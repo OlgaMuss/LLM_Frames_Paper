@@ -1,3 +1,6 @@
+#Ignore formatting folder
+Formating
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
@@ -6,3 +9,5 @@
 
 /agujournal2019.cls
 /trackchanges.sty
+
+**/*.quarto_ipynb

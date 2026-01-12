@@ -1,0 +1,244 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0",""
+"0","library(readr)"
+"0","library(dplyr)"
+"0","library(readxl)"
+"0","library(tidyr)"
+"0",""
+"0","df <- read.csv('/Users/olga/Olga\'s\ workspace/ETHZ\ SBS/Marty\ project/Data_analysis/BuildBots_children_T1T4T7.csv', header=TRUE)"
+"0",""
+"0","# /Users/olga/Olga\'s\ workspace/ETHZ\ SBS/Marty\ project/Data_analysis/BuildBots_children_T1T4T7.csv"
+"0","# /Users/lleisten/Library/CloudStorage/OneDrive-ETHZurich/PhD/2023/Projects/BuildBots/Deployment/Analysis/BuildBots_children_T1_November+7,+2025_03.13.csv"
+"0",""
+"0","# remove added x column"
+"0","df <- df[-c(1,2), ]"
+"0",""
+"0","summary(df)"
+"1"," Duration..in.seconds.  Timepoint         Participant.ID       age            Gender        NAO_safe     NAO_competence   NAO_reliable  
+ Min.   : 379          Length:83          Min.   : 1.00   Min.   :12.00   Min.   :0.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.: 667          Class :character   1st Qu.: 8.00   1st Qu.:13.00   1st Qu.:1.00   1st Qu.:4.000   1st Qu.:4.000   1st Qu.:4.000  
+ Median : 979          Mode  :character   Median :16.00   Median :13.00   Median :1.00   Median :5.000   Median :5.000   Median :5.000  
+ Mean   :1019                             Mean   :16.51   Mean   :13.44   Mean   :1.11   Mean   :4.735   Mean   :4.602   Mean   :4.783  
+ 3rd Qu.:1352                             3rd Qu.:25.00   3rd Qu.:14.00   3rd Qu.:1.00   3rd Qu.:6.000   3rd Qu.:6.000   3rd Qu.:6.000  
+ Max.   :2295                             Max.   :32.00   Max.   :16.00   Max.   :2.00   Max.   :7.000   Max.   :7.000   Max.   :7.000  
+                                                          NA's   :1       NA's   :1                                                     
+ NAO_empathetic    NAO_scary     NAO_uncomfortable   NAO_social     Blossom_safe   Blossom_competent Blossom_reliable Blossom_empathetic
+ Min.   :1.000   Min.   :1.000   Min.   :1.000     Min.   :1.000   Min.   :1.000   Min.   :1.000     Min.   :1.000    Min.   :1.000     
+ 1st Qu.:2.000   1st Qu.:1.000   1st Qu.:1.000     1st Qu.:4.000   1st Qu.:3.000   1st Qu.:3.000     1st Qu.:3.000    1st Qu.:3.000     
+ Median :4.000   Median :2.000   Median :2.000     Median :5.000   Median :5.000   Median :4.000     Median :4.000    Median :4.000     
+ Mean   :3.687   Mean   :2.482   Mean   :2.458     Mean   :4.566   Mean   :4.663   Mean   :3.988     Mean   :4.229    Mean   :4.181     
+ 3rd Qu.:5.000   3rd Qu.:3.000   3rd Qu.:3.500     3rd Qu.:6.000   3rd Qu.:6.000   3rd Qu.:5.000     3rd Qu.:6.000    3rd Qu.:6.000     
+ Max.   :7.000   Max.   :7.000   Max.   :7.000     Max.   :7.000   Max.   :7.000   Max.   :7.000     Max.   :7.000    Max.   :7.000     
+                                                                                                                                        
+ Blossom_scary   Blossom_uncomfortable Blossom_social   Marty_safe    Marty_competent Marty_reliable  Marty_empathetic  Marty_scary   
+ Min.   :1.000   Min.   :1.000         Min.   :1      Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00     Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:1.000         1st Qu.:2      1st Qu.:4.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.:1.50     1st Qu.:1.000  
+ Median :1.000   Median :2.000         Median :4      Median :5.000   Median :4.000   Median :5.000   Median :4.00     Median :1.000  
+ Mean   :2.289   Mean   :2.602         Mean   :4      Mean   :4.916   Mean   :4.157   Mean   :4.506   Mean   :3.53     Mean   :2.193  
+ 3rd Qu.:3.500   3rd Qu.:4.000         3rd Qu.:5      3rd Qu.:7.000   3rd Qu.:5.500   3rd Qu.:6.000   3rd Qu.:5.00     3rd Qu.:3.000  
+ Max.   :7.000   Max.   :7.000         Max.   :7      Max.   :7.000   Max.   :7.000   Max.   :7.000   Max.   :7.00     Max.   :7.000  
+                                                                                                                                      
+ Marty_uncomfortable  Marty_social       SOAS_1          SOAS_2          SOAS_3          SOAS_4          SOAS_5          SOAS_6     
+ Min.   :1.000       Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:1.000       1st Qu.:3.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000  
+ Median :1.000       Median :5.000   Median :2.000   Median :1.000   Median :2.000   Median :2.000   Median :1.000   Median :2.000  
+ Mean   :2.181       Mean   :4.446   Mean   :1.771   Mean   :1.578   Mean   :1.807   Mean   :1.747   Mean   :1.687   Mean   :1.807  
+ 3rd Qu.:3.000       3rd Qu.:6.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:3.000  
+ Max.   :7.000       Max.   :7.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000  
+                                                                                                                                    
+     SOAS_7      attachment_1   attachment_2    attachment_3   attachment_4r   attachment_5r    intention_1     intention_2     intention_3  
+ Min.   :1.00   Min.   :1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00  
+ 1st Qu.:2.00   1st Qu.:1.00   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.00  
+ Median :2.00   Median :2.00   Median :2.000   Median :2.000   Median :3.000   Median :3.000   Median :3.000   Median :3.000   Median :3.00  
+ Mean   :2.12   Mean   :2.06   Mean   :2.349   Mean   :2.289   Mean   :2.988   Mean   :2.976   Mean   :3.169   Mean   :3.217   Mean   :3.12  
+ 3rd Qu.:3.00   3rd Qu.:3.00   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.00  
+ Max.   :3.00   Max.   :5.00   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.00  
+                                                                                                                                             
+  intention_4       MAILS_1         MAILS_2          MAILS_3         MAILS_4          MAILS_5          MAILS_6          MAILS_7      
+ Min.   :1.000   Min.   : 1.00   Min.   : 1.000   Min.   : 1.00   Min.   : 1.000   Min.   : 1.000   Min.   : 1.000   Min.   : 1.000  
+ 1st Qu.:2.000   1st Qu.: 6.50   1st Qu.: 4.000   1st Qu.: 6.00   1st Qu.: 6.000   1st Qu.: 6.000   1st Qu.: 3.000   1st Qu.: 7.000  
+ Median :4.000   Median : 8.00   Median : 6.000   Median : 8.00   Median : 8.000   Median : 8.000   Median : 6.000   Median : 9.000  
+ Mean   :3.301   Mean   : 7.94   Mean   : 5.819   Mean   : 7.47   Mean   : 7.795   Mean   : 7.651   Mean   : 5.651   Mean   : 8.422  
+ 3rd Qu.:5.000   3rd Qu.:10.00   3rd Qu.: 8.000   3rd Qu.: 9.00   3rd Qu.:10.000   3rd Qu.: 9.500   3rd Qu.: 8.000   3rd Qu.:10.000  
+ Max.   :5.000   Max.   :11.00   Max.   :11.000   Max.   :11.00   Max.   :11.000   Max.   :11.000   Max.   :11.000   Max.   :11.000  
+                                                                                                                                     
+    MAILS_8          MAILS_9          MAILS_10       robotparts_1   robotparts_2     sensors_1        sensors_2     microcontrollers_1
+ Min.   : 1.000   Min.   : 2.000   Min.   : 1.000   Min.   : 0.0   Min.   : 0.00   Min.   : 0.000   Min.   : 0.00   Min.   : 0.00     
+ 1st Qu.: 6.500   1st Qu.: 6.000   1st Qu.: 7.500   1st Qu.: 0.0   1st Qu.: 0.00   1st Qu.: 1.000   1st Qu.: 0.00   1st Qu.: 0.00     
+ Median : 8.000   Median : 9.000   Median : 9.000   Median : 1.0   Median : 0.00   Median : 1.000   Median : 0.50   Median : 1.00     
+ Mean   : 7.602   Mean   : 8.012   Mean   : 8.349   Mean   :20.9   Mean   :15.94   Mean   : 7.904   Mean   :22.01   Mean   :31.76     
+ 3rd Qu.: 9.000   3rd Qu.:10.000   3rd Qu.:10.000   3rd Qu.: 1.0   3rd Qu.: 1.00   3rd Qu.: 1.000   3rd Qu.: 1.00   3rd Qu.:99.00     
+ Max.   :11.000   Max.   :11.000   Max.   :11.000   Max.   :99.0   Max.   :99.00   Max.   :99.000   Max.   :99.00   Max.   :99.00     
+                                                    NA's   :1      NA's   :1                        NA's   :1       NA's   :1         
+ microcontrollers_2    AI_DA09           CA12            CI29            CI31            UA19            GA10        LLMdesign_1   
+ Min.   : 0.00      Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   :1.000  
+ 1st Qu.: 0.00      1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.25   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.:2.000  
+ Median : 1.00      Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median :99.00   Median :4.000  
+ Mean   :38.89      Mean   :38.77   Mean   :36.02   Mean   :21.06   Mean   :28.09   Mean   :48.45   Mean   :55.74   Mean   :3.476  
+ 3rd Qu.:99.00      3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.: 1.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:5.000  
+ Max.   :99.00      Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :5.000  
+ NA's   :1          NA's   :1                       NA's   :1       NA's   :1       NA's   :1       NA's   :1       NA's   :1      
+      GA13            EA05            GA04            PR1             PR2             PR3             PR4             GA17            GA16      
+ Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00  
+ 1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.00  
+ Median : 1.00   Median :99.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 0.00   Median :99.00   Median : 0.00  
+ Mean   :38.43   Mean   :52.21   Mean   :41.15   Mean   :24.46   Mean   :25.66   Mean   :42.16   Mean   :25.28   Mean   :52.07   Mean   :24.34  
+ 3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.: 1.00   3rd Qu.:74.50   3rd Qu.:99.00   3rd Qu.:50.00   3rd Qu.:99.00   3rd Qu.: 1.00  
+ Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00  
+                 NA's   :1       NA's   :1       NA's   :1       NA's   :1                                       NA's   :1       NA's   :1      
+      EA11       LLM_Microcontrollers_1 LLM_Microcontrollers_2 LLM_Microcontrollers_3 LLM_Microcontrollers_4 LLM_Microcontrollers_5
+ Min.   : 0.00   Min.   : 0.00          Min.   : 0.000         Min.   : 0.00          Min.   : 0.00          Min.   : 0.00         
+ 1st Qu.: 0.00   1st Qu.: 1.00          1st Qu.: 1.000         1st Qu.: 1.00          1st Qu.: 1.00          1st Qu.: 0.25         
+ Median : 1.00   Median : 1.00          Median : 1.000         Median : 1.00          Median : 1.00          Median : 1.00         
+ Mean   :47.23   Mean   :12.15          Mean   : 8.346         Mean   :12.27          Mean   :23.42          Mean   :15.81         
+ 3rd Qu.:99.00   3rd Qu.: 1.00          3rd Qu.: 1.000         3rd Qu.: 1.00          3rd Qu.: 1.00          3rd Qu.: 1.00         
+ Max.   :99.00   Max.   :99.00          Max.   :99.000         Max.   :99.00          Max.   :99.00          Max.   :99.00         
+ NA's   :1       NA's   :57             NA's   :57             NA's   :57             NA's   :57             NA's   :57            
+ LLM_Microcontrollers_6 LLM_Microcontrollers_7 LLM_Microcontrollers_8    googled       googled_time  googled_time_3_TEXT googled_topics    
+ Min.   : 0.00          Min.   : 0.00          Min.   : 0.0           Min.   :1.000   Min.   :1.00   Length:83           Length:83         
+ 1st Qu.: 1.00          1st Qu.: 0.00          1st Qu.: 1.0           1st Qu.:2.000   1st Qu.:1.75   Class :character    Class :character  
+ Median : 1.00          Median : 1.00          Median : 1.0           Median :2.000   Median :2.00   Mode  :character    Mode  :character  
+ Mean   :23.54          Mean   :38.35          Mean   : 8.5           Mean   :2.077   Mean   :2.00                                         
+ 3rd Qu.: 1.00          3rd Qu.:99.00          3rd Qu.: 1.0           3rd Qu.:2.000   3rd Qu.:2.25                                         
+ Max.   :99.00          Max.   :99.00          Max.   :99.0           Max.   :4.000   Max.   :3.00                                         
+ NA's   :57             NA's   :57             NA's   :57             NA's   :57      NA's   :79                                           
+ googled_topics_6_TEXT    friends      friends_time       friends_time_3_TEXT  friends_who    friends_who_4_TEXT attentioncheck attentioncheck2 
+ Mode:logical          Min.   :1.000   Length:83          Length:83           Min.   :1.000   Mode:logical       Min.   :1      Min.   :0.0000  
+ NA's:83               1st Qu.:1.000   Class :character   Class :character    1st Qu.:1.750   NA's:83            1st Qu.:1      1st Qu.:1.0000  
+                       Median :2.000   Mode  :character   Mode  :character    Median :2.000                      Median :1      Median :1.0000  
+                       Mean   :1.923                                          Mean   :2.125                      Mean   :1      Mean   :0.9231  
+                       3rd Qu.:2.000                                          3rd Qu.:3.000                      3rd Qu.:1      3rd Qu.:1.0000  
+                       Max.   :3.000                                          Max.   :3.000                      Max.   :1      Max.   :1.0000  
+                       NA's   :57                                             NA's   :75                         NA's   :57     NA's   :57      
+"
+"0","# Define the columns that represent the knowledge questions (BI to EA11)"
+"0","knowledge_columns <- c("
+"0","  ""robotparts_1"", ""robotparts_2"", ""sensors_1"", ""sensors_2"", "
+"0","  ""microcontrollers_1"", ""microcontrollers_2"", ""AI_DA09"", ""CA12"", "
+"0","  ""CI29"", ""CI31"", ""UA19"", ""GA10"", ""LLMdesign_1"", ""GA13"", "
+"0","  ""EA05"", ""GA04"", ""PR1"", ""PR2"", ""PR3"", ""PR4"", ""GA17"", ""GA16"", ""EA11"""
+"0",")"
+"0",""
+"0","df$robotparts_1 <- as.numeric(df$robotparts_1)"
+"0","df$robotparts_2 <- as.numeric(df$robotparts_2)"
+"0","df$sensors_1 <- as.numeric(df$sensors_1)"
+"0","df$sensors_2 <- as.numeric(df$sensors_2)"
+"0","df$microcontrollers_1 <- as.numeric(df$microcontrollers_1)"
+"0","df$microcontrollers_2 <- as.numeric(df$microcontrollers_2)"
+"0","df$AI_DA09 <- as.numeric(df$AI_DA09)"
+"0","df$CA12 <- as.numeric(df$CA12)"
+"0","df$CI29 <- as.numeric(df$CI29)"
+"0","df$CI31 <- as.numeric(df$CI31)"
+"0","df$UA19 <- as.numeric(df$UA19)"
+"0","df$GA10 <- as.numeric(df$GA10)"
+"0","df$LLMdesign_1 <- as.numeric(df$LLMdesign_1)"
+"0","df$GA13 <- as.numeric(df$GA13)"
+"0","df$EA05 <- as.numeric(df$EA05)"
+"0","df$GA04 <- as.numeric(df$GA04)"
+"0","df$PR1 <- as.numeric(df$PR1)"
+"0","df$PR2 <- as.numeric(df$PR2)"
+"0","df$PR3 <- as.numeric(df$PR3)"
+"0","df$PR4 <- as.numeric(df$PR4)"
+"0","df$GA17 <- as.numeric(df$GA17)"
+"0","df$GA16 <- as.numeric(df$GA16)"
+"0","df$EA11 <- as.numeric(df$EA11)"
+"0",""
+"0",""
+"0","summary(df)"
+"1"," Duration..in.seconds.  Timepoint         Participant.ID       age            Gender        NAO_safe     NAO_competence   NAO_reliable  
+ Min.   : 379          Length:83          Min.   : 1.00   Min.   :12.00   Min.   :0.00   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.: 667          Class :character   1st Qu.: 8.00   1st Qu.:13.00   1st Qu.:1.00   1st Qu.:4.000   1st Qu.:4.000   1st Qu.:4.000  
+ Median : 979          Mode  :character   Median :16.00   Median :13.00   Median :1.00   Median :5.000   Median :5.000   Median :5.000  
+ Mean   :1019                             Mean   :16.51   Mean   :13.44   Mean   :1.11   Mean   :4.735   Mean   :4.602   Mean   :4.783  
+ 3rd Qu.:1352                             3rd Qu.:25.00   3rd Qu.:14.00   3rd Qu.:1.00   3rd Qu.:6.000   3rd Qu.:6.000   3rd Qu.:6.000  
+ Max.   :2295                             Max.   :32.00   Max.   :16.00   Max.   :2.00   Max.   :7.000   Max.   :7.000   Max.   :7.000  
+                                                          NA's   :1       NA's   :1                                                     
+ NAO_empathetic    NAO_scary     NAO_uncomfortable   NAO_social     Blossom_safe   Blossom_competent Blossom_reliable Blossom_empathetic
+ Min.   :1.000   Min.   :1.000   Min.   :1.000     Min.   :1.000   Min.   :1.000   Min.   :1.000     Min.   :1.000    Min.   :1.000     
+ 1st Qu.:2.000   1st Qu.:1.000   1st Qu.:1.000     1st Qu.:4.000   1st Qu.:3.000   1st Qu.:3.000     1st Qu.:3.000    1st Qu.:3.000     
+ Median :4.000   Median :2.000   Median :2.000     Median :5.000   Median :5.000   Median :4.000     Median :4.000    Median :4.000     
+ Mean   :3.687   Mean   :2.482   Mean   :2.458     Mean   :4.566   Mean   :4.663   Mean   :3.988     Mean   :4.229    Mean   :4.181     
+ 3rd Qu.:5.000   3rd Qu.:3.000   3rd Qu.:3.500     3rd Qu.:6.000   3rd Qu.:6.000   3rd Qu.:5.000     3rd Qu.:6.000    3rd Qu.:6.000     
+ Max.   :7.000   Max.   :7.000   Max.   :7.000     Max.   :7.000   Max.   :7.000   Max.   :7.000     Max.   :7.000    Max.   :7.000     
+                                                                                                                                        
+ Blossom_scary   Blossom_uncomfortable Blossom_social   Marty_safe    Marty_competent Marty_reliable  Marty_empathetic  Marty_scary   
+ Min.   :1.000   Min.   :1.000         Min.   :1      Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00     Min.   :1.000  
+ 1st Qu.:1.000   1st Qu.:1.000         1st Qu.:2      1st Qu.:4.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.:1.50     1st Qu.:1.000  
+ Median :1.000   Median :2.000         Median :4      Median :5.000   Median :4.000   Median :5.000   Median :4.00     Median :1.000  
+ Mean   :2.289   Mean   :2.602         Mean   :4      Mean   :4.916   Mean   :4.157   Mean   :4.506   Mean   :3.53     Mean   :2.193  
+ 3rd Qu.:3.500   3rd Qu.:4.000         3rd Qu.:5      3rd Qu.:7.000   3rd Qu.:5.500   3rd Qu.:6.000   3rd Qu.:5.00     3rd Qu.:3.000  
+ Max.   :7.000   Max.   :7.000         Max.   :7      Max.   :7.000   Max.   :7.000   Max.   :7.000   Max.   :7.00     Max.   :7.000  
+                                                                                                                                      
+ Marty_uncomfortable  Marty_social       SOAS_1          SOAS_2          SOAS_3          SOAS_4          SOAS_5          SOAS_6     
+ Min.   :1.000       Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ 1st Qu.:1.000       1st Qu.:3.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000  
+ Median :1.000       Median :5.000   Median :2.000   Median :1.000   Median :2.000   Median :2.000   Median :1.000   Median :2.000  
+ Mean   :2.181       Mean   :4.446   Mean   :1.771   Mean   :1.578   Mean   :1.807   Mean   :1.747   Mean   :1.687   Mean   :1.807  
+ 3rd Qu.:3.000       3rd Qu.:6.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:3.000  
+ Max.   :7.000       Max.   :7.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000   Max.   :3.000  
+                                                                                                                                    
+     SOAS_7      attachment_1   attachment_2    attachment_3   attachment_4r   attachment_5r    intention_1     intention_2     intention_3  
+ Min.   :1.00   Min.   :1.00   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.00  
+ 1st Qu.:2.00   1st Qu.:1.00   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.00  
+ Median :2.00   Median :2.00   Median :2.000   Median :2.000   Median :3.000   Median :3.000   Median :3.000   Median :3.000   Median :3.00  
+ Mean   :2.12   Mean   :2.06   Mean   :2.349   Mean   :2.289   Mean   :2.988   Mean   :2.976   Mean   :3.169   Mean   :3.217   Mean   :3.12  
+ 3rd Qu.:3.00   3rd Qu.:3.00   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.00  
+ Max.   :3.00   Max.   :5.00   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.00  
+                                                                                                                                             
+  intention_4       MAILS_1         MAILS_2          MAILS_3         MAILS_4          MAILS_5          MAILS_6          MAILS_7      
+ Min.   :1.000   Min.   : 1.00   Min.   : 1.000   Min.   : 1.00   Min.   : 1.000   Min.   : 1.000   Min.   : 1.000   Min.   : 1.000  
+ 1st Qu.:2.000   1st Qu.: 6.50   1st Qu.: 4.000   1st Qu.: 6.00   1st Qu.: 6.000   1st Qu.: 6.000   1st Qu.: 3.000   1st Qu.: 7.000  
+ Median :4.000   Median : 8.00   Median : 6.000   Median : 8.00   Median : 8.000   Median : 8.000   Median : 6.000   Median : 9.000  
+ Mean   :3.301   Mean   : 7.94   Mean   : 5.819   Mean   : 7.47   Mean   : 7.795   Mean   : 7.651   Mean   : 5.651   Mean   : 8.422  
+ 3rd Qu.:5.000   3rd Qu.:10.00   3rd Qu.: 8.000   3rd Qu.: 9.00   3rd Qu.:10.000   3rd Qu.: 9.500   3rd Qu.: 8.000   3rd Qu.:10.000  
+ Max.   :5.000   Max.   :11.00   Max.   :11.000   Max.   :11.00   Max.   :11.000   Max.   :11.000   Max.   :11.000   Max.   :11.000  
+                                                                                                                                     
+    MAILS_8          MAILS_9          MAILS_10       robotparts_1   robotparts_2     sensors_1        sensors_2     microcontrollers_1
+ Min.   : 1.000   Min.   : 2.000   Min.   : 1.000   Min.   : 0.0   Min.   : 0.00   Min.   : 0.000   Min.   : 0.00   Min.   : 0.00     
+ 1st Qu.: 6.500   1st Qu.: 6.000   1st Qu.: 7.500   1st Qu.: 0.0   1st Qu.: 0.00   1st Qu.: 1.000   1st Qu.: 0.00   1st Qu.: 0.00     
+ Median : 8.000   Median : 9.000   Median : 9.000   Median : 1.0   Median : 0.00   Median : 1.000   Median : 0.50   Median : 1.00     
+ Mean   : 7.602   Mean   : 8.012   Mean   : 8.349   Mean   :20.9   Mean   :15.94   Mean   : 7.904   Mean   :22.01   Mean   :31.76     
+ 3rd Qu.: 9.000   3rd Qu.:10.000   3rd Qu.:10.000   3rd Qu.: 1.0   3rd Qu.: 1.00   3rd Qu.: 1.000   3rd Qu.: 1.00   3rd Qu.:99.00     
+ Max.   :11.000   Max.   :11.000   Max.   :11.000   Max.   :99.0   Max.   :99.00   Max.   :99.000   Max.   :99.00   Max.   :99.00     
+                                                    NA's   :1      NA's   :1                        NA's   :1       NA's   :1         
+ microcontrollers_2    AI_DA09           CA12            CI29            CI31            UA19            GA10        LLMdesign_1   
+ Min.   : 0.00      Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   :1.000  
+ 1st Qu.: 0.00      1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.25   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.:2.000  
+ Median : 1.00      Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median :99.00   Median :4.000  
+ Mean   :38.89      Mean   :38.77   Mean   :36.02   Mean   :21.06   Mean   :28.09   Mean   :48.45   Mean   :55.74   Mean   :3.476  
+ 3rd Qu.:99.00      3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.: 1.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:5.000  
+ Max.   :99.00      Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :5.000  
+ NA's   :1          NA's   :1                       NA's   :1       NA's   :1       NA's   :1       NA's   :1       NA's   :1      
+      GA13            EA05            GA04            PR1             PR2             PR3             PR4             GA17            GA16      
+ Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00   Min.   : 0.00  
+ 1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 1.00   1st Qu.: 0.00   1st Qu.: 0.00   1st Qu.: 0.00  
+ Median : 1.00   Median :99.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 1.00   Median : 0.00   Median :99.00   Median : 0.00  
+ Mean   :38.43   Mean   :52.21   Mean   :41.15   Mean   :24.46   Mean   :25.66   Mean   :42.16   Mean   :25.28   Mean   :52.07   Mean   :24.34  
+ 3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.:99.00   3rd Qu.: 1.00   3rd Qu.:74.50   3rd Qu.:99.00   3rd Qu.:50.00   3rd Qu.:99.00   3rd Qu.: 1.00  
+ Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00   Max.   :99.00  
+                 NA's   :1       NA's   :1       NA's   :1       NA's   :1                                       NA's   :1       NA's   :1      
+      EA11       LLM_Microcontrollers_1 LLM_Microcontrollers_2 LLM_Microcontrollers_3 LLM_Microcontrollers_4 LLM_Microcontrollers_5
+ Min.   : 0.00   Min.   : 0.00          Min.   : 0.000         Min.   : 0.00          Min.   : 0.00          Min.   : 0.00         
+ 1st Qu.: 0.00   1st Qu.: 1.00          1st Qu.: 1.000         1st Qu.: 1.00          1st Qu.: 1.00          1st Qu.: 0.25         
+ Median : 1.00   Median : 1.00          Median : 1.000         Median : 1.00          Median : 1.00          Median : 1.00         
+ Mean   :47.23   Mean   :12.15          Mean   : 8.346         Mean   :12.27          Mean   :23.42          Mean   :15.81         
+ 3rd Qu.:99.00   3rd Qu.: 1.00          3rd Qu.: 1.000         3rd Qu.: 1.00          3rd Qu.: 1.00          3rd Qu.: 1.00         
+ Max.   :99.00   Max.   :99.00          Max.   :99.000         Max.   :99.00          Max.   :99.00          Max.   :99.00         
+ NA's   :1       NA's   :57             NA's   :57             NA's   :57             NA's   :57             NA's   :57            
+ LLM_Microcontrollers_6 LLM_Microcontrollers_7 LLM_Microcontrollers_8    googled       googled_time  googled_time_3_TEXT googled_topics    
+ Min.   : 0.00          Min.   : 0.00          Min.   : 0.0           Min.   :1.000   Min.   :1.00   Length:83           Length:83         
+ 1st Qu.: 1.00          1st Qu.: 0.00          1st Qu.: 1.0           1st Qu.:2.000   1st Qu.:1.75   Class :character    Class :character  
+ Median : 1.00          Median : 1.00          Median : 1.0           Median :2.000   Median :2.00   Mode  :character    Mode  :character  
+ Mean   :23.54          Mean   :38.35          Mean   : 8.5           Mean   :2.077   Mean   :2.00                                         
+ 3rd Qu.: 1.00          3rd Qu.:99.00          3rd Qu.: 1.0           3rd Qu.:2.000   3rd Qu.:2.25                                         
+ Max.   :99.00          Max.   :99.00          Max.   :99.0           Max.   :4.000   Max.   :3.00                                         
+ NA's   :57             NA's   :57             NA's   :57             NA's   :57      NA's   :79                                           
+ googled_topics_6_TEXT    friends      friends_time       friends_time_3_TEXT  friends_who    friends_who_4_TEXT attentioncheck attentioncheck2 
+ Mode:logical          Min.   :1.000   Length:83          Length:83           Min.   :1.000   Mode:logical       Min.   :1      Min.   :0.0000  
+ NA's:83               1st Qu.:1.000   Class :character   Class :character    1st Qu.:1.750   NA's:83            1st Qu.:1      1st Qu.:1.0000  
+                       Median :2.000   Mode  :character   Mode  :character    Median :2.000                      Median :1      Median :1.0000  
+                       Mean   :1.923                                          Mean   :2.125                      Mean   :1      Mean   :0.9231  
+                       3rd Qu.:2.000                                          3rd Qu.:3.000                      3rd Qu.:1      3rd Qu.:1.0000  
+                       Max.   :3.000                                          Max.   :3.000                      Max.   :1      Max.   :1.0000  
+                       NA's   :57                                             NA's   :75                         NA's   :57     NA's   :57      
+"

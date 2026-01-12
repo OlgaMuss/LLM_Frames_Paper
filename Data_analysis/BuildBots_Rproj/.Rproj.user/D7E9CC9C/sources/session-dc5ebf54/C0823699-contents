@@ -1,0 +1,137 @@
+# Session Report: df9997a0075e4d23a4f4766907f743a5
+
+**Saved at:** 2025-12-15T07:55:03.195013
+
+## Session Details
+
+- **Topic:** Mikrocontroller
+- **Mnemonic Type:** Story
+- **Learning Material:** A microcontroller is a small computer on a chip that can run a simple program.
+A microcontroller must be connected to a positive and a negative pole.
+To control other devices, a microcontroller can output a voltage of 3 V on its pins.
+It can switch this voltage on and off for different pins, also for several pins at the same time.
+When a pin is switched on, it is "HIGH"; when it is switched off, it is "LOW".
+This switching between "HIGH" and "LOW" does not happen randomly — it is controlled by a program, for example Blockly for Marty.
+Microcontrollers use a programming language called C++.
+- **Students:** ['a', 'b']
+- **Target Age:** 14
+- **Use Code Frame:** True
+- **Llm Provider:** openai
+- **Llm Model:** gpt-4.1-mini
+
+## 🎨 Mnemonic Type
+
+**Story** - A narrative that weaves concepts together
+
+## 📊 Participation Summary
+
+| Student | Contributions | Speaking Time |
+|---------|---------------|---------------|
+| **a** | 9 | 12.4s |
+| **b** | 2 | 2.8s |
+
+## 🎯 Selected Concepts
+
+**Status:** ✅ Finalized
+
+1. electrical technology 
+
+## 📖 Created Mnemonic
+
+**Status:** ✅ Complete
+
+When programming a microcontroller, make it fun so that the control system comes alive. Each function adds life, and the logic weaves together like an exciting puzzle. Input and output dance together to bring your ideas to life. This turns technology into a creative story that is fun and inspiring.
+
+## Conversation Log
+
+### Turn 1 (2025-12-15T07:31:55.663717)
+
+**a:** hello
+
+**Marty:** Hello, a! b, what do you think is the most important thing about microcontrollers that we should remember in our story?
+
+---
+
+### Turn 2 (2025-12-15T07:32:59.787936)
+
+**b:** That it is electrical technology
+
+**Marty:** Thanks, b, that's a good point! a, what other important things about microcontrollers do you think we should include in our story?
+
+---
+
+### Turn 3 (2025-12-15T07:35:50.575487)
+
+**a:** I DON'T KNOW
+
+No problem, a! b, do you have any ideas on how we can make the electrical technology in our story about microcontrollers more exciting?
+
+---
+
+### Turn 4 (2025-12-15T07:36:24.629044)
+
+**a:** MAKE IT FUNNY
+
+**Marty:** a, That's a cool idea to make the story funny! b, how could we portray the microcontroller as a funny character in our story?
+---
+
+### Turn 5 (2025-12-15T07:39:18.326795)
+
+**b:** As P Diddy
+
+**Marty:** Thanks, b, for your suggestion! a, would you like to try reciting the entire story we made together from memory? I'll help you if you get stuck!
+
+---
+
+### Turn 6 (2025-12-15T07:39:49.989629)
+
+**a:** YES
+
+**Marty:** Great, a! Then please start, and b, be ready to help if a gets stuck somewhere! a, how does our story begin?
+---
+
+### Turn 7 (2025-12-15T07:40:21.560574)
+
+**a:** YOU SAY THAT
+
+**Marty:** a, that's great courage! I'll start: “Make it funny when you program a microcontroller so that the control comes alive.” b, can you now tell the next part of the story?
+---
+
+### Turn 8 (2025-12-15T07:41:14.680132)
+
+**a:** MAKE A SIREN SOUND
+
+**Marty:** a, that sounds like fun, but let's stick to our story so we can learn it well! b, can you please tell the next part of our story?
+
+---
+
+### Turn 9 (2025-12-15T07:46:06.233146)
+
+**a:** MNEMONIC
+
+**Marty:** Thanks for your energy, a! Here's a simple mnemonic: “Microcontrollers make it clear, with 3 volts and even a program!” b, can you think of a fun idea to make this mnemonic even more exciting?
+---
+
+### Turn 10 (2025-12-15T07:52:38.773527)
+
+**a:** THAT YOU CAN SWITCH THE VARIOUS PINS ON AND OFF
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Understood:** electrical technology 
+
+</details>
+
+**Marty:** a, exactly, that's important! b, would you like to tell our whole story about the microcontroller now? That way we can see how well we remember!
+
+---
+
+### Turn 11 (2025-12-15T07:53:41.745940)
+
+**a:** MAKE A MNEMONIC FROM EVERYTHING
+
+**Marty:** a, that's a great idea! We can use our story as a mnemonic: “Funny microcontroller dances with pins, switches HIGH and LOW, programs with C++ – that's how technology comes to life!” b, would you like to recite this mnemonic device again together with a?
+
+---
+

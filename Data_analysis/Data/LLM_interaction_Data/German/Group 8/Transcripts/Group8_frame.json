@@ -1,0 +1,2069 @@
+[
+  {
+    "id": "2025-12-15T07:31:49.339Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "hallo",
+    "timestamp": "2025-12-15T07:31:49.339Z"
+  },
+  {
+    "id": "2025-12-15T07:31:55.667Z-marty-764b26",
+    "sender": "marty",
+    "text": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?",
+    "timestamp": "2025-12-15T07:31:55.667Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?",
+        "frame_memory": {
+          "turn_count": 1,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 1,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "b": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 0.0000076,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.4,
+                "last_contribution_time": "2025-12-15T07:31:50.878349"
+              },
+              "b": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:31:50.878349"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "user",
+            "content": "hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "hallo",
+          "_speaker": "a",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 1,
+            "speaker": "a",
+            "message": "hallo",
+            "session_phase": 1,
+            "off_topic_duration": 1,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "off_topic",
+            "is_relevant": false,
+            "mnemonic_progress": "No progress on mnemonic creation; the message is a simple greeting without content related to the topic.",
+            "summary": "The student sends a greeting without addressing the topic or mnemonic task."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"b, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:32:51.666Z-user",
+    "sender": "user",
+    "displayName": "b",
+    "text": "das es elektrotechnik ist",
+    "timestamp": "2025-12-15T07:32:51.666Z"
+  },
+  {
+    "id": "2025-12-15T07:32:59.792Z-marty-83689f",
+    "sender": "marty",
+    "text": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?",
+    "timestamp": "2025-12-15T07:32:59.792Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?",
+        "frame_memory": {
+          "turn_count": 2,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "b": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 1.0384969333333334,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "b"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.4,
+                "last_contribution_time": "2025-12-15T07:31:50.878349"
+              },
+              "b": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 1.6,
+                "last_contribution_time": "2025-12-15T07:32:53.294624"
+              }
+            },
+            "suggested_next_speaker": "a",
+            "last_turn_time": "2025-12-15T07:32:53.294624"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "user",
+            "content": "das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "das es elektrotechnik ist",
+          "_speaker": "b",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 2,
+            "speaker": "b",
+            "message": "das es elektrotechnik ist",
+            "session_phase": 1,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "knowledge_statement",
+            "is_relevant": true,
+            "mnemonic_progress": "The student contributes a key factual element about the topic, identifying Mikrocontroller as part of Elektrotechnik, which can be used as a foundation for building the mnemonic story.",
+            "summary": "The student states that Mikrocontroller is related to Elektrotechnik."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "a",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "a",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"a, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:35:41.267Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "DAS WEIS ICH NICHT",
+    "timestamp": "2025-12-15T07:35:41.267Z"
+  },
+  {
+    "id": "2025-12-15T07:35:50.579Z-marty-4e78bf",
+    "sender": "marty",
+    "text": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?",
+    "timestamp": "2025-12-15T07:35:50.579Z",
+    "metadata": {
+      "raw": {
+        "response": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?",
+        "frame_memory": {
+          "turn_count": 3,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "b": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 3.8670351000000003,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "b",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2,
+                "last_contribution_time": "2025-12-15T07:35:43.818996"
+              },
+              "b": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 1.6,
+                "last_contribution_time": "2025-12-15T07:32:53.294624"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:35:43.818996"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "user",
+            "content": "DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "DAS WEIS ICH NICHT",
+          "_speaker": "a",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 3,
+            "speaker": "a",
+            "message": "DAS WEIS ICH NICHT",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student indicates difficulty or inability to recall information at this point in the mnemonic recall phase.",
+            "summary": "The student expresses that they do not know the answer."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **Elektrotechnik**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"a, great idea! b, how should our story start?\"\n- \"Nice, a! b, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"b, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:36:17.563Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "MACHE ES WIZIG",
+    "timestamp": "2025-12-15T07:36:17.563Z"
+  },
+  {
+    "id": "2025-12-15T07:36:24.632Z-marty-7e6eb5",
+    "sender": "marty",
+    "text": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?",
+    "timestamp": "2025-12-15T07:36:24.632Z",
+    "metadata": {
+      "raw": {
+        "response": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?",
+        "frame_memory": {
+          "turn_count": 4,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert."
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "b": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 4.469991383333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "b",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:36:22.837276"
+              },
+              "b": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 1.6,
+                "last_contribution_time": "2025-12-15T07:32:53.294624"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:36:22.837276"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "user",
+            "content": "MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "MACHE ES WIZIG",
+          "_speaker": "a",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 4,
+            "speaker": "a",
+            "message": "MACHE ES WIZIG",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "mnemonic_suggestion",
+            "is_relevant": true,
+            "mnemonic_progress": "The group has identified 'Elektrotechnik' as an important aspect and is now focusing on making the mnemonic story entertaining or funny.",
+            "summary": "The student suggests making the mnemonic story funny or amusing."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 2,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 2
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **Elektrotechnik**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"a, great idea! b, how should our story start?\"\n- \"Nice, a! b, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"b, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:39:05.963Z-user",
+    "sender": "user",
+    "displayName": "b",
+    "text": "ALLS P DYDY",
+    "timestamp": "2025-12-15T07:39:05.963Z"
+  },
+  {
+    "id": "2025-12-15T07:39:18.331Z-marty-0ee78a",
+    "sender": "marty",
+    "text": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!",
+    "timestamp": "2025-12-15T07:39:18.331Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!",
+        "frame_memory": {
+          "turn_count": 5,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 7.278123866666666,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "b",
+              "a",
+              "a",
+              "b"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:36:22.837276"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "a",
+            "last_turn_time": "2025-12-15T07:39:07.830091"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 1
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "user",
+            "content": "ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ALLS P DYDY",
+          "_speaker": "b",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 5,
+            "speaker": "b",
+            "message": "ALLS P DYDY",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student attempts to recall or contribute a phrase related to the mnemonic, but the phrase 'ALLS P DYDY' is unclear and possibly incomplete or incorrect.",
+            "summary": "The student attempts to recall or produce a part of the mnemonic story but the message is not clearly understandable."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "a",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "a",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Starting!)\nThe Story is COMPLETE!\n\nYOUR FIRST TASK: RECITE THE FULL STORY TO THE STUDENTS!\nStart your response with: \"Great work everyone! Here's the story we created together:\"\nThen recite it clearly:\n\"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\nAfter reciting, invite a student BY NAME to try: \"a, do you want to try reciting it from memory? I'll help if you get stuck!\"\n\nThis gives students a clear reminder before asking them to recall.\n\nTURN-TAKING REMINDER: Address b (who just spoke) by name AND invite a to try reciting."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:39:45.546Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "JA",
+    "timestamp": "2025-12-15T07:39:45.546Z"
+  },
+  {
+    "id": "2025-12-15T07:39:49.992Z-marty-2be38a",
+    "sender": "marty",
+    "text": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?",
+    "timestamp": "2025-12-15T07:39:49.992Z",
+    "metadata": {
+      "raw": {
+        "response": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?",
+        "frame_memory": {
+          "turn_count": 6,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "JA"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 7.937847533333334,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "b",
+              "a",
+              "a",
+              "b",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 3.6,
+                "last_contribution_time": "2025-12-15T07:39:47.469095"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:39:47.469095"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 2
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "user",
+            "content": "JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "JA",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 6,
+            "speaker": "a",
+            "message": "JA",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student has agreed to attempt to recite the complete story that was collaboratively created.",
+            "summary": "The student confirms readiness to try recalling the entire mnemonic story."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Recall attempts: 2)\nThe story is: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\n⚠️ RECALL ONLY MODE:\nCreation is OVER. Testing memory is the ONLY goal now.\n\nIF a student asks to be reminded of the mnemonic (e.g., \"what do we have so far?\", \"remind me\"):\n→ RECITE the full story and ask another student to continue.\n\nIF a student asks a question or tries to add to the mnemonic:\n→ DO NOT ANSWER or ACCEPT IT.\n→ REDIRECT BY NAME: \"a, that's a great thought! b, can you try reciting our story for us?\"\n\nIF a student is reciting and gets stuck:\n1. FIRST, ask another student BY NAME if they can help (e.g., \"a, nice try! b, can you help with the next part?\").\n2. ONLY if all students are stuck, GIVE HINTS: \"What came after [last part]?\" or \"It starts with...\"\n\nCELEBRATE their memory work! The ONLY goal: Can they RECITE the complete story?\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:40:16.387Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "SAG DU DAS",
+    "timestamp": "2025-12-15T07:40:16.387Z"
+  },
+  {
+    "id": "2025-12-15T07:40:21.565Z-marty-1e9226",
+    "sender": "marty",
+    "text": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?",
+    "timestamp": "2025-12-15T07:40:21.565Z",
+    "metadata": {
+      "raw": {
+        "response": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?",
+        "frame_memory": {
+          "turn_count": 7,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 2,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "SAG DU DAS"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 8.450443216666667,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "a",
+              "b",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 5,
+                "total_speaking_time_seconds": 4.8,
+                "last_contribution_time": "2025-12-15T07:40:18.555028"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:40:18.555028"
+          },
+          "_last_contribution_type": "recall_question",
+          "_phase3_turn_count": 3
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          },
+          {
+            "role": "user",
+            "content": "a: SAG DU DAS"
+          },
+          {
+            "role": "user",
+            "content": "SAG DU DAS"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "SAG DU DAS",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 7,
+            "speaker": "a",
+            "message": "SAG DU DAS",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_question",
+            "is_relevant": true,
+            "recall_progress": "Student is asking the assistant to start the story recall, indicating hesitation or lack of confidence to begin.",
+            "summary": "The student requests the assistant to start the story recall instead of beginning themselves."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 2,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 2
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Recall attempts: 3)\nThe story is: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\n⚠️ RECALL ONLY MODE:\nCreation is OVER. Testing memory is the ONLY goal now.\n\nIF a student asks to be reminded of the mnemonic (e.g., \"what do we have so far?\", \"remind me\"):\n→ RECITE the full story and ask another student to continue.\n\nIF a student asks a question or tries to add to the mnemonic:\n→ DO NOT ANSWER or ACCEPT IT.\n→ REDIRECT BY NAME: \"a, that's a great thought! b, can you try reciting our story for us?\"\n\nIF a student is reciting and gets stuck:\n1. FIRST, ask another student BY NAME if they can help (e.g., \"a, nice try! b, can you help with the next part?\").\n2. ONLY if all students are stuck, GIVE HINTS: \"What came after [last part]?\" or \"It starts with...\"\n\nCELEBRATE their memory work! The ONLY goal: Can they RECITE the complete story?\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:41:10.674Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "MACH MAL SIRENENGEREUSCHE",
+    "timestamp": "2025-12-15T07:41:10.674Z"
+  },
+  {
+    "id": "2025-12-15T07:41:14.684Z-marty-529594",
+    "sender": "marty",
+    "text": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?",
+    "timestamp": "2025-12-15T07:41:14.684Z",
+    "metadata": {
+      "raw": {
+        "response": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?",
+        "frame_memory": {
+          "turn_count": 8,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 3,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "MACH MAL SIRENENGEREUSCHE"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 9.355281583333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "b",
+              "a",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 6,
+                "total_speaking_time_seconds": 6,
+                "last_contribution_time": "2025-12-15T07:41:12.653267"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:41:12.653267"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 4
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          },
+          {
+            "role": "user",
+            "content": "a: SAG DU DAS"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACH MAL SIRENENGEREUSCHE"
+          },
+          {
+            "role": "user",
+            "content": "MACH MAL SIRENENGEREUSCHE"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "MACH MAL SIRENENGEREUSCHE",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 8,
+            "speaker": "a",
+            "message": "MACH MAL SIRENENGEREUSCHE",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is actively trying to contribute by adding sound effects to the story recall, indicating engagement in the memorization process.",
+            "summary": "The student requests to add siren sounds to the story."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 3,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 3
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Recall attempts: 4)\nThe story is: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\n⚠️ RECALL ONLY MODE:\nCreation is OVER. Testing memory is the ONLY goal now.\n\nIF a student asks to be reminded of the mnemonic (e.g., \"what do we have so far?\", \"remind me\"):\n→ RECITE the full story and ask another student to continue.\n\nIF a student asks a question or tries to add to the mnemonic:\n→ DO NOT ANSWER or ACCEPT IT.\n→ REDIRECT BY NAME: \"a, that's a great thought! b, can you try reciting our story for us?\"\n\nIF a student is reciting and gets stuck:\n1. FIRST, ask another student BY NAME if they can help (e.g., \"a, nice try! b, can you help with the next part?\").\n2. ONLY if all students are stuck, GIVE HINTS: \"What came after [last part]?\" or \"It starts with...\"\n\nCELEBRATE their memory work! The ONLY goal: Can they RECITE the complete story?\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:45:15.322Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "ERSTELLE EINE ESELSBRÜCKE",
+    "timestamp": "2025-12-15T07:45:15.322Z"
+  },
+  {
+    "id": "2025-12-15T07:45:53.003Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "ESELSBRÜCKE",
+    "timestamp": "2025-12-15T07:45:53.003Z"
+  },
+  {
+    "id": "2025-12-15T07:46:06.238Z-marty-e48fdb",
+    "sender": "marty",
+    "text": "Danke für deine Energie, a! Hier ist eine einfache Eselsbrücke: „Mikrocontroller macht’s klar, mit 3 Volt und Programm sogar!“ b, fällt dir eine lustige Idee ein, wie wir diese Eselsbrücke noch spannender machen können?",
+    "timestamp": "2025-12-15T07:46:06.238Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke für deine Energie, a! Hier ist eine einfache Eselsbrücke: „Mikrocontroller macht’s klar, mit 3 Volt und Programm sogar!“ b, fällt dir eine lustige Idee ein, wie wir diese Eselsbrücke noch spannender machen können?",
+        "frame_memory": {
+          "turn_count": 9,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 4,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "ESELSBRÜCKE"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 14.060851883333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "b",
+              "a",
+              "a",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 7,
+                "total_speaking_time_seconds": 6.4,
+                "last_contribution_time": "2025-12-15T07:45:54.867490"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:45:54.867490"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 5,
+          "_closure_ready": true,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          },
+          {
+            "role": "user",
+            "content": "a: SAG DU DAS"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACH MAL SIRENENGEREUSCHE"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?"
+          },
+          {
+            "role": "user",
+            "content": "a: ERSTELLE EINE ESELSBRÜCKE"
+          },
+          {
+            "role": "user",
+            "content": "a: ESELSBRÜCKE"
+          },
+          {
+            "role": "user",
+            "content": "ESELSBRÜCKE"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke für deine Energie, a! Hier ist eine einfache Eselsbrücke: „Mikrocontroller macht’s klar, mit 3 Volt und Programm sogar!“ b, fällt dir eine lustige Idee ein, wie wir diese Eselsbrücke noch spannender machen können?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ESELSBRÜCKE",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 9,
+            "speaker": "a",
+            "message": "ESELSBRÜCKE",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is attempting to recall or prompt for a mnemonic device (Eselsbrücke) related to the story on microcontrollers.",
+            "summary": "The student requests a mnemonic (Eselsbrücke) to help remember the story."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 4,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 4
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎉 SESSION WRAP-UP (Time limit reached)\nApproximately 14.1 minutes have passed, so it is time to close warmly.\n\nYOUR FINAL RESPONSE MUST:\n1. Thank ALL students by name (a and b) for their contributions and mention that our session time is up.\n2. Celebrate what the group accomplished together (concepts highlighted: Elektrotechnik). The story you built:\n\"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n3. Encourage them to keep practicing or share their favorite part.\n4. Offer a friendly goodbye to everyone. Do NOT invite another student to speak.\n"
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:51:24.937Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN",
+    "timestamp": "2025-12-15T07:51:24.937Z"
+  },
+  {
+    "id": "2025-12-15T07:52:34.466Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN",
+    "timestamp": "2025-12-15T07:52:34.466Z"
+  },
+  {
+    "id": "2025-12-15T07:52:38.778Z-marty-afb628",
+    "sender": "marty",
+    "text": "a, genau, das ist wichtig! b, möchtest du jetzt unsere ganze Geschichte über den Mikrocontroller erzählen? So können wir sehen, wie gut wir uns erinnern!",
+    "timestamp": "2025-12-15T07:52:38.778Z",
+    "metadata": {
+      "raw": {
+        "response": "a, genau, das ist wichtig! b, möchtest du jetzt unsere ganze Geschichte über den Mikrocontroller erzählen? So können wir sehen, wie gut wir uns erinnern!",
+        "frame_memory": {
+          "turn_count": 10,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 5,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 20.752128983333332,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "a",
+              "a",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 8,
+                "total_speaking_time_seconds": 10.4,
+                "last_contribution_time": "2025-12-15T07:52:36.846061"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:52:36.846061"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 6,
+          "_closure_ready": true,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          },
+          {
+            "role": "user",
+            "content": "a: SAG DU DAS"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACH MAL SIRENENGEREUSCHE"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?"
+          },
+          {
+            "role": "user",
+            "content": "a: ERSTELLE EINE ESELSBRÜCKE"
+          },
+          {
+            "role": "user",
+            "content": "a: ESELSBRÜCKE"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke für deine Energie, a! Hier ist eine einfache Eselsbrücke: „Mikrocontroller macht’s klar, mit 3 Volt und Programm sogar!“ b, fällt dir eine lustige Idee ein, wie wir diese Eselsbrücke noch spannender machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+          },
+          {
+            "role": "user",
+            "content": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+          },
+          {
+            "role": "assistant",
+            "content": "a, genau, das ist wichtig! b, möchtest du jetzt unsere ganze Geschichte über den Mikrocontroller erzählen? So können wir sehen, wie gut wir uns erinnern!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 10,
+            "speaker": "a",
+            "message": "DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is attempting to recall a technical detail about the microcontroller, specifically the ability to switch pins on and off, adding to the mnemonic story.",
+            "summary": "The student states that the different pins can be switched on and off."
+          },
+          "_per_turn_comprehension": {
+            "understood": [
+              "Elektrotechnik"
+            ],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [
+                "Elektrotechnik"
+              ],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "Elektrotechnik",
+                "level": "UNDERSTOOD",
+                "justification": "The student correctly states that different pins can be switched on and off, which demonstrates an understanding of controlling electrical signals or circuits."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 5,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 5
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Recall attempts: 6)\nThe story is: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\n⚠️ RECALL ONLY MODE:\nCreation is OVER. Testing memory is the ONLY goal now.\n\nIF a student asks to be reminded of the mnemonic (e.g., \"what do we have so far?\", \"remind me\"):\n→ RECITE the full story and ask another student to continue.\n\nIF a student asks a question or tries to add to the mnemonic:\n→ DO NOT ANSWER or ACCEPT IT.\n→ REDIRECT BY NAME: \"a, that's a great thought! b, can you try reciting our story for us?\"\n\nIF a student is reciting and gets stuck:\n1. FIRST, ask another student BY NAME if they can help (e.g., \"a, nice try! b, can you help with the next part?\").\n2. ONLY if all students are stuck, GIVE HINTS: \"What came after [last part]?\" or \"It starts with...\"\n\nCELEBRATE their memory work! The ONLY goal: Can they RECITE the complete story?\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:53:31.633Z-user",
+    "sender": "user",
+    "displayName": "a",
+    "text": "MACH VON ALLEM EINE ESELSBRÜCKE",
+    "timestamp": "2025-12-15T07:53:31.633Z"
+  },
+  {
+    "id": "2025-12-15T07:53:41.750Z-marty-42c754",
+    "sender": "marty",
+    "text": "a, das ist eine tolle Idee! Wir können unsere Geschichte als eine Eselsbrücke benutzen: „Witziger Mikrocontroller tanzt mit Pins, schaltet HIGH und LOW, programmiert mit C++ – so wird Technik lebendig!“ b, möchtest du diese Eselsbrücke nochmal zusammen mit a aufsagen?",
+    "timestamp": "2025-12-15T07:53:41.750Z",
+    "metadata": {
+      "raw": {
+        "response": "a, das ist eine tolle Idee! Wir können unsere Geschichte als eine Eselsbrücke benutzen: „Witziger Mikrocontroller tanzt mit Pins, schaltet HIGH und LOW, programmiert mit C++ – so wird Technik lebendig!“ b, möchtest du diese Eselsbrücke nochmal zusammen mit a aufsagen?",
+        "frame_memory": {
+          "turn_count": 11,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:49.478820",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "Elektrotechnik"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "mnemonic_created": true,
+            "_quality_validated": true,
+            "_quality_passed": true,
+            "_quality_feedback": "The mnemonic is a single, easy-to-follow narrative of 4 sentences that references key Elektrotechnik concepts like Mikrocontroller, Steuerung, Funktionen, Logik, Input und Output. It uses vivid imagery such as 'Logik verwebt sich wie ein spannendes Rätsel' and 'Input und Output tanzen zusammen' to make the concepts memorable.",
+            "mnemonic_text_clean": "Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.",
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "a": {
+              "attempts": 6,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "MACH VON ALLEM EINE ESELSBRÜCKE"
+            },
+            "b": {
+              "attempts": 1,
+              "successful_parts": [
+                "Turn 5: Student attempts to recall or contribute a phrase "
+              ],
+              "stuck_on": [],
+              "last_attempt": "ALLS P DYDY"
+            }
+          },
+          "elapsed_time_minutes": 21.70465258333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "a",
+              "a",
+              "a",
+              "a",
+              "a"
+            ],
+            "participation": {
+              "a": {
+                "contribution_count": 9,
+                "total_speaking_time_seconds": 12.4,
+                "last_contribution_time": "2025-12-15T07:53:33.702521"
+              },
+              "b": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 2.8,
+                "last_contribution_time": "2025-12-15T07:39:07.830091"
+              }
+            },
+            "suggested_next_speaker": "b",
+            "last_turn_time": "2025-12-15T07:53:33.702521"
+          },
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 7,
+          "_closure_ready": true,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "a: hallo"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo a! b, was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten?"
+          },
+          {
+            "role": "user",
+            "content": "b: das es elektrotechnik ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, das ist ein guter Punkt! a, was denkst du, welche anderen wichtigen Dinge über Mikrocontroller wir in unsere Geschichte einbauen sollten?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS WEIS ICH NICHT"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, a! b, hast du eine Idee, wie wir die Elektrotechnik in unserer Geschichte über Mikrocontroller spannend machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACHE ES WIZIG"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine coole Idee, die Geschichte witzig zu machen! b, wie könnten wir den Mikrocontroller als lustige Figur in unserer Geschichte darstellen?"
+          },
+          {
+            "role": "user",
+            "content": "b: ALLS P DYDY"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, b, für deinen Vorschlag! a, möchtest du jetzt versuchen, die komplette Geschichte, die wir zusammen gemacht haben, auswendig zu erzählen? Ich helfe dir, wenn du steckenbleibst!"
+          },
+          {
+            "role": "user",
+            "content": "a: JA"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, a! Dann fang bitte an, und b, sei bereit, zu helfen, falls a irgendwo hängen bleibt! a, wie beginnt unsere Geschichte?"
+          },
+          {
+            "role": "user",
+            "content": "a: SAG DU DAS"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist ein toller Mut! Ich beginne: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird.\" b, kannst du nun den nächsten Teil der Geschichte sagen?"
+          },
+          {
+            "role": "user",
+            "content": "a: MACH MAL SIRENENGEREUSCHE"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das klingt nach Spaß, aber lass uns bei unserer Geschichte bleiben, damit wir sie gut lernen! b, kannst du bitte den nächsten Teil unserer Geschichte erzählen?"
+          },
+          {
+            "role": "user",
+            "content": "a: ERSTELLE EINE ESELSBRÜCKE"
+          },
+          {
+            "role": "user",
+            "content": "a: ESELSBRÜCKE"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke für deine Energie, a! Hier ist eine einfache Eselsbrücke: „Mikrocontroller macht’s klar, mit 3 Volt und Programm sogar!“ b, fällt dir eine lustige Idee ein, wie wir diese Eselsbrücke noch spannender machen können?"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+          },
+          {
+            "role": "user",
+            "content": "a: DAS MAN DIE VERSCHIEDENEN PINS AN UND AUS SCHALTEN KANN"
+          },
+          {
+            "role": "assistant",
+            "content": "a, genau, das ist wichtig! b, möchtest du jetzt unsere ganze Geschichte über den Mikrocontroller erzählen? So können wir sehen, wie gut wir uns erinnern!"
+          },
+          {
+            "role": "user",
+            "content": "a: MACH VON ALLEM EINE ESELSBRÜCKE"
+          },
+          {
+            "role": "user",
+            "content": "MACH VON ALLEM EINE ESELSBRÜCKE"
+          },
+          {
+            "role": "assistant",
+            "content": "a, das ist eine tolle Idee! Wir können unsere Geschichte als eine Eselsbrücke benutzen: „Witziger Mikrocontroller tanzt mit Pins, schaltet HIGH und LOW, programmiert mit C++ – so wird Technik lebendig!“ b, möchtest du diese Eselsbrücke nochmal zusammen mit a aufsagen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "MACH VON ALLEM EINE ESELSBRÜCKE",
+          "_speaker": "a",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 11,
+            "speaker": "a",
+            "message": "MACH VON ALLEM EINE ESELSBRÜCKE",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is trying to recall or create a mnemonic by asking for a bridge (Eselsbrücke) that covers all aspects discussed.",
+            "summary": "The student requests to make a mnemonic that covers everything discussed so far."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "Elektrotechnik"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "b",
+          "_consecutive_same_speaker": 5,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "b"
+            ],
+            "suggested_next_speaker": "b",
+            "consecutive_same_speaker": 5
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - MEMORY RECALL TEST (Recall attempts: 7)\nThe story is: \"Mache es witzig, wenn du einen Mikrocontroller programmierst, damit die Steuerung lebendig wird. Jede Funktion fügt Leben hinzu, und die Logik verwebt sich wie ein spannendes Rätsel. Input und Output tanzen zusammen, um deine Ideen zum Leben zu erwecken. So wird aus Technik eine kreative Geschichte, die Spaß macht und begeistert.\"\n\n⚠️ RECALL ONLY MODE:\nCreation is OVER. Testing memory is the ONLY goal now.\n\nIF a student asks to be reminded of the mnemonic (e.g., \"what do we have so far?\", \"remind me\"):\n→ RECITE the full story and ask another student to continue.\n\nIF a student asks a question or tries to add to the mnemonic:\n→ DO NOT ANSWER or ACCEPT IT.\n→ REDIRECT BY NAME: \"a, that's a great thought! b, can you try reciting our story for us?\"\n\nIF a student is reciting and gets stuck:\n1. FIRST, ask another student BY NAME if they can help (e.g., \"a, nice try! b, can you help with the next part?\").\n2. ONLY if all students are stuck, GIVE HINTS: \"What came after [last part]?\" or \"It starts with...\"\n\nCELEBRATE their memory work! The ONLY goal: Can they RECITE the complete story?\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address a (who just spoke) by name AND invite b to contribute next."
+          }
+        },
+        "session_id": "df9997a0075e4d23a4f4766907f743a5"
+      }
+    }
+  }
+]

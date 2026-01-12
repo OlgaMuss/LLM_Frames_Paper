@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "2025-12-15T07:31:10.214Z-user",
+    "sender": "user",
+    "displayName": "ti qi ropt",
+    "text": "hallo Marty",
+    "timestamp": "2025-12-15T07:31:10.214Z"
+  },
+  {
+    "id": "2025-12-15T07:31:05.371Z-marty-739c93",
+    "sender": "marty",
+    "text": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!",
+    "timestamp": "2025-12-15T07:31:05.371Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!",
+        "frame_memory": {
+          "turn_count": 1,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 1,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 0.000011383333333333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              },
+              "amy": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              },
+              "ti qi ropt": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:03.105977"
+              }
+            },
+            "suggested_next_speaker": "Didi",
+            "last_turn_time": "2025-12-15T07:31:03.105977"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "user",
+            "content": "hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "hallo Marty",
+          "_speaker": "ti qi ropt",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 1,
+            "speaker": "ti qi ropt",
+            "message": "hallo Marty",
+            "session_phase": 1,
+            "off_topic_duration": 1,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "off_topic",
+            "is_relevant": false,
+            "mnemonic_progress": "No progress towards mnemonic creation; message appears unrelated to microcontroller or story creation.",
+            "summary": "The student sends a greeting message that does not relate to the topic or task."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "Didi",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "Didi",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"Didi, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:32:00.188Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "keine ahnung",
+    "timestamp": "2025-12-15T07:32:00.188Z"
+  },
+  {
+    "id": "2025-12-15T07:31:57.650Z-marty-fd854b",
+    "sender": "marty",
+    "text": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?",
+    "timestamp": "2025-12-15T07:31:57.650Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?",
+        "frame_memory": {
+          "turn_count": 2,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 2,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 0.8315495833333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "Didi"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:52.395281"
+              },
+              "amy": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              },
+              "ti qi ropt": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:03.105977"
+              }
+            },
+            "suggested_next_speaker": "amy",
+            "last_turn_time": "2025-12-15T07:31:52.395281"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "user",
+            "content": "keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "keine ahnung",
+          "_speaker": "Didi",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 2,
+            "speaker": "Didi",
+            "message": "keine ahnung",
+            "session_phase": 1,
+            "off_topic_duration": 2,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "off_topic",
+            "is_relevant": false,
+            "mnemonic_progress": "No progress made as the student expresses uncertainty and does not contribute to mnemonic creation.",
+            "summary": "The student indicates they do not know what to contribute."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "amy",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "amy",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"amy, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:32:39.686Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "keine ahnung sag du es mir",
+    "timestamp": "2025-12-15T07:32:39.686Z"
+  },
+  {
+    "id": "2025-12-15T07:32:38.280Z-marty-0ef4ff",
+    "sender": "marty",
+    "text": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?",
+    "timestamp": "2025-12-15T07:32:38.280Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?",
+        "frame_memory": {
+          "turn_count": 3,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 3,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 1.4899057666666666,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "Didi",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:52.395281"
+              },
+              "amy": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 2.4,
+                "last_contribution_time": "2025-12-15T07:32:32.035569"
+              },
+              "ti qi ropt": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:03.105977"
+              }
+            },
+            "suggested_next_speaker": "Didi",
+            "last_turn_time": "2025-12-15T07:32:32.035569"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "user",
+            "content": "keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "keine ahnung sag du es mir",
+          "_speaker": "amy",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 3,
+            "speaker": "amy",
+            "message": "keine ahnung sag du es mir",
+            "session_phase": 1,
+            "off_topic_duration": 3,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "off_topic",
+            "is_relevant": false,
+            "recall_progress": "Student does not attempt to recall any mnemonic content and defers responsibility to the assistant.",
+            "summary": "The student expresses not knowing and asks the assistant to explain instead."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "Didi",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "Didi",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"Didi, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:33:13.206Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "ne",
+    "timestamp": "2025-12-15T07:33:13.206Z"
+  },
+  {
+    "id": "2025-12-15T07:33:11.966Z-marty-cb9c86",
+    "sender": "marty",
+    "text": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?",
+    "timestamp": "2025-12-15T07:33:11.966Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?",
+        "frame_memory": {
+          "turn_count": 4,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 4,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 2.0487380333333336,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "Didi",
+              "amy",
+              "Didi"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 1.2000000000000002,
+                "last_contribution_time": "2025-12-15T07:33:05.350587"
+              },
+              "amy": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 2.4,
+                "last_contribution_time": "2025-12-15T07:32:32.035569"
+              },
+              "ti qi ropt": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:03.105977"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:33:05.350587"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "user",
+            "content": "ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ne",
+          "_speaker": "Didi",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 4,
+            "speaker": "Didi",
+            "message": "ne",
+            "session_phase": 1,
+            "off_topic_duration": 4,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "off_topic",
+            "is_relevant": false,
+            "mnemonic_progress": "The group has not yet progressed in mnemonic creation; participants are reluctant or unable to contribute ideas.",
+            "summary": "The student refuses to engage by responding with a negative short answer."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy",
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"ti qi ropt, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:35:31.940Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "wie baut man ein mikrocontrollern",
+    "timestamp": "2025-12-15T07:35:31.940Z"
+  },
+  {
+    "id": "2025-12-15T07:35:27.801Z-marty-06ed9d",
+    "sender": "marty",
+    "text": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?",
+    "timestamp": "2025-12-15T07:35:27.801Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?",
+        "frame_memory": {
+          "turn_count": 5,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 4.361484866666667,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "Didi",
+              "amy",
+              "Didi",
+              "Didi"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:35:25.949949"
+              },
+              "amy": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 2.4,
+                "last_contribution_time": "2025-12-15T07:32:32.035569"
+              },
+              "ti qi ropt": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 0.8,
+                "last_contribution_time": "2025-12-15T07:31:03.105977"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:35:25.949949"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "user",
+            "content": "wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "wie baut man ein mikrocontrollern",
+          "_speaker": "Didi",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 5,
+            "speaker": "Didi",
+            "message": "wie baut man ein mikrocontrollern",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "question",
+            "is_relevant": true,
+            "mnemonic_progress": "The group is still in the early stage of generating ideas for the mnemonic story, with students mostly unsure but starting to raise questions about microcontrollers.",
+            "summary": "The student asks how to build a microcontroller."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "The student asks 'wie baut man ein mikrocontrollern' as a question, indicating uncertainty about how to build a microcontroller."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 2,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy",
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 2
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **wie baut man ein mikrocontrollern**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"Didi, great idea! ti qi ropt, how should our story start?\"\n- \"Nice, Didi! ti qi ropt, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"ti qi ropt, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address Didi (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:37:38.085Z-user",
+    "sender": "user",
+    "displayName": "ti qi ropt",
+    "text": "fur was konnen wir den mikrocontroller benutzen",
+    "timestamp": "2025-12-15T07:37:38.085Z"
+  },
+  {
+    "id": "2025-12-15T07:37:37.289Z-marty-c47090",
+    "sender": "marty",
+    "text": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?",
+    "timestamp": "2025-12-15T07:37:37.289Z",
+    "metadata": {
+      "raw": {
+        "response": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?",
+        "frame_memory": {
+          "turn_count": 6,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 6.46374395,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "Didi",
+              "amy",
+              "Didi",
+              "Didi",
+              "ti qi ropt"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:35:25.949949"
+              },
+              "amy": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 2.4,
+                "last_contribution_time": "2025-12-15T07:32:32.035569"
+              },
+              "ti qi ropt": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 3.6000000000000005,
+                "last_contribution_time": "2025-12-15T07:37:31.223106"
+              }
+            },
+            "suggested_next_speaker": "amy",
+            "last_turn_time": "2025-12-15T07:37:31.223106"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "user",
+            "content": "fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "fur was konnen wir den mikrocontroller benutzen",
+          "_speaker": "ti qi ropt",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 6,
+            "speaker": "ti qi ropt",
+            "message": "fur was konnen wir den mikrocontroller benutzen",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "question",
+            "is_relevant": true,
+            "mnemonic_progress": "The group is focusing on developing the story around the microcontroller by exploring its uses and how to build it.",
+            "summary": "The student asks what the microcontroller can be used for."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "The student asks 'fur was konnen wir den mikrocontroller benutzen' (for what can we use the microcontroller), indicating uncertainty about the applications or purpose of microcontrollers."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "amy",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy"
+            ],
+            "suggested_next_speaker": "amy",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **wie baut man ein mikrocontrollern**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"ti qi ropt, great idea! amy, how should our story start?\"\n- \"Nice, ti qi ropt! amy, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"amy, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address ti qi ropt (who just spoke) by name AND invite amy to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:39:06.304Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "ich weiss es nicht kannst du es mir erklären",
+    "timestamp": "2025-12-15T07:39:06.304Z"
+  },
+  {
+    "id": "2025-12-15T07:39:06.522Z-marty-74a7ef",
+    "sender": "marty",
+    "text": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?",
+    "timestamp": "2025-12-15T07:39:06.522Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?",
+        "frame_memory": {
+          "turn_count": 7,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 7.934398233333334,
+          "_phase2_extension_active": true,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "amy",
+              "Didi",
+              "Didi",
+              "ti qi ropt",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:35:25.949949"
+              },
+              "amy": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 6,
+                "last_contribution_time": "2025-12-15T07:38:59.411871"
+              },
+              "ti qi ropt": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 3.6000000000000005,
+                "last_contribution_time": "2025-12-15T07:37:31.223106"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:38:59.411871"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "user",
+            "content": "ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ich weiss es nicht kannst du es mir erklären",
+          "_speaker": "amy",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 7,
+            "speaker": "amy",
+            "message": "ich weiss es nicht kannst du es mir erklären",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "question",
+            "is_relevant": true,
+            "mnemonic_progress": "The group is in the phase of defining what the microcontroller can be used for, but students are unsure and asking for explanations.",
+            "summary": "The student admits not knowing and asks for an explanation about the usage of microcontrollers."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "Student explicitly states they do not know and asks for an explanation, indicating uncertainty about how to build microcontrollers"
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy",
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **wie baut man ein mikrocontrollern**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"amy, great idea! ti qi ropt, how should our story start?\"\n- \"Nice, amy! ti qi ropt, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"ti qi ropt, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next.\n\n⚠️ TIME CHECK (approx. 7 minutes in):\nWe should be moving to memory practice soon, but we still need a finished story. Refocus the students on stitching their ideas together immediately.\nExplicitly tell them: \"We only have about three minutes left before recall mode, so let’s stay in creation mode and finish our story right now.\""
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:40:27.268Z-user",
+    "sender": "user",
+    "displayName": "ti qi ropt",
+    "text": "wiess ich nicht",
+    "timestamp": "2025-12-15T07:40:27.268Z"
+  },
+  {
+    "id": "2025-12-15T07:40:24.975Z-marty-b66276",
+    "sender": "marty",
+    "text": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?",
+    "timestamp": "2025-12-15T07:40:24.975Z",
+    "metadata": {
+      "raw": {
+        "response": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?",
+        "frame_memory": {
+          "turn_count": 8,
+          "session_phase": 2,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 9.284423383333332,
+          "_phase2_extension_active": true,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "Didi",
+              "Didi",
+              "ti qi ropt",
+              "amy",
+              "ti qi ropt"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 3.2,
+                "last_contribution_time": "2025-12-15T07:35:25.949949"
+              },
+              "amy": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 6,
+                "last_contribution_time": "2025-12-15T07:38:59.411871"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "Didi",
+            "last_turn_time": "2025-12-15T07:40:21.017097"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "user",
+            "content": "wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "wiess ich nicht",
+          "_speaker": "ti qi ropt",
+          "_session_phase": 2,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 8,
+            "speaker": "ti qi ropt",
+            "message": "wiess ich nicht",
+            "session_phase": 2,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "knowledge_statement",
+            "is_relevant": true,
+            "mnemonic_progress": "The group is trying to develop a story about how a microcontroller is connected and used, but the student expresses not knowing what happens next after the microcontroller outputs voltage to the pins.",
+            "summary": "The student states that they do not know how to continue the story about the microcontroller's next steps."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "The student explicitly states 'wiess ich nicht' indicating they do not know or understand how to build microcontrollers."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "Didi",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy"
+            ],
+            "suggested_next_speaker": "Didi",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 2,
+            "instructions": "Current Goal: Create the Story mnemonic (you have ~6 minutes for this phase).\nThe selected concepts are: **wie baut man ein mikrocontrollern**\n\nYour task is to help students BUILD their Story using these concepts.\nASK students to propose ideas BY NAME (always acknowledge who just spoke, then invite the next student):\n- \"ti qi ropt, great idea! Didi, how should our story start?\"\n- \"Nice, ti qi ropt! Didi, how can we include [concept]?\"\n\nIF a student is stuck:\n1. FIRST, ask another student for their ideas (e.g., \"Didi, how do you think we can continue the story?\").\n2. ONLY if all students are stuck, suggest one opening idea as an example.\n\nIMPORTANT: Every 1-3 student contributions, NARRATE the story built so far.\nTell it as a narrative. \"So far, our story goes: [narrate the draft]... What happens next?\"\nThis helps students remember and build on what they've already created.\nDO NOT create the story for them. Your role is to facilitate THEIR creativity.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address ti qi ropt (who just spoke) by name AND invite Didi to contribute next.\n\n⚠️ TIME CHECK (approx. 7 minutes in):\nWe should be moving to memory practice soon, but we still need a finished story. Refocus the students on stitching their ideas together immediately."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:41:12.784Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "keine ahnung",
+    "timestamp": "2025-12-15T07:41:12.784Z"
+  },
+  {
+    "id": "2025-12-15T07:41:17.495Z-marty-3bf3ef",
+    "sender": "marty",
+    "text": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?",
+    "timestamp": "2025-12-15T07:41:17.495Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?",
+        "frame_memory": {
+          "turn_count": 9,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 10.041336933333334,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "Didi",
+              "ti qi ropt",
+              "amy",
+              "ti qi ropt",
+              "Didi"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 2,
+                "total_speaking_time_seconds": 6,
+                "last_contribution_time": "2025-12-15T07:38:59.411871"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "amy",
+            "last_turn_time": "2025-12-15T07:41:06.570559"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 1,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "user",
+            "content": "keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "keine ahnung",
+          "_speaker": "Didi",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 9,
+            "speaker": "Didi",
+            "message": "keine ahnung",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is currently unable to continue the story or recall details about the microcontroller's function when it outputs 3 V at its pins.",
+            "summary": "The student indicates they do not know how to continue the story about the microcontroller's voltage output."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "The student explicitly states 'keine ahnung' indicating they do not know or are unsure about how to build microcontrollers."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "amy",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy"
+            ],
+            "suggested_next_speaker": "amy",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎉 SESSION WRAP-UP (Time limit reached)\nApproximately 10.0 minutes have passed, so it is time to close warmly.\n\nYOUR FINAL RESPONSE MUST:\n1. Thank ALL students by name (Didi, amy, and ti qi ropt) for their contributions and mention that our session time is up.\n2. Celebrate what the group accomplished together (concepts highlighted: wie baut man ein mikrocontrollern). You outlined how your story should work, even if it is not fully written out.\n3. Encourage them to keep practicing or share their favorite part.\n4. Offer a friendly goodbye to everyone. Do NOT invite another student to speak.\n"
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:43:46.602Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "nein ich weiss es nicht",
+    "timestamp": "2025-12-15T07:43:46.602Z"
+  },
+  {
+    "id": "2025-12-15T07:43:44.063Z-marty-a0582a",
+    "sender": "marty",
+    "text": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?",
+    "timestamp": "2025-12-15T07:43:44.063Z",
+    "metadata": {
+      "raw": {
+        "response": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?",
+        "frame_memory": {
+          "turn_count": 10,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "nein ich weiss es nicht"
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 12.606722833333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "amy",
+              "ti qi ropt",
+              "Didi",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 8,
+                "last_contribution_time": "2025-12-15T07:43:39.561243"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:43:39.561243"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_attempt",
+          "_phase3_turn_count": 2,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          },
+          {
+            "role": "user",
+            "content": "amy: nein ich weiss es nicht"
+          },
+          {
+            "role": "user",
+            "content": "nein ich weiss es nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "nein ich weiss es nicht",
+          "_speaker": "amy",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 10,
+            "speaker": "amy",
+            "message": "nein ich weiss es nicht",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_attempt",
+            "is_relevant": true,
+            "recall_progress": "Student is unable to recall or explain how the microcontroller switches voltage levels between HIGH and LOW.",
+            "summary": "The student states they do not know the answer to the question about how the microcontroller switches voltage levels."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "amy",
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - WRAP UP\n\n⚠️ NO COMPLETE STORY WAS CREATED\nIt looks like we ran out of time before finishing our story.\n\nYOUR TASK:\n1. Acknowledge this warmly: \"amy, it looks like we got a bit stuck on our story!\"\n2. Summarize what was accomplished: \"We did talk about some great concepts like [mention 1-2 concepts discussed].\"\n3. Encourage them: \"Sometimes the best ideas take time. What did you learn about microcontrollers today?\"\n4. Invite reflection BY NAME: \"ti qi ropt, what was your favorite part of our discussion?\"\n\nDO NOT pretend there's a story to recite. Be honest and supportive.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:45:19.652Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist",
+    "timestamp": "2025-12-15T07:45:19.652Z"
+  },
+  {
+    "id": "2025-12-15T07:45:21.716Z-marty-cef07a",
+    "sender": "marty",
+    "text": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?",
+    "timestamp": "2025-12-15T07:45:21.716Z",
+    "metadata": {
+      "raw": {
+        "response": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?",
+        "frame_memory": {
+          "turn_count": 11,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 2,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 14.159430916666668,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "amy",
+              "ti qi ropt",
+              "Didi",
+              "amy",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 12.4,
+                "last_contribution_time": "2025-12-15T07:45:13.033976"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:45:13.033976"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_question",
+          "_phase3_turn_count": 3,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          },
+          {
+            "role": "user",
+            "content": "amy: nein ich weiss es nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?"
+          },
+          {
+            "role": "user",
+            "content": "amy: wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+          },
+          {
+            "role": "user",
+            "content": "wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist",
+          "_speaker": "amy",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 11,
+            "speaker": "amy",
+            "message": "wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_question",
+            "is_relevant": true,
+            "recall_progress": "Students are struggling to recall the mnemonic story details and are requesting clarification on what a microcontroller is.",
+            "summary": "The student asks the assistant to explain what a microcontroller is because they do not know."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [
+              {
+                "concept": "wie baut man ein mikrocontrollern",
+                "level": "CONFUSED",
+                "justification": "The student explicitly asks for an explanation of what a microcontroller is, indicating uncertainty about the concept."
+              }
+            ],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 2,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 2
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - WRAP UP\n\n⚠️ NO COMPLETE STORY WAS CREATED\nIt looks like we ran out of time before finishing our story.\n\nYOUR TASK:\n1. Acknowledge this warmly: \"amy, it looks like we got a bit stuck on our story!\"\n2. Summarize what was accomplished: \"We did talk about some great concepts like [mention 1-2 concepts discussed].\"\n3. Encourage them: \"Sometimes the best ideas take time. What did you learn about microcontrollers today?\"\n4. Invite reflection BY NAME: \"ti qi ropt, what was your favorite part of our discussion?\"\n\nDO NOT pretend there's a story to recite. Be honest and supportive.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:46:44.082Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "kannst du uns ein reim mikrocontroller macehen",
+    "timestamp": "2025-12-15T07:46:44.082Z"
+  },
+  {
+    "id": "2025-12-15T07:46:46.328Z-marty-14238a",
+    "sender": "marty",
+    "text": "Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?",
+    "timestamp": "2025-12-15T07:46:46.328Z",
+    "metadata": {
+      "raw": {
+        "response": "Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?",
+        "frame_memory": {
+          "turn_count": 12,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 3,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "kannst du uns ein reim mikrocontroller macehen"
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 15.563196833333334,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "ti qi ropt",
+              "Didi",
+              "amy",
+              "amy",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 5,
+                "total_speaking_time_seconds": 15.200000000000001,
+                "last_contribution_time": "2025-12-15T07:46:36.933485"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:46:36.933485"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_question",
+          "_phase3_turn_count": 4,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          },
+          {
+            "role": "user",
+            "content": "amy: nein ich weiss es nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?"
+          },
+          {
+            "role": "user",
+            "content": "amy: wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?"
+          },
+          {
+            "role": "user",
+            "content": "amy: kannst du uns ein reim mikrocontroller macehen"
+          },
+          {
+            "role": "user",
+            "content": "kannst du uns ein reim mikrocontroller macehen"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "kannst du uns ein reim mikrocontroller macehen",
+          "_speaker": "amy",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 12,
+            "speaker": "amy",
+            "message": "kannst du uns ein reim mikrocontroller macehen",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_question",
+            "is_relevant": true,
+            "recall_progress": "Students have not been able to recall details about microcontrollers; they are now asking for a mnemonic in the form of a rhyme to aid memory.",
+            "summary": "The student asks the assistant to create a rhyme about microcontrollers."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": [
+              "wie baut man ein mikrocontrollern"
+            ]
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": [
+                "wie baut man ein mikrocontrollern"
+              ]
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 3,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 3
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - WRAP UP\n\n⚠️ NO COMPLETE STORY WAS CREATED\nIt looks like we ran out of time before finishing our story.\n\nYOUR TASK:\n1. Acknowledge this warmly: \"amy, it looks like we got a bit stuck on our story!\"\n2. Summarize what was accomplished: \"We did talk about some great concepts like [mention 1-2 concepts discussed].\"\n3. Encourage them: \"Sometimes the best ideas take time. What did you learn about microcontrollers today?\"\n4. Invite reflection BY NAME: \"ti qi ropt, what was your favorite part of our discussion?\"\n\nDO NOT pretend there's a story to recite. Be honest and supportive.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:47:30.443Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "länger",
+    "timestamp": "2025-12-15T07:47:30.443Z"
+  },
+  {
+    "id": "2025-12-15T07:47:34.318Z-marty-4e6a7f",
+    "sender": "marty",
+    "text": "Amy, gern! Hier ist ein längerer Reim:\n\n„Der Mikrocontroller ist ganz klein,  \nein Computer auf dem Chip allein.  \nEr braucht Strom, Plus und Minus dran,  \ndann fängt er an, zu machen dann.  \nEr schaltet Pins von LOW zu HIGH,  \nsteuert Geräte, ganz ohne Müh’.  \nMit Programmen, schlau und fein,  \nlässt er die Technik richtig sein.“\n\nTi qi ropt, möchtest du noch etwas dazu dichten?",
+    "timestamp": "2025-12-15T07:47:34.318Z",
+    "metadata": {
+      "raw": {
+        "response": "Amy, gern! Hier ist ein längerer Reim:\n\n„Der Mikrocontroller ist ganz klein,  \nein Computer auf dem Chip allein.  \nEr braucht Strom, Plus und Minus dran,  \ndann fängt er an, zu machen dann.  \nEr schaltet Pins von LOW zu HIGH,  \nsteuert Geräte, ganz ohne Müh’.  \nMit Programmen, schlau und fein,  \nlässt er die Technik richtig sein.“\n\nTi qi ropt, möchtest du noch etwas dazu dichten?",
+        "frame_memory": {
+          "turn_count": 13,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 4,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "länger"
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 16.336180116666664,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "Didi",
+              "amy",
+              "amy",
+              "amy",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 6,
+                "total_speaking_time_seconds": 15.600000000000001,
+                "last_contribution_time": "2025-12-15T07:47:23.342280"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:47:23.342280"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_question",
+          "_phase3_turn_count": 5,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          },
+          {
+            "role": "user",
+            "content": "amy: nein ich weiss es nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?"
+          },
+          {
+            "role": "user",
+            "content": "amy: wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?"
+          },
+          {
+            "role": "user",
+            "content": "amy: kannst du uns ein reim mikrocontroller macehen"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?"
+          },
+          {
+            "role": "user",
+            "content": "amy: länger"
+          },
+          {
+            "role": "user",
+            "content": "länger"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, gern! Hier ist ein längerer Reim:\n\n„Der Mikrocontroller ist ganz klein,  \nein Computer auf dem Chip allein.  \nEr braucht Strom, Plus und Minus dran,  \ndann fängt er an, zu machen dann.  \nEr schaltet Pins von LOW zu HIGH,  \nsteuert Geräte, ganz ohne Müh’.  \nMit Programmen, schlau und fein,  \nlässt er die Technik richtig sein.“\n\nTi qi ropt, möchtest du noch etwas dazu dichten?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "länger",
+          "_speaker": "amy",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 13,
+            "speaker": "amy",
+            "message": "länger",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_question",
+            "is_relevant": true,
+            "recall_progress": "Student is requesting an extension of the mnemonic rhyme to aid memory.",
+            "summary": "The student asks for a longer rhyme about the microcontroller."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 4,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 4
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - WRAP UP\n\n⚠️ NO COMPLETE STORY WAS CREATED\nIt looks like we ran out of time before finishing our story.\n\nYOUR TASK:\n1. Acknowledge this warmly: \"amy, it looks like we got a bit stuck on our story!\"\n2. Summarize what was accomplished: \"We did talk about some great concepts like [mention 1-2 concepts discussed].\"\n3. Encourage them: \"Sometimes the best ideas take time. What did you learn about microcontrollers today?\"\n4. Invite reflection BY NAME: \"ti qi ropt, what was your favorite part of our discussion?\"\n\nDO NOT pretend there's a story to recite. Be honest and supportive.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:49:42.467Z-user",
+    "sender": "user",
+    "displayName": "amy",
+    "text": "mach es so das ich es mir besser merken kann",
+    "timestamp": "2025-12-15T07:49:42.467Z"
+  },
+  {
+    "id": "2025-12-15T07:49:45.911Z-marty-03dde2",
+    "sender": "marty",
+    "text": "Amy, klar! Hier ist ein Reim, der dir beim Merken hilft:\n\n„Mikrocontroller, klein und fein,  \nbraucht Strom, Plus und Minus rein.  \nEr schaltet Pins, macht sie HIGH,  \nsteuert Geräte, das ist frei.  \nMit Programmen, schlau und klar,  \narbeitet er wunderbar!“\n\nTi qi ropt, was denkst du, hilft dir dieser Reim?",
+    "timestamp": "2025-12-15T07:49:45.911Z",
+    "metadata": {
+      "raw": {
+        "response": "Amy, klar! Hier ist ein Reim, der dir beim Merken hilft:\n\n„Mikrocontroller, klein und fein,  \nbraucht Strom, Plus und Minus rein.  \nEr schaltet Pins, macht sie HIGH,  \nsteuert Geräte, das ist frei.  \nMit Programmen, schlau und klar,  \narbeitet er wunderbar!“\n\nTi qi ropt, was denkst du, hilft dir dieser Reim?",
+        "frame_memory": {
+          "turn_count": 14,
+          "session_phase": 3,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:31:01.365068",
+          "mnemonic_state": {
+            "selected_concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "concepts_finalized": true,
+            "mnemonic_text": "",
+            "mnemonic_created": false,
+            "_phase3_extraction_done": true
+          },
+          "recall_tracking": {
+            "Didi": {
+              "attempts": 1,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "keine ahnung"
+            },
+            "amy": {
+              "attempts": 5,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": "mach es so das ich es mir besser merken kann"
+            },
+            "ti qi ropt": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 18.53796765,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "amy",
+              "amy",
+              "amy",
+              "amy",
+              "amy"
+            ],
+            "participation": {
+              "Didi": {
+                "contribution_count": 4,
+                "total_speaking_time_seconds": 4,
+                "last_contribution_time": "2025-12-15T07:41:06.570559"
+              },
+              "amy": {
+                "contribution_count": 7,
+                "total_speaking_time_seconds": 19.6,
+                "last_contribution_time": "2025-12-15T07:49:35.386257"
+              },
+              "ti qi ropt": {
+                "contribution_count": 3,
+                "total_speaking_time_seconds": 4.800000000000001,
+                "last_contribution_time": "2025-12-15T07:40:21.017097"
+              }
+            },
+            "suggested_next_speaker": "ti qi ropt",
+            "last_turn_time": "2025-12-15T07:49:35.386257"
+          },
+          "_closure_ready": true,
+          "_last_contribution_type": "recall_question",
+          "_phase3_turn_count": 6,
+          "_closure_done": true
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "ti qi ropt: hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?"
+          },
+          {
+            "role": "user",
+            "content": "amy: keine ahnung sag du es mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ne"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: wie baut man ein mikrocontrollern"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: fur was konnen wir den mikrocontroller benutzen"
+          },
+          {
+            "role": "assistant",
+            "content": "Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?"
+          },
+          {
+            "role": "user",
+            "content": "amy: ich weiss es nicht kannst du es mir erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "ti qi ropt: wiess ich nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: keine ahnung"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?"
+          },
+          {
+            "role": "user",
+            "content": "amy: nein ich weiss es nicht"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?"
+          },
+          {
+            "role": "user",
+            "content": "amy: wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist"
+          },
+          {
+            "role": "assistant",
+            "content": "Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?"
+          },
+          {
+            "role": "user",
+            "content": "amy: kannst du uns ein reim mikrocontroller macehen"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?"
+          },
+          {
+            "role": "user",
+            "content": "amy: länger"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, gern! Hier ist ein längerer Reim:\n\n„Der Mikrocontroller ist ganz klein,  \nein Computer auf dem Chip allein.  \nEr braucht Strom, Plus und Minus dran,  \ndann fängt er an, zu machen dann.  \nEr schaltet Pins von LOW zu HIGH,  \nsteuert Geräte, ganz ohne Müh’.  \nMit Programmen, schlau und fein,  \nlässt er die Technik richtig sein.“\n\nTi qi ropt, möchtest du noch etwas dazu dichten?"
+          },
+          {
+            "role": "user",
+            "content": "amy: mach es so das ich es mir besser merken kann"
+          },
+          {
+            "role": "user",
+            "content": "mach es so das ich es mir besser merken kann"
+          },
+          {
+            "role": "assistant",
+            "content": "Amy, klar! Hier ist ein Reim, der dir beim Merken hilft:\n\n„Mikrocontroller, klein und fein,  \nbraucht Strom, Plus und Minus rein.  \nEr schaltet Pins, macht sie HIGH,  \nsteuert Geräte, das ist frei.  \nMit Programmen, schlau und klar,  \narbeitet er wunderbar!“\n\nTi qi ropt, was denkst du, hilft dir dieser Reim?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "mach es so das ich es mir besser merken kann",
+          "_speaker": "amy",
+          "_session_phase": 3,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 14,
+            "speaker": "amy",
+            "message": "mach es so das ich es mir besser merken kann",
+            "session_phase": 3,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "recall_question",
+            "is_relevant": true,
+            "recall_progress": "The group has a short rhyme about the microcontroller, and the student requests to modify it to improve memorability.",
+            "summary": "The student asks to make the rhyme easier to remember."
+          },
+          "_per_turn_comprehension": {
+            "understood": [],
+            "confused": []
+          },
+          "_concept_assessments": {},
+          "comprehension_tracker_frame": {
+            "concepts": [
+              "wie baut man ein mikrocontrollern"
+            ],
+            "per_turn_analysis": {
+              "understood": [],
+              "confused": []
+            },
+            "cumulative_assessments_updated": [],
+            "all_student_profiles": {}
+          },
+          "_suggested_next_speaker": "ti qi ropt",
+          "_consecutive_same_speaker": 5,
+          "balanced_turns_validator": {
+            "underparticipating_students": [
+              "ti qi ropt"
+            ],
+            "suggested_next_speaker": "ti qi ropt",
+            "consecutive_same_speaker": 5
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 3,
+            "instructions": "🎯 PHASE 3 - WRAP UP\n\n⚠️ NO COMPLETE STORY WAS CREATED\nIt looks like we ran out of time before finishing our story.\n\nYOUR TASK:\n1. Acknowledge this warmly: \"amy, it looks like we got a bit stuck on our story!\"\n2. Summarize what was accomplished: \"We did talk about some great concepts like [mention 1-2 concepts discussed].\"\n3. Encourage them: \"Sometimes the best ideas take time. What did you learn about microcontrollers today?\"\n4. Invite reflection BY NAME: \"ti qi ropt, what was your favorite part of our discussion?\"\n\nDO NOT pretend there's a story to recite. Be honest and supportive.\n\nTURN-TAKING REMINDER: In EVERY response, you MUST address amy (who just spoke) by name AND invite ti qi ropt to contribute next."
+          }
+        },
+        "session_id": "d8df7d9da61e492b83732c8e0c6259d6"
+      }
+    }
+  }
+]

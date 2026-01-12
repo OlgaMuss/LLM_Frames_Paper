@@ -1,0 +1,692 @@
+[
+  {
+    "id": "2025-12-15T07:08:28.731Z-user-d8372e",
+    "sender": "user",
+    "text": "Hello.",
+    "timestamp": "2025-12-15T07:08:28.731Z",
+    "displayName": "tia",
+    "metadata": {
+      "raw": {
+        "text": "Hello."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:08:29.456Z-marty-e606a8",
+    "sender": "marty",
+    "text": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?",
+    "timestamp": "2025-12-15T07:08:29.456Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "tia: Hello.",
+          "prompt_only_frame": {
+            "message": "tia: Hello."
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:08:48.684Z-marty-402f04",
+    "sender": "marty",
+    "text": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?",
+    "timestamp": "2025-12-15T07:08:48.684Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless:"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "aless:",
+          "prompt_only_frame": {
+            "message": "aless:"
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:08.025Z-user-552431",
+    "sender": "user",
+    "text": "Hello, how are you?",
+    "timestamp": "2025-12-15T07:09:08.025Z",
+    "displayName": "aless",
+    "metadata": {
+      "raw": {
+        "text": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:08.687Z-marty-79fe08",
+    "sender": "marty",
+    "text": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?",
+    "timestamp": "2025-12-15T07:09:08.687Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "aless: Hello, how are you?",
+          "prompt_only_frame": {
+            "message": "aless: Hello, how are you?"
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:43.720Z-marty-1a6884",
+    "sender": "marty",
+    "text": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?",
+    "timestamp": "2025-12-15T07:09:43.720Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "user",
+            "content": "tia:"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "tia:",
+          "prompt_only_frame": {
+            "message": "tia:"
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:15.124Z-user-89e2ef",
+    "sender": "user",
+    "text": "Drinking sports? Don't talk about the same thing for hours, stop it!",
+    "timestamp": "2025-12-15T07:10:15.124Z",
+    "displayName": "aless",
+    "metadata": {
+      "raw": {
+        "text": "Drinking sports? Don't talk about the same thing for hours, stop it!"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:16.040Z-marty-5b1591",
+    "sender": "marty",
+    "text": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?",
+    "timestamp": "2025-12-15T07:10:16.040Z",
+    "metadata": {
+      "raw": {
+        "response": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!",
+          "prompt_only_frame": {
+            "message": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:54.529Z-user-fdb20e",
+    "sender": "user",
+    "text": "What's in the box for me? Tini. Thank you.",
+    "timestamp": "2025-12-15T07:10:54.529Z",
+    "displayName": "aless",
+    "metadata": {
+      "raw": {
+        "text": "What's in the box for me? Tini. Thank you."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:56.027Z-marty-29c44f",
+    "sender": "marty",
+    "text": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?",
+    "timestamp": "2025-12-15T07:10:56.027Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          },
+          {
+            "role": "user",
+            "content": "aless: What's in the box for me? Tini. Thank you."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "aless: What's in the box for me? Tini. Thank you.",
+          "prompt_only_frame": {
+            "message": "aless: What's in the box for me? Tini. Thank you."
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:44.890Z-user-ddc8a4",
+    "sender": "user",
+    "text": "Explain to me what a microcontroller is.",
+    "timestamp": "2025-12-15T07:11:44.890Z",
+    "displayName": "tia",
+    "metadata": {
+      "raw": {
+        "text": "Explain to me what a microcontroller is."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:45.782Z-marty-d4b8c6",
+    "sender": "marty",
+    "text": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern.",
+    "timestamp": "2025-12-15T07:11:45.782Z",
+    "metadata": {
+      "raw": {
+        "response": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          },
+          {
+            "role": "user",
+            "content": "aless: What's in the box for me? Tini. Thank you."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Explain to me what a microcontroller is."
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "tia: Explain to me what a microcontroller is.",
+          "prompt_only_frame": {
+            "message": "tia: Explain to me what a microcontroller is."
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:50.870Z-user-ec2111",
+    "sender": "user",
+    "text": "I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that.",
+    "timestamp": "2025-12-15T07:12:50.870Z",
+    "displayName": "aless",
+    "metadata": {
+      "raw": {
+        "text": "I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:51.952Z-marty-6afe76",
+    "sender": "marty",
+    "text": "Aless, stell dir vor, „grün“ bedeutet, dass ein Pin „HIGH“ ist (eingeschaltet) und „rot“ bedeutet „LOW“ (ausgeschaltet). So kannst du dir leicht merken, wann ein Pin Spannung gibt und wann nicht. Möchtest du eine Eselsbrücke dazu?",
+    "timestamp": "2025-12-15T07:12:51.952Z",
+    "metadata": {
+      "raw": {
+        "response": "Aless, stell dir vor, „grün“ bedeutet, dass ein Pin „HIGH“ ist (eingeschaltet) und „rot“ bedeutet „LOW“ (ausgeschaltet). So kannst du dir leicht merken, wann ein Pin Spannung gibt und wann nicht. Möchtest du eine Eselsbrücke dazu?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          },
+          {
+            "role": "user",
+            "content": "aless: What's in the box for me? Tini. Thank you."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Explain to me what a microcontroller is."
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern."
+          },
+          {
+            "role": "user",
+            "content": "aless: I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that."
+          },
+          {
+            "role": "assistant",
+            "content": "Aless, stell dir vor, „grün“ bedeutet, dass ein Pin „HIGH“ ist (eingeschaltet) und „rot“ bedeutet „LOW“ (ausgeschaltet). So kannst du dir leicht merken, wann ein Pin Spannung gibt und wann nicht. Möchtest du eine Eselsbrücke dazu?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "aless: I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that.",
+          "prompt_only_frame": {
+            "message": "aless: I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that."
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:53.484Z-user-af9226",
+    "sender": "user",
+    "text": "Please explain what is a microcontroller?",
+    "timestamp": "2025-12-15T07:13:53.484Z",
+    "displayName": "tia",
+    "metadata": {
+      "raw": {
+        "text": "Please explain what is a microcontroller?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:54.248Z-marty-0e40d3",
+    "sender": "marty",
+    "text": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführt und andere Geräte über seine Pins steuern kann, indem er Spannung an- oder ausschaltet.",
+    "timestamp": "2025-12-15T07:13:54.248Z",
+    "metadata": {
+      "raw": {
+        "response": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführt und andere Geräte über seine Pins steuern kann, indem er Spannung an- oder ausschaltet.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          },
+          {
+            "role": "user",
+            "content": "aless: What's in the box for me? Tini. Thank you."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Explain to me what a microcontroller is."
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern."
+          },
+          {
+            "role": "user",
+            "content": "aless: I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that."
+          },
+          {
+            "role": "assistant",
+            "content": "Aless, stell dir vor, „grün“ bedeutet, dass ein Pin „HIGH“ ist (eingeschaltet) und „rot“ bedeutet „LOW“ (ausgeschaltet). So kannst du dir leicht merken, wann ein Pin Spannung gibt und wann nicht. Möchtest du eine Eselsbrücke dazu?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Please explain what is a microcontroller?"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführt und andere Geräte über seine Pins steuern kann, indem er Spannung an- oder ausschaltet."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "tia: Please explain what is a microcontroller?",
+          "prompt_only_frame": {
+            "message": "tia: Please explain what is a microcontroller?"
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:17.443Z-user-3fe7ee",
+    "sender": "user",
+    "text": "Hello.",
+    "timestamp": "2025-12-15T07:15:17.443Z",
+    "displayName": "tia",
+    "metadata": {
+      "raw": {
+        "text": "Hello."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:18.299Z-marty-5750d2",
+    "sender": "marty",
+    "text": "Hallo Tia! Wie kann ich dir heute beim Thema Mikrocontroller helfen? Möchtest du eine Erklärung oder eine Eselsbrücke?",
+    "timestamp": "2025-12-15T07:15:18.299Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Tia! Wie kann ich dir heute beim Thema Mikrocontroller helfen? Möchtest du eine Erklärung oder eine Eselsbrücke?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Möchtest du eine Eselsbrücke zum Thema Mikrocontroller oder eine Erklärung zu einem bestimmten Punkt?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Mir geht’s gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen? Möchtest du eine Eselsbrücke oder eine Erklärung?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wenn du möchtest, können wir zusammen eine Eselsbrücke zum Mikrocontroller bauen. Zum Beispiel: „Mikrocontroller sind kleine Computer auf einem Chip, die wie ein Lichtschalter (Pins) an- und ausgeschaltet werden können.“ Möchtest du eine zu einem bestimmten Thema?"
+          },
+          {
+            "role": "user",
+            "content": "aless: Drinking sports? Don't talk about the same thing for hours, stop it!"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Aless! Wenn du möchtest, können wir das Thema Mikrocontroller kurz und knapp erklären oder eine Eselsbrücke machen, damit es schnell klar wird. Was möchtest du?"
+          },
+          {
+            "role": "user",
+            "content": "aless: What's in the box for me? Tini. Thank you."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Aless! Im „Box“ für dich gibt es eine kurze Eselsbrücke: Denk an den Mikrocontroller wie an eine Fernbedienung – er schaltet verschiedene Knöpfe (Pins) an („HIGH“) oder aus („LOW“), um damit Geräte zu steuern. So kannst du dir merken, wie er funktioniert! Möchtest du noch mehr?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Explain to me what a microcontroller is."
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er wird an Plus- und Minuspol angeschlossen und kann über seine Pins eine Spannung von 3 V an- oder ausschalten, um andere Geräte zu steuern."
+          },
+          {
+            "role": "user",
+            "content": "aless: I don't know. There's nothing going on. Why does one of us want to be green and the others... Yeah, okay, we'll do that."
+          },
+          {
+            "role": "assistant",
+            "content": "Aless, stell dir vor, „grün“ bedeutet, dass ein Pin „HIGH“ ist (eingeschaltet) und „rot“ bedeutet „LOW“ (ausgeschaltet). So kannst du dir leicht merken, wann ein Pin Spannung gibt und wann nicht. Möchtest du eine Eselsbrücke dazu?"
+          },
+          {
+            "role": "user",
+            "content": "tia: Please explain what is a microcontroller?"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführt und andere Geräte über seine Pins steuern kann, indem er Spannung an- oder ausschaltet."
+          },
+          {
+            "role": "user",
+            "content": "tia: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Tia! Wie kann ich dir heute beim Thema Mikrocontroller helfen? Möchtest du eine Erklärung oder eine Eselsbrücke?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "tia: Hello.",
+          "prompt_only_frame": {
+            "message": "tia: Hello."
+          }
+        },
+        "session_id": "e82a186fae3641fca1f1397710092b8c"
+      }
+    }
+  }
+]

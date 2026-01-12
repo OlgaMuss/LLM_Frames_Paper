@@ -1,0 +1,55 @@
+# Session Report: a32e8556d30643e7b75cab487a27b91c
+
+**Saved at:** 2025-12-15T07:51:49.923561
+
+## Session Details
+
+- **Topic:** Microcontroller
+- **Mnemonic Type:** Story
+- **Learning Material:** Microcontroller
+
+A microcontroller is a small computer on a chip that can run a simple program.
+A microcontroller must be connected to a positive and a negative pole.
+To control other devices, a microcontroller can output a voltage of 3 V on its pins.
+It can switch this voltage on and off for different pins, also for several pins at the same time.
+When a pin is switched on, it is "HIGH"; when it is switched off, it is "LOW".
+This switching between "HIGH" and "LOW" does not happen randomly — it is controlled by a program, for example Blockly for Marty.
+Microcontrollers use a programming language called C++.
+- **Students:** ['günter', 'herbert', 'peter']
+- **Target Age:** 14
+- **Use Code Frame:** True
+- **Llm Provider:** openai
+- **Llm Model:** gpt-4.1-mini
+
+## 🎨 Mnemonic Type
+
+**Story** - A narrative that weaves concepts together
+
+## 📊 Participation Summary
+
+| Student | Contributions | Speaking Time |
+|---------|---------------|---------------|
+| **günter** | 1 | 38.8s |
+| **herbert** | 0 | 0.0s |
+| **peter** | 0 | 0.0s |
+
+## 🎯 Selected Concepts
+
+**Status:** ❌ No concepts selected
+
+## 📖 Created Mnemonic
+
+**Status:** ❌ No mnemonic created
+
+## Conversation Log
+
+### Turn 1 (2025-12-15T07:50:08.814756)
+
+**günter:** "Abrakadapra, small and fine, a microcontroller it shall be. On a chip, so tiny, it runs programs — that's neat. It's connected to plus and minus so it can work then. On pins it provides voltage, 3 volts are its power at home. HIGH or LOW, that's how it switches, the program controls it closely. With C++ it speaks the language, so it runs without much complaint." Thank you Günter, Herbert and Peter for your participation! Unfortunately our time is over now. What did you like best? Stay curious and keep practicing! Goodbye to everyone!
+
+**Marty:** Hello Günter, thanks for your great poem! Herbert, which terms or ideas from the microcontroller topic do you find particularly important so that we can use them in our story?
+
+---
+
+
+```

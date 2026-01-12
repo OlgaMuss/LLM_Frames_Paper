@@ -1,0 +1,282 @@
+[
+  {
+    "id": "2025-12-15T07:09:26.691Z-user",
+    "sender": "user",
+    "displayName": "blau",
+    "text": "Hello Marty",
+    "timestamp": "2025-12-15T07:09:26.691Z"
+  },
+  {
+    "id": "2025-12-15T07:09:23.007Z-marty-2bcd78",
+    "sender": "marty",
+    "text": "Hello, Blue! How can I help you today with the topic microcontrollers?",
+    "timestamp": "2025-12-15T07:09:23.007Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello, Blue! How can I help you today with the topic microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Blue! How can I help you today with the topic microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "blau: Hello Marty",
+          "prompt_only_frame": {
+            "message": "blau: Hello Marty"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:15.249Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "1. Hello. I need a mnemonic",
+    "timestamp": "2025-12-15T07:10:15.249Z"
+  },
+  {
+    "id": "2025-12-15T07:10:11.945Z-marty-dc27a7",
+    "sender": "marty",
+    "text": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+    "timestamp": "2025-12-15T07:10:11.945Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Blue! How can I help you today with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:03.281Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "More compact with the most important information you have",
+    "timestamp": "2025-12-15T07:11:03.281Z"
+  },
+  {
+    "id": "2025-12-15T07:10:59.914Z-marty-755ecf",
+    "sender": "marty",
+    "text": "Microcontrollers are small computers on a chip that control devices with 3 V pins by switching them to HIGH or LOW – controlled by a program.",
+    "timestamp": "2025-12-15T07:10:59.914Z",
+    "metadata": {
+      "raw": {
+        "response": "Microcontrollers are small computers on a chip that control devices with 3 V pins by switching them to HIGH or LOW – controlled by a program.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Blue! How can I help you today with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have"
+          },
+          {
+            "role": "assistant",
+            "content": "Microcontrollers are small computers on a chip that control devices with 3 V pins by switching them to HIGH or LOW – controlled by a program."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:11.319Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "You have to help me learn this, so make me a little questionnaire so I can learn the topic.",
+    "timestamp": "2025-12-15T07:13:11.319Z"
+  },
+  {
+    "id": "2025-12-15T07:13:08.759Z-marty-be524c",
+    "sender": "marty",
+    "text": "Sure, Herbert! Here is a short questionnaire on microcontrollers:\n\n1. What is a microcontroller?\n2. How does a microcontroller need to be connected?\n3. What voltage can a microcontroller output at its pins?\n4. What do “HIGH” and “LOW” mean at a pin?\n5. How is switching between “HIGH” and “LOW” controlled?\n6. What programming language do microcontrollers use?\n\nGood luck with your studies!",
+    "timestamp": "2025-12-15T07:13:08.759Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure, Herbert! Here is a short questionnaire on microcontrollers:\n\n1. What is a microcontroller?\n2. How does a microcontroller need to be connected?\n3. What voltage can a microcontroller output at its pins?\n4. What do “HIGH” and “LOW” mean at a pin?\n5. How is switching between “HIGH” and “LOW” controlled?\n6. What programming language do microcontrollers use?\n\nGood luck with your studies!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Blue! How can I help you today with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have"
+          },
+          {
+            "role": "assistant",
+            "content": "Microcontrollers are small computers on a chip that control devices with 3 V pins by switching them to HIGH or LOW – controlled by a program."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: You have to help me learn this, so make me a little questionnaire so I can learn the topic."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: You have to help me learn this, so make me a little questionnaire so I can learn the topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Herbert! Here is a short questionnaire on microcontrollers:\n\n1. What is a microcontroller?\n2. How does a microcontroller need to be connected?\n3. What voltage can a microcontroller output at its pins?\n4. What do “HIGH” and “LOW” mean at a pin?\n5. How is switching between “HIGH” and “LOW” controlled?\n6. What programming language do microcontrollers use?\n\nGood luck with your studies!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: You have to help me learn this, so make me a little questionnaire so I can learn the topic.",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: You have to help me learn this, so make me a little questionnaire so I can learn the topic."
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:04.064Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "After each question, write down the solution. And ask a question about EVERY piece of information.",
+    "timestamp": "2025-12-15T07:15:04.064Z"
+  },
+  {
+    "id": "2025-12-15T07:15:03.818Z-marty-c0be14",
+    "sender": "marty",
+    "text": "Sure thing, Herbert! Here is the complete questionnaire with answers to each question:\n\n1. What is a microcontroller?  \n   – A microcontroller is a small computer on a chip that can execute a simple program.\n\n2. What does a microcontroller need to be connected to?  \n   – It needs to be connected to a positive and negative terminal.\ n\n3. What voltage can a microcontroller output at its pins?  \n   – It can output a voltage of 3 V.\n\n4. What can a microcontroller use the voltage at its pins for?  \n   – To control other devices.\n\n5. How can a microcontroller output voltage at multiple pins?  \n   – It can switch the voltage for multiple pins on and off simultaneously.\n\n6. What does it mean when a pin is “HIGH”?  \n   – The pin is switched on.\n\n7. What does it mean when a pin is “LOW”?  \n   – The pin is switched off.\n\n8. How is switching between “HIGH” and “LOW” controlled?  \n   – It is controlled by a program, such as Blockly for Marty. \n\n9. What programming language do microcontrollers use?  \n   – They use the C++ programming language. \n\nGood luck with your studies!",
+    "timestamp": "2025-12-15T07:15:03.818Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure thing, Herbert! Here is the complete questionnaire with answers to each question:\n\n1. What is a microcontroller?  \n   – A microcontroller is a small computer on a chip that can execute a simple program.\n\n2. What does a microcontroller need to be connected to?  \n   – It needs to be connected to a positive and negative terminal.\ n\n3. What voltage can a microcontroller output at its pins?  \n   – It can output a voltage of 3 V.\n\n4. What can a microcontroller use the voltage at its pins for?  \n   – To control other devices.\n\n5. How can a microcontroller output voltage at multiple pins?  \n   – It can switch the voltage for multiple pins on and off simultaneously.\n\n6. What does it mean when a pin is “HIGH”?  \n   – The pin is switched on.\n\n7. What does it mean when a pin is “LOW”?  \n   – The pin is switched off.\n\n8. How is switching between “HIGH” and “LOW” controlled?  \n   – It is controlled by a program, such as Blockly for Marty. \n\n9. What programming language do microcontrollers use?  \n   – They use the C++ programming language. \n\nGood luck with your studies!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hello Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Blue! How can I help you today with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. Hello. I need a mnemonic"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Herbert! A mnemonic for microcontrollers: "Microcontrollers are small computers on a chip that control devices with 3 V at their pins – like a conductor who directs an orchestra with HIGH and LOW.“,
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: More compact with the most important information you have"
+          },
+          {
+            "role": "assistant",
+            "content": "Microcontrollers are small computers on a chip that control devices with 3 V pins by switching them to HIGH or LOW – controlled by a program."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: You have to help me learn this, so make me a little questionnaire so I can learn the topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Herbert! Here is a short questionnaire on microcontrollers:\n\n1. What is a microcontroller?\n2. How does a microcontroller need to be connected?\n3. What voltage can a microcontroller output at its pins?\n4. What do “HIGH” and “LOW” mean at a pin?\n5. How is switching between “HIGH” and “LOW” controlled?\n6. What programming language do microcontrollers use?\n\nGood luck with your studies!",
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: After each question, write down the solution. And ask a question about EVERY piece of information."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: After each question, write down the solution. And ask a question about EVERY piece of information."
+          },
+          {
+            "role": "assistant",
+            "content": "Sure thing, Herbert! Here is the complete questionnaire with answers to each question:\n\n1. What is a microcontroller?  \n   – A microcontroller is a small computer on a chip that can execute a simple program.\n\n2. What does a microcontroller need to be connected to?  \n   – It needs to be connected to a positive and negative terminal.\ n\n3. What voltage can a microcontroller output at its pins?  \n   – It can output a voltage of 3 V.\n\n4. What can a microcontroller use the voltage at its pins for?  \n   – To control other devices.\n\n5. How can a microcontroller output voltage at multiple pins?  \n   – It can switch the voltage for multiple pins on and off simultaneously.\n\n6. What does it mean when a pin is “HIGH”?  \n   – The pin is switched on.\n\n7. What does it mean when a pin is “LOW”?  \n   – The pin is switched off.\n\n8. How is switching between “HIGH” and “LOW” controlled?  \n   – It is controlled by a program, such as Blockly for Marty. \n\n9. What programming language do microcontrollers use?  \n   – They use the C++ programming language. \n\nGood luck with your studies!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: After each question, write down the solution. And ask a question about EVERY piece of information.",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: After each question, write down the solution. And ask a question about EVERY piece of information."
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  }
+]

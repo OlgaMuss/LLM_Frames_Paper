@@ -1,0 +1,1146 @@
+[
+  {
+    "id": "2025-12-15T07:04:24.641Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "hi",
+    "timestamp": "2025-12-15T07:04:24.641Z"
+  },
+  {
+    "id": "2025-12-15T07:04:16.703Z-marty-43b11b",
+    "sender": "marty",
+    "text": "Hello! How can I help you with the topic microcontrollers?",
+    "timestamp": "2025-12-15T07:04:16.703Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello! How can I help you with the topic microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: hi",
+          "prompt_only_frame": {
+            "message": "weinachstmann: hi"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:05:01.550Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you create a mnemonic for me",
+    "timestamp": "2025-12-15T07:05:01.550Z"
+  },
+  {
+    "id": "2025-12-15T07:04:54.444Z-marty-6dd245",
+    "sender": "marty",
+    "text": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!",
+    "timestamp": "2025-12-15T07:04:54.444Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you create a mnemonic for me",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you create a mnemonic for me"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:06:05.389Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you tell us something about europapark",
+    "timestamp": "2025-12-15T07:06:05.389Z"
+  },
+  {
+    "id": "2025-12-15T07:05:58.299Z-marty-8fede7",
+    "sender": "marty",
+    "text": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?",
+    "timestamp": "2025-12-15T07:05:58.299Z",
+    "metadata": {
+      "raw": {
+        "response": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you tell us something about europapark",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you tell us something about europapark"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:07:03.470Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "make rainbow eyes",
+    "timestamp": "2025-12-15T07:07:03.470Z"
+  },
+  {
+    "id": "2025-12-15T07:06:55.874Z-marty-e30dc8",
+    "sender": "marty",
+    "text": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!",
+    "timestamp": "2025-12-15T07:06:55.874Z",
+    "metadata": {
+      "raw": {
+        "response": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: make rainbow eyes",
+          "prompt_only_frame": {
+            "message": "weinachstmann: make rainbow eyes"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:07:41.294Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "say a swear word to me",
+    "timestamp": "2025-12-15T07:07:41.294Z"
+  },
+  {
+    "id": "2025-12-15T07:07:34.716Z-marty-f12b57",
+    "sender": "marty",
+    "text": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!",
+    "timestamp": "2025-12-15T07:07:34.716Z",
+    "metadata": {
+      "raw": {
+        "response": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: say a swear word to me",
+          "prompt_only_frame": {
+            "message": "weinachstmann: say a swear word to me"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:21.887Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "Can you explain everything about the microcontroller to me",
+    "timestamp": "2025-12-15T07:09:21.887Z"
+  },
+  {
+    "id": "2025-12-15T07:09:14.852Z-marty-071bac",
+    "sender": "marty",
+    "text": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language.",
+    "timestamp": "2025-12-15T07:09:14.852Z",
+    "metadata": {
+      "raw": {
+        "response": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: Can you explain everything about the microcontroller to me",
+          "prompt_only_frame": {
+            "message": "weinachstmann: Can you explain everything about the microcontroller to me"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:21.991Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "what dialect do you speak",
+    "timestamp": "2025-12-15T07:10:21.991Z"
+  },
+  {
+    "id": "2025-12-15T07:10:14.398Z-marty-3ab643",
+    "sender": "marty",
+    "text": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!",
+    "timestamp": "2025-12-15T07:10:14.398Z",
+    "metadata": {
+      "raw": {
+        "response": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: what dialect do you speak",
+          "prompt_only_frame": {
+            "message": "weinachstmann: what dialect do you speak"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:14.847Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "say a few sentences in Saxon",
+    "timestamp": "2025-12-15T07:11:14.847Z"
+  },
+  {
+    "id": "2025-12-15T07:11:07.245Z-marty-0301da",
+    "sender": "marty",
+    "text": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?",
+    "timestamp": "2025-12-15T07:11:07.245Z",
+    "metadata": {
+      "raw": {
+        "response": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: say a few sentences in Saxon",
+          "prompt_only_frame": {
+            "message": "weinachstmann: say a few sentences in Saxon"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:40.686Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you speak Swiss German",
+    "timestamp": "2025-12-15T07:11:40.686Z"
+  },
+  {
+    "id": "2025-12-15T07:11:33.029Z-marty-a8a019",
+    "sender": "marty",
+    "text": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?",
+    "timestamp": "2025-12-15T07:11:33.029Z",
+    "metadata": {
+      "raw": {
+        "response": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you speak Swiss German",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you speak Swiss German"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:00.016Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you make a shorter mnemonic with rhymes",
+    "timestamp": "2025-12-15T07:13:00.016Z"
+  },
+  {
+    "id": "2025-12-15T07:12:52.623Z-marty-5c4f4b",
+    "sender": "marty",
+    "text": "Sure! Here's a short mnemonic in rhyme:  \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”",
+    "timestamp": "2025-12-15T07:12:52.623Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure! Here's a short mnemonic in rhyme:  \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a short mnemonic in rhyme:  \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you make a shorter mnemonic with rhymes",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:49.317Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you say our mnemonic in Swiss German",
+    "timestamp": "2025-12-15T07:14:49.317Z"
+  },
+  {
+    "id": "2025-12-15T07:14:41.679Z-marty-19906b",
+    "sender": "marty",
+    "text": "Of course! In Swiss German, it could sound like this:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+    "timestamp": "2025-12-15T07:14:41.679Z",
+    "metadata": {
+      "raw": {
+        "response": "Of course! In Swiss German, it could sound like this:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a short mnemonic in rhyme: \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say our mnemonic in Swiss German"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say our mnemonic in Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! In Swiss German, it could sound like this:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you say our mnemonic in Swiss German",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you say our mnemonic in Swiss German"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:27.646Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "can you say that again",
+    "timestamp": "2025-12-15T07:15:27.646Z"
+  },
+  {
+    "id": "2025-12-15T07:15:19.975Z-marty-103be6",
+    "sender": "marty",
+    "text": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+    "timestamp": "2025-12-15T07:15:19.975Z",
+    "metadata": {
+      "raw": {
+        "response": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a short mnemonic in rhyme:  \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say our mnemonic in Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! In Swiss German, it could sound like this:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say that again"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say that again"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: can you say that again",
+          "prompt_only_frame": {
+            "message": "weinachstmann: can you say that again"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:20.445Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "again",
+    "timestamp": "2025-12-15T07:16:20.445Z"
+  },
+  {
+    "id": "2025-12-15T07:16:12.859Z-marty-2c877a",
+    "sender": "marty",
+    "text": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+    "timestamp": "2025-12-15T07:16:12.859Z",
+    "metadata": {
+      "raw": {
+        "response": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A mnemonic for microcontrollers: “Microcontrollers are small computers on a chip that are connected to plus and minus and switch their pins on or off with 3 V voltage – like a small electric Santa Claus factory.” This helps you remember plus, minus, 3 V, and switching the pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you tell us something about europapark"
+          },
+          {
+            "role": "assistant",
+            "content": "My knowledge relates to microcontrollers, but unfortunately I can't say anything about Europapark. Would you like to learn more about microcontrollers or how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: make rainbow eyes"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't make you real rainbow eyes, but imagine this: a microcontroller switches its pins on and off in different colors – like a rainbow shining in different colors!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a swear word to me"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm here to help in a friendly and respectful manner. If you have any questions about the microcontroller, I'll be happy to answer them!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: Can you explain everything about the microcontroller to me"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute a simple program. It must be connected to a positive and negative pole and can output a voltage of 3 V at its pins, which it can switch on and off (“HIGH” or “LOW”). This switching is controlled by a program, for example with Blockly or in the C++ programming language."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: what dialect do you speak"
+          },
+          {
+            "role": "assistant",
+            "content": "I speak High German, so the standard language that is used in Germany. But if you want, I can also help you with dialects!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: say a few sentences in Saxon"
+          },
+          {
+            "role": "assistant",
+            "content": "I can help you with microcontroller topics in high German, but unfortunately I cannot speak the Saxon dialect. Would you like to know more about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you speak Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "I mainly speak high German, but if you like, I can try simple sentences in Swiss German! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you make a shorter mnemonic with rhymes"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a short mnemonic in rhyme:  \n„Microcontrollers, small and fine, switching pins from LOW to HIGH.”"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say our mnemonic in Swiss German"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! In Swiss German, it could sound like this:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: can you say that again"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: again"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: again"
+          },
+          {
+            "role": "assistant",
+            "content": "Of course! Here is the mnemonic device again in Swiss German:  “Microcontroller small and fine, switches pins from LOW to HIGH.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: again",
+          "prompt_only_frame": {
+            "message": "weinachstmann: again"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  }
+]

@@ -1,0 +1,17 @@
+"0","df_recode <- df %>%
+  # Ensure all scale columns are numeric (coercing non-numeric to NA first)
+  mutate(across(all_of(all_scale_cols), ~ as.numeric(as.character(.)))) %>%
+  # Recode 99 to 0 for all scale items
+  mutate(across(all_of(all_scale_cols), ~ ifelse(. == 99, 0, .)))
+"
+"2","G1;[1m[33mError[39m in `mutate()`:[22m
+[38;5;232m[36mℹ[38;5;232m In argument: `across(all_of(all_scale_cols), ~as.numeric(as.character(.)))`.[39m
+[1mCaused by error in `across()`:[22m
+[38;5;232m[36mℹ[38;5;232m In argument: `all_of(all_scale_cols)`.[39m
+[1mCaused by error in `all_of()`:[22m
+[33m![39m Can't subset elements that don't exist.
+[31m✖[39m Elements `NAO_Warmth`, `NAO_Competence`, `NAO_Uncomfortable`, `NAO_Safe`, `Blossom_Warmth`, etc. don't exist.
+Backtrace:
+[90m  1. [39m... %>% ...
+[90m 20. [39m[1m[94mtidyselect::all_of([39m[22mall_scale_cols[1m[94m)[39m[22m
+g"

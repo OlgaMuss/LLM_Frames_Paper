@@ -1,0 +1,32 @@
+{
+    "id": "C33D8A5A",
+    "path": "~/Olga's workspace/ETHZ SBS/Marty project/Data_analysis/BuildBots_Rproj/Buildbots_experimentalgroup.Rmd",
+    "project_path": "Buildbots_experimentalgroup.Rmd",
+    "type": "r_markdown",
+    "hash": "2807607714",
+    "contents": "",
+    "dirty": false,
+    "created": 1766135234769.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "8,18",
+        "scrollLine": "0",
+        "rmdVisualMode": "true",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "104"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1767859113,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1767859130847,
+    "read_only": false,
+    "read_only_alternatives": []
+}

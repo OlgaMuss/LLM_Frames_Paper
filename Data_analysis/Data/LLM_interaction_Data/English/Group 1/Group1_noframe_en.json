@@ -1,0 +1,42 @@
+[
+  {
+    "id": "2025-12-15T07:18:23.652Z-user",
+    "sender": "user",
+    "displayName": "adolf",
+    "text": "A microcontroller is like a small conductor on a tiny podium (chip): it receives power (positive and negative) and raises or lowers its hands (pins) with 3 V — sometimes \"HIGH\", sometimes \"LOW\". This way it controls an entire orchestra of devices, exactly according to the score (program in C++), which tells it when and how to give the signals!",
+    "timestamp": "2025-12-15T07:18:23.652Z"
+  },
+  {
+    "id": "2025-12-15T07:18:11.871Z-marty-901647",
+    "sender": "marty",
+    "text": "Great mnemonic! The microcontroller as a conductor, supplied with power and raising or lowering its \"hands\" (pins) (3 V \"HIGH\" or \"LOW\"), thus controls devices according to a program (C++), exactly as described in the learning material.",
+    "timestamp": "2025-12-15T07:18:11.871Z",
+    "metadata": {
+      "raw": {
+        "response": "Great mnemonic! The microcontroller as a conductor, supplied with power and raising or lowering its \"hands\" (pins) (3 V \"HIGH\" or \"LOW\"), thus controls devices according to a program (C++), exactly as described in the learning material.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "adolf: A microcontroller is like a small conductor on a tiny podium (chip): it receives power (positive and negative) and raises or lowers its hands (pins) with 3 V — sometimes \"HIGH\", sometimes \"LOW\". In this way it controls an entire orchestra of devices, exactly according to the score (program in C++), which tells it when and how to give the signals!"
+          },
+          {
+            "role": "user",
+            "content": "A microcontroller is like a small conductor on a tiny podium (chip): it receives power (positive and negative) and raises or lowers its hands (pins) with 3 V — sometimes \"HIGH\", sometimes \"LOW\". In this way it controls an entire orchestra of devices, exactly according to the score (program in C++), which tells it when and how to give the signals!"
+          },
+          {
+            "role": "assistant",
+            "content": "Great mnemonic! The microcontroller as a conductor, supplied with power and raising or lowering its \"hands\" (pins) (3 V \"HIGH\" or \"LOW\"), thus controls devices according to a program (C++), exactly as described in the learning material."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "A microcontroller is like a small conductor on a tiny podium (chip): it receives power (positive and negative) and raises or lowers its hands (pins) with 3 V — sometimes \"HIGH\", sometimes \"LOW\". In this way it controls an entire orchestra of devices, exactly according to the score (program in C++), which tells it when and how to give the signals!",
+          "prompt_only_frame": {
+            "message": "A microcontroller is like a small conductor on a tiny podium (chip): it receives power (positive and negative) and raises or lowers its hands (pins) with 3 V — sometimes \"HIGH\", sometimes \"LOW\". In this way it controls an entire orchestra of devices, exactly according to the score (program in C++), which tells it when and how to give the signals!"
+          }
+        },
+        "session_id": "ef2752767d194dcb83a9235766c75633"
+      }
+    }
+  }
+]

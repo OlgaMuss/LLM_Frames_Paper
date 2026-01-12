@@ -1,0 +1,286 @@
+---
+title: "Analysis_Experimentalgroup"
+output: html_document
+date: "2025-12-16"
+---
+
+
+```{r}
+library(tidyverse)
+
+# --- 1. Load Data and Pre-processing ---
+
+# Read the CSV file
+df <- read_csv("/Users/lleisten/Library/CloudStorage/OneDrive-ETHZurich/PhD/2023/Projects/BuildBots/Deployment/Data/Children/Learning:Perception (T1,T4,T7)/BuildBots_children_T1T4T7.csv")
+
+# Set Timepoint as an ordered factor
+df$Timepoint <- factor(df$Timepoint, levels = c("T1", "T4", "T7"))
+
+summary(df)
+
+# Define a function to calculate the Standard Error
+calculate_se <- function(x) {
+  sd(x, na.rm = TRUE) / sqrt(sum(!is.na(x)))
+}
+```
+
+
+```{r}
+# --- Define Column Lists ---
+
+# MAILS (AQ-AZ: MAILS_1 to MAILS_10)
+mails_cols <- paste0("MAILS_", 1:10)
+
+# Digital Literacy
+dl_cols <- c(
+  "robotparts_1", "robotparts_2", "sensors_1", "sensors_2",
+  "microcontrollers_1", "microcontrollers_2", "AI_DA09", "CA12", "CI29", "CI31",
+  "UA19", "GA10", "LLMdesign_1", "GA13", "EA05", "GA04",
+  "PR1", "PR2", "PR3", "PR4", "GA17", "GA16", "EA11"
+)
+
+# Robot Perception (F-Z, grouped by robot)
+nao_cols <- c("NAO_safe", "NAO_competence", "NAO_reliable", "NAO_empathetic", "NAO_scary", "NAO_uncomfortable", "NAO_social")
+blossom_cols <- c("Blossom_safe", "Blossom_competent", "Blossom_reliable", "Blossom_empathetic", "Blossom_scary", "Blossom_uncomfortable", "Blossom_social")
+marty_cols <- c("Marty_safe", "Marty_competent", "Marty_reliable", "Marty_empathetic", "Marty_scary", "Marty_uncomfortable", "Marty_social")
+perception_cols <- c(nao_cols, blossom_cols, marty_cols)
+```
+
+```{r}
+all_scale_cols <- c(mails_cols, dl_cols, perception_cols)
+df_recode <- df %>%
+  # Ensure all scale columns are numeric (coercing non-numeric to NA first)
+  mutate(across(all_of(all_scale_cols), ~ as.numeric(as.character(.)))) %>%
+  # Recode 99 to 0 for all scale items
+  mutate(across(all_of(all_scale_cols), ~ ifelse(. == 99, 0, .)))
+```
+
+
+```{r}
+# =========================================================================
+# -------------------- PART A: MEAN SCORE PLOTS (99 EXCLUDED) --------------
+# =========================================================================
+
+# --- 2. MAILS Mean Plot (99s treated as NA for mean calculation) ---
+mails_mean_data <- df_recode %>%
+  # Convert 99 to NA for mean calculation only
+  mutate(across(all_of(mails_cols), ~ na_if(., 99))) %>%
+  # Calculate the mean MAILS score for each participant at each timepoint
+  mutate(MAILS_Average = rowMeans(select(., all_of(mails_cols)), na.rm = TRUE)) %>%
+  # Summarize for plotting
+  group_by(Timepoint) %>%
+  summarise(
+    Mean_MAILS = mean(MAILS_Average, na.rm = TRUE),
+    SEM_MAILS = calculate_se(MAILS_Average),
+    .groups = 'drop'
+  )
+
+plot_mails_mean <- ggplot(mails_mean_data, aes(x = Timepoint, y = Mean_MAILS, group = 1)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "blue", size = 3) +
+  geom_errorbar(aes(ymin = Mean_MAILS - SEM_MAILS, ymax = Mean_MAILS + SEM_MAILS),
+                width = 0.2, color = "blue") +
+  labs(
+    title = "Changes in MAILS Mean Score Over Time",
+    x = "Timepoint",
+    y = "Mean MAILS Score (with SEM)"
+  ) +
+  theme_minimal()
+
+print(plot_mails_mean)
+```
+
+
+```{r}
+# --- 3. Digital Literacy Mean Plot (99s treated as NA for mean calculation) ---
+dl_sum_data <- df_recode %>%
+  # Calculate the SUM DL score for each participant
+  mutate(DL_Sum = rowSums(select(., all_of(dl_cols)), na.rm = TRUE)) %>%
+  # Summarize for plotting (taking the mean of the Sum Scores to plot the line/SEM)
+  group_by(Timepoint) %>%
+  summarise(
+    Score = mean(DL_Sum, na.rm = TRUE),
+    SEM = calculate_se(DL_Sum), # SEM on the Sum score
+    .groups = 'drop'
+  )
+
+plot_dl_sum <- ggplot(dl_sum_data, aes(x = Timepoint, y = Score, group = 1)) +
+  geom_line(color = "darkgreen", size = 1) +
+  geom_point(color = "darkgreen", size = 3) +
+  geom_errorbar(aes(ymin = Score - SEM, ymax = Score + SEM),
+                width = 0.2, color = "darkgreen") +
+  labs(
+    title = "Changes in Digital Literacy Sum Score Over Time",
+    x = "Timepoint",
+    y = "Mean Digital Literacy Sum Score (with SEM)",
+    caption = "Error bars show SEM. 'I don't know' (99) responses were recoded to 0."
+  ) +
+  theme_minimal()
+
+print(plot_dl_sum)
+```
+
+
+```{r setup, include=FALSE}
+# --- 4. Robot Perception Mean Plot (99s treated as NA for mean calculation) ---
+perception_mean_data <- df %>%
+  # Convert 99 to NA for mean calculation only
+  mutate(across(all_of(perception_cols), ~ na_if(., 99))) %>%
+  # Calculate the mean score for each robot per participant
+  mutate(
+    NAO_Score = rowMeans(select(., all_of(nao_cols)), na.rm = TRUE),
+    Blossom_Score = rowMeans(select(., all_of(blossom_cols)), na.rm = TRUE),
+    Marty_Score = rowMeans(select(., all_of(marty_cols)), na.rm = TRUE)
+  ) %>%
+  select(Timepoint, NAO_Score, Blossom_Score, Marty_Score) %>%
+  # Convert to long format for plotting
+  pivot_longer(
+    cols = ends_with("_Score"),
+    names_to = "Robot",
+    values_to = "Score"
+  ) %>%
+  mutate(Robot = str_remove(Robot, "_Score")) %>%
+  # Summarize for plotting
+  group_by(Timepoint, Robot) %>%
+  summarise(
+    Mean_Score = mean(Score, na.rm = TRUE),
+    SEM_Score = calculate_sem(Score),
+    .groups = 'drop'
+  )
+
+plot_perception_mean <- ggplot(perception_mean_data, aes(x = Timepoint, y = Mean_Score, group = Robot, color = Robot)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = Mean_Score - SEM_Score, ymax = Mean_Score + SEM_Score),
+                width = 0.2) +
+  labs(
+    title = "Changes in Robot Perception Mean Score Over Time",
+    x = "Timepoint",
+    y = "Mean Perception Score (with SEM)",
+    color = "Robot",
+    caption = "Error bars show SEM. 'I don't know' (99) responses are excluded from the mean."
+  ) +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal()
+# print(plot_perception_mean)
+
+
+# =========================================================================
+# ----------------- PART B: "I DON'T KNOW" (99) PROPORTION PLOTS -----------
+# =========================================================================
+
+# Calculate the total number of responses per timepoint
+# Assuming a 'response' is a non-NA row in the original dataframe
+n_responses_per_timepoint <- df %>%
+  group_by(Timepoint) %>%
+  summarise(N = n(), .groups = 'drop')
+
+# --- 5. MAILS "I Don't Know" (99) Proportion Plot ---
+mails_idk_data <- df %>%
+  select(Timepoint, all_of(mails_cols)) %>%
+  # Convert to long format
+  pivot_longer(cols = all_of(mails_cols), names_to = "Item", values_to = "Response") %>%
+  # Count total responses and 99s per Timepoint
+  group_by(Timepoint) %>%
+  summarise(
+    Count_99 = sum(Response == 99, na.rm = TRUE),
+    Total_Possible_Responses = n(),
+    .groups = 'drop'
+  ) %>%
+  # Calculate proportion of 99s
+  mutate(Proportion_99 = Count_99 / Total_Possible_Responses)
+
+plot_mails_idk <- ggplot(mails_idk_data, aes(x = Timepoint, y = Proportion_99, group = 1)) +
+  geom_line(color = "firebrick", size = 1) +
+  geom_point(color = "firebrick", size = 3) +
+  geom_text(aes(label = scales::percent(Proportion_99, accuracy = 0.1)), vjust = -1) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    title = "Proportion of 'I Don't Know' (99) Responses for MAILS",
+    x = "Timepoint",
+    y = "Proportion of Total MAILS Responses (across all items)",
+    caption = "Plots the percentage of all MAILS scale item responses that were 99."
+  ) +
+  theme_minimal()
+# print(plot_mails_idk)
+
+
+# --- 6. Digital Literacy "I Don't Know" (99) Proportion Plot ---
+dl_idk_data <- df %>%
+  select(Timepoint, all_of(dl_cols)) %>%
+  # Convert to long format
+  pivot_longer(cols = all_of(dl_cols), names_to = "Item", values_to = "Response") %>%
+  # Count total responses and 99s per Timepoint
+  group_by(Timepoint) %>%
+  summarise(
+    Count_99 = sum(Response == 99, na.rm = TRUE),
+    Total_Possible_Responses = n(),
+    .groups = 'drop'
+  ) %>%
+  # Calculate proportion of 99s
+  mutate(Proportion_99 = Count_99 / Total_Possible_Responses)
+
+plot_dl_idk <- ggplot(dl_idk_data, aes(x = Timepoint, y = Proportion_99, group = 1)) +
+  geom_line(color = "goldenrod", size = 1) +
+  geom_point(color = "goldenrod", size = 3) +
+  geom_text(aes(label = scales::percent(Proportion_99, accuracy = 0.1)), vjust = -1) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    title = "Proportion of 'I Don't Know' (99) Responses for Digital Literacy",
+    x = "Timepoint",
+    y = "Proportion of Total DL Responses (across all items)",
+    caption = "Plots the percentage of all Digital Literacy scale item responses that were 99."
+  ) +
+  theme_minimal()
+# print(plot_dl_idk)
+
+
+# --- 7. Robot Perception "I Don't Know" (99) Proportion Plot (Separate Lines) ---
+perception_idk_data <- df %>%
+  select(Timepoint, all_of(perception_cols)) %>%
+  # Convert to long format
+  pivot_longer(cols = all_of(perception_cols), names_to = "Item", values_to = "Response") %>%
+  # Extract Robot name from the item column
+  mutate(
+    Robot = case_when(
+      str_detect(Item, "NAO") ~ "NAO",
+      str_detect(Item, "Blossom") ~ "Blossom",
+      str_detect(Item, "Marty") ~ "Marty",
+      TRUE ~ "Other"
+    )
+  ) %>%
+  # Group by Timepoint and Robot, then summarize
+  group_by(Timepoint, Robot) %>%
+  summarise(
+    Count_99 = sum(Response == 99, na.rm = TRUE),
+    Total_Possible_Responses = n(),
+    .groups = 'drop'
+  ) %>%
+  # Calculate proportion of 99s
+  mutate(Proportion_99 = Count_99 / Total_Possible_Responses)
+
+plot_perception_idk <- ggplot(perception_idk_data, aes(x = Timepoint, y = Proportion_99, group = Robot, color = Robot)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    title = "Proportion of 'I Don't Know' (99) Responses for Robot Perception",
+    x = "Timepoint",
+    y = "Proportion of Total Perception Responses",
+    color = "Robot",
+    caption = "Plots the percentage of scale item responses that were 99, per robot."
+  ) +
+  scale_color_brewer(palette = "Dark2") +
+  theme_minimal()
+# print(plot_perception_idk)
+
+# To view all 6 plots side-by-side (if using an IDE like RStudio, you will need a package like cowplot):
+# # install.packages("cowplot")
+# library(cowplot)
+# plot_grid(plot_mails_mean, plot_mails_idk,
+#           plot_dl_mean, plot_dl_idk,
+#           plot_perception_mean, plot_perception_idk,
+#           ncol = 2, labels = c("A: MAILS Mean", "B: MAILS 'IDK'",
+#                               "C: DL Mean", "D: DL 'IDK'",
+#                               "E: Perception Mean", "F: Perception 'IDK'"))
+```

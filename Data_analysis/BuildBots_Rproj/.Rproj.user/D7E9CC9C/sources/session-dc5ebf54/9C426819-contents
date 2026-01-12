@@ -1,0 +1,233 @@
+# Session Report: d8df7d9da61e492b83732c8e0c6259d6
+
+**Saved at:** 2025-12-15T07:54:53.185954
+
+## Session Details
+
+- **Topic:** Microcontroller
+- **Mnemonic Type:** Story
+- **Learning Material:** Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann.
+Ein Mikrocontroller muss an einen Plus- und einen Minuspol angeschlossen werden.
+Um andere Geräte zu steuern, kann ein Mikrocontroller an seinen Pins eine Spannung von 3 V ausgeben.
+Er kann diese Spannung für verschiedene Pins an- und ausschalten, auch für mehrere Pins gleichzeitig.
+Wenn ein Pin eingeschaltet ist, ist er „HIGH“; wenn er ausgeschaltet ist, ist er „LOW“.
+Dieses Umschalten zwischen „HIGH“ und „LOW“ geschieht nicht zufällig – es wird von einem Programm gesteuert, wie beispielsweise Blockly für Marty.
+Mikrocontroller verwenden eine Programmiersprache namens C++.
+- **Students:** ['Didi', 'amy', 'ti qi ropt']
+- **Target Age:** 14
+- **Use Code Frame:** True
+- **Llm Provider:** openai
+- **Llm Model:** gpt-4.1-mini
+
+## 🎨 Mnemonic Type
+
+**Story** - A narrative that weaves concepts together
+
+## 📊 Participation Summary
+
+| Student | Contributions | Speaking Time |
+|---------|---------------|---------------|
+| **Didi** | 4 | 4.0s |
+| **amy** | 7 | 19.6s |
+| **ti qi ropt** | 3 | 4.8s |
+
+## 🎯 Selected Concepts
+
+**Status:** ✅ Finalized
+
+1. wie baut man ein mikrocontrollern
+
+## 📖 Created Mnemonic
+
+**Status:** ❌ No mnemonic created
+
+## Conversation Log
+
+### Turn 1 (2025-12-15T07:31:05.366811)
+
+**ti qi ropt:** hallo Marty
+
+**Marty:** Hallo ti qi ropt! Was findest du am wichtigsten über Mikrocontroller, das wir in unserer Geschichte merken sollten? Didi, du bist als Nächster dran!
+
+---
+
+### Turn 2 (2025-12-15T07:31:57.645419)
+
+**Didi:** keine ahnung
+
+**Marty:** Danke, Didi! Amy, kannst du vielleicht erklären, was dir an Mikrocontrollern am meisten auffällt oder wichtig erscheint?
+
+---
+
+### Turn 3 (2025-12-15T07:32:38.278062)
+
+**amy:** keine ahnung sag du es mir
+
+**Marty:** Danke, Amy! Didi, kannst du versuchen zu sagen, welcher Teil an Mikrocontrollern für dich am schwierigsten zu verstehen ist?
+
+---
+
+### Turn 4 (2025-12-15T07:33:11.959617)
+
+**Didi:** ne
+
+**Marty:** Danke, Didi. ti qi ropt, kannst du vielleicht sagen, was du an Mikrocontrollern interessant findest oder was du dir merken möchtest?
+
+---
+
+### Turn 5 (2025-12-15T07:35:27.797783)
+
+**Didi:** wie baut man ein mikrocontrollern
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Danke, Didi, für dein Thema! ti qi ropt, wie soll unsere Geschichte beginnen, wenn es darum geht, wie man einen Mikrocontroller baut?
+
+---
+
+### Turn 6 (2025-12-15T07:37:37.285136)
+
+**ti qi ropt:** fur was konnen wir den mikrocontroller benutzen
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Gute Frage, ti qi ropt! Amy, wie können wir in unserer Geschichte erklären, wofür man einen Mikrocontroller benutzen kann?
+
+---
+
+### Turn 7 (2025-12-15T07:39:06.518183)
+
+**amy:** ich weiss es nicht kannst du es mir erklären
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Danke, Amy! Unsere Geschichte könnte damit starten, dass jemand einen Mikrocontroller an Plus- und Minuspol anschließt, um Geräte zu steuern. Ti qi ropt, wie könnten wir erzählen, was als Nächstes passiert, wenn der Mikrocontroller an den Pins Spannung ausgibt?
+
+---
+
+### Turn 8 (2025-12-15T07:40:24.970871)
+
+**ti qi ropt:** wiess ich nicht
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Kein Problem, ti qi ropt! Didi, wie könnte unsere Geschichte weitergehen, wenn der Mikrocontroller an den Pins Spannung von 3 V ausgibt?
+
+---
+
+### Turn 9 (2025-12-15T07:41:17.491607)
+
+**Didi:** keine ahnung
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Danke, Didi. Amy, möchtest du vielleicht erzählen, wie der Mikrocontroller die Spannung an den Pins an- und ausschaltet, also zwischen „HIGH“ und „LOW“ wechselt?
+
+---
+
+### Turn 10 (2025-12-15T07:43:44.058506)
+
+**amy:** nein ich weiss es nicht
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Kein Problem, Amy! Wir haben schon über wichtige Sachen gesprochen, wie dass ein Mikrocontroller ein kleiner Computer ist und dass er an Plus- und Minuspol angeschlossen wird. Manchmal brauchen gute Ideen Zeit. Was hast du heute über Mikrocontroller gelernt? Ti qi ropt, was war dein Lieblingsteil von unserer Unterhaltung?
+
+---
+
+### Turn 11 (2025-12-15T07:45:21.712019)
+
+**amy:** wir wissen nicht kannst du uns erklaren was rin mikrocontroller ist
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Danke, Amy, für deine Frage! Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführen kann, um andere Geräte zu steuern. Ti qi ropt, was findest du an der Idee eines kleinen Computers auf einem Chip spannend?
+
+---
+
+### Turn 12 (2025-12-15T07:46:46.321595)
+
+**amy:** kannst du uns ein reim mikrocontroller macehen
+
+<details>
+<summary>Turn Analysis</summary>
+
+- **Confused:** wie baut man ein mikrocontrollern
+
+</details>
+
+**Marty:** Amy, ein Reim ist eine tolle Idee! Hier ist ein einfacher Reim: „Der Mikrocontroller klein, kann steuern fein. Er schaltet Pins an, macht Geräte dann.“ Ti qi ropt, möchtest du noch eine Zeile hinzufügen?
+
+---
+
+### Turn 13 (2025-12-15T07:47:34.314336)
+
+**amy:** länger
+
+**Marty:** Amy, gern! Hier ist ein längerer Reim:
+
+„Der Mikrocontroller ist ganz klein,  
+ein Computer auf dem Chip allein.  
+Er braucht Strom, Plus und Minus dran,  
+dann fängt er an, zu machen dann.  
+Er schaltet Pins von LOW zu HIGH,  
+steuert Geräte, ganz ohne Müh’.  
+Mit Programmen, schlau und fein,  
+lässt er die Technik richtig sein.“
+
+Ti qi ropt, möchtest du noch etwas dazu dichten?
+
+---
+
+### Turn 14 (2025-12-15T07:49:45.904418)
+
+**amy:** mach es so das ich es mir besser merken kann
+
+**Marty:** Amy, klar! Hier ist ein Reim, der dir beim Merken hilft:
+
+„Mikrocontroller, klein und fein,  
+braucht Strom, Plus und Minus rein.  
+Er schaltet Pins, macht sie HIGH,  
+steuert Geräte, das ist frei.  
+Mit Programmen, schlau und klar,  
+arbeitet er wunderbar!“
+
+Ti qi ropt, was denkst du, hilft dir dieser Reim?
+
+---
+
