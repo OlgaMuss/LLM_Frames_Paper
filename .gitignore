@@ -1,6 +1,13 @@
 #Ignore formatting folder
 Formating
 
+# Ignore DS_Store
+.DS_Store
+
+# Ignore Rproj.user folder
+**/.Rproj.user/
+
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
