@@ -1,0 +1,363 @@
+[
+  {
+    "id": "2025-12-15T07:05:45.100Z-user",
+    "sender": "user",
+    "displayName": "someone",
+    "text": "Please create a mnemonic for me",
+    "timestamp": "2025-12-15T07:05:45.100Z"
+  },
+  {
+    "id": "2025-12-15T07:05:46.726Z-marty-5740d4",
+    "sender": "marty",
+    "text": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!",
+    "timestamp": "2025-12-15T07:05:46.726Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "someone: Please create a mnemonic for me",
+          "prompt_only_frame": {
+            "message": "someone: Please create a mnemonic for me"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:08:14.683Z-user",
+    "sender": "user",
+    "displayName": "ALPHA",
+    "text": "Can you make it even simpler for me?",
+    "timestamp": "2025-12-15T07:08:14.683Z"
+  },
+  {
+    "id": "2025-12-15T07:08:15.930Z-marty-36a108",
+    "sender": "marty",
+    "text": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!",
+    "timestamp": "2025-12-15T07:08:15.930Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ALPHA: Can you make it even simpler for me?",
+          "prompt_only_frame": {
+            "message": "ALPHA: Can you make it even simpler for me?"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:48.491Z-user",
+    "sender": "user",
+    "displayName": "SAXY",
+    "text": "Can you explain to me in detail how a microcontroller works?",
+    "timestamp": "2025-12-15T07:10:48.491Z"
+  },
+  {
+    "id": "2025-12-15T07:10:50.645Z-marty-7d65b5",
+    "sender": "marty",
+    "text": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely.",
+    "timestamp": "2025-12-15T07:10:50.645Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "SAXY: Can you explain to me in detail how a microcontroller works?",
+          "prompt_only_frame": {
+            "message": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:26.274Z-user",
+    "sender": "user",
+    "displayName": "SAXY",
+    "text": "Thank you",
+    "timestamp": "2025-12-15T07:12:26.274Z"
+  },
+  {
+    "id": "2025-12-15T07:12:27.065Z-marty-7f0e4e",
+    "sender": "marty",
+    "text": "You're welcome! If you have any further questions, I'll be happy to help. :)",
+    "timestamp": "2025-12-15T07:12:27.065Z",
+    "metadata": {
+      "raw": {
+        "response": "You're welcome! If you have any further questions, I'll be happy to help. :)",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely."
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Thank you"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Thank you"
+          },
+          {
+            "role": "assistant",
+            "content": "You're welcome! If you have any further questions, I'll be happy to help. :)"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "SAXY: Thank you",
+          "prompt_only_frame": {
+            "message": "SAXY: Thank you"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:16.160Z-user-ac3005",
+    "sender": "user",
+    "text": "Hello, how are you?",
+    "timestamp": "2025-12-15T07:14:16.160Z",
+    "displayName": "someone",
+    "metadata": {
+      "raw": {
+        "text": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:16.805Z-marty-07a42b",
+    "sender": "marty",
+    "text": "Hello! I'm fine, thank you! How can I help you with microcontrollers?",
+    "timestamp": "2025-12-15T07:14:16.805Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello! I'm fine, thank you! How can I help you with microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely."
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Thank you"
+          },
+          {
+            "role": "assistant",
+            "content": "You're welcome! If you have any further questions, I'll be happy to help. :)"
+          },
+          {
+            "role": "user",
+            "content": "someone: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm fine, thank you! How can I help you with microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "someone: Hello, how are you?",
+          "prompt_only_frame": {
+            "message": "someone: Hello, how are you?"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:17:02.929Z-user",
+    "sender": "user",
+    "displayName": "ALPHA",
+    "text": "What exactly is a mnemonic device?",
+    "timestamp": "2025-12-15T07:17:02.929Z"
+  },
+  {
+    "id": "2025-12-15T07:17:03.999Z-marty-33e587",
+    "sender": "marty",
+    "text": "A mnemonic device is a simple memory aid or trick that helps you remember something better, such as a short story or a sentence that makes difficult knowledge easier to understand.",
+    "timestamp": "2025-12-15T07:17:03.999Z",
+    "metadata": {
+      "raw": {
+        "response": "A mnemonic device is a simple memory aid or trick that helps you remember something better, such as a short story or a sentence that makes difficult knowledge easier to understand.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "someone: Please create a mnemonic for me"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Think of the microcontroller as a little boss on a chip: it receives power (positive and negative), turns the lights (3 V) on or off at its fingers (pins), and tells you exactly when that happens—controlled by its program in C++. This was you remember: microcontroller = little boss that controls everything with power and programs!"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: Can you make it even simpler for me?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is like a small switch box: power in, buttons (pins) on or off, and a program tells you when each button should light up. This way you remember: power + buttons + program = microcontroller!"
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Can you explain to me in detail how a microcontroller works?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! A microcontroller is a small computer on a chip that executes a program. It needs power, so a positive and negative pole. It can output a voltage of 3 V via its pins, which it can switch on (“HIGH”) or off (“LOW”). It switches the pins exactly according to the program, which is written in C++ or created with Blockly, for example. This allows the microcontroller to control other devices by sending signals to the pins – all very quickly and precisely."
+          },
+          {
+            "role": "user",
+            "content": "SAXY: Thank you"
+          },
+          {
+            "role": "assistant",
+            "content": "You're welcome! If you have any further questions, I'll be happy to help. :)"
+          },
+          {
+            "role": "user",
+            "content": "someone: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm fine, thank you! How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: What exactly is a mnemonic device?"
+          },
+          {
+            "role": "user",
+            "content": "ALPHA: What exactly is a mnemonic device?"
+          },
+          {
+            "role": "assistant",
+            "content": "A mnemonic device is a simple memory aid or trick that helps you remember something better, such as a short story or a sentence that makes difficult knowledge easier to understand."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "ALPHA: What exactly is a mnemonic device?",
+          "prompt_only_frame": {
+            "message": "ALPHA: What exactly is a mnemonic device?"
+          }
+        },
+        "session_id": "1788683bdaab44498d30af1275b9571d"
+      }
+    }
+  }
+]

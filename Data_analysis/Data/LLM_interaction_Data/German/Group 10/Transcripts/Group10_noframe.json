@@ -1,0 +1,452 @@
+[
+  {
+    "id": "2025-12-15T07:11:40.917Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "hey wie geht es dir",
+    "timestamp": "2025-12-15T07:11:40.917Z"
+  },
+  {
+    "id": "2025-12-15T07:11:32.686Z-marty-0f9011",
+    "sender": "marty",
+    "text": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?",
+    "timestamp": "2025-12-15T07:11:32.686Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: hey wie geht es dir",
+          "prompt_only_frame": {
+            "message": "Didi: hey wie geht es dir"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:00.626Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "ja gerne",
+    "timestamp": "2025-12-15T07:12:00.626Z"
+  },
+  {
+    "id": "2025-12-15T07:11:52.771Z-marty-ff84f3",
+    "sender": "marty",
+    "text": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?",
+    "timestamp": "2025-12-15T07:11:52.771Z",
+    "metadata": {
+      "raw": {
+        "response": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: ja gerne",
+          "prompt_only_frame": {
+            "message": "Didi: ja gerne"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:34.320Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "es soll sie als witz reimen",
+    "timestamp": "2025-12-15T07:13:34.320Z"
+  },
+  {
+    "id": "2025-12-15T07:13:26.722Z-marty-873d78",
+    "sender": "marty",
+    "text": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?",
+    "timestamp": "2025-12-15T07:13:26.722Z",
+    "metadata": {
+      "raw": {
+        "response": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: es soll sie als witz reimen",
+          "prompt_only_frame": {
+            "message": "Didi: es soll sie als witz reimen"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:10.178Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "ja schon aber es soll sich mehr reimen",
+    "timestamp": "2025-12-15T07:14:10.178Z"
+  },
+  {
+    "id": "2025-12-15T07:14:02.735Z-marty-fb6fdf",
+    "sender": "marty",
+    "text": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?",
+    "timestamp": "2025-12-15T07:14:02.735Z",
+    "metadata": {
+      "raw": {
+        "response": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja schon aber es soll sich mehr reimen"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja schon aber es soll sich mehr reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: ja schon aber es soll sich mehr reimen",
+          "prompt_only_frame": {
+            "message": "Didi: ja schon aber es soll sich mehr reimen"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:44.644Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "gut",
+    "timestamp": "2025-12-15T07:14:44.644Z"
+  },
+  {
+    "id": "2025-12-15T07:14:36.450Z-marty-997897",
+    "sender": "marty",
+    "text": "Freut mich, Didi! Wenn du noch mehr Reime oder Hilfe zum Mikrocontroller brauchst, sag einfach Bescheid! 😊",
+    "timestamp": "2025-12-15T07:14:36.450Z",
+    "metadata": {
+      "raw": {
+        "response": "Freut mich, Didi! Wenn du noch mehr Reime oder Hilfe zum Mikrocontroller brauchst, sag einfach Bescheid! 😊",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja schon aber es soll sich mehr reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: gut"
+          },
+          {
+            "role": "user",
+            "content": "Didi: gut"
+          },
+          {
+            "role": "assistant",
+            "content": "Freut mich, Didi! Wenn du noch mehr Reime oder Hilfe zum Mikrocontroller brauchst, sag einfach Bescheid! 😊"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: gut",
+          "prompt_only_frame": {
+            "message": "Didi: gut"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:03.348Z-user-9f2e35",
+    "sender": "user",
+    "text": "Hello.",
+    "timestamp": "2025-12-15T07:15:03.348Z",
+    "displayName": "amy",
+    "metadata": {
+      "raw": {
+        "text": "Hello."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:03.992Z-marty-4737ea",
+    "sender": "marty",
+    "text": "Hallo Amy! Wie kann ich dir zum Thema Mikrocontroller helfen? 😊",
+    "timestamp": "2025-12-15T07:15:03.992Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Amy! Wie kann ich dir zum Thema Mikrocontroller helfen? 😊",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja schon aber es soll sich mehr reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: gut"
+          },
+          {
+            "role": "assistant",
+            "content": "Freut mich, Didi! Wenn du noch mehr Reime oder Hilfe zum Mikrocontroller brauchst, sag einfach Bescheid! 😊"
+          },
+          {
+            "role": "user",
+            "content": "amy: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Amy! Wie kann ich dir zum Thema Mikrocontroller helfen? 😊"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "amy: Hello.",
+          "prompt_only_frame": {
+            "message": "amy: Hello."
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:40.763Z-user-1f05ac",
+    "sender": "user",
+    "text": "Hello, how are you?",
+    "timestamp": "2025-12-15T07:16:40.763Z",
+    "displayName": "Didi",
+    "metadata": {
+      "raw": {
+        "text": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:41.387Z-marty-a8e06d",
+    "sender": "marty",
+    "text": "Hallo Didi! Mir geht es gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen?",
+    "timestamp": "2025-12-15T07:16:41.387Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Didi! Mir geht es gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: hey wie geht es dir"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht’s gut, danke der Nachfrage. Möchtest du eine Eselsbrücke zum Thema Mikrocontroller machen?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja gerne"
+          },
+          {
+            "role": "assistant",
+            "content": "Super, Didi! Hier ist eine Eselsbrücke: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 Volt an ihren Pins spielen – HIGH oder LOW, ganz nach Programm.“ So merkst du dir, dass sie Spannung an- und ausschalten, gesteuert durch ein Programm. Gefällt dir die?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: es soll sie als witz reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Didi! Hier ein Reim-Witz:  \n„Ein Mikrocontroller, ganz famos,  \nschaltet Pins mal an, mal los.  \n3 Volt tanzen hier im Takt,  \nweil das Programm das so gepackt!“  \nGefällt dir der?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: ja schon aber es soll sich mehr reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Kein Problem, Didi! Hier ein Reim mit mehr Reimen:  \n„Mikrocontroller, klein und fein,  \nschaltet Pins mal an, mal aus, das ist sein Sein.  \nMit drei Volt Spannung, nicht zu viel,  \nprogrammierst du ihn, das ist das Ziel.  \nHIGH und LOW, das ist sein Spiel,  \nso steuert er ganz clever viel!“  \nWie findest du den?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: gut"
+          },
+          {
+            "role": "assistant",
+            "content": "Freut mich, Didi! Wenn du noch mehr Reime oder Hilfe zum Mikrocontroller brauchst, sag einfach Bescheid! 😊"
+          },
+          {
+            "role": "user",
+            "content": "amy: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Amy! Wie kann ich dir zum Thema Mikrocontroller helfen? 😊"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Didi! Mir geht es gut, danke! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: Hello, how are you?",
+          "prompt_only_frame": {
+            "message": "Didi: Hello, how are you?"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  }
+]

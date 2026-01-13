@@ -1,0 +1,130 @@
+[
+  {
+    "id": "2025-12-15T07:50:13.523Z-user",
+    "sender": "user",
+    "displayName": "günter",
+    "text": "\"Abrakadapra, klein und fein, ein Mikrocontroller soll es sein. Auf einem Chip, so klitzeklein, führt er Programme, das ist fein. An Plus und Minus wird er dran, damit er arbeiten kann dann. An Pins gibt er Spannung aus, 3 Volt sind sein Strom zu Haus. HIGH oder LOW, so schaltet er, gesteuert wird das Programm sehr. Mit C++ spricht er die Sprache, so läuft er ohne große Klage.\" Danke Günter, Herbert und Peter für eure Mitarbeit! Unsere Zeit ist jetzt leider um. Was hat euch am besten gefallen? Bleibt neugierig und übt weiter! Auf Wiedersehen an alle!",
+    "timestamp": "2025-12-15T07:50:13.523Z"
+  },
+  {
+    "id": "2025-12-15T07:50:08.819Z-marty-2c084d",
+    "sender": "marty",
+    "text": "Hallo Günter, danke für dein tolles Gedicht! Herbert, welche Begriffe oder Ideen aus dem Mikrocontroller-Thema findest du besonders wichtig, damit wir sie in unserer Geschichte verwenden können?",
+    "timestamp": "2025-12-15T07:50:08.819Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Günter, danke für dein tolles Gedicht! Herbert, welche Begriffe oder Ideen aus dem Mikrocontroller-Thema findest du besonders wichtig, damit wir sie in unserer Geschichte verwenden können?",
+        "frame_memory": {
+          "turn_count": 1,
+          "session_phase": 1,
+          "session_language": "German",
+          "consecutive_off_topic_turns": 0,
+          "session_start_time": "2025-12-15T07:50:00.453987",
+          "mnemonic_state": {
+            "selected_concepts": [],
+            "concepts_finalized": false,
+            "mnemonic_text": "",
+            "mnemonic_created": false
+          },
+          "recall_tracking": {
+            "günter": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "herbert": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            },
+            "peter": {
+              "attempts": 0,
+              "successful_parts": [],
+              "stuck_on": [],
+              "last_attempt": null
+            }
+          },
+          "elapsed_time_minutes": 0.000002483333333333333,
+          "_phase2_extension_active": false,
+          "comprehension_tracker": {
+            "concepts": [],
+            "by_student": {}
+          },
+          "balanced_turns_validator": {
+            "recent_speakers": [
+              "günter"
+            ],
+            "participation": {
+              "günter": {
+                "contribution_count": 1,
+                "total_speaking_time_seconds": 38.8,
+                "last_contribution_time": "2025-12-15T07:50:02.108353"
+              },
+              "herbert": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              },
+              "peter": {
+                "contribution_count": 0,
+                "total_speaking_time_seconds": 0,
+                "last_contribution_time": null
+              }
+            },
+            "suggested_next_speaker": "herbert",
+            "last_turn_time": "2025-12-15T07:50:02.108353"
+          }
+        },
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "günter: \"Abrakadapra, klein und fein, ein Mikrocontroller soll es sein. Auf einem Chip, so klitzeklein, führt er Programme, das ist fein. An Plus und Minus wird er dran, damit er arbeiten kann dann. An Pins gibt er Spannung aus, 3 Volt sind sein Strom zu Haus. HIGH oder LOW, so schaltet er, gesteuert wird das Programm sehr. Mit C++ spricht er die Sprache, so läuft er ohne große Klage.\" Danke Günter, Herbert und Peter für eure Mitarbeit! Unsere Zeit ist jetzt leider um. Was hat euch am besten gefallen? Bleibt neugierig und übt weiter! Auf Wiedersehen an alle!"
+          },
+          {
+            "role": "user",
+            "content": "\"Abrakadapra, klein und fein, ein Mikrocontroller soll es sein. Auf einem Chip, so klitzeklein, führt er Programme, das ist fein. An Plus und Minus wird er dran, damit er arbeiten kann dann. An Pins gibt er Spannung aus, 3 Volt sind sein Strom zu Haus. HIGH oder LOW, so schaltet er, gesteuert wird das Programm sehr. Mit C++ spricht er die Sprache, so läuft er ohne große Klage.\" Danke Günter, Herbert und Peter für eure Mitarbeit! Unsere Zeit ist jetzt leider um. Was hat euch am besten gefallen? Bleibt neugierig und übt weiter! Auf Wiedersehen an alle!"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Günter, danke für dein tolles Gedicht! Herbert, welche Begriffe oder Ideen aus dem Mikrocontroller-Thema findest du besonders wichtig, damit wir sie in unserer Geschichte verwenden können?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "\"Abrakadapra, klein und fein, ein Mikrocontroller soll es sein. Auf einem Chip, so klitzeklein, führt er Programme, das ist fein. An Plus und Minus wird er dran, damit er arbeiten kann dann. An Pins gibt er Spannung aus, 3 Volt sind sein Strom zu Haus. HIGH oder LOW, so schaltet er, gesteuert wird das Programm sehr. Mit C++ spricht er die Sprache, so läuft er ohne große Klage.\" Danke Günter, Herbert und Peter für eure Mitarbeit! Unsere Zeit ist jetzt leider um. Was hat euch am besten gefallen? Bleibt neugierig und übt weiter! Auf Wiedersehen an alle!",
+          "_speaker": "günter",
+          "_session_phase": 1,
+          "mnemonic_co_creator_marty": {
+            "turn_count": 1,
+            "speaker": "günter",
+            "message": "\"Abrakadapra, klein und fein, ein Mikrocontroller soll es sein. Auf einem Chip, so klitzeklein, führt er Programme, das ist fein. An Plus und Minus wird er dran, damit er arbeiten kann dann. An Pins gibt er Spannung aus, 3 Volt sind sein Strom zu Haus. HIGH oder LOW, so schaltet er, gesteuert wird das Programm sehr. Mit C++ spricht er die Sprache, so läuft er ohne große Klage.\" Danke Günter, Herbert und Peter für eure Mitarbeit! Unsere Zeit ist jetzt leider um. Was hat euch am besten gefallen? Bleibt neugierig und übt weiter! Auf Wiedersehen an alle!",
+            "session_phase": 1,
+            "off_topic_duration": 0,
+            "_suggested_next_speaker": null,
+            "_consecutive_same_speaker": 0,
+            "contribution_type": "mnemonic_suggestion",
+            "is_relevant": true,
+            "mnemonic_progress": "The message presents a full mnemonic poem describing the microcontroller's characteristics and operation, establishing a complete story-like mnemonic.",
+            "summary": "The student shares a detailed mnemonic poem about a microcontroller, reinforcing the concept through a creative story."
+          },
+          "comprehension_tracker_frame": {},
+          "_suggested_next_speaker": "herbert",
+          "_consecutive_same_speaker": 1,
+          "balanced_turns_validator": {
+            "underparticipating_students": [],
+            "suggested_next_speaker": "herbert",
+            "consecutive_same_speaker": 1
+          },
+          "language_checker_frame": {},
+          "phases_checker_frame": {},
+          "_phase_instructions": {
+            "phase": 1,
+            "instructions": "Current Goal: Select 3-5 Key Concepts (you have ~3 minutes for this phase).\nYour task is to help students SELECT which concepts they think are important to remember. Let THEM propose concepts.\n\nCRITICAL RULES:\n1. DO NOT PROPOSE, SUGGEST, OR LIST ANY CONCEPTS YOURSELF. Not even as examples or as multiple-choice questions.\n2. Your ONLY job is to ASK students an open-ended question to let THEM come up with the concepts first.\n3. LANGUAGE: If a student speaks in a language other than English (e.g., German), you MUST respond in that same language.\n\nGOOD Examples of what to ask:\n- \"What are the most important things about microcontrollers that you want to remember?\"\n- \"Which concepts from our learning material seem trickiest to you?\"\n- \"What would you like your Story to help you remember?\"\n\nBAD Examples (DO NOT DO THIS):\n- BAD Example 1: \"Nice idea! Let's start with this concept: the ESP32 is Marty's brain.\"\n- BAD Example 2: \"That’s a great start! Which concepts feel trickiest: (a) what a microcontroller is, or (b) how pins work?\"\n\nIF a student is stuck OR explicitly says they do not understand a concept (e.g., \"I don't get it\" or \"Ich verstehe nicht\"):\n1. FIRST, ask another student if they can help (e.g., \"herbert, can you try to explain it in your own words?\").\n2. IF that doesn't work, then YOU can ask a focused, diagnostic question to break down their confusion (e.g., \"Thanks for letting me know. To help, what specific part about it is most confusing?\").\n3. ONLY if everyone is struggling after both steps, you can then offer ONE small example to get them thinking.\n\nOnce students have proposed and agreed on 3-5 concepts, CONFIRM the final list:\n\"Perfect! So our concepts are: [list the concepts]. Ready to start building our Story?"
+          }
+        },
+        "session_id": "a32e8556d30643e7b75cab487a27b91c"
+      }
+    }
+  }
+]

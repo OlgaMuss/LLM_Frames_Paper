@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2025-12-15T07:19:47.663Z-user",
+    "sender": "user",
+    "displayName": "DER FÜHRER",
+    "text": "sag mir was über microcontroler",
+    "timestamp": "2025-12-15T07:19:47.663Z"
+  },
+  {
+    "id": "2025-12-15T07:19:49.516Z-marty-f6f243",
+    "sender": "marty",
+    "text": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführt. Er wird an Plus- und Minuspol angeschlossen und kann an seinen Pins 3 V ausgeben, um Geräte zu steuern. Dabei schaltet er die Pins zwischen „HIGH“ (ein) und „LOW“ (aus) – gesteuert durch Programme wie Blockly oder in C++.  \nFür die Eselsbrücke mit rollendem „r“: „Mikrocontroller rotiert rasch, regelt rasch, rund um die Uhr.“",
+    "timestamp": "2025-12-15T07:19:49.516Z",
+    "metadata": {
+      "raw": {
+        "response": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführt. Er wird an Plus- und Minuspol angeschlossen und kann an seinen Pins 3 V ausgeben, um Geräte zu steuern. Dabei schaltet er die Pins zwischen „HIGH“ (ein) und „LOW“ (aus) – gesteuert durch Programme wie Blockly oder in C++.  \nFür die Eselsbrücke mit rollendem „r“: „Mikrocontroller rotiert rasch, regelt rasch, rund um die Uhr.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "DER FÜHRER: sag mir was über microcontroler"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: sag mir was über microcontroler"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführt. Er wird an Plus- und Minuspol angeschlossen und kann an seinen Pins 3 V ausgeben, um Geräte zu steuern. Dabei schaltet er die Pins zwischen „HIGH“ (ein) und „LOW“ (aus) – gesteuert durch Programme wie Blockly oder in C++.  \nFür die Eselsbrücke mit rollendem „r“: „Mikrocontroller rotiert rasch, regelt rasch, rund um die Uhr.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "DER FÜHRER: sag mir was über microcontroler",
+          "prompt_only_frame": {
+            "message": "DER FÜHRER: sag mir was über microcontroler"
+          }
+        },
+        "session_id": "e74d1a0736c94a6f8adbe5effb29b8f4"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:20:53.495Z-user",
+    "sender": "user",
+    "displayName": "DER FÜHRER",
+    "text": "nochmal als eselsbrücke",
+    "timestamp": "2025-12-15T07:20:53.495Z"
+  },
+  {
+    "id": "2025-12-15T07:20:54.593Z-marty-053566",
+    "sender": "marty",
+    "text": "Klar! Hier ist die Eselsbrücke mit rollendem „r“:  \n„Mikrocontroller rattert, regelt, rotiert – rundherum rasch und richtig.“",
+    "timestamp": "2025-12-15T07:20:54.593Z",
+    "metadata": {
+      "raw": {
+        "response": "Klar! Hier ist die Eselsbrücke mit rollendem „r“:  \n„Mikrocontroller rattert, regelt, rotiert – rundherum rasch und richtig.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "DER FÜHRER: sag mir was über microcontroler"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführt. Er wird an Plus- und Minuspol angeschlossen und kann an seinen Pins 3 V ausgeben, um Geräte zu steuern. Dabei schaltet er die Pins zwischen „HIGH“ (ein) und „LOW“ (aus) – gesteuert durch Programme wie Blockly oder in C++.  \nFür die Eselsbrücke mit rollendem „r“: „Mikrocontroller rotiert rasch, regelt rasch, rund um die Uhr.“"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: nochmal als eselsbrücke"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: nochmal als eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist die Eselsbrücke mit rollendem „r“:  \n„Mikrocontroller rattert, regelt, rotiert – rundherum rasch und richtig.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "DER FÜHRER: nochmal als eselsbrücke",
+          "prompt_only_frame": {
+            "message": "DER FÜHRER: nochmal als eselsbrücke"
+          }
+        },
+        "session_id": "e74d1a0736c94a6f8adbe5effb29b8f4"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:21:37.639Z-user",
+    "sender": "user",
+    "displayName": "DER FÜHRER",
+    "text": "nochmal als eselsbrücke",
+    "timestamp": "2025-12-15T07:21:37.639Z"
+  },
+  {
+    "id": "2025-12-15T07:21:38.504Z-marty-b5559a",
+    "sender": "marty",
+    "text": "Natürlich! Hier ist eine weitere Eselsbrücke:  \n„Mikrocontroller: Rasant regelt er Räume, rotiert Relais, reicht Ruhm.“",
+    "timestamp": "2025-12-15T07:21:38.504Z",
+    "metadata": {
+      "raw": {
+        "response": "Natürlich! Hier ist eine weitere Eselsbrücke:  \n„Mikrocontroller: Rasant regelt er Räume, rotiert Relais, reicht Ruhm.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "DER FÜHRER: sag mir was über microcontroler"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der einfache Programme ausführt. Er wird an Plus- und Minuspol angeschlossen und kann an seinen Pins 3 V ausgeben, um Geräte zu steuern. Dabei schaltet er die Pins zwischen „HIGH“ (ein) und „LOW“ (aus) – gesteuert durch Programme wie Blockly oder in C++.  \nFür die Eselsbrücke mit rollendem „r“: „Mikrocontroller rotiert rasch, regelt rasch, rund um die Uhr.“"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: nochmal als eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist die Eselsbrücke mit rollendem „r“:  \n„Mikrocontroller rattert, regelt, rotiert – rundherum rasch und richtig.“"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: nochmal als eselsbrücke"
+          },
+          {
+            "role": "user",
+            "content": "DER FÜHRER: nochmal als eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Hier ist eine weitere Eselsbrücke:  \n„Mikrocontroller: Rasant regelt er Räume, rotiert Relais, reicht Ruhm.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "DER FÜHRER: nochmal als eselsbrücke",
+          "prompt_only_frame": {
+            "message": "DER FÜHRER: nochmal als eselsbrücke"
+          }
+        },
+        "session_id": "e74d1a0736c94a6f8adbe5effb29b8f4"
+      }
+    }
+  }
+]

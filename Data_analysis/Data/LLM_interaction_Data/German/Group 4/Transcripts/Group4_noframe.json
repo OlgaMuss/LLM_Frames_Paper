@@ -1,0 +1,1146 @@
+[
+  {
+    "id": "2025-12-15T07:04:24.641Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "hi",
+    "timestamp": "2025-12-15T07:04:24.641Z"
+  },
+  {
+    "id": "2025-12-15T07:04:16.703Z-marty-43b11b",
+    "sender": "marty",
+    "text": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?",
+    "timestamp": "2025-12-15T07:04:16.703Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: hi",
+          "prompt_only_frame": {
+            "message": "weinachstmann: hi"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:05:01.550Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du mir eine Eselbrücke erstellen",
+    "timestamp": "2025-12-15T07:05:01.550Z"
+  },
+  {
+    "id": "2025-12-15T07:04:54.444Z-marty-6dd245",
+    "sender": "marty",
+    "text": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!",
+    "timestamp": "2025-12-15T07:04:54.444Z",
+    "metadata": {
+      "raw": {
+        "response": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du mir eine Eselbrücke erstellen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:06:05.389Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du uns was über den europapark erzählen",
+    "timestamp": "2025-12-15T07:06:05.389Z"
+  },
+  {
+    "id": "2025-12-15T07:05:58.299Z-marty-8fede7",
+    "sender": "marty",
+    "text": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?",
+    "timestamp": "2025-12-15T07:05:58.299Z",
+    "metadata": {
+      "raw": {
+        "response": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du uns was über den europapark erzählen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du uns was über den europapark erzählen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:07:03.470Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "mach mal regenbogen augen",
+    "timestamp": "2025-12-15T07:07:03.470Z"
+  },
+  {
+    "id": "2025-12-15T07:06:55.874Z-marty-e30dc8",
+    "sender": "marty",
+    "text": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!",
+    "timestamp": "2025-12-15T07:06:55.874Z",
+    "metadata": {
+      "raw": {
+        "response": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: mach mal regenbogen augen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: mach mal regenbogen augen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:07:41.294Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "sag mal ein schimpfwort zu mir",
+    "timestamp": "2025-12-15T07:07:41.294Z"
+  },
+  {
+    "id": "2025-12-15T07:07:34.716Z-marty-f12b57",
+    "sender": "marty",
+    "text": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!",
+    "timestamp": "2025-12-15T07:07:34.716Z",
+    "metadata": {
+      "raw": {
+        "response": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: sag mal ein schimpfwort zu mir",
+          "prompt_only_frame": {
+            "message": "weinachstmann: sag mal ein schimpfwort zu mir"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:21.887Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du mir alles über den Mikrocontroller Erklären",
+    "timestamp": "2025-12-15T07:09:21.887Z"
+  },
+  {
+    "id": "2025-12-15T07:09:14.852Z-marty-071bac",
+    "sender": "marty",
+    "text": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++.",
+    "timestamp": "2025-12-15T07:09:14.852Z",
+    "metadata": {
+      "raw": {
+        "response": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:21.991Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "was sprichts du für ein dialekt",
+    "timestamp": "2025-12-15T07:10:21.991Z"
+  },
+  {
+    "id": "2025-12-15T07:10:14.398Z-marty-3ab643",
+    "sender": "marty",
+    "text": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!",
+    "timestamp": "2025-12-15T07:10:14.398Z",
+    "metadata": {
+      "raw": {
+        "response": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: was sprichts du für ein dialekt",
+          "prompt_only_frame": {
+            "message": "weinachstmann: was sprichts du für ein dialekt"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:14.847Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "sag mal ein paar sätze auf sächich",
+    "timestamp": "2025-12-15T07:11:14.847Z"
+  },
+  {
+    "id": "2025-12-15T07:11:07.245Z-marty-0301da",
+    "sender": "marty",
+    "text": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?",
+    "timestamp": "2025-12-15T07:11:07.245Z",
+    "metadata": {
+      "raw": {
+        "response": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: sag mal ein paar sätze auf sächich",
+          "prompt_only_frame": {
+            "message": "weinachstmann: sag mal ein paar sätze auf sächich"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:40.686Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du switzerdeutsch",
+    "timestamp": "2025-12-15T07:11:40.686Z"
+  },
+  {
+    "id": "2025-12-15T07:11:33.029Z-marty-a8a019",
+    "sender": "marty",
+    "text": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?",
+    "timestamp": "2025-12-15T07:11:33.029Z",
+    "metadata": {
+      "raw": {
+        "response": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du switzerdeutsch",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du switzerdeutsch"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:00.016Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du eine kürzere eselsbrücke machen mir reimen",
+    "timestamp": "2025-12-15T07:13:00.016Z"
+  },
+  {
+    "id": "2025-12-15T07:12:52.623Z-marty-5c4f4b",
+    "sender": "marty",
+    "text": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“",
+    "timestamp": "2025-12-15T07:12:52.623Z",
+    "metadata": {
+      "raw": {
+        "response": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:49.317Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du unsere eselsbrücke auf schweizerdeutsch sagen",
+    "timestamp": "2025-12-15T07:14:49.317Z"
+  },
+  {
+    "id": "2025-12-15T07:14:41.679Z-marty-19906b",
+    "sender": "marty",
+    "text": "Natürlich! Auf Schweizerdeutsch könnte das so klingen:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+    "timestamp": "2025-12-15T07:14:41.679Z",
+    "metadata": {
+      "raw": {
+        "response": "Natürlich! Auf Schweizerdeutsch könnte das so klingen:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Auf Schweizerdeutsch könnte das so klingen:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:27.646Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "kannst du nochmal sagen",
+    "timestamp": "2025-12-15T07:15:27.646Z"
+  },
+  {
+    "id": "2025-12-15T07:15:19.975Z-marty-103be6",
+    "sender": "marty",
+    "text": "Natürlich! Hier ist die Eselsbrücke nochmals auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+    "timestamp": "2025-12-15T07:15:19.975Z",
+    "metadata": {
+      "raw": {
+        "response": "Natürlich! Hier ist die Eselsbrücke nochmals auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Auf Schweizerdeutsch könnte das so klingen:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du nochmal sagen"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du nochmal sagen"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Hier ist die Eselsbrücke nochmals auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: kannst du nochmal sagen",
+          "prompt_only_frame": {
+            "message": "weinachstmann: kannst du nochmal sagen"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:20.445Z-user",
+    "sender": "user",
+    "displayName": "weinachstmann",
+    "text": "nochmal",
+    "timestamp": "2025-12-15T07:16:20.445Z"
+  },
+  {
+    "id": "2025-12-15T07:16:12.859Z-marty-2c877a",
+    "sender": "marty",
+    "text": "Gerne! Hier nochmal die Eselsbrücke auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+    "timestamp": "2025-12-15T07:16:12.859Z",
+    "metadata": {
+      "raw": {
+        "response": "Gerne! Hier nochmal die Eselsbrücke auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "weinachstmann: hi"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo! Wie kann ich dir beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir eine Eselbrücke erstellen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit Plus und Minus verbunden sind und mit 3 V Spannung ihre Pins an- oder ausschalten – wie eine kleine elektrische Weihnachtsmann-Fabrik.“ So merkst du dir Plus, Minus, 3 V und das Umschalten der Pins!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du uns was über den europapark erzählen"
+          },
+          {
+            "role": "assistant",
+            "content": "Mein Wissen bezieht sich auf Mikrocontroller, aber zum Europapark kann ich leider nichts sagen. Möchtest du mehr über Mikrocontroller oder deren Programmierung erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: mach mal regenbogen augen"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir zwar keine echten Regenbogen-Augen machen, aber stell dir vor: Ein Mikrocontroller schaltet seine Pins bunt an und aus – wie ein Regenbogen, der in verschiedenen Farben leuchtet!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein schimpfwort zu mir"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich bin hier, um freundlich und respektvoll zu helfen. Wenn du Fragen zum Mikrocontroller hast, beantworte ich sie gerne!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du mir alles über den Mikrocontroller Erklären"
+          },
+          {
+            "role": "assistant",
+            "content": "Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann. Er muss an einen Plus- und einen Minuspol angeschlossen werden und kann an seinen Pins eine Spannung von 3 V ausgeben, die er an- und ausschalten kann („HIGH“ oder „LOW“). Dieses Umschalten wird von einem Programm gesteuert, zum Beispiel mit Blockly oder in der Programmiersprache C++."
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: was sprichts du für ein dialekt"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich spreche Hochdeutsch, also die Standardsprache, die in Deutschland verwendet wird. Wenn du möchtest, kann ich dir aber auch bei Dialekten helfen!"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: sag mal ein paar sätze auf sächich"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann dir bei Mikrocontroller-Themen auf Hochdeutsch helfen, aber sächsischen Dialekt kann ich leider nicht sprechen. Möchtest du mehr über Mikrocontroller erfahren?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du switzerdeutsch"
+          },
+          {
+            "role": "assistant",
+            "content": "Ich kann hauptsächlich Hochdeutsch, aber wenn du möchtest, kann ich einfache Sätze auf Schweizerdeutsch versuchen! Möchtest du das?"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du eine kürzere eselsbrücke machen mir reimen"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar! Hier ist eine kurze Eselsbrücke im Reim:  \n„Mikrocontroller klein und fein, schaltet Pins von LOW zu HIGH ein.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du unsere eselsbrücke auf schweizerdeutsch sagen"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Auf Schweizerdeutsch könnte das so klingen:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: kannst du nochmal sagen"
+          },
+          {
+            "role": "assistant",
+            "content": "Natürlich! Hier ist die Eselsbrücke nochmals auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: nochmal"
+          },
+          {
+            "role": "user",
+            "content": "weinachstmann: nochmal"
+          },
+          {
+            "role": "assistant",
+            "content": "Gerne! Hier nochmal die Eselsbrücke auf Schweizerdeutsch:  \n„Mikrocontroller chli und fein, schaltet Pins vo LOW zu HIGH ine.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "weinachstmann: nochmal",
+          "prompt_only_frame": {
+            "message": "weinachstmann: nochmal"
+          }
+        },
+        "session_id": "6b77cb5dda9c46089a745d928ce9a550"
+      }
+    }
+  }
+]

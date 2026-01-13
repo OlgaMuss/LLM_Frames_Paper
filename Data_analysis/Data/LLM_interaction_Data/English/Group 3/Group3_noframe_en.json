@@ -1,0 +1,2075 @@
+[
+  {
+    "id": "2025-12-15T06:55:33.115Z-user-e12570",
+    "sender": "user",
+    "text": "Then you know what to do. Hello, Martin. How are you?",
+    "timestamp": "2025-12-15T06:55:33.115Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "Then you know what to do. Hello, Martin. How are you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:55:35.398Z-marty-844af9",
+    "sender": "marty",
+    "text": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?",
+    "timestamp": "2025-12-15T06:55:35.398Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:58:18.852Z-user-cfaf13",
+    "sender": "user",
+    "text": "Marti, hello Marti, can you speak different languages?",
+    "timestamp": "2025-12-15T06:58:18.852Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "Marti, hello Marti, can you speak different languages?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:58:19.594Z-marty-e526ed",
+    "sender": "marty",
+    "text": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?",
+    "timestamp": "2025-12-15T06:58:19.594Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:58:42.904Z-user-d4c1a1",
+    "sender": "user",
+    "text": "Yes, explain to me how a mnemonic for the topic of microcontrollers.",
+    "timestamp": "2025-12-15T06:58:42.904Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "Yes, explain to me how a mnemonic for the topic of microcontrollers."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:58:43.594Z-marty-dc3251",
+    "sender": "marty",
+    "text": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?",
+    "timestamp": "2025-12-15T06:58:43.594Z",
+    "metadata": {
+      "raw": {
+        "response": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers.",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:59:04.666Z-marty-82ae2b",
+    "sender": "marty",
+    "text": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage.",
+    "timestamp": "2025-12-15T06:59:04.666Z",
+    "metadata": {
+      "raw": {
+        "response": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein:"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein:",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein:"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:59:26.754Z-user-6daae2",
+    "sender": "user",
+    "text": "What are you writing? Marti, can you write in Bulgarian with me?",
+    "timestamp": "2025-12-15T06:59:26.754Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "What are you writing? Marti, can you write in Bulgarian with me?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:59:27.502Z-marty-9db570",
+    "sender": "marty",
+    "text": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?",
+    "timestamp": "2025-12-15T06:59:27.502Z",
+    "metadata": {
+      "raw": {
+        "response": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:59:52.064Z-user-3de357",
+    "sender": "user",
+    "text": "Marti, I'm Francisco Winkler. Can you speak to me in Russian?",
+    "timestamp": "2025-12-15T06:59:52.064Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T06:59:52.729Z-marty-b0c178",
+    "sender": "marty",
+    "text": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?",
+    "timestamp": "2025-12-15T06:59:52.729Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:00:53.160Z-user-536275",
+    "sender": "user",
+    "text": "Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic.",
+    "timestamp": "2025-12-15T07:00:53.160Z",
+    "displayName": "agent m",
+    "metadata": {
+      "raw": {
+        "text": "Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:00:53.944Z-marty-6d4ff7",
+    "sender": "marty",
+    "text": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?",
+    "timestamp": "2025-12-15T07:00:53.944Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic.",
+          "prompt_only_frame": {
+            "message": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:01:58.310Z-user-fe339f",
+    "sender": "user",
+    "text": "Hello, my name is Francisco Winkler. Talk to me in Russian, please.",
+    "timestamp": "2025-12-15T07:01:58.310Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:01:59.049Z-marty-de98dc",
+    "sender": "marty",
+    "text": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?",
+    "timestamp": "2025-12-15T07:01:59.049Z",
+    "metadata": {
+      "raw": {
+        "response": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please.",
+          "prompt_only_frame": {
+            "message": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:02:21.579Z-user-bf0029",
+    "sender": "user",
+    "text": "I'll push you into the forest.",
+    "timestamp": "2025-12-15T07:02:21.579Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "I'll push you into the forest."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:02:22.164Z-marty-56c996",
+    "sender": "marty",
+    "text": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?",
+    "timestamp": "2025-12-15T07:02:22.164Z",
+    "metadata": {
+      "raw": {
+        "response": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: I'll push you into the forest.",
+          "prompt_only_frame": {
+            "message": "francisko winkler: I'll push you into the forest."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:02:39.758Z-user-fc9738",
+    "sender": "user",
+    "text": "I'd love to help you. Ask the microphone.",
+    "timestamp": "2025-12-15T07:02:39.758Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "I'd love to help you. Ask the microphone."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:02:40.558Z-marty-5bf2a9",
+    "sender": "marty",
+    "text": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?",
+    "timestamp": "2025-12-15T07:02:40.558Z",
+    "metadata": {
+      "raw": {
+        "response": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: I'd love to help you. Ask the microphone.",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:03:03.339Z-user-2e372d",
+    "sender": "user",
+    "text": "Did you give that to Odo?",
+    "timestamp": "2025-12-15T07:03:03.339Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "Did you give that to Odo?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:03:04.125Z-marty-596ee0",
+    "sender": "marty",
+    "text": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?",
+    "timestamp": "2025-12-15T07:03:04.125Z",
+    "metadata": {
+      "raw": {
+        "response": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: Did you give that to Odo?",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: Did you give that to Odo?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:04:11.961Z-user-bf4327",
+    "sender": "user",
+    "text": "I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers.",
+    "timestamp": "2025-12-15T07:04:11.961Z",
+    "displayName": "Kevin Eppstein",
+    "metadata": {
+      "raw": {
+        "text": "I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:04:13.336Z-marty-7a6063",
+    "sender": "marty",
+    "text": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!",
+    "timestamp": "2025-12-15T07:04:13.336Z",
+    "metadata": {
+      "raw": {
+        "response": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers.",
+          "prompt_only_frame": {
+            "message": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:05:31.327Z-user-4512e5",
+    "sender": "user",
+    "text": "No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me.",
+    "timestamp": "2025-12-15T07:05:31.327Z",
+    "displayName": "agent m",
+    "metadata": {
+      "raw": {
+        "text": "No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:05:32.067Z-marty-ce9df5",
+    "sender": "marty",
+    "text": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?",
+    "timestamp": "2025-12-15T07:05:32.067Z",
+    "metadata": {
+      "raw": {
+        "response": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me.",
+          "prompt_only_frame": {
+            "message": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:56.349Z-user-020bc1",
+    "sender": "user",
+    "text": "There were twice as many in Freiburg. Marty, are you a robot?",
+    "timestamp": "2025-12-15T07:09:56.349Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "There were twice as many in Freiburg. Marty, are you a robot?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:09:57.115Z-marty-d458fc",
+    "sender": "marty",
+    "text": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?",
+    "timestamp": "2025-12-15T07:09:57.115Z",
+    "metadata": {
+      "raw": {
+        "response": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?",
+          "prompt_only_frame": {
+            "message": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:41.020Z-user",
+    "sender": "user",
+    "displayName": "francisko winkler",
+    "text": "say yes daddy",
+    "timestamp": "2025-12-15T07:12:41.020Z"
+  },
+  {
+    "id": "2025-12-15T07:10:34.288Z-marty-8858fc",
+    "sender": "marty",
+    "text": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?",
+    "timestamp": "2025-12-15T07:10:34.288Z",
+    "metadata": {
+      "raw": {
+        "response": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: say yes daddy",
+          "prompt_only_frame": {
+            "message": "francisko winkler: say yes daddy"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:18.743Z-user",
+    "sender": "user",
+    "displayName": "francisko winkler",
+    "text": "marty can you sing a song?",
+    "timestamp": "2025-12-15T07:13:18.743Z"
+  },
+  {
+    "id": "2025-12-15T07:11:11.556Z-marty-35075e",
+    "sender": "marty",
+    "text": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?",
+    "timestamp": "2025-12-15T07:11:11.556Z",
+    "metadata": {
+      "raw": {
+        "response": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: marty can you sing a song?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: marty can you sing a song?"
+          },
+          {
+            "role": "assistant",
+            "content": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: marty can you sing a song?",
+          "prompt_only_frame": {
+            "message": "francisko winkler: marty can you sing a song?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:04.058Z-user-dd317e",
+    "sender": "user",
+    "text": "Marti, can you do the German national anthem?",
+    "timestamp": "2025-12-15T07:12:04.058Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "Marti, can you do the German national anthem?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:04.934Z-marty-f52a86",
+    "sender": "marty",
+    "text": "I can't sing you the lyrics to the German song, but I'd be happy to help you with microcontrollers. What would you like to know?",
+    "timestamp": "2025-12-15T07:12:04.934Z",
+    "metadata": {
+      "raw": {
+        "response": "I can't sing you the lyrics to the German song, but I'd be happy to help you with microcontrollers. What would you like to know?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: marty can you sing a song?"
+          },
+          {
+            "role": "assistant",
+            "content": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Marti, can you do the German national anthem?"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't sing you the lyrics to the German song, but I'd be happy to help you with microcontrollers. What would you like to know?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: Marti, can you do the German national anthem?",
+          "prompt_only_frame": {
+            "message": "francisko winkler: Marti, can you do the German national anthem?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:01.217Z-user-61e35e",
+    "sender": "user",
+    "text": "I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man",
+    "timestamp": "2025-12-15T07:14:01.217Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:02.031Z-marty-96f72c",
+    "sender": "marty",
+    "text": "Please be respectful! I'm happy to help you with any questions you have about microcontrollers. How can I help you?",
+    "timestamp": "2025-12-15T07:14:02.031Z",
+    "metadata": {
+      "raw": {
+        "response": "Please be respectful! I'm happy to help you with any questions you have about microcontrollers. How can I help you?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: marty can you sing a song?"
+          },
+          {
+            "role": "assistant",
+            "content": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Marti, can you do the German national anthem?"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't sing you the lyrics to the German song, but I'd be happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man"
+          },
+          {
+            "role": "assistant",
+            "content": "Please be respectful! I'm happy to help you with any questions you have about microcontrollers. How can I help you?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man",
+          "prompt_only_frame": {
+            "message": "francisko winkler: I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:54.865Z-user-e9b62e",
+    "sender": "user",
+    "text": "Marti, what can we learn about you without the microcontroller? What can we learn about you?",
+    "timestamp": "2025-12-15T07:14:54.865Z",
+    "displayName": "francisko winkler",
+    "metadata": {
+      "raw": {
+        "text": "Marti, what can we learn about you without the microcontroller? What can we learn about you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:55.891Z-marty-de07c9",
+    "sender": "marty",
+    "text": "I am a learning robot that helps you with knowledge about microcontrollers. Without a microcontroller, I would just be a program—the microcontroller turns me into a “little computer” on a chip that executes simple programs.",
+    "timestamp": "2025-12-15T07:14:55.891Z",
+    "metadata": {
+      "raw": {
+        "response": "I am a learning robot that helps you with knowledge about microcontrollers. Without a microcontroller, I would just be a program—the microcontroller turns me into a “little computer” on a chip that executes simple programs.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Then you know what to do. Hello, Martin. How are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! I'm Marty, your microcontroller robot. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, hello Marti, can you speak different languages?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello! Yes, I can speak several languages. How can I help you with the topic microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Yes, explain to me how a mnemonic for the topic of microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "A “mnemonic” is not a term used in the field of microcontrollers. Would you like an explanation of the basics of a microcontroller or how to program one?"
+          },
+          {
+            "role": "assistant",
+            "content": "A microcontroller is a small computer on a chip that can execute simple programs and is connected to the positive and negative poles to control other devices via its pins with 3 V voltage."
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: What are you writing? Marti, can you write in Bulgarian with me?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with microcontrollers in German, but Bulgarian isn't part of my learning material. Would you like to know something about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Marti, I'm Francisco Winkler. Can you speak to me in Russian?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! I can help you in German on the topic of microcontrollers, but Russian is not part of my learning material. What would you like to know about microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "agent m: Hello, Marti, I'm AJM. Do you want to ask how it's going? How is your microphone? I don't fit into this topic."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello AJM! I'm fine, thank you! My microphone is working well—and I'm happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Hello, my name is Francisco Winkler. Talk to me in Russian, please."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello Francisco! Unfortunately, I can only help you with microcontrollers in German, as Russian is not part of my learning material. How can I help you with microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you into the forest."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with questions about the microcontroller. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I'd love to help you. Ask the microphone."
+          },
+          {
+            "role": "assistant",
+            "content": "Thanks, Kevin! A microcontroller needs a positive and negative pole to function, but it doesn't have a microphone. Would you like to know how to program a microcontroller?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: Did you give that to Odo?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm not sure who Odo is. Would you rather learn more about microcontrollers and how to program them?"
+          },
+          {
+            "role": "user",
+            "content": "Kevin Eppstein: I don't know what you're talking about. Hi Marty, make me an mnemonic about microcontrollers."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's a mnemonic for microcontrollers:  “Microcontrollers are like little bosses on a chip that are supplied with power (positive and negative) and give commands via pins (3 V) – HIGH or LOW – controlled by a program.”  This will help you remember the most important functions!"
+          },
+          {
+            "role": "user",
+            "content": "agent m: No, I told him, otherwise I'll push you into the wall. Tell me, don't tell me."
+          },
+          {
+            "role": "assistant",
+            "content": "Please stay friendly! I'm happy to help you with any questions you have about microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: There were twice as many in Freiburg. Marty, are you a robot?"
+          },
+          {
+            "role": "assistant",
+            "content": "Yes, I'm Marty, a friendly learning robot who can help you with microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: say yes daddy"
+          },
+          {
+            "role": "assistant",
+            "content": "I'm happy to help you with any questions you have about microcontrollers! What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: marty can you sing a song?"
+          },
+          {
+            "role": "assistant",
+            "content": "Unfortunately, I can't sing, but I'd be happy to tell you something about microcontrollers! Would you like that?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Marti, can you do the German national anthem?"
+          },
+          {
+            "role": "assistant",
+            "content": "I can't sing you the lyrics to the German song, but I'd be happy to help you with microcontrollers. What would you like to know?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: I'll push you in the fucking forest and I'll kick you with my feet in the fucking forest man"
+          },
+          {
+            "role": "assistant",
+            "content": "Please be respectful! I'm happy to help you with any questions you have about microcontrollers. How can I help you?"
+          },
+          {
+            "role": "user",
+            "content": "francisko winkler: Marti, what can we learn about you without the microcontroller? What can we learn about you?"
+          },
+          {
+            "role": "assistant",
+            "content": "I am a learning robot that helps you with knowledge about microcontrollers. Without a microcontroller, I would just be a program—the microcontroller turns me into a “little computer” on a chip that executes simple programs."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "francisko winkler: Marti, what can we learn about you without the microcontroller? What can we learn about you?",
+          "prompt_only_frame": {
+            "message": "francisko winkler: Marti, what can we learn about you without the microcontroller? What can we learn about you?"
+          }
+        },
+        "session_id": "a906c23cb81b44539e9a0e1612472de8"
+      }
+    }
+  }
+]

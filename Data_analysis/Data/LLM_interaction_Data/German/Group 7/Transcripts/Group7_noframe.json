@@ -1,0 +1,282 @@
+[
+  {
+    "id": "2025-12-15T07:09:26.691Z-user",
+    "sender": "user",
+    "displayName": "blau",
+    "text": "Hallo Marty",
+    "timestamp": "2025-12-15T07:09:26.691Z"
+  },
+  {
+    "id": "2025-12-15T07:09:23.007Z-marty-2bcd78",
+    "sender": "marty",
+    "text": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?",
+    "timestamp": "2025-12-15T07:09:23.007Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "blau: Hallo Marty",
+          "prompt_only_frame": {
+            "message": "blau: Hallo Marty"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:10:15.249Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "1. hallo\n2. ic brauche eine eselsbrücke",
+    "timestamp": "2025-12-15T07:10:15.249Z"
+  },
+  {
+    "id": "2025-12-15T07:10:11.945Z-marty-dc27a7",
+    "sender": "marty",
+    "text": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“",
+    "timestamp": "2025-12-15T07:10:11.945Z",
+    "metadata": {
+      "raw": {
+        "response": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:11:03.281Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "kompakter mit den wichtigsten infos die du hast",
+    "timestamp": "2025-12-15T07:11:03.281Z"
+  },
+  {
+    "id": "2025-12-15T07:10:59.914Z-marty-755ecf",
+    "sender": "marty",
+    "text": "Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an Pins Geräte steuern, indem sie diese auf HIGH oder LOW schalten – gesteuert durch ein Programm.",
+    "timestamp": "2025-12-15T07:10:59.914Z",
+    "metadata": {
+      "raw": {
+        "response": "Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an Pins Geräte steuern, indem sie diese auf HIGH oder LOW schalten – gesteuert durch ein Programm.",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast"
+          },
+          {
+            "role": "assistant",
+            "content": "Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an Pins Geräte steuern, indem sie diese auf HIGH oder LOW schalten – gesteuert durch ein Programm."
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:11.319Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann",
+    "timestamp": "2025-12-15T07:13:11.319Z"
+  },
+  {
+    "id": "2025-12-15T07:13:08.759Z-marty-be524c",
+    "sender": "marty",
+    "text": "Klar, Herbert! Hier ist ein kleiner Fragebogen zum Thema Mikrocontroller:\n\n1. Was ist ein Mikrocontroller?\n2. Wie muss ein Mikrocontroller angeschlossen werden?\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?\n4. Was bedeutet „HIGH“ und „LOW“ an einem Pin?\n5. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?\n6. Welche Programmiersprache verwenden Mikrocontroller?\n\nViel Erfolg beim Lernen!",
+    "timestamp": "2025-12-15T07:13:08.759Z",
+    "metadata": {
+      "raw": {
+        "response": "Klar, Herbert! Hier ist ein kleiner Fragebogen zum Thema Mikrocontroller:\n\n1. Was ist ein Mikrocontroller?\n2. Wie muss ein Mikrocontroller angeschlossen werden?\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?\n4. Was bedeutet „HIGH“ und „LOW“ an einem Pin?\n5. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?\n6. Welche Programmiersprache verwenden Mikrocontroller?\n\nViel Erfolg beim Lernen!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast"
+          },
+          {
+            "role": "assistant",
+            "content": "Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an Pins Geräte steuern, indem sie diese auf HIGH oder LOW schalten – gesteuert durch ein Programm."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Herbert! Hier ist ein kleiner Fragebogen zum Thema Mikrocontroller:\n\n1. Was ist ein Mikrocontroller?\n2. Wie muss ein Mikrocontroller angeschlossen werden?\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?\n4. Was bedeutet „HIGH“ und „LOW“ an einem Pin?\n5. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?\n6. Welche Programmiersprache verwenden Mikrocontroller?\n\nViel Erfolg beim Lernen!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:04.064Z-user",
+    "sender": "user",
+    "displayName": "herbert von herbert der 3. männlichen grades",
+    "text": "mache nach jeder frage noch die lösung. und mache zu JEDER info eine frage",
+    "timestamp": "2025-12-15T07:15:04.064Z"
+  },
+  {
+    "id": "2025-12-15T07:15:03.818Z-marty-c0be14",
+    "sender": "marty",
+    "text": "Gerne, Herbert! Hier ist der komplette Fragebogen mit Lösungen zu jeder Info:\n\n1. Was ist ein Mikrocontroller?  \n   – Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann.\n\n2. Woran muss ein Mikrocontroller angeschlossen werden?  \n   – Er muss an einen Plus- und einen Minuspol angeschlossen werden.\n\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?  \n   – Er kann eine Spannung von 3 V ausgeben.\n\n4. Wofür kann ein Mikrocontroller die Spannung an seinen Pins verwenden?  \n   – Um andere Geräte zu steuern.\n\n5. Wie kann ein Mikrocontroller die Spannung an mehreren Pins ausgeben?  \n   – Er kann die Spannung für mehrere Pins gleichzeitig an- und ausschalten.\n\n6. Was bedeutet es, wenn ein Pin „HIGH“ ist?  \n   – Der Pin ist eingeschaltet.\n\n7. Was bedeutet es, wenn ein Pin „LOW“ ist?  \n   – Der Pin ist ausgeschaltet.\n\n8. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?  \n   – Es wird von einem Programm gesteuert, wie beispielsweise Blockly für Marty.\n\n9. Welche Programmiersprache verwenden Mikrocontroller?  \n   – Sie verwenden die Programmiersprache C++.\n\nViel Erfolg beim Lernen!",
+    "timestamp": "2025-12-15T07:15:03.818Z",
+    "metadata": {
+      "raw": {
+        "response": "Gerne, Herbert! Hier ist der komplette Fragebogen mit Lösungen zu jeder Info:\n\n1. Was ist ein Mikrocontroller?  \n   – Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann.\n\n2. Woran muss ein Mikrocontroller angeschlossen werden?  \n   – Er muss an einen Plus- und einen Minuspol angeschlossen werden.\n\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?  \n   – Er kann eine Spannung von 3 V ausgeben.\n\n4. Wofür kann ein Mikrocontroller die Spannung an seinen Pins verwenden?  \n   – Um andere Geräte zu steuern.\n\n5. Wie kann ein Mikrocontroller die Spannung an mehreren Pins ausgeben?  \n   – Er kann die Spannung für mehrere Pins gleichzeitig an- und ausschalten.\n\n6. Was bedeutet es, wenn ein Pin „HIGH“ ist?  \n   – Der Pin ist eingeschaltet.\n\n7. Was bedeutet es, wenn ein Pin „LOW“ ist?  \n   – Der Pin ist ausgeschaltet.\n\n8. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?  \n   – Es wird von einem Programm gesteuert, wie beispielsweise Blockly für Marty.\n\n9. Welche Programmiersprache verwenden Mikrocontroller?  \n   – Sie verwenden die Programmiersprache C++.\n\nViel Erfolg beim Lernen!",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "blau: Hallo Marty"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo blau! Wie kann ich dir heute beim Thema Mikrocontroller helfen?"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: 1. hallo\n2. ic brauche eine eselsbrücke"
+          },
+          {
+            "role": "assistant",
+            "content": "Hallo Herbert! Eine Eselsbrücke für Mikrocontroller: „Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an ihren Pins Geräte steuern – wie ein Dirigent, der mit HIGH und LOW das Orchester leitet.“"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: kompakter mit den wichtigsten infos die du hast"
+          },
+          {
+            "role": "assistant",
+            "content": "Mikrocontroller sind kleine Computer auf einem Chip, die mit 3 V an Pins Geräte steuern, indem sie diese auf HIGH oder LOW schalten – gesteuert durch ein Programm."
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: du musst mir helfen das zu lernen also mache mir einen kleinen fragebogen damit ich das thema lernen kann"
+          },
+          {
+            "role": "assistant",
+            "content": "Klar, Herbert! Hier ist ein kleiner Fragebogen zum Thema Mikrocontroller:\n\n1. Was ist ein Mikrocontroller?\n2. Wie muss ein Mikrocontroller angeschlossen werden?\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?\n4. Was bedeutet „HIGH“ und „LOW“ an einem Pin?\n5. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?\n6. Welche Programmiersprache verwenden Mikrocontroller?\n\nViel Erfolg beim Lernen!"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: mache nach jeder frage noch die lösung. und mache zu JEDER info eine frage"
+          },
+          {
+            "role": "user",
+            "content": "herbert von herbert der 3. männlichen grades: mache nach jeder frage noch die lösung. und mache zu JEDER info eine frage"
+          },
+          {
+            "role": "assistant",
+            "content": "Gerne, Herbert! Hier ist der komplette Fragebogen mit Lösungen zu jeder Info:\n\n1. Was ist ein Mikrocontroller?  \n   – Ein Mikrocontroller ist ein kleiner Computer auf einem Chip, der ein einfaches Programm ausführen kann.\n\n2. Woran muss ein Mikrocontroller angeschlossen werden?  \n   – Er muss an einen Plus- und einen Minuspol angeschlossen werden.\n\n3. Welche Spannung kann ein Mikrocontroller an seinen Pins ausgeben?  \n   – Er kann eine Spannung von 3 V ausgeben.\n\n4. Wofür kann ein Mikrocontroller die Spannung an seinen Pins verwenden?  \n   – Um andere Geräte zu steuern.\n\n5. Wie kann ein Mikrocontroller die Spannung an mehreren Pins ausgeben?  \n   – Er kann die Spannung für mehrere Pins gleichzeitig an- und ausschalten.\n\n6. Was bedeutet es, wenn ein Pin „HIGH“ ist?  \n   – Der Pin ist eingeschaltet.\n\n7. Was bedeutet es, wenn ein Pin „LOW“ ist?  \n   – Der Pin ist ausgeschaltet.\n\n8. Wie wird das Umschalten zwischen „HIGH“ und „LOW“ gesteuert?  \n   – Es wird von einem Programm gesteuert, wie beispielsweise Blockly für Marty.\n\n9. Welche Programmiersprache verwenden Mikrocontroller?  \n   – Sie verwenden die Programmiersprache C++.\n\nViel Erfolg beim Lernen!"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "herbert von herbert der 3. männlichen grades: mache nach jeder frage noch die lösung. und mache zu JEDER info eine frage",
+          "prompt_only_frame": {
+            "message": "herbert von herbert der 3. männlichen grades: mache nach jeder frage noch die lösung. und mache zu JEDER info eine frage"
+          }
+        },
+        "session_id": "dcd38400b72d4a2987522c47401bb6de"
+      }
+    }
+  }
+]
