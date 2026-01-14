@@ -1,10 +1,11 @@
 # Conversation: Group 3 (Frame English)
 
-### Turn 1
+
+### Turn 1 ("timestamp": "2025-12-15T07:37:09.899Z")
 **agent j**: Hello Marty
 **Marty**: Hello, agent! agent m, what important things about microcontrollers would you most like to remember?
 
-### Turn 2
+### Turn 2 
 **agent j**: Each of us will give you some information about microcontrollers, and you have to create a mnemonic out of it.
 **Marty**: Thanks, agent j, for the idea! agent m, what information about microcontrollers do you think is particularly important for us to use in our mnemonic?
 
@@ -32,13 +33,14 @@
 **francisko winkler**: That the microcontrollers are the bosses and assign tasks to the employees, thats how you can imagine it
 **Marty**: Great picture, francisko winkler! The microcontrollers as bosses who assign tasks to employees (other parts) makes the topic much easier to understand. agent m, what do you like best about this idea?
 
-### Turn 9
+### Turn 9 ("timestamp": "2025-12-15T07:53:18.801Z")
 **agent m**: Sounds like a good idea.
 **Marty**: agent m, it seems like we've gotten a little stuck with our story! But we've already discussed some great things, such as how microcontrollers are small chips that can control many devices and how they assign tasks like bosses. Sometimes the best ideas need time to really grow. francisko winkler, what did you like best about our discussion today? Thank you all, agent j, agent m, and francisko winkler, for your great contributions—unfortunately, our time is up now. Stay curious and have fun continuing to learn! Goodbye!
 
 ### Turn 10
 **agent j**: Rephrase the same again as a joke
-**Marty**: agent j, here's a little joke to finish off: Why are microcontrollers like bosses in a company? Because they always say who is “HIGH” or “LOW” and when – and no one is allowed to just mess around! We've learned a lot today about small chips that do big jobs. francisko winkler, what did you find most amusing about our discussion? Thank you all, agent j, agent m, and francisko winkler. Unfortunately, our time is up. Stay curious and see you soon!
+**Marty**: agent J, here’s a little joke to wrap things up: Why are microcontrollers like bosses in a company? Because they’re always telling everyone who is 'HIGH' or 'LOW' at any given time—and nobody is allowed to just flake out! We’ve learned a lot today about small chips that do big work. Francisko Winkler, what did you find funniest about our discussion? Thanks to all of you—Agent J, Agent M, and Francisko Winkler—our time is unfortunately up. Stay curious and see you soon!
+
 
 ### Turn 11
 **agent j**: Still do a story
