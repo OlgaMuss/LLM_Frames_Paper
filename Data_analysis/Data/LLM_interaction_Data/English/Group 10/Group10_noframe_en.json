@@ -1,0 +1,452 @@
+[
+  {
+    "id": "2025-12-15T07:11:40.917Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "Hey, how are you?",
+    "timestamp": "2025-12-15T07:11:40.917Z"
+  },
+  {
+    "id": "2025-12-15T07:11:32.686Z-marty-0f9011",
+    "sender": "marty",
+    "text": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?",
+    "timestamp": "2025-12-15T07:11:32.686Z",
+    "metadata": {
+      "raw": {
+        "response": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: Hey, how are you?",
+          "prompt_only_frame": {
+            "message": "Didi: Hey, how are you?"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:12:00.626Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "yes please",
+    "timestamp": "2025-12-15T07:12:00.626Z"
+  },
+  {
+    "id": "2025-12-15T07:11:52.771Z-marty-ff84f3",
+    "sender": "marty",
+    "text": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?",
+    "timestamp": "2025-12-15T07:11:52.771Z",
+    "metadata": {
+      "raw": {
+        "response": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: yes please",
+          "prompt_only_frame": {
+            "message": "Didi: yes please"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:13:34.320Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "it should rhyme as a joke",
+    "timestamp": "2025-12-15T07:13:34.320Z"
+  },
+  {
+    "id": "2025-12-15T07:13:26.722Z-marty-873d78",
+    "sender": "marty",
+    "text": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?",
+    "timestamp": "2025-12-15T07:13:26.722Z",
+    "metadata": {
+      "raw": {
+        "response": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: it should rhyme as a joke",
+          "prompt_only_frame": {
+            "message": "Didi: it should rhyme as a joke"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:10.178Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "Yes, but it should rhyme more.",
+    "timestamp": "2025-12-15T07:14:10.178Z"
+  },
+  {
+    "id": "2025-12-15T07:14:02.735Z-marty-fb6fdf",
+    "sender": "marty",
+    "text": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?",
+    "timestamp": "2025-12-15T07:14:02.735Z",
+    "metadata": {
+      "raw": {
+        "response": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Yes, but it should rhyme more."
+          },
+          {
+            "role": "user",
+            "content": "Didi: Yes, but it should rhyme more."
+          },
+          {
+            "role": "assistant",
+            "content": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: Yes, but it should rhyme more.",
+          "prompt_only_frame": {
+            "message": "Didi: Yes, but it should rhyme more."
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:14:44.644Z-user",
+    "sender": "user",
+    "displayName": "Didi",
+    "text": "good",
+    "timestamp": "2025-12-15T07:14:44.644Z"
+  },
+  {
+    "id": "2025-12-15T07:14:36.450Z-marty-997897",
+    "sender": "marty",
+    "text": "Glad to hear it, Didi! If you need more time or help with the microcontroller, just let me know!😊",
+    "timestamp": "2025-12-15T07:14:36.450Z",
+    "metadata": {
+      "raw": {
+        "response": "Glad to hear it, Didi! If you need more time or help with the microcontroller, just let me know!😊",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Yes, but it should rhyme more."
+          },
+          {
+            "role": "assistant",
+            "content": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: good"
+          },
+          {
+            "role": "user",
+            "content": "Didi: good"
+          },
+          {
+            "role": "assistant",
+            "content": "Glad to hear it, Didi! If you need more time or help with the microcontroller, just let me know!😊"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: good",
+          "prompt_only_frame": {
+            "message": "Didi: good"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:03.348Z-user-9f2e35",
+    "sender": "user",
+    "text": "Hello.",
+    "timestamp": "2025-12-15T07:15:03.348Z",
+    "displayName": "amy",
+    "metadata": {
+      "raw": {
+        "text": "Hello."
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:15:03.992Z-marty-4737ea",
+    "sender": "marty",
+    "text": "Hi Amy! How can I help you with the topic of microcontrollers? 😊",
+    "timestamp": "2025-12-15T07:15:03.992Z",
+    "metadata": {
+      "raw": {
+        "response": "Hi Amy! How can I help you with the topic of microcontrollers? 😊",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Yes, but it should rhyme more."
+          },
+          {
+            "role": "assistant",
+            "content": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: good"
+          },
+          {
+            "role": "assistant",
+            "content": "Glad to hear it, Didi! If you need more time or help with the microcontroller, just let me know!😊"
+          },
+          {
+            "role": "user",
+            "content": "amy: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Amy! How can I help you with the topic of microcontrollers? 😊"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "amy: Hello.",
+          "prompt_only_frame": {
+            "message": "amy: Hello."
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:40.763Z-user-1f05ac",
+    "sender": "user",
+    "text": "Hello, how are you?",
+    "timestamp": "2025-12-15T07:16:40.763Z",
+    "displayName": "Didi",
+    "metadata": {
+      "raw": {
+        "text": "Hello, how are you?"
+      }
+    }
+  },
+  {
+    "id": "2025-12-15T07:16:41.387Z-marty-a8e06d",
+    "sender": "marty",
+    "text": "Hi Didi! I'm doing well, thanks! How can I help you with the microcontroller topic?",
+    "timestamp": "2025-12-15T07:16:41.387Z",
+    "metadata": {
+      "raw": {
+        "response": "Hi Didi! I'm doing well, thanks! How can I help you with the microcontroller topic?",
+        "frame_memory": {},
+        "conversation_history": [
+          {
+            "role": "user",
+            "content": "Didi: Hey, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm fine, thanks for asking. Would you like to make a mnemonic on the topic of microcontrollers?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: yes please"
+          },
+          {
+            "role": "assistant",
+            "content": "Great, Didi! Here's a mnemonic: “Microcontrollers are small computers on a chip that play with 3 volts on their pins – HIGH or LOW, depending on the program.” This helps you remember that they switch the voltage on and off, controlled by a program. Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: it should rhyme as a joke"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure, Didi! Here's a rhyming joke:  “A microcontroller, quite splendid,  switches pins on and off.  3 volts dance here in time,  because that's how the program is packed!”  Do you like it?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Yes, but it should rhyme more."
+          },
+          {
+            "role": "assistant",
+            "content": "No problem, Didi! Here's a rhyme with more rhymes: Microcontroller, small and fine,  switches pins on and off, that's what it does.  With three volts of power, not too much,  you program it, that's the goal.  HIGH and LOW, that's its game,  that's how it cleverly controls so much!  What do you think?"
+          },
+          {
+            "role": "user",
+            "content": "Didi: good"
+          },
+          {
+            "role": "assistant",
+            "content": "Glad to hear it, Didi! If you need more time or help with the microcontroller, just let me know!😊"
+          },
+          {
+            "role": "user",
+            "content": "amy: Hello."
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Amy! How can I help you with the topic of microcontrollers? 😊"
+          },
+          {
+            "role": "user",
+            "content": "Didi: Hello, how are you?"
+          },
+          {
+            "role": "assistant",
+            "content": "Hi Didi! I'm doing well, thanks! How can I help you with the microcontroller topic?"
+          }
+        ],
+        "shared_context": {
+          "_cleaned_message": "Didi: Hello, how are you?",
+          "prompt_only_frame": {
+            "message": "Didi: Hello, how are you?"
+          }
+        },
+        "session_id": "52140ed86bc143ccbe6bee35e5e698ac"
+      }
+    }
+  }
+]
