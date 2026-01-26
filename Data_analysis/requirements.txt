@@ -1,0 +1,14 @@
+# Core Data Analysis
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+statsmodels
+scikit-learn
+
+# Data Loading & Config
+pyyaml
+
+# Jupyter Kernel support
+ipykernel

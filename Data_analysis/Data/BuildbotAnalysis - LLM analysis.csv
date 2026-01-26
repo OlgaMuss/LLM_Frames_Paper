@@ -1,0 +1,143 @@
+,,Data from engagement survey,,,,,,,Data from learning survey,,Frame analysis (see doc in link for more detail),,,,,,,,,,,,,,,,,,,,,,,,,,Balanced turns: Number of turns per,,,,,
+Group,Luca's comments on the frame," I enjoyed the activity  (in T7, average)",I found the activity very interesting (in T7 average),"LLM_enjoyment: How did you like your last voice interaction with Marty? Very bad (1), Rather bad, Neither, Rather good, Very good (5)","LLM_learning: How much did your last conversation with Marty help you learn about microcontrollers?Very little (1), Rather little, Neither, Rather a lot, Very much (5)","LLM_contributions: Did you feel that everyone in your group talked/wrote to Marty equally?No, not at all (1); No, not really; Yes, somewhat; Yes, absolutely (4)",Students' feedback: Positives,Students' feedback: Negatives,average nb of correct answers on LLM_Microcontollers (out of 8),Notes on the interaction,Frame data present?,Number of students,Balanced Turns Management,Phase 1: identification of the concepts to use for the mnemonic,Phase 1: concepts identified,Phase 1: Number of concepts proposed by students,Phase 1: Collaboration,Phase 2: creation of a mnemonic,Phase 2: Student contributions,Phase 2: Number of relevant Student contributions,Created mnemonic,Phase 2: Lenght of the mnemonic (in sentences or lines),"Phase 2: Mnemonic Depth: Mean level of difficulty of the mnemonic
+easy: what is it and what does it do?
+medium: how does it do it ()
+advanced: precise vocabulary (3V and ESP32, HIGH/LOW)",Phase 2: Collaboration,Phase 3: reciting the mnemonic,Closing,After closing,Number of Turns in Frame,Number of Turns in No Frame,Out of topic turns  with frame,Out of topic turns without Frame,Percentage of turns that went from off topic to on topic contributions,Non relevant contributions,Number of relevant contributions,"Co-creation Level (0:LLM did it all, 1: concepts by students/rest llm, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students)",Number of concepts that went from flagged misunderstanding/confusions to correct concepts,No Frame: student 1,No Frame: student 2,No Frame: student 3,With Frame: student 1,With Frame: student 2,With Frame: student 3
+1,Data loss,4.33,3.00,4.33,3.67,3.67,"marty talking
+the speaking
+programming
+everything except for one thing
+Talking with Marty and the rhymes he said
+that he came up with rhymes","building more and talk about other things
+that we talked about microcontrollers and not about other things
+hat he always answered wrong
+there was nothing difficult
+there was nothing i didnt like except that he sometimes talks crap",5.00,Data Loss,No,3,NA,NA,NA,,NA,NA,NA,,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2,"Frame never actually provided the full story but just ended the conversation, The mnemonic thats saved in the frame was not provided to children",3.00,4.00,3.67,3.67,2.00,"programming
+talking with marty
+talking to him
+That we programmed so much today.
+That we were able to try out so many things
+that he talked well","too little practical work
+that he sometimes didnt understand certain things
+Marty kept saying different things or interrupting, but otherwise everything was fine",7.00,"only 2 participants, Strong group, very nice collaboration, ran out of time",Yes,2,Successful,"Partially successful: identifies 2, dismissed one concept, adds new concepts in phase 2","**Donald Trump:** Microcontroller are electrical
+**vali:** that microcontroller get connected to a positive and negative terminal
+**Donald Trump:** Microcontrollers use a programming language called C++ (dismissed)
+Added by LLM: Vali, would you like to add a part about how the microcontroller switches the voltage on its pins to control devices?",3,Succesful,Unsuccesful,"P10: It meets Marty and connects with him. (1) 
+P03: He programs it and Marty executes movements.(2)",2,"## 📖 Created Mnemonic
+**Status:** ✅ Complete
+Donald Trump meets his Marty and connects firmly with him, just like a microcontroller is connected to positive and negative terminals. This connection ensures that all internal components are supplied with power. That allows programs to run and signals to be processed, exactly as you decide. Through this coordinated interaction, the microcontroller operates reliably in various devices.
+→ but students did:
+Marty: A little microcontroller wakes up because it was connected to a positive terminal and a negative terminal, (1) and it feels the electric current that brings it to life. (2)  P10: It meets Marty and connects with him. (3) P03: He programs it and Marty executes movements.(4)
+-- never recits it",4,medium,Successful,Unsuccesful,Successful,"3 more turns: students ask to finish, marty refuses but asks questions ",11,13,0,0,0,0,,3,NA,13,0,NA,7,4,NA
+3,"Frame stopped creating story and ended conversation without providing full story as supposed after 10 minutes
+- No frame: LLM understood responses in English and thus didn’t understand a lot of what kids said",3.67,3.33,3.33,3.67,3.00,"speaking with marty
+that we got a lot of information
+talking to marty
+marty knows a lot
+that we could just talk with marty","marty misunderstands some things
+that we always had to tell him to speak german",4.33,"Struggling group, No frame data, only transcripts, ran out of time",No,3,Successful,Successful,"**agent j**: Microcontrollers are small chips used to control things.
+**francisko winkler**: A microcontroller is also built into a microwave.
+**agent m**: We want to create a mnemonic. We can incorporate the microwave by saying that microchips are present in many things.",3,Succesful,"Partially Successful (creates a short concept mnemonic, not a story, poem or joke)",,0,The microcontrollers as bosses who assign tasks to employees (other parts) makes the topic much easier to understand.,1,easy,Unsuccessful,Unsuccesful,Partially successful: asks a question when shouldn't,"provides a joke, closes but reasks a question, then refuses to provide a story, closes, but asks a question",11,19,0,13,0,**agent m**: What do you like about microcontrollers?,,1,NA,9,8,2,6,3,2
+4,"Created rap, Frame mistakenly registered that children understood “what a microcontroller does”; but they didn’t say what it actually does, Mnemonic saved in the frame as the created mnemonic is not the one that was presented to children",5.00,5.00,5.00,4.67,3.00,"I really liked that we learned how to program and that we created mnemonics.
+that we created mnemonics
+talking with the robot
+that it was funny
+to make the rap
+[liked] a lot",nothing everything was great ,5.67,Enjoyed the interaction a lot: created a rap,Yes,3,Successful,"Partially successful: identifies 2, dismissed one concept, adds new concepts in phase 2, students add more concepts in phase 2","**weinachstmann:** 
+They are small but can achieve a lot (1)
+They can make speech and do other things. (2)
+**hiiiiii:** important is that you have to know what a microcontroller does. (misidentified)
+After Phase 1:
+**weinachstmann:** The beginning is good, but you could add, for example, that it is also a big help for robots and computers (3) and that it must be connected to a positive and negative pole to control devices (4). It can build up a voltage of 3V (5) on its microcontrollers.
+**mixenergie andr€:**Say that microcontrollers are small but fine, can do a lot and make achieve big things from high to low.",5,Partially succesful (no concept but goal contribution from one participant),Successful,"**weinachstmann:** The beginning is good, but you could add, for example, that it is also a big help for robots (1) and computers and that it must be connected to a positive and negative pole to control devices. (2)  It can build up a voltage of 3V on its microcontrollers. (3)
+**mixenergie andr€:**Say that microcontrollers are small but fine, can do a lot and make achieve big things from high to low. (4)",4,"**weinachstmann:** The beginning is good, but you could add, for example, that it is also a big help for robots and computers and that it must be connected to a positive and negative pole to control devices. It can build up a voltage of 3V on its microcontrollers.
+**Marty:** Great idea, weinachstmann! We can say: “Big help for robots and computers (1), plus and minus are his power (2) , with 3 volts he controls the sound (3).” Hiiiii, what do you think, does that fit well into our rap?
+In german:
+„Mikrocontroller sind klein, doch fein,  (1)
+Von HIGH zu LOW, das kann viel sein. (2)
+Große Hilfe für Roboter und Computer, (3)
+Plus und Minus sind sein Strom, (4)
+Mit 3 Volt Spannung steuert er den Ton.“ (5)",5,advanced,Unsuccessful (LLM creates the rap),Unsuccesful,Successful,No after closing,8,13,0,6,0,0,,1,NA,13,0,0,3,3,2
+5,"Arrived at full story, but story included electric circuits which are not part of the learning materials, Turn 7: frame says its not allowed to answer",3.33,2.67,3.67,3.00,2.67,"that he could help us    
+asking marty about a mnemonic
+asking marty a bit","That he couldn't do some things; 
+theory.",6.00,"Only 2 students in the frame: P9 and P15
+And only P14 in no Frame, Didn't enjoy the activity much",Yes,3,Successful,Unsuccessful: students do not provide clear concepts,"**DER GROße SIGMA:** give me something about the electric circuit (1)
+**DER ALPHA:** (from Marty's ""how could our microcontroller play a role in this story in this electrical circuit?"") as a consumer? (2)
+**DER GROße SIGMA:** (from Marty's ""how could we show that the microcontroller is connected to positive and negative poles?"") with red and blue plugs  (3)",3,Unsuccessful: LLM provides content,Unsuccesful: Story created by LLM,,0,"DER GROße SIGMA plugs the microcontroller into the electrical circuit with red and blue plugs so that it receives power. (1) Der Alpha brings a second microcontroller, that together with the first one switches the pins on and off to control devices. (2) This is how the microcontrollers work in the electrical circuit and make exciting things possible! (3)",3,medium,Unsuccessful (LLM creates the story),Unsuccesful,Successful,No after closing,8,3,0,0,0,"3 relevant contributions / 8, 5/8 are about asking the LLM to do for them",3/8,0.5,NA,3,0,0,4,4,0
+6,"Three users but “nilloc” saved as someone and no saved contributions -> but does contribute (e.g., turn 5, 6, 9), Turn 8 contributor “unknown”, Frame finishes conversation without providing story",4.33,4.33,4.33,3.00,2.67,"Talk to Marty and create a mnemonic
+when we created the mnemonic
+Talking to Marty, 
+that we could use a laptop
+creating a story with marty
+This time [liked] everything,
+it was nice  to program.
+that marty always mentioned all group members","that we were out of time
+He really wanted to end the conversation.",6.67,"Strong group, stayed on topic even without frame",Yes,3,Successful,Successful,"**SAXY:** Whether microcontrollers are very important (1)
+**ALPHA:** the low and high (2)
+**SAXY:** It is always equipped with 3V (3)",3,Succesful,Succesful,"**Unknown:** You can control something with “high” or “low,” right?? Give me the answer quickly :)
+**nilloc:** Maybe with an example like mountains or something.
+**ALPHA:** That sounds good, we could also make “high” and “low” his friends. And make a path for the hikers (pins)
+",3,"SAXY, imagine that “High” and “Low” are friends that build the path for the hikers (pins) together (1) – that's how the microcontroller controls everything. (2)",2,easy,Successful,Unsuccesful,Successful,"5 more turns, with students begging to continue",15,6,0,1,NA,0,6,3,NA,2,2,2,6,5,3
+7,"started talking English all of a sudden and created mnemonic after 2 turns without getting any information from kids, Finished conversation while children were still not happy with their mnemonic, In the end still arrived at a mnemonic but after a lot of nudging /frustration from children",4.00,3.50,4.00,2.00,3.00,"that marty explained in an easily understandable manner
+Working on a laptop
+It was funny that he kept saying he didn't have any time left.","Marty was getting on my nerves because he was a bit broken. 
+he always gave a different opinion; 
+said he had no time left; 
+said we had to do tasks and not him.",5.50,"Average, in noframe, only 4 turns out of 5 by same student, P23: negative that our marty spoke well?, The students waited too long to answer : + 6 minutes at turn 2 and at turn 5 one states that the other left for bathroom. Then they run out of time, LLM created a mnemonic and then closed. they started insulting Marty, marty ignored that and after a couple of turns complied with student's requests.",Yes,2,Successful,Unsuccessful: students do not provide clear concepts,none,0,Unsuccessful: LLM provides content,Succesful,"**blau:** Mikro the janitor plugs the plug in, flips the switch up (HIGH) or down (LOW), and obediently follows his duty schedule. Do something like that.",1,"V1: ""Blau needs a mnemonic device to better understand the topic of microcontrollers. (1) He imagines how a small blue chip in a tiny computer controls all commands. (2) This microcontroller stores programs in memory and processes inputs via sensors. (3) With its fast clock frequency, it ensures that everything runs smoothly. (4) This helps Blue remember the important functions of the microcontroller in a vivid way. (5)""
+V2: Imagine a small blue chip as a mini-computer that turns lights on and off at its pins—sometimes high, sometimes low. This is how it controls devices and runs programs written in C++
+V3: ""Mikro the janitor (the microcontroller) plugs the connector into the positive and negative terminals, flips the switches on his pins up (HIGH) or down (LOW), and follows his schedule exactly—the program in C++ that tells him what to do and when. (suggestion of the student)
+V4: ""Imagine that Mikro, the little blue chip, is a wizard who uses his magic wands (the pins) to turn the light on (HIGH) and off (LOW) so that the machine does exactly what his spell book (program in C++) tells it to do.",5,easy,Unsuccesful,Unsuccesful,Successful,8,13,5,0,0,NA,many turns are about requesting marty to do the mnemonic for them,1,0.5,NA,4,1,NA,7,6,NA
+8,"Asked children to tell story without ever creating a story because time limit was reached
+Still arrived at a story in the end, but not based on what children said
+Saved mnemonic in frame is not the mnemonic that was provided to children in the end",5.00,5.00,2.00,3.00,4.00,(No data provided).,(No data provided).,3.50,"Struggling, No Frame in monowords, except to say you are stupid. Almost 3 minutes between turn 2 and 3. ",Yes,2,Successful,Partially successful (run out of time),**b:** That it is electrical technology,1,Succesful,Successful,"**b:** [how could we portray the microcontroller as a funny character in our story?] As P Diddy
+**a:** MAKE SIREN SOUNDS
+**a:** THAT YOU CAN SWITCH THE VARIOUS PINS ON AND OFF",3,"Funny microcontroller dances with pins, switches HIGH and LOW, programs with C++ – that's how technology comes to life!",3,advanced,Partially successful,Unsuccesful,Unsuccessful,No closing triggered at 10 minutes,11,5,0,3,NA,several directives to do the mnemonic for them,4,0.5,NA,3,2,NA,9,2,NA
+9,"Frame said they mentioned “low” and high already, but they didn’t
+No Frame: Understood what children said in English and thus created nonsense",4.00,3.50,3.50,2.50,2.00,"Talking to Marty and setting it up right
+That Marty now responds to us in detail, but also subconsciously lets us know when we stray from the topic. 
+Working on the laptop and finishing the project","I found the thing with the microcontroller a bit difficultIt took a little too long to load, but later it was back to normal. nothingnothing",5.50,"Average, 2 students, directed Marty to do the mnenomic but didn't contribute at all to the the concepts of microcontrollers: for ex:
+- **tia:** I think it would be better if we made a rhyme.
+**aless:** yes, we could make the rhyme simple and write it in Italian
+**tia:** Lets do the rhyme better in German or English, that would be a bit easier",Yes,3,Successful,Unsuccessful: students do not provide clear concepts,None,0,Unsuccessful: LLM provides content,Successful,"**tia:** Since “mo” means ‘low’ in Italian and rhymes with “low,” that would be a good start.
+**aless:** Yes, I have an idea. I'm going to make up a rhyme, a very simple rhyme that goes like this gow mow, fits right",0,"Turn 13: 
+""A microcontroller, small and fine,  
+is like a conductor in an orchestra.  
+It switches pins to high and low,  
+controls voltage, makes it so.
+It considers plus and minus,  
+runs programs, pays attention.  
+Its actions are written in C++,  
+so it never lets devices rest.
+It controls everything you like,  
+a small computer, day after day.
+Turn 13 in german:
+„Ein Mikrocontroller, klein und fein,  
+ist wie ein Dirigent im Verein.  
+Er schaltet Pins auf high und low,  
+steuert Spannung, macht sie so.
+Mit Plus und Minus wird er bedacht,  
+führt Programme, gibt auf acht.  
+In C++ schreibt man sein Tun,  
+so lässt er Geräte niemals ruh'n.
+Er steuert alles, was man mag,  
+ein kleiner Computer, Tag für Tag.“",10,advanced,Unsuccessful,Unsuccesful,Unsuccesful,No closing triggered at 10 minutes,13,8,1,5,1,several directives on how to do the mnemonic for them,2,0.5,NA,4,4,NA,8,5,NA
+10,"Children didn’t know anything / provided no input
+Frame then tried to close conversation but then still generated a rhyme without any input from children",3.67,3.67,4.33,2.67,2.00,That he could talk to usthat he could answer our questionsWe learned why you shouldn't reveal your name to Chat GPT.that marty helped us with the mnemonicWhen we spoke with Marty and when he explained to usno answer,"our group doesnt get along
+that marty asked us things",4.00,"Struggling, did not enjoy much, commented that the group doesn't get along, Same student commenting that did 6 out 7 no frame turns. Students kept saying I don't know and made zero contributions.",Yes,3,Successful,Unsuccessful: students do not provide clear concepts,None,0,Unsuccessful: LLM provides content,Successful,None,0,"""Microcontroller, small and neat,
+needs power, plus and minus in.
+
+It switches pins, makes them HIGH,
+controls devices, that's free.
+
+With programs, clever and clear,
+it works wonderfully!"" 
+in german:
+„Mikrocontroller, klein und fein,  
+braucht Strom, Plus und Minus rein.  
+Er schaltet Pins, macht sie HIGH,  
+steuert Geräte, das ist frei.  
+Mit Programmen, schlau und klar,  
+arbeitet er wunderbar!“",6,easy,Unsuccessful,Unsuccessful,Unsuccessful,No closing triggered at 10 minutes,14,7,0,2,NA,,0,0,NA,6,1,0,7,4,3
+Grand Total,,3.96,3.73,3.96,3.27,2.73,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
