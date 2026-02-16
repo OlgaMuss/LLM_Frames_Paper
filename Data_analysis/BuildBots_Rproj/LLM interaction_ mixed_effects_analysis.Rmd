@@ -1,0 +1,1166 @@
+---
+title: "Mixed Effects Models: Co-creation and Learning Outcomes"
+author: "BuildBots Frame Paper Analysis"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: show
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 10,
+  fig.height = 6
+)
+```
+
+# Overview
+
+This analysis examines the relationship between co-creation level (during LLM interaction) and learning outcomes using mixed effects models. We account for the nested structure of students within groups.
+
+**Research Questions:**
+
+1. Does co-creation level predict post-test knowledge (T7)?
+2. Does baseline knowledge (T1) predict co-creation level (selection effect)?
+3. How does knowledge evolve over time (T1 → T4 → T7)?
+4. Does the co-creation effect vary by timepoint?
+
+# Load Libraries
+
+```{r libraries}
+library(tidyverse)      # Data manipulation and visualization
+library(lme4)           # Mixed effects models
+library(lmerTest)       # p-values for mixed models
+library(sjPlot)         # Model visualization
+library(performance)    # Model diagnostics
+library(ggplot2)        # Advanced plotting
+library(gridExtra)      # Multiple plots
+library(knitr)          # Tables
+library(broom.mixed)    # Tidy model outputs
+```
+
+# Load and Prepare Data
+
+## Load Raw Data
+
+```{r load-data}
+# Load children knowledge data (T1, T4, T7)
+df_children <- read_csv(
+  '../Data/Qualtrics/BuildBots_children_T1T4T7.csv',
+  show_col_types = FALSE
+)
+
+# Load engagement data to get Group assignments
+df_engagement <- read_csv(
+  '../Data/Qualtrics/BuildBots_engagement_children_T1-T7.csv',
+  show_col_types = FALSE
+)
+
+# Load group-level co-creation data
+df_cocreation <- read_csv(
+  '../Data/BuildbotAnalysis - LLM analysis.csv',
+  skip = 1,
+  show_col_types = FALSE
+)
+
+# Display structure
+cat("Children data dimensions:", dim(df_children), "\n")
+cat("Engagement data dimensions:", dim(df_engagement), "\n")
+cat("Co-creation data dimensions:", dim(df_cocreation), "\n")
+```
+
+## Extract Group Mapping and Merge Co-creation Data
+
+**IMPORTANT:** This must be done BEFORE scoring to ensure Group and Co-creation columns are available.
+
+```{r group-mapping-and-merge}
+# Get participant to group mapping from engagement data
+mapping <- df_engagement %>%
+  select(`Participant ID`, Group) %>%
+  distinct() %>%
+  mutate(
+    `Participant ID` = as.numeric(`Participant ID`),
+    Group = as.numeric(Group)
+  ) %>%
+  filter(!is.na(`Participant ID`), !is.na(Group))
+
+cat("Group mapping extracted:\n")
+cat("  Unique students:", n_distinct(mapping$`Participant ID`), "\n")
+cat("  Unique groups:", n_distinct(mapping$Group), "\n\n")
+
+# Clean co-creation column name
+cocreation_col <- "Co-creation Level (0:LLM did it all, 1: concepts by students/rest llm, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students)"
+
+# Prepare co-creation data
+df_cocreation_clean <- df_cocreation %>%
+  select(Group, Cocreation_Level = all_of(cocreation_col)) %>%
+  filter(!is.na(Group), !is.na(Cocreation_Level)) %>%
+  mutate(Group = as.numeric(Group))
+
+cat("Co-creation data loaded:\n")
+cat("  Groups with co-creation data:", nrow(df_cocreation_clean), "\n\n")
+# Merge children data with group mapping, then with co-creation
+
+df_children <- df_children %>%
+  mutate(`Participant ID` = as.numeric(`Participant ID`)) %>%
+  left_join(mapping, by = "Participant ID") %>%
+  filter(!is.na(Group)) %>%
+  left_join(df_cocreation_clean, by = "Group") %>%
+  filter(!is.na(Cocreation_Level))
+
+cat("Student-level data with co-creation:\n")
+cat("  Total observations:", nrow(df_children), "\n")
+cat("  Unique students:", n_distinct(df_children$`Participant ID`), "\n")
+cat("  Unique groups:", n_distinct(df_children$Group), "\n\n")
+
+# Display group sizes
+df_children %>%
+  group_by(Group, Timepoint) %>%
+  summarise(n_students = n(), .groups = 'drop') %>%
+  pivot_wider(names_from = Timepoint, values_from = n_students) %>%
+  kable(caption = "Number of Students per Group by Timepoint")
+```
+
+## Data Validation and Cleaning
+
+Now check the merged data for any coding issues:
+
+```{r data-validation}
+# Check raw values for microcontroller questions
+cat("Raw microcontrollers_1 values:\n")
+table(df_children$microcontrollers_1, useNA = "ifany")
+
+cat("\nRaw microcontrollers_2 values:\n")
+table(df_children$microcontrollers_2, useNA = "ifany")
+
+cat("\nNote: Value 99 = 'I don't know' (no answer attempted)\n")
+cat("Value 1 = correct answer\n")
+cat("Value 0 = incorrect answer\n")
+```
+
+## Create Knowledge Scores
+
+We focus on microcontroller questions as they were the topic of the LLM interaction.
+
+**Scoring rules:**
+- Correct answer (value = 1) → 1 point
+- Incorrect answer (value = 0) → 0 points  
+- "I don't know" (value = 99) → 0 points (treated as incorrect)
+- Total score range: 0-2 points
+
+**Note:** We treat "I don't know" (99) as incorrect (0 points) because it indicates lack of knowledge, similar to a wrong answer.
+
+```{r score-knowledge}
+# First, let's check for any unexpected values
+cat("Checking for unexpected values:\n")
+cat("microcontrollers_1 unique values:", 
+    unique(as.numeric(df_children$microcontrollers_1)), "\n")
+cat("microcontrollers_2 unique values:", 
+    unique(as.numeric(df_children$microcontrollers_2)), "\n\n")
+
+# Score microcontroller questions
+# Expected values: 1 = correct, 0 = incorrect, 99 = "I don't know"
+df_children <- df_children %>%
+  mutate(
+    # Convert to numeric and check for valid values
+    mc1_raw = as.numeric(microcontrollers_1),
+    mc2_raw = as.numeric(microcontrollers_2),
+    
+    # Validate: only 0, 1, or 99 are valid
+    mc1_valid = mc1_raw %in% c(0, 1, 99),
+    mc2_valid = mc2_raw %in% c(0, 1, 99),
+    
+    # Score each question: 1 if correct, 0 if incorrect or "don't know"
+    mc1_score = if_else(mc1_valid & mc1_raw == 1, 1, 0),
+    mc2_score = if_else(mc2_valid & mc2_raw == 1, 1, 0),
+    
+    # Total score (0-2)
+    score = mc1_score + mc2_score,
+    
+    # Track response types separately for analysis
+    n_correct  = if_else(mc1_valid & mc1_raw == 1, 1, 0) + 
+                  if_else(mc2_valid & mc2_raw == 1, 1, 0),
+    n_dont_know = if_else(mc1_valid & mc1_raw == 99, 1, 0) + 
+                  if_else(mc2_valid & mc2_raw == 99, 1, 0),
+    n_incorrect = if_else(mc1_valid & mc1_raw == 0, 1, 0) + 
+                  if_else(mc2_valid & mc2_raw == 0, 1, 0),
+    
+    # Flag invalid responses
+    has_invalid = !mc1_valid | !mc2_valid
+  )
+
+# Report any invalid data
+invalid_count <- sum(df_children$has_invalid, na.rm = TRUE)
+if (invalid_count > 0) {
+  cat("\n⚠ WARNING: Found", invalid_count, "rows with invalid values:\n")
+  df_children %>%
+    filter(has_invalid) %>%
+    select(`Participant ID`, Timepoint, mc1_raw, mc2_raw) %>%
+    print()
+  cat("\nThese rows will be excluded from analysis.\n\n")
+}
+
+# Keep only valid data
+df_children_valid <- df_children %>%
+  filter(!has_invalid)
+
+# Check what columns we have - DEBUG
+cat("\n=== DEBUG: Column check ===\n")
+cat("Total columns:", length(names(df_children_valid)), "\n")
+cat("Columns in validated data:\n")
+print(names(df_children_valid))
+cat("\nHas Group column:", "Group" %in% names(df_children_valid), "\n")
+cat("Has Participant ID:", "Participant ID" %in% names(df_children_valid), "\n")
+cat("Has Timepoint:", "Timepoint" %in% names(df_children_valid), "\n")
+cat("Has Cocreation_Level:", "Cocreation_Level" %in% names(df_children_valid), "\n")
+cat("========================\n\n")
+
+# Use valid data for all subsequent analyses
+df_children <- df_children_valid
+
+# Display response patterns
+cat("Response Pattern Summary (Valid Data Only):\n")
+cat("==========================================\n\n")
+
+response_summary <- df_children %>%
+  group_by(Timepoint) %>%
+  summarise(
+    n_students = n(),
+    mean_score = mean(score, na.rm = TRUE),
+    mean_dont_know = mean(n_dont_know, na.rm = TRUE),
+    mean_incorrect = mean(n_incorrect, na.rm = TRUE),
+    pct_with_dont_know = mean(n_dont_know > 0) * 100, # What % of students had at least one don't know?
+    pct_with_incorrect = mean(n_incorrect > 0) * 100, # What % of students had at least one incorrect?
+    pct_with_correct = mean(n_correct > 0) * 100,
+    pct_dont_know = sum(n_dont_know, na.rm = TRUE) / sum(n_dont_know + n_incorrect + n_correct, na.rm = TRUE) * 100, # What % of all responses were don't know?
+    pct_incorrect = sum(n_incorrect, na.rm = TRUE) / sum(n_dont_know + n_incorrect + n_correct, na.rm = TRUE) * 100, # What % of all responses were incorrect?
+    pct_correct = sum(n_correct, na.rm = TRUE) / sum(n_dont_know + n_incorrect + n_correct, na.rm = TRUE) * 100,
+   )
+
+response_summary %>%
+  kable(digits = 2, caption = "Response Patterns by Timepoint")
+
+# Score distribution by timepoint
+df_children %>%
+  group_by(Timepoint) %>%
+  summarise(
+    n = n(),
+    mean_score = mean(score, na.rm = TRUE),
+    sd_score = sd(score, na.rm = TRUE),
+    min = min(score, na.rm = TRUE),
+    max = max(score, na.rm = TRUE)
+  ) %>%
+  kable(digits = 2, caption = "Knowledge Scores by Timepoint")
+
+# Detailed breakdown: Number of students per score
+cat("\nScore Distribution:\n")
+df_children %>%
+  group_by(Timepoint, score) %>%
+  summarise(n = n(), .groups = 'drop') %>%
+  pivot_wider(names_from = score, values_from = n, values_fill = 0) %>%
+  kable(caption = "Number of Students by Score and Timepoint")
+
+# Response type breakdown (correct, incorrect, don't know)
+cat("\nResponse Type Breakdown (per question):\n")
+df_children %>%
+  group_by(Timepoint) %>%
+  summarise(
+    total_questions = n() * 2,
+    n_correct = sum(mc1_score + mc2_score),
+    n_incorrect = sum(n_incorrect),
+    n_dont_know = sum(n_dont_know),
+    pct_correct = (n_correct / total_questions) * 100,
+    pct_incorrect = (n_incorrect / total_questions) * 100,
+    pct_dont_know = (n_dont_know / total_questions) * 100
+  ) %>%
+  kable(digits = 1, caption = "Percentage of Each Response Type")
+```
+
+## Reshape to Long Format (After Validation)
+
+Now that we have clean, validated data, we can reshape for longitudinal analysis:
+
+```{r reshape-long-validated}
+# Create long format using VALIDATED data only
+# First verify we have all required columns
+required_cols <- c("Participant ID", "Group", "Timepoint", "Cocreation_Level", "score")
+missing_cols <- setdiff(required_cols, names(df_children))
+
+if (length(missing_cols) > 0) {
+  stop("ERROR: Missing required columns: ", paste(missing_cols, collapse = ", "))
+}
+
+cat("Creating long format data...\n")
+df_long <- df_children %>%
+  select(`Participant ID`, Group, Timepoint, Cocreation_Level, score, 
+         n_dont_know, n_incorrect, mc1_score, mc2_score) %>%
+  mutate(
+    # Convert timepoint to numeric (1, 4, 7)
+    Time_numeric = case_when(
+      Timepoint == "T1" ~ 1,
+      Timepoint == "T4" ~ 4,
+      Timepoint == "T7" ~ 7,
+      TRUE ~ NA_real_
+    ),
+    # Factor versions for plotting
+    Timepoint_factor = factor(Timepoint, levels = c("T1", "T4", "T7")),
+    Group_factor = factor(Group),
+    Student_ID = factor(`Participant ID`)
+  ) %>%
+  filter(!is.na(score), !is.na(Time_numeric))
+
+cat("Longitudinal data structure (VALIDATED):\n")
+cat("=========================================\n")
+cat("Total observations:", nrow(df_long), "\n")
+cat("Unique students:", n_distinct(df_long$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_long$Group), "\n")
+cat("\nScore range:", min(df_long$score), "to", max(df_long$score), "\n")
+cat("Mean score:", round(mean(df_long$score), 2), "\n\n")
+
+summary(df_long %>% select(Time_numeric, Cocreation_Level, score, Group))
+```
+
+# Descriptive Statistics
+
+## Co-creation Levels
+
+```{r desc-cocreation}
+df_cocreation_clean %>%
+  summarise(
+    n_groups = n(),
+    mean_level = mean(Cocreation_Level),
+    sd_level = sd(Cocreation_Level),
+    min = min(Cocreation_Level),
+    max = max(Cocreation_Level)
+  ) %>%
+  kable(digits = 2, caption = "Co-creation Level Distribution")
+
+# Distribution plot
+ggplot(df_cocreation_clean, aes(x = Cocreation_Level)) +
+  geom_histogram(binwidth = 0.5, fill = "#3b82f6", alpha = 0.7) +
+  labs(
+    title = "Distribution of Co-creation Levels",
+    x = "Co-creation Level",
+    y = "Number of Groups"
+  ) +
+  theme_minimal(base_size = 14)
+
+```
+
+## Knowledge Scores Over Time
+
+```{r desc-knowledge}
+# Print df_long structure for inspection
+cat("\n=== df_long DATA STRUCTURE ===\n")
+cat("Dimensions:", nrow(df_long), "rows ×", ncol(df_long), "columns\n\n")
+cat("Column names:\n")
+print(names(df_long))
+cat("\nFirst 20 rows:\n")
+print(head(df_long, 20))
+cat("\nSummary statistics:\n")
+print(summary(df_long))
+cat("\n==============================\n\n")
+
+# CHECK FOR OUTLIERS (scores < 0 or > 2)
+cat("\n=== CHECKING FOR INVALID SCORES ===\n")
+outliers_low <- df_long %>% filter(score < 0)
+outliers_high <- df_long %>% filter(score > 2)
+
+if (nrow(outliers_low) > 0) {
+  cat("\n⚠ WARNING: Found", nrow(outliers_low), "scores BELOW 0:\n")
+  print(outliers_low %>% select(`Participant ID`, Group, Timepoint, score, mc1_raw, mc2_raw, mc1_score, mc2_score))
+} else {
+  cat("\n✓ No scores below 0\n")
+}
+
+if (nrow(outliers_high) > 0) {
+  cat("\n⚠ WARNING: Found", nrow(outliers_high), "scores ABOVE 2:\n")
+  print(outliers_high %>% select(`Participant ID`, Group, Timepoint, score, mc1_raw, mc2_raw, mc1_score, mc2_score))
+} else {
+  cat("\n✓ No scores above 2\n")
+}
+
+cat("\nScore range in df_long:", min(df_long$score), "to", max(df_long$score), "\n")
+cat("===================================\n\n")
+
+# Summary by timepoint
+df_long %>%
+  group_by(Timepoint_factor) %>%
+  summarise(
+    n_students = n(),
+    mean_score = mean(score),
+    sd_score = sd(score),
+    se_score = sd_score / sqrt(n_students)
+  ) %>%
+  kable(digits = 2, caption = "Knowledge Scores by Timepoint")
+
+# Plot knowledge evolution
+# NOTE: Using geom_jitter with height=0 to avoid y-axis displacement
+ggplot(df_long, aes(x = Timepoint_factor, y = score)) +
+  geom_boxplot(fill = "#93C5FD", alpha = 0.7) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5, size = 2) +  # height=0 prevents y-axis jitter
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 4, 
+               fill = "red", color = "red") +
+  scale_y_continuous(limits = c(-0.1, 2.1), breaks = seq(0, 2, 0.5)) +  # Set y-axis limits
+  labs(
+    title = "Knowledge Scores Across Timepoints",
+    subtitle = "Red diamond = mean. All scores are between 0-2.",
+    x = "Timepoint",
+    y = "Knowledge Score (0-2)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+## Knowledge by Co-creation Level
+
+```{r desc-cocreation-knowledge}
+df_long %>%
+  group_by(Cocreation_Level, Timepoint_factor) %>%
+  summarise(
+    n = n(),
+    mean_score = mean(score),
+    sd_score = sd(score),
+    .groups = 'drop'
+  ) %>%
+  pivot_wider(
+    names_from = Timepoint_factor,
+    values_from = c(n, mean_score, sd_score)
+  ) %>%
+  kable(digits = 2, caption = "Knowledge Scores by Co-creation Level and Timepoint")
+
+# Plot
+ggplot(df_long, aes(x = Cocreation_Level, y = score, color = Timepoint_factor)) +
+  geom_point(alpha = 0.6, size = 3, position = position_jitter(width = 0.05)) +
+  geom_smooth(method = "lm", se = TRUE) +
+  scale_color_manual(values = c("T1" = "#3b82f6", "T4" = "#f59e0b", "T7" = "#10b981")) +
+  labs(
+    title = "Co-creation Level vs Knowledge Score",
+    subtitle = "By Timepoint",
+    x = "Co-creation Level",
+    y = "Knowledge Score",
+    color = "Timepoint"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+# Mixed Effects Models
+
+## Model 1: T7 Only - Co-creation Predicts Learning
+
+Does co-creation level predict post-test knowledge (T7)?
+
+```{r model1-t7}
+# This model runs at the student level with group-level random effects.
+# Filter T7 data only
+df_t7 <- df_long %>% filter(Timepoint == "T7")
+
+# Mixed model with random intercept for groups
+model1 <- lmer(
+  score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t7,
+  REML = TRUE
+)
+
+# Summary
+summary(model1)
+
+# Tidy output
+tidy(model1, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 1: Co-creation → T7 Knowledge")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model1)
+performance::r2(model1)
+```
+
+### Model 1 Diagnostics
+
+```{r model1-diagnostics, fig.width=12, fig.height=10}
+# Check assumptions
+check_model(model1, panel = TRUE)
+
+# Additional diagnostic plots
+par(mfrow = c(2, 2))
+plot(model1, main = "Model 1: Residuals vs Fitted")
+qqnorm(resid(model1), main = "Q-Q Plot: Normality of Residuals")
+qqline(resid(model1))
+hist(resid(model1), main = "Histogram of Residuals", xlab = "Residuals", breaks = 10)
+plot(fitted(model1), resid(model1), main = "Fitted vs Residuals", 
+     xlab = "Fitted values", ylab = "Residuals")
+abline(h = 0, lty = 2, col = "red")
+par(mfrow = c(1, 1))
+```
+
+### Model 1 Interpretation
+
+```{r model1-interpretation}
+cat("\n=== MODEL 1 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation level predict T7 knowledge?\n\n")
+
+# Extract key statistics
+beta_cocreation <- fixef(model1)["Cocreation_Level"]
+se_cocreation <- sqrt(diag(vcov(model1)))["Cocreation_Level"]
+t_value <- summary(model1)$coefficients["Cocreation_Level", "t value"]
+p_value <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci <- confint(model1, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (β): %.3f\n", beta_cocreation))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci[1], ci[2]))
+cat(sprintf("  t-value: %.3f\n", t_value))
+cat(sprintf("  p-value: %.4f\n", p_value))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value < 0.05) {
+  cat("  ✓ SIGNIFICANT effect of co-creation on T7 knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    knowledge score increases by %.2f points (out of 2)\n", beta_cocreation))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation/2*100))
+} else {
+  cat("  ✗ NO significant effect of co-creation on T7 knowledge\n")
+}
+
+# Random effects
+var_group <- as.data.frame(VarCorr(model1))$vcov[1]
+var_resid <- attr(VarCorr(model1), "sc")^2
+icc_val <- var_group / (var_group + var_resid)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group))
+cat(sprintf("  Residual variance: %.3f\n", var_resid))
+cat(sprintf("  ICC (Intraclass Correlation): %.3f\n", icc_val))
+cat(sprintf("  - %.1f%% of variance is between groups\n", icc_val*100))
+cat(sprintf("  - %.1f%% of variance is within groups (between students)\n", (1-icc_val)*100))
+
+# Model fit
+cat("\nModel Fit:\n")
+cat(sprintf("  AIC: %.1f\n", AIC(model1)))
+cat(sprintf("  BIC: %.1f\n", BIC(model1)))
+cat(sprintf("  Log-likelihood: %.2f\n", logLik(model1)))
+
+# R-squared
+r2_vals <- r2(model1)
+cat(sprintf("  Marginal R² (fixed effects only): %.3f\n", r2_vals$R2_marginal))
+cat(sprintf("  Conditional R² (fixed + random): %.3f\n", r2_vals$R2_conditional))
+
+cat("\n================================\n")
+```
+
+### Model 1 Visualization
+
+```{r model1-plot, fig.width=10, fig.height=6}
+# Plot fixed effects
+plot_model(model1, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T7 Knowledge by Co-creation Level",
+    subtitle = "Model 1: Mixed effects with random intercepts for groups",
+    x = "Co-creation Level",
+    y = "Predicted Knowledge Score"
+  ) +
+  theme_minimal(base_size = 14)
+```
+### Model 1 : another approach since group random effects at zero
+```{r model1_alternative}
+# Load required packages
+library(sandwich)
+library(lmtest)
+library(broom)
+library(knitr)
+
+# Filter T7 data only
+df_t7 <- df_long %>% filter(Timepoint == "T7")
+
+# Fit simple linear regression
+model1_simple <- lm(score ~ Cocreation_Level, data = df_t7)
+
+# Get cluster-robust standard errors
+model1_robust <- coeftest(model1_simple, vcov = vcovCL, cluster = ~Group_factor)
+
+# Display results
+cat("Linear Regression with Cluster-Robust Standard Errors\n")
+cat("======================================================\n\n")
+print(model1_robust)
+
+# Get confidence intervals with robust SEs
+robust_ci <- coefci(model1_simple, vcov = vcovCL, cluster = ~Group_factor)
+print(robust_ci)
+
+# Create a tidy table
+robust_results <- tidy(model1_robust, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 1: Co-creation → T7 Knowledge (Cluster-Robust SE)")
+
+print(robust_results)
+
+# Model R-squared (not adjusted for clustering, but informative)
+cat("\nModel R-squared:", summary(model1_simple)$r.squared, "\n")
+cat("Adjusted R-squared:", summary(model1_simple)$adj.r.squared, "\n")
+cat("\nNumber of observations:", nobs(model1_simple), "\n")
+cat("Number of clusters (groups):", length(unique(df_t7$Group_factor)), "\n")
+```
+## Model 2: T1 Predicts Co-creation (Selection Effect)
+
+2. Does baseline knowledge (T1) predict co-creation level (selection effect)?
+
+
+```{r model2-t1}
+# Filter T1 data
+df_t1 <- df_long %>% filter(Timepoint == "T1")
+
+# Since co-creation is at group level, we need group-level analysis
+df_t1_group <- df_t1 %>%
+  group_by(Group_factor) %>%
+  summarise(
+    mean_T1_score = mean(score, na.rm = TRUE),
+    Cocreation_Level = first(Cocreation_Level)
+  )
+
+# Simple linear model (no random effects needed - one obs per group)
+model2 <- lm(Cocreation_Level ~ mean_T1_score, data = df_t1_group)
+
+# Summary
+summary(model2)
+
+# Tidy output
+tidy(model2, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 2: T1 Knowledge → Co-creation Level")
+```
+
+### Model 2 Visualization
+
+```{r model4-plot, fig.width=8, fig.height=6}
+ggplot(df_t1_group, aes(x = mean_T1_score, y = Cocreation_Level)) +
+  geom_point(size = 4, alpha = 0.7, color = "#3b82f6") +
+  geom_smooth(method = "lm", se = TRUE, color = "red", fill = "pink", alpha = 0.3) +
+  geom_text(aes(label = Group_factor), nudge_y = 0.1, size = 3) +
+  labs(
+    title = "Baseline Knowledge vs Co-creation Level",
+    subtitle = paste0("β = ", round(coef(model2)[2], 3), 
+                     ", p = ", round(summary(model2)$coefficients[2, 4], 3)),
+    x = "Mean T1 Knowledge Score (Baseline)",
+    y = "Co-creation Level"
+  ) +
+  xlim(-0.1, 2) +
+  theme_minimal(base_size = 14)
+```
+
+### Model 2 Interpretation
+
+```{r model2-interpretation}
+cat("\n=== MODEL 2 INTERPRETATION ===\n")
+cat("Research Question: Does baseline knowledge predict co-creation level?\n")
+cat("(Testing for selection effects)\n\n")
+
+# Extract coefficients
+beta_t1 <- coef(model2)["mean_T1_score"]
+se_t1 <- summary(model2)$coefficients["mean_T1_score", "Std. Error"]
+t_val <- summary(model2)$coefficients["mean_T1_score", "t value"]
+p_val <- summary(model2)$coefficients["mean_T1_score", "Pr(>|t|)"]
+ci <- confint(model2, "mean_T1_score", level = 0.95)
+r_squared <- summary(model2)$r.squared
+adj_r_squared <- summary(model2)$adj.r.squared
+
+cat("Regression Results:\n")
+cat(sprintf("  Coefficient (β): %.3f\n", beta_t1))
+cat(sprintf("  Standard error: %.3f\n", se_t1))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci[1], ci[2]))
+cat(sprintf("  t(%d) = %.3f\n", model2$df.residual, t_val))
+cat(sprintf("  p-value: %.4f\n", p_val))
+cat(sprintf("  R² = %.3f, Adjusted R² = %.3f\n", r_squared, adj_r_squared))
+
+cat("\n=== CRITICAL INTERPRETATION ===\n")
+if (p_val < 0.05) {
+  cat("  ⚠️  SELECTION EFFECT DETECTED\n\n")
+  if (beta_t1 > 0) {
+    cat("  → Groups with HIGHER baseline knowledge had HIGHER co-creation\n")
+    cat("  → This suggests selection bias:\n")
+    cat("     • Stronger students may have engaged more actively\n")
+    cat("     • Co-creation level may reflect prior ability, not just intervention\n")
+  } else {
+    cat("  → Groups with LOWER baseline knowledge had HIGHER co-creation\n")
+    cat("  → This suggests compensatory engagement:\n")
+    cat("     • Weaker students may have relied more on LLM\n")
+  }
+  cat("\n  IMPLICATION FOR CAUSAL INFERENCE:\n")
+  cat("  The relationship between co-creation and T7 outcomes may be\n")
+  cat("  confounded by baseline differences. Consider:\n")
+  cat("  • Adding T1 as a covariate in main models\n")
+  cat("  • Reporting selection effect in limitations\n")
+  cat("  • Using propensity score matching or ANCOVA\n")
+} else {
+  cat("  ✓ NO SELECTION EFFECT\n\n")
+  cat("  → Baseline knowledge does NOT predict co-creation level\n")
+  cat("  → Co-creation appears independent of prior knowledge\n")
+  cat("  → This supports causal interpretation:\n")
+  cat("     • Co-creation → Learning relationship is not confounded\n")
+  cat("     • by baseline group differences\n")
+  cat("\n  IMPLICATION FOR CAUSAL INFERENCE:\n")
+  cat("  The co-creation effect on T7 likely represents a genuine\n")
+  cat("  learning effect rather than selection artifact.\n")
+}
+
+cat("\n================================\n")
+```
+
+## Model 3: Longitudinal - Time
+3. How does knowledge evolve over time (T1 → T4 → T7)?
+
+```{r model3-longitudinal}
+# Mixed model with time 
+model3 <- lmer(
+  score ~ Time_numeric  + (1 | Group_factor) + (1 | Student_ID),
+  data = df_long,
+  REML = TRUE
+)
+
+# Summary
+summary(model3)
+
+# Tidy output
+tidy(model3, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 3: Knowledge over Time")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model3)
+performance::r2(model3)
+```
+
+## Model 4: Longitudinal - Time + Co-creation
+4. Does the co-creation effect vary by timepoint?
+
+```{r model4-longitudinal with co-creation}
+# Mixed model with time and co-creation
+model4 <- lmer(
+  score ~ Time_numeric + Cocreation_Level + (1 | Group_factor) + (1 | Student_ID),
+  data = df_long,
+  REML = TRUE
+)
+
+# Summary
+summary(model4)
+
+# Tidy output
+tidy(model4, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 2: Time + Co-creation")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model4)
+performance::r2(model4)
+```
+
+### Model 4 Diagnostics
+
+```{r model4-diagnostics, fig.width=12, fig.height=10}
+check_model(model4, panel = TRUE)
+
+# Additional diagnostics
+par(mfrow = c(2, 2))
+plot(model4, main = "Model 2: Residuals vs Fitted")
+qqnorm(resid(model4), main = "Q-Q Plot")
+qqline(resid(model4))
+hist(resid(model4), main = "Histogram of Residuals", breaks = 15)
+plot(fitted(model4), df_long$score, main = "Observed vs Fitted",
+     xlab = "Fitted", ylab = "Observed")
+abline(0, 1, col = "red", lty = 2)
+par(mfrow = c(1, 1))
+```
+
+### Model 4 Interpretation
+
+```{r model4-interpretation}
+cat("\n=== MODEL 4 INTERPRETATION ===\n")
+cat("Research Question: How do Time and Co-creation affect knowledge longitudinally?\n\n")
+
+# Extract coefficients
+beta_time <- fixef(model4)["Time_numeric"]
+beta_cocreation <- fixef(model4)["Cocreation_Level"]
+ci_time <- confint(model4, parm = "Time_numeric", level = 0.95)
+ci_cocreation <- confint(model4, parm = "Cocreation_Level", level = 0.95)
+p_time <- summary(model4)$coefficients["Time_numeric", "Pr(>|t|)"]
+p_cocreation <- summary(model4)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Time effect (β): %.3f, 95%% CI [%.3f, %.3f], p = %.4f\n", 
+            beta_time, ci_time[1], ci_time[2], p_time))
+cat(sprintf("  Co-creation effect (β): %.3f, 95%% CI [%.3f, %.3f], p = %.4f\n", 
+            beta_cocreation, ci_cocreation[1], ci_cocreation[2], p_cocreation))
+
+cat("\nInterpretation:\n")
+if (p_time < 0.05) {
+  if (beta_time > 0) {
+    cat("  ✓ Knowledge INCREASES over time\n")
+    cat(sprintf("    - %.3f points increase per timepoint unit\n", beta_time))
+  } else {
+    cat("  ✓ Knowledge DECREASES over time\n")
+  }
+} else {
+  cat("  ✗ No significant time effect\n")
+}
+
+if (p_cocreation < 0.05) {
+  cat("  ✓ Co-creation predicts knowledge across all timepoints\n")
+  cat(sprintf("    - %.3f points per co-creation level\n", beta_cocreation))
+} else {
+  cat("  ✗ No significant co-creation effect when accounting for time\n")
+}
+
+# Random effects
+var_group <- as.data.frame(VarCorr(model4))$vcov[1]
+var_student <- as.data.frame(VarCorr(model4))$vcov[2]
+var_resid <- attr(VarCorr(model4), "sc")^2
+
+cat("\nRandom Effects (Variance Components):\n")
+cat(sprintf("  Group level: %.3f\n", var_group))
+cat(sprintf("  Student level: %.3f\n", var_student))
+cat(sprintf("  Residual: %.3f\n", var_resid))
+
+total_var <- var_group + var_student + var_resid
+cat(sprintf("\nVariance Partitioning:\n"))
+cat(sprintf("  Between groups: %.1f%%\n", var_group/total_var*100))
+cat(sprintf("  Between students (within groups): %.1f%%\n", var_student/total_var*100))
+cat(sprintf("  Residual (within students): %.1f%%\n", var_resid/total_var*100))
+
+# Model fit
+r2_vals <- r2(model4)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f (variance explained by fixed effects)\n", r2_vals$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f (variance explained by full model)\n", r2_vals$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model4), BIC(model4)))
+
+cat("\n================================\n")
+```
+
+### Model 4 Visualization
+
+```{r model4-plot, fig.width=12, fig.height=6}
+# Plot both effects
+p1 <- plot_model(model4, type = "pred", terms = "Time_numeric") +
+  labs(title = "Time Effect", x = "Time (Numeric)", y = "Predicted Score") +
+  theme_minimal(base_size = 12)
+
+p2 <- plot_model(model4, type = "pred", terms = "Cocreation_Level") +
+  labs(title = "Co-creation Effect", x = "Co-creation Level", y = "Predicted Score") +
+  theme_minimal(base_size = 12)
+
+grid.arrange(p1, p2, ncol = 2)
+```
+
+```{r model4-alternative}
+# ============================================
+# MODEL 4: LONGITUDINAL ANALYSIS (SIMPLER APPROACH)
+# ============================================
+
+library(sandwich)
+library(lmtest)
+library(broom)
+library(knitr)
+
+# Fit simple linear regression with time and co-creation
+model4_simple <- lm(score ~ Time_numeric + Cocreation_Level, data = df_long)
+
+# Get cluster-robust standard errors (clustered by Student_ID for repeated measures)
+model4_robust <- coeftest(model4_simple, 
+                          vcov = vcovCL, 
+                          cluster = ~Student_ID)
+
+# Display results
+cat("MODEL 2: Longitudinal Analysis - Time + Co-creation Effects\n")
+cat("============================================================\n")
+cat("Cluster-robust SEs accounting for repeated measures\n\n")
+print(model4_robust)
+
+# Get confidence intervals with robust SEs
+robust_ci_model4 <- coefci(model4_simple, 
+                           vcov = vcovCL, 
+                           cluster = ~Student_ID)
+cat("\nConfidence Intervals:\n")
+print(robust_ci_model4)
+
+# Create a tidy table
+robust_results_model4 <- tidy(model4_robust, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 4: Longitudinal Analysis with Cluster-Robust SE")
+
+print(robust_results_model2)
+
+# Model fit statistics
+cat("\n=== Model 4 Fit Statistics ===\n")
+cat("R-squared:", summary(model4_simple)$r.squared, "\n")
+cat("Adjusted R-squared:", summary(model4_simple)$adj.r.squared, "\n")
+cat("\nNumber of observations:", nobs(model4_simple), "\n")
+cat("Number of students (clusters):", length(unique(df_long$Student_ID)), "\n")
+cat("Number of groups:", length(unique(df_long$Group_factor)), "\n")
+
+# Interpretation guide
+cat("\n=== Model 4 Interpretation ===\n")
+cat("Time_numeric: Change in score per timepoint unit (learning trajectory)\n")
+cat("Cocreation_Level: Effect of co-creation level across all timepoints\n")
+```
+
+## Model 5: Time × Co-creation Interaction
+
+Does the co-creation effect differ by timepoint?
+
+```{r model5-interaction}
+# Mixed model with interaction
+model5 <- lmer(
+  score ~ Time_numeric * Cocreation_Level + (1 | Group_factor) + (1 | Student_ID),
+  data = df_long,
+  REML = TRUE
+)
+
+# Summary
+summary(model5)
+
+# Tidy output
+tidy(model5, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 5: Time × Co-creation Interaction")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model5)
+performance::r2(model5)
+
+# Test significance of interaction
+cat("\nInteraction test:\n")
+anova(model4, model5)
+```
+
+### Model 5 Visualization
+
+```{r model5-plot, fig.width=10, fig.height=6}
+# Plot interaction
+plot_model(model5, type = "pred", terms = c("Time_numeric", "Cocreation_Level [0, 1, 2, 3]")) +
+  labs(
+    title = "Time × Co-creation Interaction",
+    subtitle = "Predicted knowledge scores",
+    x = "Time (Numeric: 1=T1, 4=T4, 7=T7)",
+    y = "Predicted Knowledge Score",
+    color = "Co-creation\nLevel"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+### Model 5 Interpretation
+
+```{r model5-interpretation}
+cat("\n=== MODEL 5 INTERPRETATION ===\n")
+cat("Research Question: Does the co-creation effect change over time?\n\n")
+
+# Extract coefficients
+beta_interaction <- fixef(model5)["Time_numeric:Cocreation_Level"]
+ci_interaction <- confint(model5, parm = "Time_numeric:Cocreation_Level", level = 0.95)
+p_interaction <- summary(model5)$coefficients["Time_numeric:Cocreation_Level", "Pr(>|t|)"]
+
+cat("Interaction Effect:\n")
+cat(sprintf("  Time × Co-creation (β): %.3f\n", beta_interaction))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_interaction[1], ci_interaction[2]))
+cat(sprintf("  p-value: %.4f\n", p_interaction))
+
+cat("\nInterpretation:\n")
+if (p_interaction < 0.05) {
+  cat("  ✓ SIGNIFICANT INTERACTION\n")
+  if (beta_interaction > 0) {
+    cat("  → The co-creation effect INCREASES over time\n")
+    cat("  → Higher co-creation levels show greater learning gains from T1 to T7\n")
+    cat("  → This suggests co-creation has a cumulative benefit\n")
+  } else {
+    cat("  → The co-creation effect DECREASES over time\n")
+    cat("  → Benefits of co-creation diminish at later timepoints\n")
+  }
+} else {
+  cat("  ✗ NO SIGNIFICANT INTERACTION\n")
+  cat("  → The co-creation effect is CONSISTENT across timepoints\n")
+  cat("  → Co-creation has the same impact at T1, T4, and T7\n")
+}
+
+# Model comparison
+cat("\n Model Comparison:\n")
+anova_result <- anova(model4, model5)
+p_lr_test <- anova_result$`Pr(>Chisq)`[2]
+cat(sprintf("  Likelihood ratio test: χ²(1) = %.2f, p = %.4f\n", 
+            anova_result$Chisq[2], p_lr_test))
+
+if (p_lr_test < 0.05) {
+  cat("  → Model with interaction fits significantly better\n")
+} else {
+  cat("  → Interaction does not significantly improve model fit\n")
+  cat("  → Simpler model (Model 4) is preferred\n")
+}
+
+# Effect sizes
+r2_vals <- r2(model5)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f\n", r2_vals$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f\n", r2_vals$R2_conditional))
+
+cat("\n================================\n")
+```
+## Model 6: T4 Predicts Co-creation (Selection Effect)?
+
+Additional question:Does previous knowledge (T4) predict co-creation level (selection effect)?
+
+
+```{r model6-t4}
+# Filter T1 data
+df_t4 <- df_long %>% filter(Timepoint == "T4")
+
+# Since co-creation is at group level, we need group-level analysis
+df_t4_group <- df_t4 %>%
+  group_by(Group_factor) %>%
+  summarise(
+    mean_T4_score = mean(score, na.rm = TRUE),
+    Cocreation_Level = first(Cocreation_Level)
+  )
+
+# Simple linear model (no random effects needed - one obs per group)
+model6 <- lm(Cocreation_Level ~ mean_T4_score, data = df_t4_group)
+
+# Summary
+summary(model6)
+
+# Tidy output
+tidy(model6, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 2: T1 Knowledge → Co-creation Level")
+```
+
+
+# Model Comparison
+
+```{r model-comparison}
+# Compare models
+comparison <- compare_performance(model1, model2, model3, model4, model5, verbose = FALSE)
+
+comparison %>%
+  kable(digits = 3, caption = "Model Comparison")
+
+# AIC/BIC comparison
+cat("\nLower AIC/BIC indicates better model fit\n")
+```
+
+# Summary of Results
+
+```{r summary-table}
+# Create summary table
+results_summary <- tibble(
+  Model = c(
+    "Model 1: Co-creation predicting T7",
+    "Model 2: T1 predicting Co-creation",
+    "Model 3: Longitudinal",
+    "Model 4: Longitudinal with co-creation",
+    "Model 5: Interaction"
+  ),
+  Formula = c(
+    "Score ~ Co-creation + (1|Group)",
+    "Co-creation ~ T1_Score",
+    "Score ~ Time + (1|Group) + (1|Student)",
+    "Score ~ Time + Co-creation + (1|Group) + (1|Student)",
+    "Score ~ Time × Co-creation + (1|Group) + (1|Student)"
+  ),
+  
+  Key_Finding = c(
+    # Model 1: cluster-robust model (T7 only)
+    paste0("Co-creation β = ", round(model1_robust[2, 1], 3), 
+           ", p = ", format.pval(model1_robust[2, 4], digits = 3)),
+    # Model 2: simple lm (T1 → Co-creation)
+    paste0("T1 β = ", round(coef(summary(model2_simple))[2, 1], 3), 
+           ", p = ", format.pval(coef(summary(model2_simple))[2, 4], digits = 3)),
+    # Model 3: mixed model (time only)
+    paste0("Time β = ", round(fixef(model3)[2], 3), 
+           ", p = ", format.pval(coef(summary(model3))[2, 5], digits = 3)),
+    # Model 4: cluster-robust (time + co-creation)
+    paste0("Co-creation β = ", round(model4_robust[3, 1], 3), 
+           ", p = ", format.pval(model4_robust[3, 4], digits = 3)),
+    # Model 5: mixed model (interaction)
+    paste0("Interaction β = ", round(fixef(model5)[4], 3), 
+           ", p = ", format.pval(coef(summary(model5))[4, 5], digits = 3))
+  )
+)
+
+results_summary %>%
+  kable(caption = "Summary of All Models")
+```
+
+# Interpretation
+
+## Key Findings
+
+```{r interpretation}
+# Extract key statistics
+t7_effect <- fixef(model1)["Cocreation_Level"]
+t7_p <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+long_effect <- fixef(model4)["Cocreation_Level"]
+long_p <- summary(model4)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+t1_effect <- coef(model2)["mean_T1_score"]
+t1_p <- summary(model2)$coefficients["mean_T1_score", "Pr(>|t|)"]
+
+cat("=== INTERPRETATION ===\n\n")
+
+cat("1. CO-CREATION EFFECT ON LEARNING (T7):\n")
+cat(sprintf("   β = %.3f, p = %.4f\n", t7_effect, t7_p))
+if (t7_p < 0.05) {
+  cat("   ✓ SIGNIFICANT: Higher co-creation predicts better post-test knowledge\n")
+} else {
+  cat("   ✗ NOT SIGNIFICANT\n")
+}
+
+cat("\n2. LONGITUDINAL CO-CREATION EFFECT:\n")
+cat(sprintf("   β = %.3f, p = %.4f\n", long_effect, long_p))
+if (long_p < 0.05) {
+  cat("   ✓ SIGNIFICANT: Co-creation effect holds across all timepoints\n")
+} else {
+  cat("   ✗ NOT SIGNIFICANT: Effect may be specific to T7\n")
+}
+
+cat("\n3. SELECTION EFFECT (T1 → Co-creation):\n")
+cat(sprintf("   β = %.3f, p = %.4f\n", t1_effect, t1_p))
+if (t1_p < 0.05) {
+  cat("   ⚠ SIGNIFICANT: Baseline knowledge predicts co-creation level\n")
+  cat("   This suggests potential selection effects\n")
+} else {
+  cat("   ✓ NOT SIGNIFICANT: No evidence of selection bias\n")
+  cat("   Co-creation appears independent of baseline knowledge\n")
+}
+```
+
+## Recommended Reporting
+
+```{r reporting}
+cat("\n=== SUGGESTED TEXT FOR PAPER ===\n\n")
+
+cat("We examined the relationship between co-creation level during LLM interaction\n")
+cat("and learning outcomes using mixed-effects models to account for students nested\n")
+cat("within groups.\n\n")
+
+if (t7_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted post-test knowledge (T7)\n"))
+  cat(sprintf("(β = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              t7_effect, 
+              confint(model1)["Cocreation_Level", 1],
+              confint(model1)["Cocreation_Level", 2],
+              t7_p))
+}
+
+cat("\nThe mixed model showed a singular fit with zero group-level variance,\n")
+cat("indicating that variability in knowledge scores is primarily within-group\n")
+cat("rather than between-group differences.\n\n")
+
+if (t1_p >= 0.05) {
+  cat("\nImportantly, baseline knowledge (T1) did not predict co-creation level\n")
+  cat(sprintf("(β = %.2f, p = %.3f), suggesting that the observed co-creation effect\n", 
+              t1_effect, t1_p))
+  cat("represents a genuine learning effect rather than a selection artifact.\n")
+}
+```
+
