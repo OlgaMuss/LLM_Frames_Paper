@@ -1,0 +1,34 @@
+\contentsline {section}{Overview}{1}{section*.2}%
+\contentsline {section}{Load Libraries}{2}{section*.3}%
+\contentsline {section}{Load and Prepare Data}{2}{section*.4}%
+\contentsline {subsection}{Load Raw Data}{2}{section*.5}%
+\contentsline {subsection}{Extract Group Mapping and Merge Co-creation Data}{2}{section*.6}%
+\contentsline {subsection}{Data Validation and Cleaning}{4}{section*.7}%
+\contentsline {subsection}{Create Knowledge Scores}{5}{section*.8}%
+\contentsline {subsection}{Reshape to Long Format (After Validation)}{9}{section*.9}%
+\contentsline {section}{Descriptive Statistics}{11}{section*.10}%
+\contentsline {subsection}{Co-creation Levels}{11}{section*.11}%
+\contentsline {subsection}{Knowledge Scores Over Time}{12}{section*.12}%
+\contentsline {subsection}{Knowledge by Co-creation Level}{15}{section*.13}%
+\contentsline {section}{Mixed Effects Models}{16}{section*.14}%
+\contentsline {subsection}{Model 1: T7 Only - Co-creation Predicts Learning}{16}{section*.15}%
+\contentsline {subsubsection}{Model 1 Diagnostics}{18}{section*.16}%
+\contentsline {subsubsection}{Model 1 Interpretation}{20}{section*.17}%
+\contentsline {subsubsection}{Model 1 Visualization}{22}{section*.18}%
+\contentsline {subsection}{Model 2: T1 Predicts Co-creation (Selection Effect)}{24}{section*.19}%
+\contentsline {subsubsection}{Model 2 Visualization}{25}{section*.20}%
+\contentsline {subsubsection}{Model 2 Interpretation}{26}{section*.21}%
+\contentsline {subsection}{Model 3: Longitudinal - Time}{28}{section*.22}%
+\contentsline {subsection}{Model 4: Longitudinal - Time + Co-creation}{29}{section*.23}%
+\contentsline {subsubsection}{Model 4 Diagnostics}{31}{section*.24}%
+\contentsline {subsubsection}{Model 4 Interpretation}{33}{section*.25}%
+\contentsline {subsubsection}{Model 4 Visualization}{35}{section*.26}%
+\contentsline {subsection}{Model 5: Time × Co-creation Interaction}{38}{section*.27}%
+\contentsline {subsubsection}{Model 5 Visualization}{40}{section*.28}%
+\contentsline {subsubsection}{Model 5 Interpretation}{40}{section*.29}%
+\contentsline {subsection}{Model 6: T4 Predicts Co-creation (Selection Effect)?}{42}{section*.30}%
+\contentsline {section}{Model Comparison}{43}{section*.31}%
+\contentsline {section}{Summary of Results}{44}{section*.32}%
+\contentsline {section}{Interpretation}{45}{section*.33}%
+\contentsline {subsection}{Key Findings}{45}{section*.34}%
+\contentsline {subsection}{Recommended Reporting}{46}{section*.35}%
