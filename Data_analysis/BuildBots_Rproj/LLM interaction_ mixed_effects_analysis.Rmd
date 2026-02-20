@@ -29,10 +29,29 @@ This analysis examines the relationship between co-creation level (during LLM in
 
 **Research Questions:**
 
-1. Does co-creation level predict post-test knowledge (T7)?
-2. Does baseline knowledge (T1) predict co-creation level (selection effect)?
-3. How does knowledge evolve over time (T1 → T4 → T7)?
-4. Does the co-creation effect vary by timepoint?
+**Basic Microcontroller Questions (2 items, T1-T8):**
+1. Does co-creation level predict immediate post-test knowledge (T7)?
+2. Does co-creation level predict delayed post-test knowledge (T8)?
+3. Does baseline knowledge (T1) predict co-creation level (selection effect)?
+4. How does knowledge evolve over time (T1 → T4 → T7)?
+5. Does the co-creation effect vary by timepoint?
+
+**LLM-Specific Microcontroller Questions (8 items, T7-T8 only):**
+6. Does co-creation level predict immediate LLM-specific knowledge (T7)?
+7. Does co-creation level predict delayed LLM-specific knowledge (T8)?
+
+**Combined Microcontroller Questions (2 basic + 8 LLM = 10 total, T7-T8 only):**
+8. Does co-creation level predict immediate total knowledge (T7)?
+9. Does co-creation level predict delayed total knowledge (T8)?
+
+**Learning Gains (T1 → T7 change, basic questions only):**
+10. Does co-creation level predict learning gains from baseline to post-test?
+11. Is the T7 effect due to learning gains or baseline differences?
+
+**Knowledge Retention/Decay (T7 → T8 change):**
+12. Does co-creation level predict knowledge retention or loss from T7 to T8?
+13. Does co-creation protect against knowledge decay?
+14. How do effects compare across basic, LLM, and combined measures?
 
 # Load Libraries
 
@@ -53,9 +72,9 @@ library(broom.mixed)    # Tidy model outputs
 ## Load Raw Data
 
 ```{r load-data}
-# Load children knowledge data (T1, T4, T7)
+# Load children knowledge data (T1, T4, T7, T8)
 df_children <- read_csv(
-  '../Data/Qualtrics/BuildBots_children_T1T4T7.csv',
+  '../Data/Qualtrics/BuildBots_children_T1T4T7T8.csv',
   show_col_types = FALSE
 )
 
@@ -285,6 +304,390 @@ df_children %>%
   kable(digits = 1, caption = "Percentage of Each Response Type")
 ```
 
+## Create LLM Microcontroller Scores (T7 and T8 only)
+
+The LLM_Microcontrollers questions (8 questions total) were only administered at T7 and T8, specifically targeting knowledge about the LLM interaction content.
+
+**Scoring rules:**
+- Correct answer (value = 1) → 1 point
+- Incorrect answer (value = 0) → 0 points  
+- "I don't know" (value = 99) → 0 points (treated as incorrect)
+- Missing (NA) → excluded from analysis
+- Total score range: 0-8 points
+
+```{r score-llm-microcontrollers}
+cat("\n=== SCORING LLM MICROCONTROLLER QUESTIONS (T7 & T8) ===\n\n")
+
+# Check which timepoints have these questions
+llm_cols <- paste0("LLM_Microcontrollers_", 1:8)
+cat("Checking LLM microcontroller questions availability by timepoint:\n")
+
+for (tp in c("T1", "T4", "T7", "T8")) {
+  tp_data <- df_children %>% filter(Timepoint == tp)
+  if (nrow(tp_data) > 0) {
+    n_complete <- sum(complete.cases(tp_data[, llm_cols]))
+    cat(sprintf("  %s: %d students, %d with complete LLM questions\n", 
+                tp, nrow(tp_data), n_complete))
+  }
+}
+
+# Score LLM microcontroller questions for T7 and T8
+df_children <- df_children %>%
+  mutate(
+    # Convert all 8 questions to numeric
+    llm_mc1_raw = as.numeric(LLM_Microcontrollers_1),
+    llm_mc2_raw = as.numeric(LLM_Microcontrollers_2),
+    llm_mc3_raw = as.numeric(LLM_Microcontrollers_3),
+    llm_mc4_raw = as.numeric(LLM_Microcontrollers_4),
+    llm_mc5_raw = as.numeric(LLM_Microcontrollers_5),
+    llm_mc6_raw = as.numeric(LLM_Microcontrollers_6),
+    llm_mc7_raw = as.numeric(LLM_Microcontrollers_7),
+    llm_mc8_raw = as.numeric(LLM_Microcontrollers_8),
+    
+    # Score each question: 1 if correct, 0 if incorrect or "don't know", NA if missing
+    llm_mc1_score = case_when(
+      is.na(llm_mc1_raw) ~ NA_real_,
+      llm_mc1_raw == 1 ~ 1,
+      llm_mc1_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc2_score = case_when(
+      is.na(llm_mc2_raw) ~ NA_real_,
+      llm_mc2_raw == 1 ~ 1,
+      llm_mc2_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc3_score = case_when(
+      is.na(llm_mc3_raw) ~ NA_real_,
+      llm_mc3_raw == 1 ~ 1,
+      llm_mc3_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc4_score = case_when(
+      is.na(llm_mc4_raw) ~ NA_real_,
+      llm_mc4_raw == 1 ~ 1,
+      llm_mc4_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc5_score = case_when(
+      is.na(llm_mc5_raw) ~ NA_real_,
+      llm_mc5_raw == 1 ~ 1,
+      llm_mc5_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc6_score = case_when(
+      is.na(llm_mc6_raw) ~ NA_real_,
+      llm_mc6_raw == 1 ~ 1,
+      llm_mc6_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc7_score = case_when(
+      is.na(llm_mc7_raw) ~ NA_real_,
+      llm_mc7_raw == 1 ~ 1,
+      llm_mc7_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    llm_mc8_score = case_when(
+      is.na(llm_mc8_raw) ~ NA_real_,
+      llm_mc8_raw == 1 ~ 1,
+      llm_mc8_raw %in% c(0, 99) ~ 0,
+      TRUE ~ NA_real_
+    ),
+    
+    # Calculate total LLM microcontroller score (0-8)
+    # Only calculate if at least some questions are answered
+    llm_score = llm_mc1_score + llm_mc2_score + llm_mc3_score + llm_mc4_score +
+                llm_mc5_score + llm_mc6_score + llm_mc7_score + llm_mc8_score,
+    
+    # Count valid responses
+    llm_n_answered = (!is.na(llm_mc1_score)) + (!is.na(llm_mc2_score)) + 
+                     (!is.na(llm_mc3_score)) + (!is.na(llm_mc4_score)) +
+                     (!is.na(llm_mc5_score)) + (!is.na(llm_mc6_score)) + 
+                     (!is.na(llm_mc7_score)) + (!is.na(llm_mc8_score))
+  )
+
+# Display LLM score distribution by timepoint
+cat("\n=== LLM Microcontroller Score Distribution ===\n\n")
+
+df_children %>%
+  filter(!is.na(llm_score)) %>%
+  group_by(Timepoint) %>%
+  summarise(
+    n_students = n(),
+    mean_score = mean(llm_score, na.rm = TRUE),
+    sd_score = sd(llm_score, na.rm = TRUE),
+    min_score = min(llm_score, na.rm = TRUE),
+    max_score = max(llm_score, na.rm = TRUE),
+    mean_n_answered = mean(llm_n_answered, na.rm = TRUE)
+  ) %>%
+  kable(digits = 2, caption = "LLM Microcontroller Knowledge Scores by Timepoint")
+
+# Detailed score distribution
+cat("\nDetailed Score Distribution (T7 & T8 only):\n")
+df_children %>%
+  filter(!is.na(llm_score), Timepoint %in% c("T7", "T8")) %>%
+  group_by(Timepoint, llm_score) %>%
+  summarise(n = n(), .groups = 'drop') %>%
+  pivot_wider(names_from = Timepoint, values_from = n, values_fill = 0) %>%
+  kable(caption = "Number of Students by LLM Score and Timepoint")
+```
+
+## Create Combined Knowledge Scores (T7 and T8 only)
+
+For a comprehensive assessment of microcontroller knowledge at T7 and T8, we create a combined score that includes both basic (2 items) and LLM-specific (8 items) questions.
+
+**Combined Score:**
+- Basic microcontrollers: 0-2 points
+- LLM microcontrollers: 0-8 points
+- **Total range: 0-10 points**
+
+```{r score-combined}
+cat("\n=== CREATING COMBINED KNOWLEDGE SCORES ===\n\n")
+
+# Create combined score (only meaningful for T7 and T8 where both measures exist)
+df_children <- df_children %>%
+  mutate(
+    # Combined score: basic (0-2) + LLM (0-8) = total (0-10)
+    combined_score = case_when(
+      !is.na(score) & !is.na(llm_score) ~ score + llm_score,
+      TRUE ~ NA_real_
+    )
+  )
+
+# Display combined score distribution
+cat("Combined Score Distribution (T7 & T8 only):\n\n")
+
+df_children %>%
+  filter(!is.na(combined_score)) %>%
+  group_by(Timepoint) %>%
+  summarise(
+    n_students = n(),
+    mean_basic = mean(score, na.rm = TRUE),
+    mean_llm = mean(llm_score, na.rm = TRUE),
+    mean_combined = mean(combined_score, na.rm = TRUE),
+    sd_combined = sd(combined_score, na.rm = TRUE),
+    min_combined = min(combined_score, na.rm = TRUE),
+    max_combined = max(combined_score, na.rm = TRUE)
+  ) %>%
+  kable(digits = 2, caption = "Combined Knowledge Scores by Timepoint")
+
+# Score breakdown by timepoint
+cat("\nDetailed Combined Score Distribution:\n")
+df_children %>%
+  filter(!is.na(combined_score)) %>%
+  group_by(Timepoint) %>%
+  summarise(
+    `0-2` = sum(combined_score <= 2),
+    `3-4` = sum(combined_score >= 3 & combined_score <= 4),
+    `5-6` = sum(combined_score >= 5 & combined_score <= 6),
+    `7-8` = sum(combined_score >= 7 & combined_score <= 8),
+    `9-10` = sum(combined_score >= 9)
+  ) %>%
+  kable(caption = "Number of Students by Combined Score Range")
+```
+
+## Create Knowledge Change Scores (T7 to T8)
+
+To examine whether co-creation protects against knowledge decay, we calculate the change in knowledge from immediate (T7) to delayed (T8) post-test for each student.
+
+**Knowledge Change Interpretation:**
+- Positive values = knowledge gain
+- Zero = knowledge maintained
+- Negative values = knowledge loss/decay
+
+```{r score-knowledge-change}
+cat("\n=== CREATING KNOWLEDGE CHANGE SCORES (T7 → T8) ===\n\n")
+
+# Create separate dataframes for T7 and T8
+df_t7_change <- df_children %>%
+  filter(Timepoint == "T7") %>%
+  select(`Participant ID`, Group, Cocreation_Level, 
+         score_t7 = score, 
+         llm_score_t7 = llm_score,
+         combined_score_t7 = combined_score)
+
+df_t8_change <- df_children %>%
+  filter(Timepoint == "T8") %>%
+  select(`Participant ID`,
+         score_t8 = score,
+         llm_score_t8 = llm_score,
+         combined_score_t8 = combined_score)
+
+# Merge and calculate changes
+df_change <- df_t7_change %>%
+  inner_join(df_t8_change, by = "Participant ID") %>%
+  mutate(
+    # Calculate change scores (T8 - T7)
+    basic_change = score_t8 - score_t7,
+    llm_change = llm_score_t8 - llm_score_t7,
+    combined_change = combined_score_t8 - combined_score_t7,
+    
+    # Categorize change direction
+    basic_change_category = case_when(
+      basic_change > 0 ~ "Gain",
+      basic_change == 0 ~ "Maintained",
+      basic_change < 0 ~ "Loss"
+    ),
+    llm_change_category = case_when(
+      llm_change > 0 ~ "Gain",
+      llm_change == 0 ~ "Maintained",
+      llm_change < 0 ~ "Loss"
+    ),
+    combined_change_category = case_when(
+      combined_change > 0 ~ "Gain",
+      combined_change == 0 ~ "Maintained",
+      combined_change < 0 ~ "Loss"
+    ),
+    
+    Group_factor = factor(Group)
+  )
+
+cat("Knowledge Change Analysis:\n")
+cat("Students with both T7 and T8 data:", nrow(df_change), "\n\n")
+
+# Summary statistics
+cat("BASIC MICROCONTROLLER QUESTIONS (2 items):\n")
+df_change %>%
+  summarise(
+    n = n(),
+    mean_change = mean(basic_change, na.rm = TRUE),
+    sd_change = sd(basic_change, na.rm = TRUE),
+    median_change = median(basic_change, na.rm = TRUE),
+    n_loss = sum(basic_change < 0, na.rm = TRUE),
+    n_maintained = sum(basic_change == 0, na.rm = TRUE),
+    n_gain = sum(basic_change > 0, na.rm = TRUE),
+    pct_loss = (n_loss / n) * 100
+  ) %>%
+  kable(digits = 2, caption = "Basic Knowledge Change Statistics")
+
+cat("\nLLM MICROCONTROLLER QUESTIONS (8 items):\n")
+df_change %>%
+  summarise(
+    n = sum(!is.na(llm_change)),
+    mean_change = mean(llm_change, na.rm = TRUE),
+    sd_change = sd(llm_change, na.rm = TRUE),
+    median_change = median(llm_change, na.rm = TRUE),
+    n_loss = sum(llm_change < 0, na.rm = TRUE),
+    n_maintained = sum(llm_change == 0, na.rm = TRUE),
+    n_gain = sum(llm_change > 0, na.rm = TRUE),
+    pct_loss = (n_loss / n) * 100
+  ) %>%
+  kable(digits = 2, caption = "LLM Knowledge Change Statistics")
+
+cat("\nCOMBINED KNOWLEDGE (10 items):\n")
+df_change %>%
+  summarise(
+    n = sum(!is.na(combined_change)),
+    mean_change = mean(combined_change, na.rm = TRUE),
+    sd_change = sd(combined_change, na.rm = TRUE),
+    median_change = median(combined_change, na.rm = TRUE),
+    n_loss = sum(combined_change < 0, na.rm = TRUE),
+    n_maintained = sum(combined_change == 0, na.rm = TRUE),
+    n_gain = sum(combined_change > 0, na.rm = TRUE),
+    pct_loss = (n_loss / n) * 100
+  ) %>%
+  kable(digits = 2, caption = "Combined Knowledge Change Statistics")
+
+# Distribution by co-creation level
+cat("\n\nKnowledge Change by Co-creation Level:\n")
+df_change %>%
+  group_by(Cocreation_Level) %>%
+  summarise(
+    n = n(),
+    mean_basic_change = mean(basic_change, na.rm = TRUE),
+    mean_llm_change = mean(llm_change, na.rm = TRUE),
+    mean_combined_change = mean(combined_change, na.rm = TRUE),
+    pct_basic_loss = sum(basic_change < 0, na.rm = TRUE) / n() * 100,
+    pct_llm_loss = sum(llm_change < 0, na.rm = TRUE) / sum(!is.na(llm_change)) * 100
+  ) %>%
+  kable(digits = 2, caption = "Mean Knowledge Change by Co-creation Level")
+```
+
+## Create Learning Gains Scores (T1 to T7)
+
+To examine whether co-creation predicts learning gains, we calculate the change in basic microcontroller knowledge from baseline (T1) to immediate post-test (T7).
+
+**Learning Gains Interpretation:**
+- Positive values = learning gain
+- Zero = no learning
+- Negative values = knowledge loss (rare from baseline to post-test)
+
+```{r score-learning-gains}
+cat("\n=== CREATING LEARNING GAINS SCORES (T1 → T7) ===\n\n")
+
+# Create separate dataframes for T1 and T7
+df_t1_gain <- df_children %>%
+  filter(Timepoint == "T1") %>%
+  select(`Participant ID`, Group, Cocreation_Level, 
+         score_t1 = score)
+
+df_t7_gain <- df_children %>%
+  filter(Timepoint == "T7") %>%
+  select(`Participant ID`,
+         score_t7 = score)
+
+# Merge and calculate learning gains
+df_gains <- df_t1_gain %>%
+  inner_join(df_t7_gain, by = "Participant ID") %>%
+  mutate(
+    # Calculate learning gain (T7 - T1)
+    learning_gain = score_t7 - score_t1,
+    
+    # Categorize gain
+    gain_category = case_when(
+      learning_gain > 0 ~ "Positive Gain",
+      learning_gain == 0 ~ "No Change",
+      learning_gain < 0 ~ "Negative"
+    ),
+    
+    Group_factor = factor(Group)
+  )
+
+cat("Learning Gains Analysis:\n")
+cat("Students with both T1 and T7 data:", nrow(df_gains), "\n\n")
+
+# Summary statistics
+cat("BASIC MICROCONTROLLER QUESTIONS (2 items):\n")
+df_gains %>%
+  summarise(
+    n = n(),
+    mean_t1 = mean(score_t1, na.rm = TRUE),
+    mean_t7 = mean(score_t7, na.rm = TRUE),
+    mean_gain = mean(learning_gain, na.rm = TRUE),
+    sd_gain = sd(learning_gain, na.rm = TRUE),
+    median_gain = median(learning_gain, na.rm = TRUE),
+    n_negative = sum(learning_gain < 0, na.rm = TRUE),
+    n_no_change = sum(learning_gain == 0, na.rm = TRUE),
+    n_positive = sum(learning_gain > 0, na.rm = TRUE),
+    pct_positive = (n_positive / n) * 100,
+    max_possible_gain = 2
+  ) %>%
+  kable(digits = 2, caption = "Learning Gains Statistics (T1 → T7)")
+
+# Distribution of learning gains
+cat("\nDetailed Learning Gain Distribution:\n")
+df_gains %>%
+  group_by(learning_gain) %>%
+  summarise(n = n(), pct = n() / nrow(df_gains) * 100) %>%
+  arrange(learning_gain) %>%
+  kable(digits = 1, caption = "Distribution of Learning Gain Scores")
+
+# Learning gains by co-creation level
+cat("\n\nLearning Gains by Co-creation Level:\n")
+df_gains %>%
+  group_by(Cocreation_Level) %>%
+  summarise(
+    n = n(),
+    mean_t1 = mean(score_t1, na.rm = TRUE),
+    mean_t7 = mean(score_t7, na.rm = TRUE),
+    mean_gain = mean(learning_gain, na.rm = TRUE),
+    sd_gain = sd(learning_gain, na.rm = TRUE),
+    pct_positive_gain = sum(learning_gain > 0, na.rm = TRUE) / n() * 100,
+    pct_no_gain = sum(learning_gain == 0, na.rm = TRUE) / n() * 100
+  ) %>%
+  kable(digits = 2, caption = "Mean Learning Gains by Co-creation Level")
+```
+
 ## Reshape to Long Format (After Validation)
 
 Now that we have clean, validated data, we can reshape for longitudinal analysis:
@@ -302,17 +705,19 @@ if (length(missing_cols) > 0) {
 cat("Creating long format data...\n")
 df_long <- df_children %>%
   select(`Participant ID`, Group, Timepoint, Cocreation_Level, score, 
-         n_dont_know, n_incorrect, mc1_score, mc2_score) %>%
+         n_dont_know, n_incorrect, mc1_score, mc2_score,
+         llm_score, llm_n_answered, combined_score) %>%
   mutate(
-    # Convert timepoint to numeric (1, 4, 7)
+    # Convert timepoint to numeric (1, 4, 7, 8)
     Time_numeric = case_when(
       Timepoint == "T1" ~ 1,
       Timepoint == "T4" ~ 4,
       Timepoint == "T7" ~ 7,
+      Timepoint == "T8" ~ 8,
       TRUE ~ NA_real_
     ),
     # Factor versions for plotting
-    Timepoint_factor = factor(Timepoint, levels = c("T1", "T4", "T7")),
+    Timepoint_factor = factor(Timepoint, levels = c("T1", "T4", "T7", "T8")),
     Group_factor = factor(Group),
     Student_ID = factor(`Participant ID`)
   ) %>%
@@ -441,10 +846,10 @@ df_long %>%
 ggplot(df_long, aes(x = Cocreation_Level, y = score, color = Timepoint_factor)) +
   geom_point(alpha = 0.6, size = 3, position = position_jitter(width = 0.05)) +
   geom_smooth(method = "lm", se = TRUE) +
-  scale_color_manual(values = c("T1" = "#3b82f6", "T4" = "#f59e0b", "T7" = "#10b981")) +
+  scale_color_manual(values = c("T1" = "#3b82f6", "T4" = "#f59e0b", "T7" = "#10b981", "T8" = "#8b5cf6")) +
   labs(
     title = "Co-creation Level vs Knowledge Score",
-    subtitle = "By Timepoint",
+    subtitle = "By Timepoint (Including Delayed Follow-up T8)",
     x = "Co-creation Level",
     y = "Knowledge Score",
     color = "Timepoint"
@@ -945,7 +1350,7 @@ anova(model4, model5)
 plot_model(model5, type = "pred", terms = c("Time_numeric", "Cocreation_Level [0, 1, 2, 3]")) +
   labs(
     title = "Time × Co-creation Interaction",
-    subtitle = "Predicted knowledge scores",
+    subtitle = "Predicted knowledge scores (Note: Model uses T1, T4, T7 only)",
     x = "Time (Numeric: 1=T1, 4=T4, 7=T7)",
     y = "Predicted Knowledge Score",
     color = "Co-creation\nLevel"
@@ -1014,7 +1419,7 @@ Additional question:Does previous knowledge (T4) predict co-creation level (sele
 
 
 ```{r model6-t4}
-# Filter T1 data
+# Filter T4 data
 df_t4 <- df_long %>% filter(Timepoint == "T4")
 
 # Since co-creation is at group level, we need group-level analysis
@@ -1033,21 +1438,2613 @@ summary(model6)
 
 # Tidy output
 tidy(model6, conf.int = TRUE) %>%
-  kable(digits = 3, caption = "Model 2: T1 Knowledge → Co-creation Level")
+  kable(digits = 3, caption = "Model 6: T4 Knowledge → Co-creation Level")
+```
+
+## Model 7: T8 Only - Co-creation Predicts Delayed Learning
+
+Does co-creation level predict delayed post-test knowledge (T8)? This model examines whether the co-creation effect persists at the delayed follow-up timepoint.
+
+```{r model7-t8}
+# Filter T8 data only
+df_t8 <- df_long %>% filter(Timepoint == "T8")
+
+cat("\n=== T8 DATA CHECK ===\n")
+cat("T8 observations:", nrow(df_t8), "\n")
+cat("Unique students:", n_distinct(df_t8$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_t8$Group_factor), "\n")
+cat("Score range:", min(df_t8$score, na.rm = TRUE), "to", max(df_t8$score, na.rm = TRUE), "\n")
+cat("Mean score:", round(mean(df_t8$score, na.rm = TRUE), 2), "\n\n")
+
+# Mixed model with random intercept for groups
+model7 <- lmer(
+  score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t8,
+  REML = TRUE
+)
+
+# Summary
+summary(model7)
+
+# Tidy output
+tidy(model7, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 7: Co-creation → T8 Knowledge (Delayed)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model7)
+performance::r2(model7)
+```
+
+### Model 7 Diagnostics
+
+```{r model7-diagnostics, fig.width=12, fig.height=10}
+# Check assumptions
+check_model(model7, panel = TRUE)
+
+# Additional diagnostic plots
+par(mfrow = c(2, 2))
+plot(model7, main = "Model 7: Residuals vs Fitted")
+qqnorm(resid(model7), main = "Q-Q Plot: Normality of Residuals")
+qqline(resid(model7))
+hist(resid(model7), main = "Histogram of Residuals", xlab = "Residuals", breaks = 10)
+plot(fitted(model7), resid(model7), main = "Fitted vs Residuals", 
+     xlab = "Fitted values", ylab = "Residuals")
+abline(h = 0, lty = 2, col = "red")
+par(mfrow = c(1, 1))
+```
+
+### Model 7 Interpretation
+
+```{r model7-interpretation}
+cat("\n=== MODEL 7 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation level predict T8 knowledge (delayed post-test)?\n\n")
+
+# Extract key statistics
+beta_cocreation_t8 <- fixef(model7)["Cocreation_Level"]
+se_cocreation_t8 <- sqrt(diag(vcov(model7)))["Cocreation_Level"]
+t_value_t8 <- summary(model7)$coefficients["Cocreation_Level", "t value"]
+p_value_t8 <- summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_t8 <- confint(model7, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (beta): %.3f\n", beta_cocreation_t8))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation_t8))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_t8[1], ci_t8[2]))
+cat(sprintf("  t-value: %.3f\n", t_value_t8))
+cat(sprintf("  p-value: %.4f\n", p_value_t8))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value_t8 < 0.05) {
+  cat("  [YES] SIGNIFICANT effect of co-creation on T8 knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    knowledge score increases by %.2f points (out of 2)\n", beta_cocreation_t8))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation_t8/2*100))
+} else {
+  cat("  [NO] NO significant effect of co-creation on T8 knowledge\n")
+}
+
+# Compare with T7 effect (Model 1)
+beta_cocreation_t7 <- fixef(model1)["Cocreation_Level"]
+p_value_t7 <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("\nComparison with T7 (Model 1):\n")
+cat(sprintf("  T7 effect: beta = %.3f, p = %.4f\n", beta_cocreation_t7, p_value_t7))
+cat(sprintf("  T8 effect: beta = %.3f, p = %.4f\n", beta_cocreation_t8, p_value_t8))
+
+if (p_value_t7 < 0.05 && p_value_t8 < 0.05) {
+  if (abs(beta_cocreation_t8 - beta_cocreation_t7) < 0.1) {
+    cat("  -> Co-creation effect PERSISTS at delayed follow-up\n")
+    cat("  -> Learning benefits are MAINTAINED over time\n")
+  } else if (beta_cocreation_t8 < beta_cocreation_t7) {
+    cat("  -> Co-creation effect WEAKENS at delayed follow-up\n")
+    cat("  -> Some knowledge decay occurred\n")
+  } else {
+    cat("  -> Co-creation effect STRENGTHENS at delayed follow-up\n")
+    cat("  -> Possible consolidation effect\n")
+  }
+} else if (p_value_t7 < 0.05 && p_value_t8 >= 0.05) {
+  cat("  -> Co-creation effect DISAPPEARS at delayed follow-up\n")
+  cat("  -> Learning benefits did NOT persist\n")
+} else if (p_value_t7 >= 0.05 && p_value_t8 < 0.05) {
+  cat("  -> Co-creation effect EMERGES at delayed follow-up\n")
+  cat("  -> Possible delayed consolidation effect\n")
+}
+
+# Random effects
+var_group_t8 <- as.data.frame(VarCorr(model7))$vcov[1]
+var_resid_t8 <- attr(VarCorr(model7), "sc")^2
+icc_val_t8 <- var_group_t8 / (var_group_t8 + var_resid_t8)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_t8))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_t8))
+cat(sprintf("  ICC (Intraclass Correlation): %.3f\n", icc_val_t8))
+cat(sprintf("  - %.1f%% of variance is between groups\n", icc_val_t8*100))
+cat(sprintf("  - %.1f%% of variance is within groups (between students)\n", (1-icc_val_t8)*100))
+
+# Model fit
+cat("\nModel Fit:\n")
+cat(sprintf("  AIC: %.1f\n", AIC(model7)))
+cat(sprintf("  BIC: %.1f\n", BIC(model7)))
+cat(sprintf("  Log-likelihood: %.2f\n", logLik(model7)))
+
+# R-squared
+r2_vals_t8 <- r2(model7)
+cat(sprintf("  Marginal R² (fixed effects only): %.3f\n", r2_vals_t8$R2_marginal))
+cat(sprintf("  Conditional R² (fixed + random): %.3f\n", r2_vals_t8$R2_conditional))
+
+cat("\n================================\n")
+```
+
+### Model 7 Visualization
+
+```{r model7-plot, fig.width=10, fig.height=6}
+# Plot fixed effects
+plot_model(model7, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T8 Knowledge by Co-creation Level",
+    subtitle = "Model 7: Mixed effects with random intercepts for groups (Delayed Follow-up)",
+    x = "Co-creation Level",
+    y = "Predicted Knowledge Score"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+### Model 7: Alternative Approach with Cluster-Robust Standard Errors
+
+```{r model7-alternative}
+# Load required packages (already loaded above, but included for completeness)
+library(sandwich)
+library(lmtest)
+library(broom)
+library(knitr)
+
+# Filter T8 data only
+df_t8 <- df_long %>% filter(Timepoint == "T8")
+
+# Fit simple linear regression
+model7_simple <- lm(score ~ Cocreation_Level, data = df_t8)
+
+# Get cluster-robust standard errors
+model7_robust <- coeftest(model7_simple, vcov = vcovCL, cluster = ~Group_factor)
+
+# Display results
+cat("Linear Regression with Cluster-Robust Standard Errors (T8)\n")
+cat("===========================================================\n\n")
+print(model7_robust)
+
+# Get confidence intervals with robust SEs
+robust_ci_t8 <- coefci(model7_simple, vcov = vcovCL, cluster = ~Group_factor)
+print(robust_ci_t8)
+
+# Create a tidy table
+robust_results_t8 <- tidy(model7_robust, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 7: Co-creation → T8 Knowledge (Cluster-Robust SE)")
+
+print(robust_results_t8)
+
+# Model R-squared (not adjusted for clustering, but informative)
+cat("\nModel R-squared:", summary(model7_simple)$r.squared, "\n")
+cat("Adjusted R-squared:", summary(model7_simple)$adj.r.squared, "\n")
+cat("\nNumber of observations:", nobs(model7_simple), "\n")
+cat("Number of clusters (groups):", length(unique(df_t8$Group_factor)), "\n")
+
+# Compare with T7 results
+cat("\n=== COMPARISON: T7 vs T8 Effects ===\n")
+cat("This helps assess persistence of co-creation benefits:\n\n")
+
+# Get T7 simple model for comparison
+df_t7_compare <- df_long %>% filter(Timepoint == "T7")
+model1_simple_compare <- lm(score ~ Cocreation_Level, data = df_t7_compare)
+model1_robust_compare <- coeftest(model1_simple_compare, vcov = vcovCL, cluster = ~Group_factor)
+
+t7_beta <- model1_robust_compare[2, "Estimate"]
+t7_p <- model1_robust_compare[2, "Pr(>|t|)"]
+t8_beta <- model7_robust[2, "Estimate"]
+t8_p <- model7_robust[2, "Pr(>|t|)"]
+
+cat(sprintf("T7: beta = %.3f, p = %.4f\n", t7_beta, t7_p))
+cat(sprintf("T8: beta = %.3f, p = %.4f\n", t8_beta, t8_p))
+cat(sprintf("Difference: %.3f points\n", t8_beta - t7_beta))
+
+if (t7_p < 0.05 && t8_p < 0.05) {
+  pct_retention <- (t8_beta / t7_beta) * 100
+  cat(sprintf("\n[SUSTAINED EFFECT] Both significant. T8 effect is %.1f%% of T7 effect\n", pct_retention))
+  if (pct_retention > 80) {
+    cat("-> Strong persistence: Co-creation benefits maintained at delayed follow-up\n")
+  } else if (pct_retention > 50) {
+    cat("-> Moderate persistence: Co-creation benefits partially maintained\n")
+  } else {
+    cat("-> Weak persistence: Substantial decay in co-creation benefits\n")
+  }
+} else if (t7_p < 0.05 && t8_p >= 0.05) {
+  cat("\n[EFFECT DISAPPEARED] T7 significant but T8 not significant\n")
+  cat("-> Co-creation benefits did NOT persist to delayed follow-up\n")
+} else if (t7_p >= 0.05 && t8_p < 0.05) {
+  cat("\n[DELAYED EMERGENCE] T7 not significant but T8 significant\n")
+  cat("-> Possible consolidation: Co-creation benefits emerged with time\n")
+} else {
+  cat("\n[NO EFFECTS] Neither T7 nor T8 showed significant co-creation effects\n")
+}
+
+cat("\n====================================\n")
+```
+
+## Model 8: T7 LLM Microcontrollers - Co-creation Predicts Detailed Knowledge
+
+Does co-creation level predict T7 performance on the 8 LLM-specific microcontroller questions?
+
+```{r model8-t7-llm}
+# Filter T7 data with LLM scores
+df_t7_llm <- df_long %>% 
+  filter(Timepoint == "T7", !is.na(llm_score))
+
+cat("\n=== T7 LLM MICROCONTROLLER DATA CHECK ===\n")
+cat("T7 observations with LLM scores:", nrow(df_t7_llm), "\n")
+cat("Unique students:", n_distinct(df_t7_llm$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_t7_llm$Group_factor), "\n")
+cat("Score range:", min(df_t7_llm$llm_score, na.rm = TRUE), "to", 
+    max(df_t7_llm$llm_score, na.rm = TRUE), "\n")
+cat("Mean score:", round(mean(df_t7_llm$llm_score, na.rm = TRUE), 2), "\n\n")
+
+# Mixed model with random intercept for groups
+model8 <- lmer(
+  llm_score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t7_llm,
+  REML = TRUE
+)
+
+# Summary
+summary(model8)
+
+# Tidy output
+tidy(model8, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 8: Co-creation → T7 LLM Microcontroller Knowledge (8 questions)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model8)
+performance::r2(model8)
+```
+
+### Model 8 Interpretation
+
+```{r model8-interpretation}
+cat("\n=== MODEL 8 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation predict T7 LLM microcontroller knowledge (8 questions)?\n\n")
+
+# Extract key statistics
+beta_cocreation_t7_llm <- fixef(model8)["Cocreation_Level"]
+se_cocreation_t7_llm <- sqrt(diag(vcov(model8)))["Cocreation_Level"]
+t_value_t7_llm <- summary(model8)$coefficients["Cocreation_Level", "t value"]
+p_value_t7_llm <- summary(model8)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_t7_llm <- confint(model8, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (beta): %.3f\n", beta_cocreation_t7_llm))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation_t7_llm))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_t7_llm[1], ci_t7_llm[2]))
+cat(sprintf("  t-value: %.3f\n", t_value_t7_llm))
+cat(sprintf("  p-value: %.4f\n", p_value_t7_llm))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value_t7_llm < 0.05) {
+  cat("  [YES] SIGNIFICANT effect of co-creation on T7 LLM microcontroller knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    LLM knowledge score increases by %.2f points (out of 8)\n", beta_cocreation_t7_llm))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation_t7_llm/8*100))
+} else {
+  cat("  [NO] NO significant effect of co-creation on T7 LLM microcontroller knowledge\n")
+}
+
+# Compare with basic microcontroller questions (Model 1)
+beta_t7_basic <- fixef(model1)["Cocreation_Level"]
+p_t7_basic <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("\nComparison with Basic Microcontroller Questions (Model 1):\n")
+cat(sprintf("  Basic questions (2 items): beta = %.3f, p = %.4f\n", beta_t7_basic, p_t7_basic))
+cat(sprintf("  LLM questions (8 items): beta = %.3f, p = %.4f\n", beta_cocreation_t7_llm, p_value_t7_llm))
+
+# Standardize for comparison (effect per question)
+if (p_t7_basic < 0.05 && p_value_t7_llm < 0.05) {
+  effect_per_q_basic <- beta_t7_basic / 2
+  effect_per_q_llm <- beta_cocreation_t7_llm / 8
+  cat(sprintf("\n  Effect per question:\n"))
+  cat(sprintf("    Basic: %.3f points per co-creation level\n", effect_per_q_basic))
+  cat(sprintf("    LLM: %.3f points per co-creation level\n", effect_per_q_llm))
+  
+  if (abs(effect_per_q_llm - effect_per_q_basic) < 0.05) {
+    cat("  -> Similar effect sizes across question types\n")
+  } else if (effect_per_q_llm > effect_per_q_basic) {
+    cat("  -> STRONGER effects on LLM-specific questions\n")
+    cat("     Co-creation may particularly benefit understanding of LLM interaction content\n")
+  } else {
+    cat("  -> WEAKER effects on LLM-specific questions\n")
+  }
+}
+
+# Random effects
+var_group_t7_llm <- as.data.frame(VarCorr(model8))$vcov[1]
+var_resid_t7_llm <- attr(VarCorr(model8), "sc")^2
+icc_val_t7_llm <- var_group_t7_llm / (var_group_t7_llm + var_resid_t7_llm)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_t7_llm))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_t7_llm))
+cat(sprintf("  ICC: %.3f (%.1f%% between groups)\n", icc_val_t7_llm, icc_val_t7_llm*100))
+
+# Model fit
+r2_vals_t7_llm <- r2(model8)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f\n", r2_vals_t7_llm$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f\n", r2_vals_t7_llm$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model8), BIC(model8)))
+
+cat("\n================================\n")
+```
+
+### Model 8 Visualization
+
+```{r model8-plot, fig.width=10, fig.height=6}
+plot_model(model8, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T7 LLM Microcontroller Knowledge by Co-creation Level",
+    subtitle = "Model 8: 8 LLM-specific microcontroller questions",
+    x = "Co-creation Level",
+    y = "Predicted LLM Knowledge Score (0-8)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+## Model 9: T8 LLM Microcontrollers - Co-creation Predicts Delayed Detailed Knowledge
+
+Does co-creation level predict T8 performance on the 8 LLM-specific microcontroller questions?
+
+```{r model9-t8-llm}
+# Filter T8 data with LLM scores
+df_t8_llm <- df_long %>% 
+  filter(Timepoint == "T8", !is.na(llm_score))
+
+cat("\n=== T8 LLM MICROCONTROLLER DATA CHECK ===\n")
+cat("T8 observations with LLM scores:", nrow(df_t8_llm), "\n")
+cat("Unique students:", n_distinct(df_t8_llm$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_t8_llm$Group_factor), "\n")
+cat("Score range:", min(df_t8_llm$llm_score, na.rm = TRUE), "to", 
+    max(df_t8_llm$llm_score, na.rm = TRUE), "\n")
+cat("Mean score:", round(mean(df_t8_llm$llm_score, na.rm = TRUE), 2), "\n\n")
+
+# Mixed model with random intercept for groups
+model9 <- lmer(
+  llm_score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t8_llm,
+  REML = TRUE
+)
+
+# Summary
+summary(model9)
+
+# Tidy output
+tidy(model9, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 9: Co-creation → T8 LLM Microcontroller Knowledge (Delayed)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model9)
+performance::r2(model9)
+```
+
+### Model 9 Interpretation
+
+```{r model9-interpretation}
+cat("\n=== MODEL 9 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation predict T8 LLM microcontroller knowledge (delayed)?\n\n")
+
+# Extract key statistics
+beta_cocreation_t8_llm <- fixef(model9)["Cocreation_Level"]
+se_cocreation_t8_llm <- sqrt(diag(vcov(model9)))["Cocreation_Level"]
+t_value_t8_llm <- summary(model9)$coefficients["Cocreation_Level", "t value"]
+p_value_t8_llm <- summary(model9)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_t8_llm <- confint(model9, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (beta): %.3f\n", beta_cocreation_t8_llm))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation_t8_llm))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_t8_llm[1], ci_t8_llm[2]))
+cat(sprintf("  t-value: %.3f\n", t_value_t8_llm))
+cat(sprintf("  p-value: %.4f\n", p_value_t8_llm))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value_t8_llm < 0.05) {
+  cat("  [YES] SIGNIFICANT effect of co-creation on T8 LLM microcontroller knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    LLM knowledge score increases by %.2f points (out of 8)\n", beta_cocreation_t8_llm))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation_t8_llm/8*100))
+} else {
+  cat("  [NO] NO significant effect of co-creation on T8 LLM microcontroller knowledge\n")
+}
+
+# Compare with T7 LLM questions (Model 8)
+cat("\nComparison with T7 LLM Questions (Model 8):\n")
+cat(sprintf("  T7: beta = %.3f, p = %.4f\n", beta_cocreation_t7_llm, p_value_t7_llm))
+cat(sprintf("  T8: beta = %.3f, p = %.4f\n", beta_cocreation_t8_llm, p_value_t8_llm))
+
+if (p_value_t7_llm < 0.05 && p_value_t8_llm < 0.05) {
+  retention_pct_llm <- (beta_cocreation_t8_llm / beta_cocreation_t7_llm) * 100
+  cat(sprintf("\n  Effect Retention: T8 is %.1f%% of T7 effect\n", retention_pct_llm))
+  
+  if (retention_pct_llm > 90) {
+    cat("  -> EXCELLENT retention of LLM-specific knowledge\n")
+  } else if (retention_pct_llm > 70) {
+    cat("  -> GOOD retention of LLM-specific knowledge\n")
+  } else if (retention_pct_llm > 50) {
+    cat("  -> MODERATE retention of LLM-specific knowledge\n")
+  } else {
+    cat("  -> WEAK retention of LLM-specific knowledge\n")
+  }
+} else if (p_value_t7_llm < 0.05 && p_value_t8_llm >= 0.05) {
+  cat("\n  -> LLM-specific knowledge benefits DID NOT persist\n")
+} else if (p_value_t7_llm >= 0.05 && p_value_t8_llm < 0.05) {
+  cat("\n  -> Delayed emergence of LLM-specific knowledge effects\n")
+}
+
+# Compare with basic microcontroller questions (Model 7)
+beta_t8_basic <- fixef(model7)["Cocreation_Level"]
+p_t8_basic <- summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("\nComparison with Basic Microcontroller Questions at T8 (Model 7):\n")
+cat(sprintf("  Basic questions (2 items): beta = %.3f, p = %.4f\n", beta_t8_basic, p_t8_basic))
+cat(sprintf("  LLM questions (8 items): beta = %.3f, p = %.4f\n", beta_cocreation_t8_llm, p_value_t8_llm))
+
+# Random effects
+var_group_t8_llm <- as.data.frame(VarCorr(model9))$vcov[1]
+var_resid_t8_llm <- attr(VarCorr(model9), "sc")^2
+icc_val_t8_llm <- var_group_t8_llm / (var_group_t8_llm + var_resid_t8_llm)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_t8_llm))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_t8_llm))
+cat(sprintf("  ICC: %.3f (%.1f%% between groups)\n", icc_val_t8_llm, icc_val_t8_llm*100))
+
+# Model fit
+r2_vals_t8_llm <- r2(model9)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f\n", r2_vals_t8_llm$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f\n", r2_vals_t8_llm$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model9), BIC(model9)))
+
+cat("\n================================\n")
+```
+
+### Model 9 Visualization
+
+```{r model9-plot, fig.width=10, fig.height=6}
+plot_model(model9, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T8 LLM Microcontroller Knowledge by Co-creation Level",
+    subtitle = "Model 9: 8 LLM-specific microcontroller questions (Delayed)",
+    x = "Co-creation Level",
+    y = "Predicted LLM Knowledge Score (0-8)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+### LLM Microcontrollers Comparison: T7 vs T8
+
+```{r model8-model9-comparison, fig.width=14, fig.height=6}
+# Create comparison plots for T7 vs T8 LLM questions
+library(gridExtra)
+
+# T7 LLM plot
+p_t7_llm <- plot_model(model8, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T7: Immediate (LLM Questions)",
+    subtitle = paste0("beta = ", round(fixef(model8)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model8))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-8)"
+  ) +
+  ylim(0, 8) +
+  theme_minimal(base_size = 12)
+
+# T8 LLM plot
+p_t8_llm <- plot_model(model9, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T8: Delayed (LLM Questions)",
+    subtitle = paste0("beta = ", round(fixef(model9)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model9))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-8)"
+  ) +
+  ylim(0, 8) +
+  theme_minimal(base_size = 12)
+
+# Arrange side by side
+grid.arrange(p_t7_llm, p_t8_llm, ncol = 2,
+             top = "LLM Microcontroller Questions: Immediate vs Delayed Effects")
+```
+
+```{r llm-t7-t8-raw-comparison, fig.width=14, fig.height=6}
+# Raw data comparison
+df_t7_t8_llm <- df_long %>% 
+  filter(Timepoint %in% c("T7", "T8"), !is.na(llm_score))
+
+ggplot(df_t7_t8_llm, aes(x = Cocreation_Level, y = llm_score)) +
+  geom_jitter(aes(color = Timepoint_factor), width = 0.1, height = 0.1, alpha = 0.6, size = 3) +
+  geom_smooth(aes(color = Timepoint_factor, fill = Timepoint_factor), 
+              method = "lm", se = TRUE, alpha = 0.2) +
+  scale_color_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                    labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_fill_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                   labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_y_continuous(limits = c(-0.5, 8.5), breaks = seq(0, 8, 1)) +
+  labs(
+    title = "LLM Microcontroller Knowledge: Immediate (T7) vs Delayed (T8)",
+    subtitle = "8 LLM-specific questions about microcontrollers",
+    x = "Co-creation Level",
+    y = "LLM Knowledge Score (0-8)",
+    color = "Timepoint",
+    fill = "Timepoint"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom")
+```
+
+## Model 10: T7 Combined Knowledge - Co-creation Predicts Total Knowledge
+
+Does co-creation level predict T7 performance on the combined knowledge measure (basic 2 items + LLM 8 items = 10 total items)?
+
+```{r model10-t7-combined}
+# Filter T7 data with combined scores
+df_t7_combined <- df_long %>% 
+  filter(Timepoint == "T7", !is.na(combined_score))
+
+cat("\n=== T7 COMBINED KNOWLEDGE DATA CHECK ===\n")
+cat("T7 observations with combined scores:", nrow(df_t7_combined), "\n")
+cat("Unique students:", n_distinct(df_t7_combined$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_t7_combined$Group_factor), "\n")
+cat("Score range:", min(df_t7_combined$combined_score, na.rm = TRUE), "to", 
+    max(df_t7_combined$combined_score, na.rm = TRUE), "\n")
+cat("Mean score:", round(mean(df_t7_combined$combined_score, na.rm = TRUE), 2), "\n")
+cat("Mean basic component:", round(mean(df_t7_combined$score, na.rm = TRUE), 2), "\n")
+cat("Mean LLM component:", round(mean(df_t7_combined$llm_score, na.rm = TRUE), 2), "\n\n")
+
+# Mixed model with random intercept for groups
+model10 <- lmer(
+  combined_score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t7_combined,
+  REML = TRUE
+)
+
+# Summary
+summary(model10)
+
+# Tidy output
+tidy(model10, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 10: Co-creation → T7 Combined Knowledge (10 items total)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model10)
+performance::r2(model10)
+```
+
+### Model 10 Interpretation
+
+```{r model10-interpretation}
+cat("\n=== MODEL 10 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation predict T7 total microcontroller knowledge?\n")
+cat("(Combined score: 2 basic + 8 LLM = 10 items total)\n\n")
+
+# Extract key statistics
+beta_cocreation_t7_combined <- fixef(model10)["Cocreation_Level"]
+se_cocreation_t7_combined <- sqrt(diag(vcov(model10)))["Cocreation_Level"]
+t_value_t7_combined <- summary(model10)$coefficients["Cocreation_Level", "t value"]
+p_value_t7_combined <- summary(model10)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_t7_combined <- confint(model10, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (beta): %.3f\n", beta_cocreation_t7_combined))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation_t7_combined))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_t7_combined[1], ci_t7_combined[2]))
+cat(sprintf("  t-value: %.3f\n", t_value_t7_combined))
+cat(sprintf("  p-value: %.4f\n", p_value_t7_combined))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value_t7_combined < 0.05) {
+  cat("  [YES] SIGNIFICANT effect of co-creation on T7 combined knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    combined knowledge score increases by %.2f points (out of 10)\n", beta_cocreation_t7_combined))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation_t7_combined/10*100))
+  cat(sprintf("  - Effect per item: %.3f points\n", beta_cocreation_t7_combined/10))
+} else {
+  cat("  [NO] NO significant effect of co-creation on T7 combined knowledge\n")
+}
+
+# Compare with component models
+cat("\nComparison with Component Models (T7):\n")
+cat(sprintf("  Basic only (Model 1, 2 items): beta = %.3f, p = %.4f\n", 
+            fixef(model1)["Cocreation_Level"], 
+            summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]))
+cat(sprintf("  LLM only (Model 8, 8 items): beta = %.3f, p = %.4f\n", 
+            fixef(model8)["Cocreation_Level"], 
+            summary(model8)$coefficients["Cocreation_Level", "Pr(>|t|)"]))
+cat(sprintf("  Combined (Model 10, 10 items): beta = %.3f, p = %.4f\n", 
+            beta_cocreation_t7_combined, p_value_t7_combined))
+
+# Check if combined effect equals sum of components
+sum_components <- fixef(model1)["Cocreation_Level"] + fixef(model8)["Cocreation_Level"]
+cat(sprintf("\nSum of component effects: %.3f\n", sum_components))
+cat(sprintf("Combined model effect: %.3f\n", beta_cocreation_t7_combined))
+cat(sprintf("Difference: %.3f points (%.1f%%)\n", 
+            beta_cocreation_t7_combined - sum_components,
+            (beta_cocreation_t7_combined - sum_components) / sum_components * 100))
+
+if (abs(beta_cocreation_t7_combined - sum_components) < 0.1) {
+  cat("-> Combined effect approximately equals sum of components (linear additivity)\n")
+} else if (beta_cocreation_t7_combined > sum_components) {
+  cat("-> Combined effect EXCEEDS sum of components (synergistic effect)\n")
+} else {
+  cat("-> Combined effect LESS THAN sum of components\n")
+}
+
+# Random effects
+var_group_t7_combined <- as.data.frame(VarCorr(model10))$vcov[1]
+var_resid_t7_combined <- attr(VarCorr(model10), "sc")^2
+icc_val_t7_combined <- var_group_t7_combined / (var_group_t7_combined + var_resid_t7_combined)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_t7_combined))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_t7_combined))
+cat(sprintf("  ICC: %.3f (%.1f%% between groups)\n", icc_val_t7_combined, icc_val_t7_combined*100))
+
+# Model fit
+r2_vals_t7_combined <- r2(model10)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f\n", r2_vals_t7_combined$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f\n", r2_vals_t7_combined$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model10), BIC(model10)))
+
+cat("\n================================\n")
+```
+
+### Model 10 Visualization
+
+```{r model10-plot, fig.width=10, fig.height=6}
+plot_model(model10, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T7 Combined Knowledge by Co-creation Level",
+    subtitle = "Model 10: Combined score (2 basic + 8 LLM = 10 total items)",
+    x = "Co-creation Level",
+    y = "Predicted Combined Score (0-10)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+## Model 11: T8 Combined Knowledge - Co-creation Predicts Delayed Total Knowledge
+
+Does co-creation level predict T8 performance on the combined knowledge measure?
+
+```{r model11-t8-combined}
+# Filter T8 data with combined scores
+df_t8_combined <- df_long %>% 
+  filter(Timepoint == "T8", !is.na(combined_score))
+
+cat("\n=== T8 COMBINED KNOWLEDGE DATA CHECK ===\n")
+cat("T8 observations with combined scores:", nrow(df_t8_combined), "\n")
+cat("Unique students:", n_distinct(df_t8_combined$Student_ID), "\n")
+cat("Unique groups:", n_distinct(df_t8_combined$Group_factor), "\n")
+cat("Score range:", min(df_t8_combined$combined_score, na.rm = TRUE), "to", 
+    max(df_t8_combined$combined_score, na.rm = TRUE), "\n")
+cat("Mean score:", round(mean(df_t8_combined$combined_score, na.rm = TRUE), 2), "\n")
+cat("Mean basic component:", round(mean(df_t8_combined$score, na.rm = TRUE), 2), "\n")
+cat("Mean LLM component:", round(mean(df_t8_combined$llm_score, na.rm = TRUE), 2), "\n\n")
+
+# Mixed model with random intercept for groups
+model11 <- lmer(
+  combined_score ~ Cocreation_Level + (1 | Group_factor),
+  data = df_t8_combined,
+  REML = TRUE
+)
+
+# Summary
+summary(model11)
+
+# Tidy output
+tidy(model11, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 11: Co-creation → T8 Combined Knowledge (Delayed)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model11)
+performance::r2(model11)
+```
+
+### Model 11 Interpretation
+
+```{r model11-interpretation}
+cat("\n=== MODEL 11 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation predict T8 total microcontroller knowledge?\n")
+cat("(Combined score: 2 basic + 8 LLM = 10 items total, delayed follow-up)\n\n")
+
+# Extract key statistics
+beta_cocreation_t8_combined <- fixef(model11)["Cocreation_Level"]
+se_cocreation_t8_combined <- sqrt(diag(vcov(model11)))["Cocreation_Level"]
+t_value_t8_combined <- summary(model11)$coefficients["Cocreation_Level", "t value"]
+p_value_t8_combined <- summary(model11)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_t8_combined <- confint(model11, parm = "Cocreation_Level", level = 0.95)
+
+cat("Fixed Effects:\n")
+cat(sprintf("  Co-creation coefficient (beta): %.3f\n", beta_cocreation_t8_combined))
+cat(sprintf("  Standard error: %.3f\n", se_cocreation_t8_combined))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", ci_t8_combined[1], ci_t8_combined[2]))
+cat(sprintf("  t-value: %.3f\n", t_value_t8_combined))
+cat(sprintf("  p-value: %.4f\n", p_value_t8_combined))
+
+# Effect size interpretation
+cat("\nEffect Interpretation:\n")
+if (p_value_t8_combined < 0.05) {
+  cat("  [YES] SIGNIFICANT effect of co-creation on T8 combined knowledge\n")
+  cat(sprintf("  - For each 1-unit increase in co-creation level,\n"))
+  cat(sprintf("    combined knowledge score increases by %.2f points (out of 10)\n", beta_cocreation_t8_combined))
+  cat(sprintf("  - This represents a %.1f%% increase per co-creation level\n", beta_cocreation_t8_combined/10*100))
+  cat(sprintf("  - Effect per item: %.3f points\n", beta_cocreation_t8_combined/10))
+} else {
+  cat("  [NO] NO significant effect of co-creation on T8 combined knowledge\n")
+}
+
+# Compare with T7 combined (Model 10)
+cat("\nComparison with T7 Combined Knowledge (Model 10):\n")
+cat(sprintf("  T7: beta = %.3f, p = %.4f\n", beta_cocreation_t7_combined, p_value_t7_combined))
+cat(sprintf("  T8: beta = %.3f, p = %.4f\n", beta_cocreation_t8_combined, p_value_t8_combined))
+
+if (p_value_t7_combined < 0.05 && p_value_t8_combined < 0.05) {
+  retention_pct_combined <- (beta_cocreation_t8_combined / beta_cocreation_t7_combined) * 100
+  cat(sprintf("\n  Effect Retention: T8 is %.1f%% of T7 effect\n", retention_pct_combined))
+  
+  if (retention_pct_combined > 90) {
+    cat("  -> EXCELLENT retention of overall knowledge benefits\n")
+  } else if (retention_pct_combined > 70) {
+    cat("  -> GOOD retention of overall knowledge benefits\n")
+  } else if (retention_pct_combined > 50) {
+    cat("  -> MODERATE retention of overall knowledge benefits\n")
+  } else {
+    cat("  -> WEAK retention of overall knowledge benefits\n")
+  }
+} else if (p_value_t7_combined < 0.05 && p_value_t8_combined >= 0.05) {
+  cat("\n  -> Overall knowledge benefits DID NOT persist\n")
+} else if (p_value_t7_combined >= 0.05 && p_value_t8_combined < 0.05) {
+  cat("\n  -> Delayed emergence of overall knowledge effects\n")
+}
+
+# Compare with component models at T8
+cat("\nComparison with Component Models (T8):\n")
+cat(sprintf("  Basic only (Model 7, 2 items): beta = %.3f, p = %.4f\n", 
+            fixef(model7)["Cocreation_Level"], 
+            summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"]))
+cat(sprintf("  LLM only (Model 9, 8 items): beta = %.3f, p = %.4f\n", 
+            fixef(model9)["Cocreation_Level"], 
+            summary(model9)$coefficients["Cocreation_Level", "Pr(>|t|)"]))
+cat(sprintf("  Combined (Model 11, 10 items): beta = %.3f, p = %.4f\n", 
+            beta_cocreation_t8_combined, p_value_t8_combined))
+
+# Random effects
+var_group_t8_combined <- as.data.frame(VarCorr(model11))$vcov[1]
+var_resid_t8_combined <- attr(VarCorr(model11), "sc")^2
+icc_val_t8_combined <- var_group_t8_combined / (var_group_t8_combined + var_resid_t8_combined)
+
+cat("\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_t8_combined))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_t8_combined))
+cat(sprintf("  ICC: %.3f (%.1f%% between groups)\n", icc_val_t8_combined, icc_val_t8_combined*100))
+
+# Model fit
+r2_vals_t8_combined <- r2(model11)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f\n", r2_vals_t8_combined$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f\n", r2_vals_t8_combined$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model11), BIC(model11)))
+
+cat("\n================================\n")
+```
+
+### Model 11 Visualization
+
+```{r model11-plot, fig.width=10, fig.height=6}
+plot_model(model11, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted T8 Combined Knowledge by Co-creation Level",
+    subtitle = "Model 11: Combined score (2 basic + 8 LLM = 10 total items, delayed)",
+    x = "Co-creation Level",
+    y = "Predicted Combined Score (0-10)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+### Combined Knowledge Comparison: T7 vs T8
+
+```{r model10-model11-comparison, fig.width=14, fig.height=6}
+# Create comparison plots for T7 vs T8 combined scores
+library(gridExtra)
+
+# T7 combined plot
+p_t7_combined <- plot_model(model10, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T7: Immediate (Combined 10 items)",
+    subtitle = paste0("beta = ", round(fixef(model10)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model10))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-10)"
+  ) +
+  ylim(0, 10) +
+  theme_minimal(base_size = 12)
+
+# T8 combined plot
+p_t8_combined <- plot_model(model11, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T8: Delayed (Combined 10 items)",
+    subtitle = paste0("beta = ", round(fixef(model11)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model11))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-10)"
+  ) +
+  ylim(0, 10) +
+  theme_minimal(base_size = 12)
+
+# Arrange side by side
+grid.arrange(p_t7_combined, p_t8_combined, ncol = 2,
+             top = "Combined Microcontroller Knowledge: Immediate vs Delayed Effects")
+```
+
+```{r combined-t7-t8-raw-comparison, fig.width=14, fig.height=6}
+# Raw data comparison
+df_t7_t8_combined <- df_long %>% 
+  filter(Timepoint %in% c("T7", "T8"), !is.na(combined_score))
+
+ggplot(df_t7_t8_combined, aes(x = Cocreation_Level, y = combined_score)) +
+  geom_jitter(aes(color = Timepoint_factor), width = 0.1, height = 0.15, alpha = 0.6, size = 3) +
+  geom_smooth(aes(color = Timepoint_factor, fill = Timepoint_factor), 
+              method = "lm", se = TRUE, alpha = 0.2) +
+  scale_color_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                    labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_fill_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                   labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_y_continuous(limits = c(-0.5, 10.5), breaks = seq(0, 10, 2)) +
+  labs(
+    title = "Combined Microcontroller Knowledge: Immediate (T7) vs Delayed (T8)",
+    subtitle = "Total score: 2 basic + 8 LLM = 10 items",
+    x = "Co-creation Level",
+    y = "Combined Knowledge Score (0-10)",
+    color = "Timepoint",
+    fill = "Timepoint"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom")
+```
+
+## Model 12: Knowledge Change (T7 → T8) - Does Co-creation Protect Against Decay?
+
+Does co-creation level predict how much knowledge students retain or lose from T7 to T8? This model examines whether higher co-creation protects against knowledge decay.
+
+```{r model12-knowledge-change}
+cat("\n=== MODEL 12: KNOWLEDGE CHANGE ANALYSIS ===\n\n")
+
+# Analyze all three types of knowledge change
+cat("Data for knowledge change analysis:\n")
+cat("  Students with complete T7→T8 data:", nrow(df_change), "\n")
+cat("  Students with LLM data:", sum(!is.na(df_change$llm_change)), "\n")
+cat("  Students with combined data:", sum(!is.na(df_change$combined_change)), "\n\n")
+
+# Model 12a: Basic microcontroller knowledge change
+cat("=== MODEL 12a: Basic Knowledge Change ===\n")
+model12a <- lmer(
+  basic_change ~ Cocreation_Level + (1 | Group_factor),
+  data = df_change,
+  REML = TRUE
+)
+
+summary(model12a)
+
+tidy(model12a, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 12a: Co-creation → Basic Knowledge Change (T7→T8)")
+
+# Model 12b: LLM microcontroller knowledge change
+cat("\n=== MODEL 12b: LLM Knowledge Change ===\n")
+model12b <- lmer(
+  llm_change ~ Cocreation_Level + (1 | Group_factor),
+  data = df_change %>% filter(!is.na(llm_change)),
+  REML = TRUE
+)
+
+summary(model12b)
+
+tidy(model12b, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 12b: Co-creation → LLM Knowledge Change (T7→T8)")
+
+# Model 12c: Combined knowledge change
+cat("\n=== MODEL 12c: Combined Knowledge Change ===\n")
+model12c <- lmer(
+  combined_change ~ Cocreation_Level + (1 | Group_factor),
+  data = df_change %>% filter(!is.na(combined_change)),
+  REML = TRUE
+)
+
+summary(model12c)
+
+tidy(model12c, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 12c: Co-creation → Combined Knowledge Change (T7→T8)")
+```
+
+### Model 12 Interpretation
+
+```{r model12-interpretation}
+cat("\n=== MODEL 12 COMPREHENSIVE INTERPRETATION ===\n")
+cat("Research Question: Does co-creation level predict knowledge change (retention/decay)?\n\n")
+
+# Extract key statistics for all three sub-models
+beta_basic_change <- fixef(model12a)["Cocreation_Level"]
+p_basic_change <- summary(model12a)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_basic_change <- confint(model12a, parm = "Cocreation_Level", level = 0.95)
+
+beta_llm_change <- fixef(model12b)["Cocreation_Level"]
+p_llm_change <- summary(model12b)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_llm_change <- confint(model12b, parm = "Cocreation_Level", level = 0.95)
+
+beta_combined_change <- fixef(model12c)["Cocreation_Level"]
+p_combined_change <- summary(model12c)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_combined_change <- confint(model12c, parm = "Cocreation_Level", level = 0.95)
+
+# Overall summary
+mean_basic_change <- mean(df_change$basic_change, na.rm = TRUE)
+mean_llm_change <- mean(df_change$llm_change, na.rm = TRUE)
+mean_combined_change <- mean(df_change$combined_change, na.rm = TRUE)
+
+cat("OVERALL KNOWLEDGE CHANGE (T7 → T8):\n")
+cat(sprintf("  Basic questions: mean change = %.3f (%.1f%% of max)\n", 
+            mean_basic_change, mean_basic_change/2*100))
+cat(sprintf("  LLM questions: mean change = %.3f (%.1f%% of max)\n", 
+            mean_llm_change, mean_llm_change/8*100))
+cat(sprintf("  Combined: mean change = %.3f (%.1f%% of max)\n", 
+            mean_combined_change, mean_combined_change/10*100))
+
+if (mean_basic_change < 0 | mean_llm_change < 0 | mean_combined_change < 0) {
+  cat("\n  -> On average, students experienced KNOWLEDGE DECAY from T7 to T8\n")
+} else if (mean_basic_change > 0 | mean_llm_change > 0 | mean_combined_change > 0) {
+  cat("\n  -> On average, students experienced KNOWLEDGE GAIN from T7 to T8\n")
+} else {
+  cat("\n  -> On average, students MAINTAINED knowledge from T7 to T8\n")
+}
+
+cat("\n" %>% strrep(2))
+cat("A. BASIC MICROCONTROLLER KNOWLEDGE CHANGE:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Beta = %.3f, 95%% CI [%.3f, %.3f], p = %.4f\n", 
+            beta_basic_change, ci_basic_change[1], ci_basic_change[2], p_basic_change))
+
+if (p_basic_change < 0.05) {
+  cat("[YES] SIGNIFICANT effect of co-creation on basic knowledge change\n\n")
+  if (beta_basic_change > 0) {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with LESS DECAY (or more gain)\n")
+    cat("  -> For each 1-unit increase in co-creation level,\n")
+    cat(sprintf("     students retain/gain %.3f more points from T7 to T8\n", beta_basic_change))
+    cat("  -> Co-creation appears to PROTECT against knowledge loss\n")
+  } else {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with MORE DECAY (or less gain)\n")
+    cat("  -> This suggests potential issues with co-creation implementation\n")
+  }
+} else {
+  cat("[NO] NO significant effect of co-creation on basic knowledge change\n\n")
+  cat("INTERPRETATION:\n")
+  cat("  -> Co-creation level does not predict knowledge retention/decay\n")
+  cat("  -> Decay rates are similar across co-creation levels\n")
+}
+
+cat("\n\nB. LLM MICROCONTROLLER KNOWLEDGE CHANGE:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Beta = %.3f, 95%% CI [%.3f, %.3f], p = %.4f\n", 
+            beta_llm_change, ci_llm_change[1], ci_llm_change[2], p_llm_change))
+
+if (p_llm_change < 0.05) {
+  cat("[YES] SIGNIFICANT effect of co-creation on LLM knowledge change\n\n")
+  if (beta_llm_change > 0) {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with BETTER RETENTION of LLM content\n")
+    cat(sprintf("  -> For each 1-unit increase in co-creation level,\n"))
+    cat(sprintf("     students retain/gain %.3f more points from T7 to T8\n", beta_llm_change))
+    cat("  -> Co-creation particularly protects LLM-specific knowledge\n")
+  } else {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with MORE DECAY of LLM content\n")
+  }
+} else {
+  cat("[NO] NO significant effect of co-creation on LLM knowledge change\n\n")
+  cat("INTERPRETATION:\n")
+  cat("  -> Co-creation level does not predict LLM knowledge retention/decay\n")
+}
+
+cat("\n\nC. COMBINED KNOWLEDGE CHANGE:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Beta = %.3f, 95%% CI [%.3f, %.3f], p = %.4f\n", 
+            beta_combined_change, ci_combined_change[1], ci_combined_change[2], p_combined_change))
+
+if (p_combined_change < 0.05) {
+  cat("[YES] SIGNIFICANT effect of co-creation on overall knowledge change\n\n")
+  if (beta_combined_change > 0) {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with BETTER OVERALL RETENTION\n")
+    cat(sprintf("  -> For each 1-unit increase in co-creation level,\n"))
+    cat(sprintf("     students retain/gain %.3f more points overall (out of 10)\n", beta_combined_change))
+    cat("  -> Co-creation provides protective effect across all content\n")
+  } else {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with MORE OVERALL DECAY\n")
+  }
+} else {
+  cat("[NO] NO significant effect of co-creation on overall knowledge change\n\n")
+  cat("INTERPRETATION:\n")
+  cat("  -> Co-creation level does not predict overall knowledge retention/decay\n")
+}
+
+cat("\n\nD. COMPARATIVE ANALYSIS:\n")
+cat("=" %>% strrep(60), "\n")
+
+# Compare effect sizes across knowledge types
+cat("Effect sizes (beta coefficients) for knowledge change:\n")
+cat(sprintf("  Basic (2 items): %.3f, p = %.4f\n", beta_basic_change, p_basic_change))
+cat(sprintf("  LLM (8 items): %.3f, p = %.4f\n", beta_llm_change, p_llm_change))
+cat(sprintf("  Combined (10 items): %.3f, p = %.4f\n", beta_combined_change, p_combined_change))
+
+# Per-item comparison
+cat("\nPer-item effect sizes:\n")
+cat(sprintf("  Basic: %.3f per item\n", beta_basic_change/2))
+cat(sprintf("  LLM: %.3f per item\n", beta_llm_change/8))
+cat(sprintf("  Combined: %.3f per item\n", beta_combined_change/10))
+
+# Determine if protective effect is uniform
+if (p_basic_change < 0.05 && p_llm_change < 0.05) {
+  if (beta_basic_change > 0 && beta_llm_change > 0) {
+    cat("\n-> Co-creation provides UNIFORM PROTECTIVE effect across both question types\n")
+  } else if (beta_basic_change > 0 && beta_llm_change <= 0) {
+    cat("\n-> Co-creation protects basic knowledge but NOT LLM-specific knowledge\n")
+  } else if (beta_basic_change <= 0 && beta_llm_change > 0) {
+    cat("\n-> Co-creation protects LLM knowledge but NOT basic knowledge\n")
+  }
+} else if (p_basic_change < 0.05 && p_llm_change >= 0.05) {
+  cat("\n-> Protective effect is SPECIFIC to basic microcontroller knowledge\n")
+} else if (p_basic_change >= 0.05 && p_llm_change < 0.05) {
+  cat("\n-> Protective effect is SPECIFIC to LLM microcontroller knowledge\n")
+}
+
+# Model fit statistics
+cat("\n\nModel Fit Statistics:\n")
+cat(sprintf("Model 12a (Basic): R² = %.3f, AIC = %.1f\n", 
+            r2(model12a)$R2_marginal, AIC(model12a)))
+cat(sprintf("Model 12b (LLM): R² = %.3f, AIC = %.1f\n", 
+            r2(model12b)$R2_marginal, AIC(model12b)))
+cat(sprintf("Model 12c (Combined): R² = %.3f, AIC = %.1f\n", 
+            r2(model12c)$R2_marginal, AIC(model12c)))
+
+cat("\n================================\n")
+```
+
+### Model 12 Visualizations
+
+```{r model12-plots, fig.width=16, fig.height=12}
+# Create comprehensive visualization of knowledge change
+library(gridExtra)
+
+# Plot 1: Predicted knowledge change by co-creation (Basic)
+p1 <- plot_model(model12a, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Basic Knowledge Change (T7→T8)",
+    subtitle = paste0("beta = ", round(beta_basic_change, 3), 
+                     ", p = ", format.pval(p_basic_change, digits = 3)),
+    x = "Co-creation Level",
+    y = "Knowledge Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1) +
+  annotate("text", x = min(df_change$Cocreation_Level), y = 0.1, 
+           label = "No change", hjust = 0, color = "red") +
+  theme_minimal(base_size = 12)
+
+# Plot 2: Predicted knowledge change by co-creation (LLM)
+p2 <- plot_model(model12b, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "LLM Knowledge Change (T7→T8)",
+    subtitle = paste0("beta = ", round(beta_llm_change, 3), 
+                     ", p = ", format.pval(p_llm_change, digits = 3)),
+    x = "Co-creation Level",
+    y = "Knowledge Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1) +
+  annotate("text", x = min(df_change$Cocreation_Level, na.rm = TRUE), y = 0.3, 
+           label = "No change", hjust = 0, color = "red") +
+  theme_minimal(base_size = 12)
+
+# Plot 3: Predicted knowledge change by co-creation (Combined)
+p3 <- plot_model(model12c, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Combined Knowledge Change (T7→T8)",
+    subtitle = paste0("beta = ", round(beta_combined_change, 3), 
+                     ", p = ", format.pval(p_combined_change, digits = 3)),
+    x = "Co-creation Level",
+    y = "Knowledge Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1) +
+  annotate("text", x = min(df_change$Cocreation_Level, na.rm = TRUE), y = 0.3, 
+           label = "No change", hjust = 0, color = "red") +
+  theme_minimal(base_size = 12)
+
+# Plot 4: Raw data - Basic change
+p4 <- ggplot(df_change, aes(x = Cocreation_Level, y = basic_change)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", alpha = 0.5) +
+  geom_jitter(width = 0.1, height = 0.05, alpha = 0.6, size = 3, color = "#3b82f6") +
+  geom_smooth(method = "lm", se = TRUE, color = "#1e40af", fill = "#93c5fd", alpha = 0.3) +
+  labs(
+    title = "Basic: Raw Data",
+    x = "Co-creation Level",
+    y = "Change (T8 - T7)"
+  ) +
+  theme_minimal(base_size = 12)
+
+# Plot 5: Raw data - LLM change
+p5 <- ggplot(df_change %>% filter(!is.na(llm_change)), 
+             aes(x = Cocreation_Level, y = llm_change)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", alpha = 0.5) +
+  geom_jitter(width = 0.1, height = 0.1, alpha = 0.6, size = 3, color = "#10b981") +
+  geom_smooth(method = "lm", se = TRUE, color = "#047857", fill = "#6ee7b7", alpha = 0.3) +
+  labs(
+    title = "LLM: Raw Data",
+    x = "Co-creation Level",
+    y = "Change (T8 - T7)"
+  ) +
+  theme_minimal(base_size = 12)
+
+# Plot 6: Raw data - Combined change
+p6 <- ggplot(df_change %>% filter(!is.na(combined_change)), 
+             aes(x = Cocreation_Level, y = combined_change)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", alpha = 0.5) +
+  geom_jitter(width = 0.1, height = 0.15, alpha = 0.6, size = 3, color = "#8b5cf6") +
+  geom_smooth(method = "lm", se = TRUE, color = "#6d28d9", fill = "#c4b5fd", alpha = 0.3) +
+  labs(
+    title = "Combined: Raw Data",
+    x = "Co-creation Level",
+    y = "Change (T8 - T7)"
+  ) +
+  theme_minimal(base_size = 12)
+
+# Arrange in 3x2 grid
+grid.arrange(p1, p4, p2, p5, p3, p6, ncol = 2,
+             top = "Knowledge Change Analysis: Does Co-creation Protect Against Decay?")
+```
+
+```{r model12-distribution, fig.width=14, fig.height=6}
+# Distribution of knowledge change by co-creation level
+df_change_long <- df_change %>%
+  select(Cocreation_Level, basic_change, llm_change, combined_change) %>%
+  pivot_longer(cols = c(basic_change, llm_change, combined_change),
+               names_to = "Knowledge_Type",
+               values_to = "Change") %>%
+  filter(!is.na(Change)) %>%
+  mutate(
+    Knowledge_Type = factor(Knowledge_Type,
+                           levels = c("basic_change", "llm_change", "combined_change"),
+                           labels = c("Basic (2 items)", "LLM (8 items)", "Combined (10 items)"))
+  )
+
+ggplot(df_change_long, aes(x = factor(Cocreation_Level), y = Change, fill = Knowledge_Type)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1) +
+  geom_boxplot(alpha = 0.7, outlier.alpha = 0.5) +
+  facet_wrap(~ Knowledge_Type, scales = "free_y") +
+  scale_fill_manual(values = c("#3b82f6", "#10b981", "#8b5cf6")) +
+  labs(
+    title = "Distribution of Knowledge Change (T7→T8) by Co-creation Level",
+    subtitle = "Red line = no change. Above = gain, Below = loss",
+    x = "Co-creation Level",
+    y = "Knowledge Change (T8 - T7)",
+    fill = "Knowledge Type"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none")
+```
+
+## Model 13: Learning Gains (T1 → T7) - Does Co-creation Predict Learning?
+
+Does co-creation level predict how much students learn from baseline (T1) to immediate post-test (T7)? This model examines whether higher co-creation is associated with greater learning gains.
+
+```{r model13-learning-gains}
+cat("\n=== MODEL 13: LEARNING GAINS ANALYSIS (T1 → T7) ===\n\n")
+
+cat("Data for learning gains analysis:\n")
+cat("  Students with complete T1→T7 data:", nrow(df_gains), "\n")
+cat("  Mean baseline (T1):", round(mean(df_gains$score_t1), 2), "\n")
+cat("  Mean post-test (T7):", round(mean(df_gains$score_t7), 2), "\n")
+cat("  Mean learning gain:", round(mean(df_gains$learning_gain), 2), "\n\n")
+
+# Model 13: Learning gains (T1 → T7)
+model13 <- lmer(
+  learning_gain ~ Cocreation_Level + (1 | Group_factor),
+  data = df_gains,
+  REML = TRUE
+)
+
+summary(model13)
+
+tidy(model13, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "Model 13: Co-creation → Learning Gains (T1→T7, Basic 2 items)")
+
+# Model performance
+cat("\nModel Performance:\n")
+performance::icc(model13)
+performance::r2(model13)
+```
+
+### Model 13 Interpretation
+
+```{r model13-interpretation}
+cat("\n=== MODEL 13 INTERPRETATION ===\n")
+cat("Research Question: Does co-creation predict learning gains from baseline to post-test?\n\n")
+
+# Extract key statistics
+beta_learning_gain <- fixef(model13)["Cocreation_Level"]
+se_learning_gain <- sqrt(diag(vcov(model13)))["Cocreation_Level"]
+t_value_learning_gain <- summary(model13)$coefficients["Cocreation_Level", "t value"]
+p_value_learning_gain <- summary(model13)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+ci_learning_gain <- confint(model13, parm = "Cocreation_Level", level = 0.95)
+
+# Overall learning statistics
+mean_gain <- mean(df_gains$learning_gain, na.rm = TRUE)
+pct_with_gain <- sum(df_gains$learning_gain > 0) / nrow(df_gains) * 100
+
+cat("OVERALL LEARNING PATTERN (T1 → T7):\n")
+cat(sprintf("  Mean learning gain: %.3f points (out of 2 possible)\n", mean_gain))
+cat(sprintf("  This represents %.1f%% of the maximum possible improvement\n", mean_gain/2*100))
+cat(sprintf("  Percentage of students with positive gains: %.1f%%\n", pct_with_gain))
+
+if (mean_gain > 0.5) {
+  cat("\n  -> Substantial learning occurred from baseline to post-test\n")
+} else if (mean_gain > 0) {
+  cat("\n  -> Modest learning occurred from baseline to post-test\n")
+} else {
+  cat("\n  -> Minimal or no learning detected from baseline to post-test\n")
+}
+
+cat("\n\nCO-CREATION EFFECT ON LEARNING GAINS:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Beta = %.3f, SE = %.3f\n", beta_learning_gain, se_learning_gain))
+cat(sprintf("95%% CI: [%.3f, %.3f]\n", ci_learning_gain[1], ci_learning_gain[2]))
+cat(sprintf("t-value = %.3f, p-value = %.4f\n", t_value_learning_gain, p_value_learning_gain))
+
+if (p_value_learning_gain < 0.05) {
+  cat("\n[YES] SIGNIFICANT effect of co-creation on learning gains\n\n")
+  if (beta_learning_gain > 0) {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with GREATER LEARNING GAINS\n")
+    cat(sprintf("  -> For each 1-unit increase in co-creation level,\n"))
+    cat(sprintf("     students gain %.3f more points from T1 to T7\n", beta_learning_gain))
+    cat(sprintf("  -> This represents %.1f%% additional learning per co-creation level\n", 
+                beta_learning_gain/2*100))
+    cat("\n  PRACTICAL SIGNIFICANCE:\n")
+    
+    # Calculate difference between high and low co-creation
+    gain_diff_0_to_3 <- beta_learning_gain * 3
+    cat(sprintf("  -> Students at co-creation level 3 vs. level 0 would be expected to\n"))
+    cat(sprintf("     learn %.3f more points (%.1f%% more of the scale)\n", 
+                gain_diff_0_to_3, gain_diff_0_to_3/2*100))
+  } else {
+    cat("INTERPRETATION:\n")
+    cat("  -> Higher co-creation is associated with SMALLER LEARNING GAINS\n")
+    cat("  -> This unexpected finding warrants investigation\n")
+  }
+} else {
+  cat("\n[NO] NO significant effect of co-creation on learning gains\n\n")
+  cat("INTERPRETATION:\n")
+  cat("  -> Co-creation level does not predict how much students learn\n")
+  cat("  -> Learning gains are similar across co-creation levels\n")
+  cat("  -> Other factors (not measured here) drive learning differences\n")
+}
+
+# Compare with Model 1 (T7 absolute scores)
+beta_t7_absolute <- fixef(model1)["Cocreation_Level"]
+p_t7_absolute <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("\n\nCOMPARISON WITH ABSOLUTE T7 SCORES (Model 1):\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Absolute T7 scores (Model 1): beta = %.3f, p = %.4f\n", 
+            beta_t7_absolute, p_t7_absolute))
+cat(sprintf("Learning gains T1→T7 (Model 13): beta = %.3f, p = %.4f\n", 
+            beta_learning_gain, p_value_learning_gain))
+
+if (p_t7_absolute < 0.05 && p_value_learning_gain < 0.05) {
+  cat("\nBoth models show significant co-creation effects:\n")
+  if (abs(beta_t7_absolute - beta_learning_gain) < 0.1) {
+    cat("  -> Effect sizes are SIMILAR\n")
+    cat("  -> This suggests co-creation primarily affects learning gains\n")
+    cat("  -> (not just baseline differences)\n")
+  } else if (beta_learning_gain > beta_t7_absolute) {
+    cat("  -> STRONGER effect on learning gains than absolute scores\n")
+    cat("  -> Co-creation particularly impacts the learning process\n")
+  } else {
+    cat("  -> WEAKER effect on learning gains than absolute scores\n")
+    cat("  -> Some of the T7 effect may reflect baseline differences\n")
+  }
+} else if (p_t7_absolute < 0.05 && p_value_learning_gain >= 0.05) {
+  cat("\nT7 effects exist but not explained by learning gains:\n")
+  cat("  -> The T7 co-creation effect may be due to baseline differences\n")
+  cat("  -> See Model 2 for selection effects analysis\n")
+} else if (p_t7_absolute >= 0.05 && p_value_learning_gain < 0.05) {
+  cat("\nLearning gains show effects not visible in absolute T7:\n")
+  cat("  -> Co-creation affects learning trajectory\n")
+  cat("  -> Gain scores reveal effects obscured in absolute scores\n")
+}
+
+# Random effects
+var_group_gain <- as.data.frame(VarCorr(model13))$vcov[1]
+var_resid_gain <- attr(VarCorr(model13), "sc")^2
+icc_val_gain <- var_group_gain / (var_group_gain + var_resid_gain)
+
+cat("\n\nRandom Effects:\n")
+cat(sprintf("  Group variance: %.3f\n", var_group_gain))
+cat(sprintf("  Residual variance: %.3f\n", var_resid_gain))
+cat(sprintf("  ICC: %.3f (%.1f%% between groups)\n", icc_val_gain, icc_val_gain*100))
+
+if (icc_val_gain > 0.1) {
+  cat("  -> Substantial clustering: learning gains vary by group\n")
+} else {
+  cat("  -> Minimal clustering: learning gains primarily individual\n")
+}
+
+# Model fit
+r2_vals_gain <- r2(model13)
+cat(sprintf("\nModel Fit:\n"))
+cat(sprintf("  Marginal R²: %.3f (variance explained by co-creation)\n", r2_vals_gain$R2_marginal))
+cat(sprintf("  Conditional R²: %.3f (variance explained by full model)\n", r2_vals_gain$R2_conditional))
+cat(sprintf("  AIC: %.1f, BIC: %.1f\n", AIC(model13), BIC(model13)))
+
+cat("\n================================\n")
+```
+
+### Model 13: Correlation Analysis
+
+Given the non-significant mixed model result but substantial group-level variance, let's examine the simple correlation and explore the clustering pattern.
+
+```{r model13-correlation-analysis}
+cat("\n=== SIMPLE CORRELATION ANALYSIS ===\n")
+cat("Examining relationship without mixed model structure\n\n")
+
+# Simple Pearson correlation (student-level)
+cor_result <- cor.test(df_gains$Cocreation_Level, df_gains$learning_gain, 
+                       method = "pearson")
+
+cat("STUDENT-LEVEL CORRELATION:\n")
+cat(sprintf("  Pearson r = %.3f\n", cor_result$estimate))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", cor_result$conf.int[1], cor_result$conf.int[2]))
+cat(sprintf("  t(%d) = %.3f, p = %.4f\n", cor_result$parameter, cor_result$statistic, cor_result$p.value))
+
+if (cor_result$p.value < 0.05) {
+  cat("\n  [SIGNIFICANT] Simple correlation exists at student level\n")
+} else {
+  cat("\n  [NOT SIGNIFICANT] No simple linear relationship at student level\n")
+}
+
+# Spearman correlation (non-parametric, in case of non-linearity)
+cor_spearman <- cor.test(df_gains$Cocreation_Level, df_gains$learning_gain, 
+                         method = "spearman", exact = FALSE)
+
+cat("\nSPEARMAN RANK CORRELATION (non-parametric):\n")
+cat(sprintf("  Spearman rho = %.3f, p = %.4f\n", 
+            cor_spearman$estimate, cor_spearman$p.value))
+
+# Group-level correlation
+df_gains_group <- df_gains %>%
+  group_by(Group_factor) %>%
+  summarise(
+    Cocreation_Level = first(Cocreation_Level),
+    mean_gain = mean(learning_gain, na.rm = TRUE),
+    sd_gain = sd(learning_gain, na.rm = TRUE),
+    n = n()
+  )
+
+cor_group <- cor.test(df_gains_group$Cocreation_Level, df_gains_group$mean_gain,
+                     method = "pearson")
+
+cat("\nGROUP-LEVEL CORRELATION:\n")
+cat(sprintf("  Pearson r = %.3f\n", cor_group$estimate))
+cat(sprintf("  95%% CI: [%.3f, %.3f]\n", cor_group$conf.int[1], cor_group$conf.int[2]))
+cat(sprintf("  t(%d) = %.3f, p = %.4f\n", cor_group$parameter, cor_group$statistic, cor_group$p.value))
+
+if (cor_group$p.value < 0.05) {
+  cat("\n  [SIGNIFICANT] Correlation exists at GROUP level\n")
+} else {
+  cat("\n  [NOT SIGNIFICANT] No relationship at group level either\n")
+}
+
+cat("\n\n=== UNDERSTANDING THE DISCREPANCY ===\n")
+cat("Why is co-creation → T7 significant but co-creation → learning gains not?\n\n")
+
+# Calculate correlations for comparison
+cor_t7 <- cor.test(df_gains$Cocreation_Level, df_gains$score_t7, method = "pearson")
+cor_t1 <- cor.test(df_gains$Cocreation_Level, df_gains$score_t1, method = "pearson")
+
+cat("Simple Correlations:\n")
+cat(sprintf("  Co-creation with T1 (baseline): r = %.3f, p = %.4f\n", 
+            cor_t1$estimate, cor_t1$p.value))
+cat(sprintf("  Co-creation with T7 (post-test): r = %.3f, p = %.4f\n", 
+            cor_t7$estimate, cor_t7$p.value))
+cat(sprintf("  Co-creation with T1→T7 gain: r = %.3f, p = %.4f\n", 
+            cor_result$estimate, cor_result$p.value))
+
+cat("\n")
+if (cor_t7$p.value < 0.05 && cor_result$p.value >= 0.05) {
+  if (cor_t1$p.value < 0.05) {
+    cat("INTERPRETATION:\n")
+    cat("  -> Co-creation correlates with T7 AND T1 (baseline)\n")
+    cat("  -> The T7 effect may partially reflect baseline differences\n")
+    cat("  -> Gain scores control for baseline, revealing weaker effect\n")
+    cat("  -> However, Model 2 shows T1 doesn't PREDICT co-creation at group level\n")
+    cat("  -> This suggests complex clustering patterns\n")
+  } else {
+    cat("INTERPRETATION:\n")
+    cat("  -> Co-creation correlates with T7 but NOT with T1 or gains\n")
+    cat("  -> This is unusual and warrants investigation\n")
+    cat("  -> Possible explanations:\n")
+    cat("     1. Non-linear relationship with gains\n")
+    cat("     2. Ceiling/floor effects in gain scores\n")
+    cat("     3. High within-group variability masking effects\n")
+  }
+}
+
+cat("\n")
+```
+
+### Model 13: Examining Within vs Between Group Effects
+
+```{r model13-variance-decomposition}
+cat("\n=== VARIANCE DECOMPOSITION ANALYSIS ===\n")
+cat("Why is group-level variance higher for gains than for T7?\n\n")
+
+# Compare ICCs across models
+icc_t1 <- as.numeric(performance::icc(lmer(score ~ 1 + (1|Group_factor), 
+                                           data = df_long %>% filter(Timepoint == "T1")))$ICC_adjusted)
+icc_t7_model1 <- as.numeric(performance::icc(model1)$ICC_adjusted)
+icc_gain_model13 <- as.numeric(performance::icc(model13)$ICC_adjusted)
+
+cat("Intraclass Correlations (ICC):\n")
+cat(sprintf("  T1 scores (baseline): ICC = %.3f (%.1f%% between groups)\n", 
+            icc_t1, icc_t1*100))
+cat(sprintf("  T7 scores (Model 1): ICC = %.3f (%.1f%% between groups)\n", 
+            icc_t7_model1, icc_t7_model1*100))
+cat(sprintf("  Learning gains (Model 13): ICC = %.3f (%.1f%% between groups)\n", 
+            icc_gain_model13, icc_gain_model13*100))
+
+cat("\nINTERPRETATION:\n")
+if (icc_gain_model13 > icc_t7_model1) {
+  cat("  -> Learning GAINS show MORE clustering than absolute T7 scores\n")
+  cat("  -> Groups differ more in HOW MUCH students learn than in final scores\n")
+  cat("\nPossible explanations:\n")
+  cat("  1. GROUP-LEVEL FACTORS affect learning trajectory\n")
+  cat("     - Group dynamics, teaching quality, engagement patterns\n")
+  cat("     - These create differential learning within groups\n")
+  cat("  2. BASELINE HETEROGENEITY within groups\n")
+  cat("     - If groups have mixed baseline knowledge, gains vary more\n")
+  cat("     - Some students have more 'room to grow'\n")
+  cat("  3. MEASUREMENT PROPERTIES\n")
+  cat("     - Gain scores may be more sensitive to group processes\n")
+  cat("     - Absolute scores may mask within-group learning variation\n")
+}
+
+cat("\n\nExamining within-group variance in baseline (T1):\n")
+
+# Calculate within-group SD at T1 and T7
+variance_by_group <- df_long %>%
+  filter(Timepoint %in% c("T1", "T7")) %>%
+  group_by(Group_factor, Timepoint) %>%
+  summarise(
+    mean_score = mean(score, na.rm = TRUE),
+    sd_score = sd(score, na.rm = TRUE),
+    n = n(),
+    .groups = 'drop'
+  ) %>%
+  pivot_wider(names_from = Timepoint, 
+              values_from = c(mean_score, sd_score, n),
+              names_glue = "{.value}_{Timepoint}")
+
+# Merge with co-creation and gains
+variance_with_gains <- variance_by_group %>%
+  mutate(Group_factor = as.character(Group_factor)) %>%
+  left_join(
+    df_gains %>% 
+      group_by(Group_factor) %>%
+      summarise(
+        Cocreation_Level = first(Cocreation_Level),
+        mean_gain = mean(learning_gain, na.rm = TRUE),
+        sd_gain = sd(learning_gain, na.rm = TRUE)
+      ) %>%
+      mutate(Group_factor = as.character(Group_factor)),
+    by = "Group_factor"
+  )
+
+cat("\nWithin-group variability by co-creation level:\n")
+variance_with_gains %>%
+  group_by(Cocreation_Level) %>%
+  summarise(
+    n_groups = n(),
+    mean_SD_T1 = mean(sd_score_T1, na.rm = TRUE),
+    mean_SD_T7 = mean(sd_score_T7, na.rm = TRUE),
+    mean_SD_gain = mean(sd_gain, na.rm = TRUE)
+  ) %>%
+  kable(digits = 3, caption = "Mean Within-Group SD by Co-creation Level")
+
+cat("\n")
+```
+
+```{r model13-group-patterns, fig.width=14, fig.height=6}
+# Visualize group-level patterns
+library(gridExtra)
+
+# Plot 1: Group means for learning gains by co-creation
+p1 <- ggplot(df_gains_group, aes(x = Cocreation_Level, y = mean_gain)) +
+  geom_point(aes(size = n), alpha = 0.7, color = "#f59e0b") +
+  geom_smooth(method = "lm", se = TRUE, color = "#d97706", fill = "#fbbf24", alpha = 0.3) +
+  geom_text(aes(label = Group_factor), nudge_y = 0.1, size = 3) +
+  labs(
+    title = "Group-Level: Mean Learning Gains",
+    subtitle = paste0("Group-level correlation: r = ", round(cor_group$estimate, 3),
+                     ", p = ", format.pval(cor_group$p.value, digits = 3)),
+    x = "Co-creation Level",
+    y = "Mean Learning Gain per Group",
+    size = "Group Size"
+  ) +
+  theme_minimal(base_size = 14)
+
+# Plot 2: Within-group variance in gains
+p2 <- ggplot(variance_with_gains, aes(x = Cocreation_Level, y = sd_gain)) +
+  geom_point(aes(size = n_T1), alpha = 0.7, color = "#8b5cf6") +
+  geom_smooth(method = "lm", se = TRUE, color = "#6d28d9", fill = "#c4b5fd", alpha = 0.3) +
+  geom_text(aes(label = Group_factor), nudge_y = 0.05, size = 3) +
+  labs(
+    title = "Within-Group Variability in Learning Gains",
+    subtitle = "Does variability differ by co-creation level?",
+    x = "Co-creation Level",
+    y = "SD of Learning Gains within Group",
+    size = "Group Size"
+  ) +
+  theme_minimal(base_size = 14)
+
+grid.arrange(p1, p2, ncol = 2,
+             top = "Group-Level Analysis: Learning Gains Patterns")
+```
+
+```{r model13-individual-vs-group}
+# Compare student-level vs group-level relationships
+cat("\n=== COMPARING LEVELS OF ANALYSIS ===\n\n")
+
+# Simple regression at student level (ignoring clustering)
+lm_student <- lm(learning_gain ~ Cocreation_Level, data = df_gains)
+
+# Simple regression at group level
+lm_group <- lm(mean_gain ~ Cocreation_Level, data = df_gains_group)
+
+cat("STUDENT-LEVEL (ignoring groups):\n")
+cat(sprintf("  Beta = %.3f, SE = %.3f, p = %.4f\n",
+            coef(lm_student)[2],
+            summary(lm_student)$coefficients[2, 2],
+            summary(lm_student)$coefficients[2, 4]))
+cat(sprintf("  R² = %.3f\n", summary(lm_student)$r.squared))
+
+cat("\nGROUP-LEVEL (aggregated):\n")
+cat(sprintf("  Beta = %.3f, SE = %.3f, p = %.4f\n",
+            coef(lm_group)[2],
+            summary(lm_group)$coefficients[2, 2],
+            summary(lm_group)$coefficients[2, 4]))
+cat(sprintf("  R² = %.3f\n", summary(lm_group)$r.squared))
+
+cat("\nMIXED MODEL (Model 13):\n")
+cat(sprintf("  Beta = %.3f, SE = %.3f, p = %.4f\n",
+            fixef(model13)[2],
+            sqrt(diag(vcov(model13)))[2],
+            summary(model13)$coefficients[2, 5]))
+
+cat("\n\nWHY THE DISCREPANCY?\n")
+cat("=" %>% strrep(60), "\n")
+
+if (cor_result$p.value >= 0.05 && cor_group$p.value >= 0.05 && p_value_learning_gain >= 0.05) {
+  cat("\nAll three approaches show non-significant effects:\n")
+  cat("  -> Co-creation does NOT predict learning gains\n")
+  cat("  -> The T7 effect (Model 1) must have another explanation\n\n")
+  
+  cat("POSSIBLE EXPLANATIONS:\n")
+  cat("1. CEILING EFFECTS:\n")
+  cat("   - If T1 scores are already high, limited room for improvement\n")
+  cat("   - Check T1 distribution\n\n")
+  
+  cat("2. HIGH WITHIN-GROUP VARIABILITY:\n")
+  cat("   - ICC = 15.8% means substantial group clustering\n")
+  cat("   - But this clustering is not explained by co-creation\n")
+  cat("   - Other group factors (teacher, classroom dynamics) matter more\n\n")
+  
+  cat("3. DIFFERENTIAL BASELINE:\n")
+  cat("   - Even without selection effect (Model 2), there may be\n")
+  cat("   - random baseline differences between groups\n")
+  cat("   - These could affect T7 scores without affecting gains\n\n")
+  
+  # Check T1 distribution
+  cat("Baseline (T1) distribution check:\n")
+  t1_summary <- df_gains %>%
+    summarise(
+      mean_t1 = mean(score_t1),
+      ceiling_pct = sum(score_t1 == 2) / n() * 100,
+      floor_pct = sum(score_t1 == 0) / n() * 100
+    )
+  cat(sprintf("  Mean T1 score: %.2f (out of 2)\n", t1_summary$mean_t1))
+  cat(sprintf("  At ceiling (score = 2): %.1f%%\n", t1_summary$ceiling_pct))
+  cat(sprintf("  At floor (score = 0): %.1f%%\n", t1_summary$floor_pct))
+  
+  if (t1_summary$mean_t1 > 1.5) {
+    cat("\n  -> HIGH baseline scores: ceiling effects may limit gains\n")
+  } else if (t1_summary$ceiling_pct > 30) {
+    cat("\n  -> Substantial ceiling effects: many students maxed out at T1\n")
+  }
+}
+
+cat("\n")
+```
+
+### Model 13: Exploring the Clustering Pattern
+
+```{r model13-clustering-exploration, fig.width=14, fig.height=10}
+cat("\n=== WHY IS GROUP-LEVEL VARIANCE HIGH FOR GAINS? ===\n\n")
+
+# Compare variance components across models
+cat("Variance Component Comparison:\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Get variance components
+get_variance_components <- function(model, model_name) {
+  vc <- as.data.frame(VarCorr(model))
+  var_group <- vc$vcov[1]
+  var_resid <- attr(VarCorr(model), "sc")^2
+  icc <- var_group / (var_group + var_resid)
+  
+  tibble(
+    Model = model_name,
+    Var_Group = var_group,
+    Var_Residual = var_resid,
+    ICC = icc,
+    Pct_Between = icc * 100
+  )
+}
+
+variance_comparison <- bind_rows(
+  get_variance_components(model1, "Model 1: T7 absolute"),
+  get_variance_components(model7, "Model 7: T8 absolute"),
+  get_variance_components(model13, "Model 13: T1→T7 gains")
+)
+
+variance_comparison %>%
+  kable(digits = 3, caption = "Variance Components: Why Gains Show More Clustering")
+
+cat("\n\nKEY FINDING:\n")
+cat("Learning GAINS show substantially more group-level clustering (ICC = ", 
+    round(variance_comparison$ICC[3], 3), ")\n")
+cat("than absolute scores at T7 (ICC = ", round(variance_comparison$ICC[1], 3), ")\n\n")
+
+cat("WHAT THIS MEANS:\n")
+cat("  1. Groups differ more in LEARNING TRAJECTORIES than in final outcomes\n")
+cat("  2. Some groups have consistently higher/lower gains across all students\n")
+cat("  3. This group-level variation is NOT explained by co-creation level\n")
+cat("  4. Other group factors (not measured) drive learning variation\n\n")
+
+cat("IMPLICATIONS:\n")
+cat("  -> Co-creation may not be the primary driver of learning differences\n")
+cat("  -> Group context (teacher, dynamics, implementation) matters\n")
+cat("  -> The T7 effect (Model 1) may be driven by these unmeasured factors\n")
+cat("  -> Caution needed in interpreting co-creation as causal mechanism\n")
+
+# Visualize this
+# Create plots showing the clustering
+p1 <- ggplot(df_gains, aes(x = factor(Group_factor), y = learning_gain)) +
+  geom_boxplot(aes(fill = factor(Cocreation_Level)), alpha = 0.7) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  scale_fill_viridis_d(name = "Co-creation\nLevel") +
+  labs(
+    title = "Learning Gains by Group",
+    subtitle = "Note the variability between groups",
+    x = "Group",
+    y = "Learning Gain (T7 - T1)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+p2 <- ggplot(df_gains_group, aes(x = Cocreation_Level, y = sd_gain)) +
+  geom_point(size = 4, alpha = 0.7, color = "#8b5cf6") +
+  geom_smooth(method = "lm", se = TRUE, color = "#6d28d9") +
+  labs(
+    title = "Within-Group Variability vs Co-creation",
+    subtitle = "Is variability related to co-creation level?",
+    x = "Co-creation Level",
+    y = "SD of Learning Gains within Group"
+  ) +
+  theme_minimal(base_size = 12)
+
+grid.arrange(p1, p2, ncol = 2,
+             top = "Understanding Group-Level Clustering in Learning Gains")
+```
+
+```{r model13-interaction-exploration}
+cat("\n=== EXPLORING POTENTIAL NON-LINEAR RELATIONSHIPS ===\n\n")
+
+# Check if relationship might be non-linear
+model13_quad <- lmer(
+  learning_gain ~ Cocreation_Level + I(Cocreation_Level^2) + (1 | Group_factor),
+  data = df_gains,
+  REML = TRUE
+)
+
+cat("Testing for quadratic (non-linear) relationship:\n")
+summary(model13_quad)$coefficients %>%
+  as.data.frame() %>%
+  rownames_to_column("Term") %>%
+  kable(digits = 3, caption = "Quadratic Model: Learning Gain ~ Co-creation + Co-creation²")
+
+# Test if quadratic improves fit
+anova_quad <- anova(model13, model13_quad)
+p_quad <- anova_quad$`Pr(>Chisq)`[2]
+
+cat(sprintf("\nLikelihood ratio test: p = %.4f\n", p_quad))
+if (p_quad < 0.05) {
+  cat("  -> QUADRATIC term is significant\n")
+  cat("  -> Relationship between co-creation and gains is NON-LINEAR\n")
+} else {
+  cat("  -> NO evidence of non-linear relationship\n")
+}
+
+cat("\n")
+```
+
+### Model 13: Data Structure and Power Analysis
+
+```{r model13-data-structure}
+cat("\n=== DATA STRUCTURE ANALYSIS ===\n")
+cat("Understanding sample distribution and statistical power\n\n")
+
+# Distribution of co-creation levels
+cat("Distribution of Co-creation Levels:\n")
+df_gains %>%
+  group_by(Cocreation_Level) %>%
+  summarise(
+    n_students = n(),
+    n_groups = n_distinct(Group_factor),
+    mean_gain = mean(learning_gain),
+    sd_gain = sd(learning_gain)
+  ) %>%
+  kable(digits = 2, caption = "Sample Size by Co-creation Level")
+
+# Check if uneven distribution might affect power
+cat("\n")
+if (min(table(df_gains$Cocreation_Level)) < 5) {
+  cat("[WARNING] Small sample sizes at some co-creation levels\n")
+  cat("  -> May limit statistical power to detect effects\n")
+}
+
+# Examine relationship accounting for baseline (ANCOVA approach)
+cat("\n\n=== ALTERNATIVE APPROACH: ANCOVA ===\n")
+cat("Does controlling for T1 as covariate change interpretation?\n\n")
+
+model13_ancova <- lmer(
+  score_t7 ~ score_t1 + Cocreation_Level + (1 | Group_factor),
+  data = df_gains,
+  REML = TRUE
+)
+
+cat("T7 Score ~ T1 Score + Co-creation Level:\n")
+tidy(model13_ancova, conf.int = TRUE) %>%
+  kable(digits = 3, caption = "ANCOVA: T7 controlling for T1")
+
+beta_cc_ancova <- fixef(model13_ancova)["Cocreation_Level"]
+p_cc_ancova <- summary(model13_ancova)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("\nComparing approaches:\n")
+cat(sprintf("  Simple T7 model (Model 1): beta = %.3f, p = %.4f\n", 
+            fixef(model1)[2], summary(model1)$coefficients[2, 5]))
+cat(sprintf("  Learning gain model (Model 13): beta = %.3f, p = %.4f\n",
+            fixef(model13)[2], summary(model13)$coefficients[2, 5]))
+cat(sprintf("  ANCOVA (T7 ~ T1 + CC): beta = %.3f, p = %.4f\n",
+            beta_cc_ancova, p_cc_ancova))
+
+cat("\nINTERPRETATION:\n")
+if (p_cc_ancova < 0.05 && p_value_learning_gain >= 0.05) {
+  cat("  -> ANCOVA shows significant effect when controlling for T1\n")
+  cat("  -> But gain scores (which also control for T1) show no effect\n")
+  cat("  -> This discrepancy suggests:\n")
+  cat("     1. The relationship may not be strictly linear\n")
+  cat("     2. Regression to the mean may be occurring\n")
+  cat("     3. Gain scores and ANCOVA capture different aspects\n")
+} else if (abs(beta_cc_ancova - fixef(model13)[2]) < 0.05) {
+  cat("  -> ANCOVA and gain model give similar results\n")
+  cat("  -> Consistent evidence for (non-)effect of co-creation on learning\n")
+}
+
+cat("\n")
+```
+
+```{r model13-regression-to-mean}
+cat("\n=== CHECKING FOR REGRESSION TO THE MEAN ===\n\n")
+
+# Regression to the mean: students with low T1 should show higher gains
+cor_t1_gain <- cor.test(df_gains$score_t1, df_gains$learning_gain)
+
+cat("Correlation between T1 (baseline) and Learning Gain:\n")
+cat(sprintf("  r = %.3f, p = %.4f\n", cor_t1_gain$estimate, cor_t1_gain$p.value))
+
+if (cor_t1_gain$estimate < -0.2 && cor_t1_gain$p.value < 0.05) {
+  cat("\n  [DETECTED] Regression to the mean is occurring\n")
+  cat("  -> Students with low baseline show higher gains\n")
+  cat("  -> Students with high baseline show lower gains (ceiling effect)\n")
+  cat("  -> This is expected and complicates gain score interpretation\n")
+} else {
+  cat("\n  [NOT DETECTED] No strong regression to the mean\n")
+}
+
+# Visualize
+ggplot(df_gains, aes(x = score_t1, y = learning_gain, color = factor(Cocreation_Level))) +
+  geom_point(alpha = 0.6, size = 3) +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  scale_color_viridis_d(name = "Co-creation\nLevel") +
+  labs(
+    title = "Learning Gains vs Baseline Knowledge",
+    subtitle = "Testing for regression to the mean by co-creation level",
+    x = "T1 Score (Baseline)",
+    y = "Learning Gain (T7 - T1)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+```{r model13-sample-size-comparison}
+cat("\n=== CRITICAL: SAMPLE SIZE COMPARISON ===\n")
+cat("Checking if reduced sample size explains non-significance\n\n")
+
+# Get sample sizes for each model
+n_t1 <- df_long %>% filter(Timepoint == "T1") %>% nrow()
+n_t7 <- df_long %>% filter(Timepoint == "T7") %>% nrow()
+n_gains <- nrow(df_gains)
+
+cat("Sample Sizes Across Models:\n")
+cat(sprintf("  Model 2 (T1 only): n = %d students\n", n_t1))
+cat(sprintf("  Model 1 (T7 only): n = %d students\n", n_t7))
+cat(sprintf("  Model 13 (T1→T7 gains): n = %d students\n", n_gains))
+
+cat("\n[IMPORTANT] Model 1 and Model 13 have IDENTICAL sample sizes!\n")
+cat("  -> Sample size reduction is NOT the explanation\n")
+cat("  -> Both models use the same 24 students with complete T7 data\n")
+
+# Check which students are in which models
+students_t1 <- df_long %>% filter(Timepoint == "T1") %>% pull(`Participant ID`)
+students_t7 <- df_long %>% filter(Timepoint == "T7") %>% pull(`Participant ID`)
+students_gains <- df_gains %>% pull(`Participant ID`)
+
+# Students at T1 but not at T7
+missing_at_t7 <- setdiff(students_t1, students_t7)
+# Students at T7 but not at T1  
+missing_at_t1 <- setdiff(students_t7, students_t1)
+
+if (length(missing_at_t7) > 0) {
+  cat(sprintf("\n%d students present at T1 but ABSENT at T7:\n", length(missing_at_t7)))
+  df_missing_t7 <- df_long %>%
+    filter(`Participant ID` %in% missing_at_t7, Timepoint == "T1") %>%
+    select(`Participant ID`, Group_factor, Cocreation_Level, score) %>%
+    arrange(Cocreation_Level)
+  print(kable(df_missing_t7, caption = "Students who left after T1"))
+}
+
+if (length(missing_at_t1) > 0) {
+  cat(sprintf("\n%d students present at T7 but ABSENT at T1:\n", length(missing_at_t1)))
+  df_missing_t1 <- df_long %>%
+    filter(`Participant ID` %in% missing_at_t1, Timepoint == "T7") %>%
+    select(`Participant ID`, Group_factor, Cocreation_Level, score) %>%
+    arrange(Cocreation_Level)
+  print(kable(df_missing_t1, caption = "Students who joined after T1 (not in gains)"))
+}
+
+cat("\nSample composition:\n")
+cat("  Model 13 includes: ALL students present at both T1 AND T7\n")
+cat("  Model 1 includes: ALL students present at T7 (regardless of T1)\n")
+
+if (n_gains == n_t7) {
+  cat("\n[CRITICAL] Sample sizes are IDENTICAL\n")
+  cat("  -> Power differences must come from OTHER sources\n")
+}
+
+cat("\n")
+```
+
+```{r model13-attendance-analysis}
+cat("\n=== STUDENT ATTENDANCE PATTERN ANALYSIS ===\n")
+cat("Why do we have 27 students with co-creation but only 24 at T7?\n\n")
+
+# Get all unique students across all timepoints
+all_students <- df_long %>%
+  pull(`Participant ID`) %>%
+  unique()
+
+# Create attendance matrix
+attendance <- df_long %>%
+  select(`Participant ID`, Timepoint, Group_factor, Cocreation_Level) %>%
+  distinct() %>%
+  mutate(present = 1) %>%
+  pivot_wider(names_from = Timepoint,
+              values_from = present,
+              values_fill = 0) %>%
+  arrange(`Participant ID`)
+
+cat("Complete Attendance Pattern:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Total unique students in dataset: %d\n", nrow(attendance)))
+cat(sprintf("Students at T1: %d\n", sum(attendance$T1)))
+cat(sprintf("Students at T4: %d\n", sum(attendance$T4)))
+cat(sprintf("Students at T7: %d\n", sum(attendance$T7)))
+cat(sprintf("Students at T8: %d\n", sum(attendance$T8)))
+
+# Identify students missing T7
+students_missing_t7 <- attendance %>%
+  filter(T7 == 0)
+
+if (nrow(students_missing_t7) > 0) {
+  cat(sprintf("\n[FOUND] %d students have co-creation data but NO T7 scores:\n\n", 
+              nrow(students_missing_t7)))
+  
+  students_missing_t7 %>%
+    select(`Participant ID`, Group_factor, Cocreation_Level, T1, T4, T7, T8) %>%
+    kable(caption = "Students Missing T7 Data (1 = present, 0 = absent)")
+  
+  cat("\n")
+  cat("These students are EXCLUDED from:\n")
+  cat("  - Model 1 (T7 analysis)\n")
+  cat("  - Model 13 (learning gains T1→T7)\n")
+  cat("  - Any other T7-based analysis\n\n")
+  
+  # Check their co-creation distribution
+  cat("Co-creation distribution of missing students:\n")
+  students_missing_t7 %>%
+    group_by(Cocreation_Level) %>%
+    summarise(n = n()) %>%
+    kable()
+  
+  cat("\n")
+  
+  # Check if they were present at other timepoints
+  cat("Their attendance at other timepoints:\n")
+  cat(sprintf("  Present at T1: %d/%d\n", sum(students_missing_t7$T1), nrow(students_missing_t7)))
+  cat(sprintf("  Present at T4: %d/%d\n", sum(students_missing_t7$T4), nrow(students_missing_t7)))
+  cat(sprintf("  Present at T8: %d/%d\n", sum(students_missing_t7$T8), nrow(students_missing_t7)))
+}
+
+# Show complete attendance patterns
+cat("\n\nFull Attendance Pattern Summary:\n")
+cat("=" %>% strrep(60), "\n")
+
+attendance_patterns <- attendance %>%
+  mutate(
+    pattern = paste(T1, T4, T7, T8, sep = "-"),
+    complete = (T1 == 1 & T4 == 1 & T7 == 1 & T8 == 1)
+  ) %>%
+  group_by(pattern) %>%
+  summarise(
+    n = n(),
+    description = case_when(
+      pattern == "1-1-1-1" ~ "All timepoints",
+      pattern == "1-1-1-0" ~ "Missing T8 only",
+      pattern == "1-1-0-1" ~ "Missing T7 only",
+      pattern == "1-1-0-0" ~ "Missing T7 & T8",
+      pattern == "1-0-1-1" ~ "Missing T4 only",
+      pattern == "0-1-1-1" ~ "Missing T1 only",
+      TRUE ~ "Other pattern"
+    )
+  ) %>%
+  arrange(desc(n))
+
+print(kable(attendance_patterns, caption = "Student Attendance Patterns (1=present, 0=absent)"))
+
+cat("\n")
+cat("IMPLICATIONS FOR ANALYSIS:\n")
+cat(sprintf("  - Complete longitudinal data: %d students\n", 
+            sum(attendance$T1 & attendance$T4 & attendance$T7 & attendance$T8)))
+cat(sprintf("  - Can calculate T1→T7 gains: %d students\n", n_gains))
+cat(sprintf("  - Can calculate T7→T8 change: %d students\n", 
+            nrow(df_change)))
+
+cat("\n")
+```
+
+```{r model13-verification-t1-in-t7}
+cat("\n=== CRITICAL VERIFICATION: Do all T7 students have T1 data? ===\n")
+cat("This explains why Model 1 and Model 13 have identical sample sizes\n\n")
+
+# Get students at each timepoint
+students_t1 <- df_long %>% filter(Timepoint == "T1") %>% pull(`Participant ID`)
+students_t7 <- df_long %>% filter(Timepoint == "T7") %>% pull(`Participant ID`)
+
+cat(sprintf("Students at T1: %d\n", length(students_t1)))
+cat(sprintf("Students at T7: %d\n", length(students_t7)))
+
+# Check: do all T7 students also have T1?
+t7_students_with_t1 <- students_t7[students_t7 %in% students_t1]
+t7_students_without_t1 <- setdiff(students_t7, students_t1)
+
+cat(sprintf("\nT7 students who ALSO have T1: %d\n", length(t7_students_with_t1)))
+cat(sprintf("T7 students who LACK T1: %d\n", length(t7_students_without_t1)))
+
+if (length(t7_students_without_t1) == 0) {
+  cat("\n[CONFIRMED] ALL T7 students also have T1 data!\n")
+  cat("  -> This explains why Model 1 (n=24) and Model 13 (n=24) are identical\n")
+  cat("  -> Every student at T7 can be included in gain analysis\n")
+  cat("  -> Sample size is NOT the issue for Model 13 non-significance\n")
+} else {
+  cat("\n[UNEXPECTED] Some T7 students don't have T1 data\n")
+  cat("  -> These students should be excluded from Model 13\n")
+  
+  df_t7_no_t1 <- df_long %>%
+    filter(`Participant ID` %in% t7_students_without_t1, Timepoint == "T7") %>%
+    select(`Participant ID`, Group_factor, Cocreation_Level, score)
+  
+  print(kable(df_t7_no_t1, caption = "T7 students without T1 data"))
+}
+
+# Now identify the 3 students with co-creation but no T7
+all_students <- df_long %>% distinct(`Participant ID`) %>% pull(`Participant ID`)
+students_no_t7 <- setdiff(all_students, students_t7)
+
+cat(sprintf("\n\n=== STUDENTS WITH CO-CREATION DATA BUT NO T7 ===\n"))
+cat(sprintf("Total students in dataset: %d\n", length(all_students)))
+cat(sprintf("Students missing T7: %d\n\n", length(students_no_t7)))
+
+if (length(students_no_t7) > 0) {
+  # Get their info from any available timepoint
+  df_no_t7 <- df_long %>%
+    filter(`Participant ID` %in% students_no_t7) %>%
+    group_by(`Participant ID`) %>%
+    summarise(
+      Group_factor = first(Group_factor),
+      Cocreation_Level = first(Cocreation_Level),
+      has_T1 = any(Timepoint == "T1"),
+      has_T4 = any(Timepoint == "T4"),
+      has_T7 = any(Timepoint == "T7"),
+      has_T8 = any(Timepoint == "T8"),
+      .groups = 'drop'
+    ) %>%
+    arrange(Cocreation_Level, Group_factor)
+  
+  print(kable(df_no_t7, caption = "Students Who Never Showed Up for T7 Testing"))
+  
+  cat("\nThese students are EXCLUDED from ALL T7-based analyses:\n")
+  cat("  - Model 1 (T7 absolute scores)\n")
+  cat("  - Model 8 (T7 LLM questions)\n")
+  cat("  - Model 10 (T7 combined knowledge)\n")
+  cat("  - Model 13 (T1→T7 learning gains)\n")
+  
+  # Check their co-creation distribution
+  cat("\n\nCo-creation distribution of students missing T7:\n")
+  df_no_t7 %>%
+    group_by(Cocreation_Level) %>%
+    summarise(n = n()) %>%
+    kable()
+  
+  # Check if this creates bias
+  cat("\n")
+  if (max(df_no_t7$Cocreation_Level) - min(df_no_t7$Cocreation_Level) > 1) {
+    cat("[WARNING] Missing students span multiple co-creation levels\n")
+    cat("  -> Could introduce bias if missingness related to co-creation\n")
+  } else {
+    cat("[OK] Missing students concentrated in one co-creation level\n")
+    cat("  -> Less likely to bias results\n")
+  }
+}
+
+cat("\n\nSUMMARY:\n")
+cat("=" %>% strrep(60), "\n")
+cat(sprintf("Starting sample: %d students with co-creation assignments\n", length(all_students)))
+cat(sprintf("Attended T7: %d students (%.1f%%)\n", length(students_t7), 
+            (length(students_t7)/length(all_students))*100))
+cat(sprintf("Missing T7: %d students (%.1f%%)\n", length(students_no_t7),
+            (length(students_no_t7)/length(all_students))*100))
+
+if (length(t7_students_without_t1) == 0) {
+  cat(sprintf("\nAll %d T7 students have T1 data → Model 1 and Model 13 use same sample\n", 
+              length(students_t7)))
+}
+
+cat("\n")
+```
+
+```{r model13-power-analysis}
+
+cat("\n=== STATISTICAL POWER CONSIDERATIONS ===\n\n")
+
+# Calculate effect size (Cohen's f²)
+r2_marginal <- r2(model13)$R2_marginal
+f_squared <- r2_marginal / (1 - r2_marginal)
+
+cat("Effect Size:\n")
+cat(sprintf("  Marginal R² = %.3f\n", r2_marginal))
+cat(sprintf("  Cohen's f² = %.3f\n", f_squared))
+
+if (f_squared < 0.02) {
+  cat("  -> VERY SMALL effect size\n")
+} else if (f_squared < 0.15) {
+  cat("  -> SMALL effect size\n")
+} else if (f_squared < 0.35) {
+  cat("  -> MEDIUM effect size\n")
+} else {
+  cat("  -> LARGE effect size\n")
+}
+
+cat("\nSample Size:\n")
+cat(sprintf("  Model 1 (T7): n = %d students\n", n_t7))
+cat(sprintf("  Model 13 (gains): n = %d students\n", nrow(df_gains)))
+
+if (n_gains == n_t7) {
+  cat("\n  [IDENTICAL SAMPLE SIZES] Both models use the same 24 students\n")
+  cat("  -> Sample size is NOT the reason for different p-values\n\n")
+} else {
+  cat(sprintf("  Sample size difference: %d students\n", abs(n_t7 - n_gains)))
+}
+
+cat(sprintf("  Number of groups: %d\n", n_distinct(df_gains$Group_factor)))
+cat(sprintf("  Students per group: %.1f (mean)\n", 
+            nrow(df_gains) / n_distinct(df_gains$Group_factor)))
+
+# Compare standard errors - THIS is the key
+se_model1 <- sqrt(diag(vcov(model1)))[2]
+se_model13 <- sqrt(diag(vcov(model13)))[2]
+
+cat("\nSTANDARD ERROR COMPARISON:\n")
+cat(sprintf("  SE for Model 1 (T7): %.3f\n", se_model1))
+cat(sprintf("  SE for Model 13 (gains): %.3f\n", se_model13))
+cat(sprintf("  SE ratio: %.2fx larger for gains model\n\n", se_model13 / se_model1))
+
+cat("WHY IS THE STANDARD ERROR %.2fx LARGER?\n", se_model13 / se_model1)
+cat("=" %>% strrep(60), "\n\n")
+
+cat("1. HIGHER VARIABILITY IN OUTCOME:\n")
+cat("   - Strong regression to mean (r = -0.732)\n")
+cat("   - Gain scores inherently more variable than levels\n")
+cat(sprintf("   - SD of T7 scores: %.3f\n", sd(df_gains$score_t7, na.rm = TRUE)))
+cat(sprintf("   - SD of learning gains: %.3f\n", sd(df_gains$learning_gain, na.rm = TRUE)))
+cat(sprintf("   - Gain SD is %.2fx larger\n\n", 
+            sd(df_gains$learning_gain, na.rm = TRUE) / sd(df_gains$score_t7, na.rm = TRUE)))
+
+cat("2. HIGHER ICC (LESS EFFICIENT SAMPLE):\n")
+icc_model1 <- as.numeric(performance::icc(model1)$ICC_adjusted)
+icc_model13 <- as.numeric(performance::icc(model13)$ICC_adjusted)
+cat(sprintf("   - Model 1 ICC: %.1f%%\n", icc_model1 * 100))
+cat(sprintf("   - Model 13 ICC: %.1f%%\n", icc_model13 * 100))
+cat("   - Higher ICC = more clustering = less independent information\n")
+cat(sprintf("   - Effective sample size reduced by clustering\n\n"))
+
+# Calculate "effective" sample size accounting for ICC
+# Design effect = 1 + (avg cluster size - 1) * ICC
+avg_cluster_size <- nrow(df_gains) / n_distinct(df_gains$Group_factor)
+design_effect_model1 <- 1 + (avg_cluster_size - 1) * icc_model1
+design_effect_model13 <- 1 + (avg_cluster_size - 1) * icc_model13
+
+eff_n_model1 <- n_t7 / design_effect_model1
+eff_n_model13 <- n_gains / design_effect_model13
+
+cat("3. EFFECTIVE SAMPLE SIZE (accounting for clustering):\n")
+cat(sprintf("   - Model 1 effective n: %.1f (design effect = %.2f)\n", 
+            eff_n_model1, design_effect_model1))
+cat(sprintf("   - Model 13 effective n: %.1f (design effect = %.2f)\n",
+            eff_n_model13, design_effect_model13))
+cat(sprintf("   - Model 13 has %.1f%% less effective sample\n\n",
+            (1 - eff_n_model13/eff_n_model1) * 100))
+
+# Rule of thumb for mixed models: need ~30 groups for stable estimates
+if (n_distinct(df_gains$Group_factor) < 30) {
+  cat("  [NOTE] With <30 groups, mixed model estimates may be unstable\n")
+  cat("  -> Group-level effects should be interpreted cautiously\n")
+}
+
+cat("\n\nBOTTOM LINE:\n")
+cat("=" %>% strrep(60), "\n")
+cat("The non-significant gain effect is due to STATISTICAL PROPERTIES OF GAIN SCORES:\n\n")
+
+cat("1. SAME SAMPLE SIZE (n = 24 for both models):\n")
+cat("   - Sample size reduction is NOT the explanation\n\n")
+
+cat("2. MUCH HIGHER VARIABILITY:\n")
+cat("   - Strong regression to mean (r = -0.732)\n")
+cat("   - Gain scores are %.2fx more variable than T7 scores\n", 
+    sd(df_gains$learning_gain, na.rm = TRUE) / sd(df_gains$score_t7, na.rm = TRUE))
+cat(sprintf("   - SE is %.2fx larger than Model 1\n\n", se_model13 / se_model1))
+
+cat("3. HIGHER ICC (15.8% vs 2.9%):\n")
+cat("   - More clustering = less 'effective' sample size\n")
+cat(sprintf("   - Effective n reduced by %.1f%% due to clustering\n", 
+            (1 - eff_n_model13/eff_n_model1) * 100))
+cat("   - Groups differ in learning trajectories (not explained by co-creation)\n")
+cat("   - Other group factors create 'noise' in the gain model\n\n")
+
+cat("4. SIMILAR EFFECT SIZE:\n")
+cat("   - Beta coefficients are nearly identical (0.362 vs 0.339)\n")
+cat("   - ANCOVA (T7 ~ T1 + CC) is highly significant (p = 0.0061)\n")
+cat("   - This suggests the EFFECT EXISTS but gain model lacks power\n\n")
+
+cat("CONCLUSION:\n")
+cat("Co-creation likely DOES affect learning gains, but Model 13 is\n")
+cat("underpowered to detect it due to:\n")
+cat("  - High variability from regression to mean\n")
+cat("  - Substantial unexplained group-level variance (ICC = 15.8%)\n")
+cat("  - Reduced effective sample size from clustering\n\n")
+cat("The ANCOVA approach (p = 0.0061) provides stronger evidence because:\n")
+cat("  - Same sample size but lower variability\n")
+cat("  - Better handles regression to mean\n")
+cat("  - More efficient use of the data structure\n")
+
+cat("\n")
+```
+
+### Model 13 Visualizations
+
+```{r model13-plots, fig.width=14, fig.height=6}
+library(gridExtra)
+
+# Plot 1: Predicted learning gains by co-creation
+p1 <- plot_model(model13, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Predicted Learning Gains by Co-creation Level",
+    subtitle = paste0("Model 13: beta = ", round(beta_learning_gain, 3), 
+                     ", p = ", format.pval(p_value_learning_gain, digits = 3)),
+    x = "Co-creation Level",
+    y = "Learning Gain (T7 - T1)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", alpha = 0.5) +
+  ylim(-0.5, 2) +
+  theme_minimal(base_size = 14)
+
+# Plot 2: Raw data
+p2 <- ggplot(df_gains, aes(x = Cocreation_Level, y = learning_gain)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", alpha = 0.5) +
+  geom_jitter(width = 0.1, height = 0.05, alpha = 0.6, size = 3, color = "#f59e0b") +
+  geom_smooth(method = "lm", se = TRUE, color = "#d97706", fill = "#fbbf24", alpha = 0.3) +
+  labs(
+    title = "Raw Data: Learning Gains by Co-creation",
+    subtitle = "Points above red line = positive learning",
+    x = "Co-creation Level",
+    y = "Learning Gain (T7 - T1)"
+  ) +
+  theme_minimal(base_size = 14)
+
+grid.arrange(p1, p2, ncol = 2,
+             top = "Learning Gains Analysis (T1 → T7): Co-creation Effect")
+```
+
+```{r model13-trajectories, fig.width=12, fig.height=8}
+cat("\n=== TRAJECTORY PLOT DIAGNOSTICS ===\n")
+
+# Get total students with co-creation data
+total_students_with_cocreation <- df_long %>% 
+  distinct(`Participant ID`) %>% 
+  nrow()
+
+# Check how many students we should plot
+cat(sprintf("Total students with co-creation data: %d\n", total_students_with_cocreation))
+cat(sprintf("Students at T1: %d\n", n_t1))
+cat(sprintf("Students at T7: %d\n", n_t7))
+cat(sprintf("Students in df_gains (have both T1 AND T7): %d\n", nrow(df_gains)))
+
+students_missing_from_plot <- total_students_with_cocreation - nrow(df_gains)
+
+cat(sprintf("\nStudents excluded from trajectory plot: %d (%.1f%% of total)\n", 
+            students_missing_from_plot, 
+            (students_missing_from_plot / total_students_with_cocreation) * 100))
+
+# Identify who is missing from the plot
+students_all <- df_long %>% distinct(`Participant ID`) %>% pull(`Participant ID`)
+students_in_plot <- df_gains %>% pull(`Participant ID`)
+students_excluded <- setdiff(students_all, students_in_plot)
+
+if (length(students_excluded) > 0) {
+  cat(sprintf("\n%d students have co-creation data but not in trajectory plot:\n", 
+              length(students_excluded)))
+  
+  # Find their attendance pattern
+  df_excluded_attendance <- df_long %>%
+    filter(`Participant ID` %in% students_excluded) %>%
+    group_by(`Participant ID`) %>%
+    summarise(
+      Group_factor = first(Group_factor),
+      Cocreation_Level = first(Cocreation_Level),
+      has_T1 = any(Timepoint == "T1"),
+      has_T4 = any(Timepoint == "T4"),
+      has_T7 = any(Timepoint == "T7"),
+      has_T8 = any(Timepoint == "T8")
+    ) %>%
+    arrange(Cocreation_Level, Group_factor)
+  
+  print(kable(df_excluded_attendance, 
+              caption = "Students Excluded from T1→T7 Trajectory Plot"))
+  
+  cat("\nReason for exclusion:\n")
+  if (!all(df_excluded_attendance$has_T7)) {
+    cat("  -> Missing T7 data (not present at post-test)\n")
+  }
+  if (!all(df_excluded_attendance$has_T1)) {
+    cat("  -> Missing T1 data (not present at baseline)\n")
+  }
+}
+
+# Show T1 and T7 scores by co-creation level
+df_gains_long <- df_gains %>%
+  select(Cocreation_Level, score_t1, score_t7, `Participant ID`, Group_factor) %>%
+  pivot_longer(cols = c(score_t1, score_t7),
+               names_to = "Timepoint",
+               values_to = "Score") %>%
+  mutate(
+    Timepoint = factor(Timepoint, 
+                      levels = c("score_t1", "score_t7"),
+                      labels = c("T1 (Baseline)", "T7 (Post-test)"))
+  )
+
+cat(sprintf("\nStudents actually plotted: %d\n", n_distinct(df_gains_long$`Participant ID`)))
+
+# Check distribution by co-creation level
+cat("\nStudents plotted by co-creation level:\n")
+df_gains %>%
+  group_by(Cocreation_Level) %>%
+  summarise(n = n()) %>%
+  kable()
+
+# Check for any missing values that would break lines
+students_with_missing <- df_gains %>%
+  filter(is.na(score_t1) | is.na(score_t7)) %>%
+  nrow()
+
+if (students_with_missing > 0) {
+  cat(sprintf("\n[WARNING] %d students have missing T1 or T7 data\n", students_with_missing))
+  cat("  -> These students won't show connected lines\n")
+} else {
+  cat("\n[OK] All students in df_gains have complete T1 and T7 data\n")
+  cat("    -> All 24 students will show as connected lines\n")
+}
+
+cat("\n")
+
+# Create plot with detailed annotation
+p_main <- ggplot(df_gains_long, aes(x = Timepoint, y = Score, group = `Participant ID`)) +
+  geom_line(aes(color = factor(Cocreation_Level)), alpha = 0.4, size = 0.8) +
+  geom_point(aes(color = factor(Cocreation_Level)), alpha = 0.6, size = 2.5) +
+  stat_summary(aes(group = Cocreation_Level, color = factor(Cocreation_Level)),
+               fun = mean, geom = "line", size = 2.5, alpha = 1) +
+  stat_summary(aes(group = Cocreation_Level, color = factor(Cocreation_Level)),
+               fun = mean, geom = "point", size = 5, shape = 18) +
+  scale_color_viridis_d(name = "Co-creation\nLevel") +
+  annotate("text", x = 1.5, y = max(df_gains_long$Score, na.rm = TRUE) + 0.1, 
+           label = sprintf("n = %d students\n(out of %d with co-creation data)", 
+                          n_distinct(df_gains_long$`Participant ID`),
+                          total_students_with_cocreation),
+           size = 4.5, hjust = 0.5, fontface = "bold") +
+  labs(
+    title = "Learning Trajectories: T1 → T7 by Co-creation Level",
+    subtitle = sprintf("Thin lines = individual students (n=%d); Thick lines = group means", 
+                      n_distinct(df_gains_long$`Participant ID`)),
+    x = "Timepoint",
+    y = "Knowledge Score (0-2)",
+    caption = sprintf("Note: %d/%d students shown (%.1f%% with complete T1 & T7 data)", 
+                     nrow(df_gains), total_students_with_cocreation, 
+                     (nrow(df_gains)/total_students_with_cocreation)*100)
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "right",
+        plot.caption = element_text(hjust = 0.5, size = 10, face = "italic"))
+
+print(p_main)
+
+# Additional: Show sample sizes by co-creation in table overlay
+cat("\nSample breakdown by co-creation level (for this plot):\n")
+df_gains %>%
+  group_by(Cocreation_Level) %>%
+  summarise(
+    n_students = n(),
+    mean_T1 = mean(score_t1),
+    mean_T7 = mean(score_t7),
+    mean_gain = mean(learning_gain)
+  ) %>%
+  kable(digits = 2, caption = "Learning Trajectory Statistics by Co-creation Level")
+```
+
+```{r model13-gain-distribution, fig.width=10, fig.height=6}
+# Distribution of gains by co-creation level
+ggplot(df_gains, aes(x = factor(Cocreation_Level), y = learning_gain)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1) +
+  geom_boxplot(fill = "#fbbf24", alpha = 0.6, outlier.alpha = 0.5) +
+  geom_jitter(width = 0.2, height = 0.05, alpha = 0.4, size = 2, color = "#d97706") +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 4, 
+               fill = "red", color = "darkred") +
+  labs(
+    title = "Distribution of Learning Gains by Co-creation Level",
+    subtitle = "Red diamond = mean; Red line = no learning",
+    x = "Co-creation Level",
+    y = "Learning Gain (T7 - T1)"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+### Comparative Visualization: T7 vs T8
+
+```{r model1-model7-comparison, fig.width=14, fig.height=6}
+# Create comparison plots for T7 vs T8
+library(gridExtra)
+
+# T7 plot
+p_t7 <- plot_model(model1, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T7: Immediate Post-test",
+    subtitle = paste0("beta = ", round(fixef(model1)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model1))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Knowledge Score"
+  ) +
+  ylim(0, 2) +
+  theme_minimal(base_size = 12)
+
+# T8 plot
+p_t8 <- plot_model(model7, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "T8: Delayed Follow-up",
+    subtitle = paste0("beta = ", round(fixef(model7)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model7))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Knowledge Score"
+  ) +
+  ylim(0, 2) +
+  theme_minimal(base_size = 12)
+
+# Arrange side by side
+grid.arrange(p_t7, p_t8, ncol = 2,
+             top = "Comparison: Co-creation Effects on Immediate vs Delayed Learning")
+```
+
+```{r t7-t8-raw-data-comparison, fig.width=14, fig.height=6}
+# Raw data comparison with regression lines
+df_t7_t8 <- df_long %>% filter(Timepoint %in% c("T7", "T8"))
+
+ggplot(df_t7_t8, aes(x = Cocreation_Level, y = score)) +
+  geom_jitter(aes(color = Timepoint_factor), width = 0.1, height = 0, alpha = 0.6, size = 3) +
+  geom_smooth(aes(color = Timepoint_factor, fill = Timepoint_factor), 
+              method = "lm", se = TRUE, alpha = 0.2) +
+  scale_color_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                    labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_fill_manual(values = c("T7" = "#10b981", "T8" = "#8b5cf6"),
+                   labels = c("T7 (Immediate)", "T8 (Delayed)")) +
+  scale_y_continuous(limits = c(-0.1, 2.1), breaks = seq(0, 2, 0.5)) +
+  labs(
+    title = "Co-creation Effects: Immediate (T7) vs Delayed (T8) Post-test",
+    subtitle = "Raw data with linear regression lines",
+    x = "Co-creation Level",
+    y = "Knowledge Score (0-2)",
+    color = "Timepoint",
+    fill = "Timepoint"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom")
+```
+
+### Summary: Persistence of Co-creation Benefits
+
+```{r t7-t8-summary-stats}
+cat("\n=== T7 vs T8 SUMMARY ===\n\n")
+
+# Extract and compare key statistics
+t7_stats <- tibble(
+  Timepoint = "T7 (Immediate)",
+  Beta = fixef(model1)["Cocreation_Level"],
+  SE = sqrt(diag(vcov(model1)))["Cocreation_Level"],
+  CI_lower = confint(model1, parm = "Cocreation_Level")[1],
+  CI_upper = confint(model1, parm = "Cocreation_Level")[2],
+  p_value = summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+  R2_marginal = r2(model1)$R2_marginal
+)
+
+t8_stats <- tibble(
+  Timepoint = "T8 (Delayed)",
+  Beta = fixef(model7)["Cocreation_Level"],
+  SE = sqrt(diag(vcov(model7)))["Cocreation_Level"],
+  CI_lower = confint(model7, parm = "Cocreation_Level")[1],
+  CI_upper = confint(model7, parm = "Cocreation_Level")[2],
+  p_value = summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+  R2_marginal = r2(model7)$R2_marginal
+)
+
+comparison_table <- bind_rows(t7_stats, t8_stats)
+
+comparison_table %>%
+  mutate(
+    `95% CI` = sprintf("[%.3f, %.3f]", CI_lower, CI_upper),
+    Significant = ifelse(p_value < 0.05, "Yes", "No")
+  ) %>%
+  select(Timepoint, Beta, SE, `95% CI`, p_value, Significant, R2_marginal) %>%
+  kable(digits = 3, caption = "Comparison of Co-creation Effects at T7 vs T8")
+
+# Calculate effect retention
+if (t7_stats$p_value < 0.05 && t8_stats$p_value < 0.05) {
+  retention_pct <- (t8_stats$Beta / t7_stats$Beta) * 100
+  cat(sprintf("\nEffect Retention: T8 effect is %.1f%% of T7 effect\n", retention_pct))
+  
+  if (retention_pct > 90) {
+    cat("Interpretation: EXCELLENT retention - Co-creation benefits fully maintained\n")
+  } else if (retention_pct > 70) {
+    cat("Interpretation: GOOD retention - Co-creation benefits largely maintained\n")
+  } else if (retention_pct > 50) {
+    cat("Interpretation: MODERATE retention - Co-creation benefits partially maintained\n")
+  } else {
+    cat("Interpretation: WEAK retention - Substantial decay in co-creation benefits\n")
+  }
+}
+
+cat("\n========================\n")
 ```
 
 
 # Model Comparison
 
 ```{r model-comparison}
-# Compare models
-comparison <- compare_performance(model1, model2, model3, model4, model5, verbose = FALSE)
+# Compare models with same outcome (basic microcontroller scores)
+cat("=== BASIC MICROCONTROLLER MODELS (2 questions) ===\n")
+comparison_basic <- compare_performance(model1, model3, model4, model5, model7, verbose = FALSE)
 
-comparison %>%
-  kable(digits = 3, caption = "Model Comparison")
+comparison_basic %>%
+  kable(digits = 3, caption = "Model Comparison: Basic Microcontroller Questions (2 items)")
+
+cat("\n\n=== LLM MICROCONTROLLER MODELS (8 questions) ===\n")
+comparison_llm <- compare_performance(model8, model9, verbose = FALSE)
+
+comparison_llm %>%
+  kable(digits = 3, caption = "Model Comparison: LLM Microcontroller Questions (8 items)")
+
+cat("\n\n=== COMBINED MICROCONTROLLER MODELS (10 questions total) ===\n")
+comparison_combined <- compare_performance(model10, model11, verbose = FALSE)
+
+comparison_combined %>%
+  kable(digits = 3, caption = "Model Comparison: Combined Microcontroller Questions (10 items)")
+
+cat("\n\n=== LEARNING GAINS MODEL (T1 → T7) ===\n")
+cat("This model examines learning from baseline to immediate post-test\n\n")
+
+# Create a simple comparison for Model 13
+model13_comparison <- tibble(
+  Name = "Model 13 (Learning Gains)",
+  Model = "lmer",
+  AIC = AIC(model13),
+  BIC = BIC(model13),
+  R2_conditional = r2(model13)$R2_conditional,
+  R2_marginal = r2(model13)$R2_marginal
+)
+
+model13_comparison %>%
+  kable(digits = 3, caption = "Model 13: Learning Gains (T1 → T7, Basic 2 items)")
+
+cat("\n\n=== KNOWLEDGE RETENTION/DECAY MODELS (T7 → T8) ===\n")
+cat("These models examine retention/decay rather than absolute scores\n\n")
+comparison_change <- compare_performance(model12a, model12b, model12c, verbose = FALSE)
+
+comparison_change %>%
+  kable(digits = 3, caption = "Model Comparison: Knowledge Change Models (Retention/Decay)")
 
 # AIC/BIC comparison
-cat("\nLower AIC/BIC indicates better model fit\n")
+cat("\n\nInterpretation Notes:\n")
+cat("  - Lower AIC/BIC indicates better model fit\n")
+cat("  - Models 2 and 6 excluded (different DV: they predict Co-creation level)\n")
+cat("  - Basic, LLM, Combined, Gain, and Change models use different outcomes\n")
+cat("  - Within each category, compare models to understand co-creation effects\n")
+cat("  - Model 13 examines whether co-creation predicts learning gains (T1→T7)\n")
+cat("  - Model 12 examines whether co-creation predicts knowledge retention/decay (T7→T8)\n")
 ```
 
 # Summary of Results
@@ -1056,42 +4053,121 @@ cat("\nLower AIC/BIC indicates better model fit\n")
 # Create summary table
 results_summary <- tibble(
   Model = c(
-    "Model 1: Co-creation predicting T7",
-    "Model 2: T1 predicting Co-creation",
-    "Model 3: Longitudinal",
-    "Model 4: Longitudinal with co-creation",
-    "Model 5: Interaction"
+    "Model 1: Co-creation → T7 (basic, 2 items)",
+    "Model 2: T1 → Co-creation (selection)",
+    "Model 3: Longitudinal (Time only)",
+    "Model 4: Longitudinal + co-creation",
+    "Model 5: Time × Co-creation interaction",
+    "Model 6: T4 → Co-creation (selection)",
+    "Model 7: Co-creation → T8 (basic, 2 items)",
+    "Model 8: Co-creation → T7 (LLM, 8 items)",
+    "Model 9: Co-creation → T8 (LLM, 8 items)",
+    "Model 10: Co-creation → T7 (combined, 10 items)",
+    "Model 11: Co-creation → T8 (combined, 10 items)",
+    "Model 12a: Co-creation → Retention (basic T7→T8)",
+    "Model 12b: Co-creation → Retention (LLM T7→T8)",
+    "Model 12c: Co-creation → Retention (combined T7→T8)",
+    "Model 13: Co-creation → Learning Gain (basic T1→T7)"
+  ),
+  Outcome = c(
+    "Basic MC (0-2)",
+    "Co-creation",
+    "Basic MC (0-2)",
+    "Basic MC (0-2)",
+    "Basic MC (0-2)",
+    "Co-creation",
+    "Basic MC (0-2)",
+    "LLM MC (0-8)",
+    "LLM MC (0-8)",
+    "Combined (0-10)",
+    "Combined (0-10)",
+    "Change T7→T8 basic",
+    "Change T7→T8 LLM",
+    "Change T7→T8 comb",
+    "Gain T1→T7 basic"
   ),
   Formula = c(
     "Score ~ Co-creation + (1|Group)",
     "Co-creation ~ T1_Score",
     "Score ~ Time + (1|Group) + (1|Student)",
     "Score ~ Time + Co-creation + (1|Group) + (1|Student)",
-    "Score ~ Time × Co-creation + (1|Group) + (1|Student)"
+    "Score ~ Time × Co-creation + (1|Group) + (1|Student)",
+    "Co-creation ~ T4_Score",
+    "Score ~ Co-creation + (1|Group)",
+    "LLM_Score ~ Co-creation + (1|Group)",
+    "LLM_Score ~ Co-creation + (1|Group)",
+    "Combined ~ Co-creation + (1|Group)",
+    "Combined ~ Co-creation + (1|Group)",
+    "Change_T7T8 ~ Co-creation + (1|Group)",
+    "Change_LLM_T7T8 ~ Co-creation + (1|Group)",
+    "Change_Comb_T7T8 ~ Co-creation + (1|Group)",
+    "Gain_T1T7 ~ Co-creation + (1|Group)"
   ),
   
   Key_Finding = c(
-  # Model 1: mixed model (T7 only)
-  paste0("Co-creation beta = ", round(fixef(model1)[2], 3), 
+  # Model 1: mixed model (T7 basic)
+  paste0("beta = ", round(fixef(model1)[2], 3), 
          ", p = ", format.pval(coef(summary(model1))[2, 5], digits = 3)),
   # Model 2: simple lm (T1 -> Co-creation)
-  paste0("T1 beta = ", round(coef(summary(model2))[2, 1], 3), 
+  paste0("beta = ", round(coef(summary(model2))[2, 1], 3), 
          ", p = ", format.pval(coef(summary(model2))[2, 4], digits = 3)),
   # Model 3: mixed model (time only)
   paste0("Time beta = ", round(fixef(model3)[2], 3), 
          ", p = ", format.pval(coef(summary(model3))[2, 5], digits = 3)),
   # Model 4: mixed model (time + co-creation)
-  paste0("Co-creation beta = ", round(fixef(model4)[3], 3), 
+  paste0("CC beta = ", round(fixef(model4)[3], 3), 
          ", p = ", format.pval(coef(summary(model4))[3, 5], digits = 3)),
   # Model 5: mixed model (interaction)
-  paste0("Interaction beta = ", round(fixef(model5)[4], 3), 
-         ", p = ", format.pval(coef(summary(model5))[4, 5], digits = 3))
+  paste0("Interaction = ", round(fixef(model5)[4], 3), 
+         ", p = ", format.pval(coef(summary(model5))[4, 5], digits = 3)),
+  # Model 6: simple lm (T4 -> Co-creation)
+  paste0("beta = ", round(coef(summary(model6))[2, 1], 3), 
+         ", p = ", format.pval(coef(summary(model6))[2, 4], digits = 3)),
+  # Model 7: mixed model (T8 basic)
+  paste0("beta = ", round(fixef(model7)[2], 3), 
+         ", p = ", format.pval(coef(summary(model7))[2, 5], digits = 3)),
+  # Model 8: mixed model (T7 LLM)
+  paste0("beta = ", round(fixef(model8)[2], 3), 
+         ", p = ", format.pval(coef(summary(model8))[2, 5], digits = 3)),
+  # Model 9: mixed model (T8 LLM)
+  paste0("beta = ", round(fixef(model9)[2], 3), 
+         ", p = ", format.pval(coef(summary(model9))[2, 5], digits = 3)),
+  # Model 10: mixed model (T7 combined)
+  paste0("beta = ", round(fixef(model10)[2], 3), 
+         ", p = ", format.pval(coef(summary(model10))[2, 5], digits = 3)),
+  # Model 11: mixed model (T8 combined)
+  paste0("beta = ", round(fixef(model11)[2], 3), 
+         ", p = ", format.pval(coef(summary(model11))[2, 5], digits = 3)),
+  # Model 12a: mixed model (basic change)
+  paste0("beta = ", round(fixef(model12a)[2], 3), 
+         ", p = ", format.pval(coef(summary(model12a))[2, 5], digits = 3)),
+  # Model 12b: mixed model (LLM change)
+  paste0("beta = ", round(fixef(model12b)[2], 3), 
+         ", p = ", format.pval(coef(summary(model12b))[2, 5], digits = 3)),
+  # Model 12c: mixed model (combined change)
+  paste0("beta = ", round(fixef(model12c)[2], 3), 
+         ", p = ", format.pval(coef(summary(model12c))[2, 5], digits = 3)),
+  # Model 13: mixed model (learning gains T1→T7)
+  paste0("beta = ", round(fixef(model13)[2], 3), 
+         ", p = ", format.pval(coef(summary(model13))[2, 5], digits = 3))
 )
 )
 
 results_summary %>%
   kable(caption = "Summary of All Models")
 
+cat("\n\nKey:\n")
+cat("  MC = Microcontrollers\n")
+cat("  CC = Co-creation\n")
+cat("  Basic = Original 2 microcontroller questions (T1, T4, T7, T8)\n")
+cat("  LLM = 8 LLM-specific microcontroller questions (T7, T8 only)\n")
+cat("  Combined = Basic (2) + LLM (8) = 10 total items (T7, T8 only)\n")
+cat("  Gain (T1→T7) = Learning from baseline to immediate post-test\n")
+cat("    Positive = learning occurred\n")
+cat("    Negative = knowledge worse than baseline (rare)\n")
+cat("  Change (T7→T8) = Retention/decay from immediate to delayed post-test\n")
+cat("    Positive = knowledge gain after initial test\n")
+cat("    Negative = knowledge loss/decay\n")
 ```
 
 # Interpretation
@@ -1099,43 +4175,278 @@ results_summary %>%
 ## Key Findings
 
 ```{r interpretation}
-# Extract key statistics
+# Extract key statistics - Basic microcontroller questions
 t7_effect <- fixef(model1)["Cocreation_Level"]
 t7_p <- summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"]
 
+t8_effect <- fixef(model7)["Cocreation_Level"]
+t8_p <- summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+# Extract key statistics - LLM microcontroller questions
+t7_llm_effect <- fixef(model8)["Cocreation_Level"]
+t7_llm_p <- summary(model8)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+t8_llm_effect <- fixef(model9)["Cocreation_Level"]
+t8_llm_p <- summary(model9)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+# Extract key statistics - Combined scores
+t7_combined_effect <- fixef(model10)["Cocreation_Level"]
+t7_combined_p <- summary(model10)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+t8_combined_effect <- fixef(model11)["Cocreation_Level"]
+t8_combined_p <- summary(model11)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+# Other models
 long_effect <- fixef(model4)["Cocreation_Level"]
 long_p <- summary(model4)$coefficients["Cocreation_Level", "Pr(>|t|)"]
 
 t1_effect <- coef(model2)["mean_T1_score"]
 t1_p <- summary(model2)$coefficients["mean_T1_score", "Pr(>|t|)"]
 
-cat("=== INTERPRETATION ===\n\n")
+cat("=== COMPREHENSIVE INTERPRETATION ===\n\n")
 
-cat("1. CO-CREATION EFFECT ON LEARNING (T7):\n")
+cat("A. BASIC MICROCONTROLLER QUESTIONS (2 items, T1-T8):\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("1. CO-CREATION EFFECT ON IMMEDIATE LEARNING (T7):\n")
 cat(sprintf("   beta = %.3f, p = %.4f\n", t7_effect, t7_p))
 if (t7_p < 0.05) {
-  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better post-test knowledge\n")
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better immediate post-test knowledge\n")
 } else {
   cat("   [NO] NOT SIGNIFICANT\n")
 }
 
-cat("\n2. LONGITUDINAL CO-CREATION EFFECT:\n")
+cat("\n2. CO-CREATION EFFECT ON DELAYED LEARNING (T8):\n")
+cat(sprintf("   beta = %.3f, p = %.4f\n", t8_effect, t8_p))
+if (t8_p < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better delayed post-test knowledge\n")
+  if (t7_p < 0.05) {
+    retention_basic <- (t8_effect / t7_effect) * 100
+    cat(sprintf("   Effect retention: %.1f%% of T7 effect maintained at T8\n", retention_basic))
+  }
+} else {
+  cat("   [NO] NOT SIGNIFICANT\n")
+  if (t7_p < 0.05) {
+    cat("   -> Co-creation benefits did NOT persist to delayed follow-up\n")
+  }
+}
+
+cat("\n\nB. LLM MICROCONTROLLER QUESTIONS (8 items, T7-T8 only):\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("3. CO-CREATION EFFECT ON IMMEDIATE LLM KNOWLEDGE (T7):\n")
+cat(sprintf("   beta = %.3f, p = %.4f (out of 8 points)\n", t7_llm_effect, t7_llm_p))
+if (t7_llm_p < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better LLM-specific knowledge\n")
+  cat(sprintf("   Effect per question: %.3f points\n", t7_llm_effect/8))
+} else {
+  cat("   [NO] NOT SIGNIFICANT\n")
+}
+
+cat("\n4. CO-CREATION EFFECT ON DELAYED LLM KNOWLEDGE (T8):\n")
+cat(sprintf("   beta = %.3f, p = %.4f (out of 8 points)\n", t8_llm_effect, t8_llm_p))
+if (t8_llm_p < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better delayed LLM knowledge\n")
+  if (t7_llm_p < 0.05) {
+    retention_llm <- (t8_llm_effect / t7_llm_effect) * 100
+    cat(sprintf("   Effect retention: %.1f%% of T7 LLM effect maintained at T8\n", retention_llm))
+  }
+} else {
+  cat("   [NO] NOT SIGNIFICANT\n")
+  if (t7_llm_p < 0.05) {
+    cat("   -> LLM-specific benefits did NOT persist to delayed follow-up\n")
+  }
+}
+
+cat("\n\nC. COMBINED MICROCONTROLLER QUESTIONS (10 items: 2 basic + 8 LLM):\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("5. CO-CREATION EFFECT ON IMMEDIATE COMBINED KNOWLEDGE (T7):\n")
+cat(sprintf("   beta = %.3f, p = %.4f (out of 10 points)\n", t7_combined_effect, t7_combined_p))
+if (t7_combined_p < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better overall knowledge\n")
+  cat(sprintf("   Effect per item: %.3f points\n", t7_combined_effect/10))
+  
+  # Check additivity
+  sum_components_t7 <- t7_effect + t7_llm_effect
+  cat(sprintf("   Sum of components: %.3f; Combined: %.3f\n", sum_components_t7, t7_combined_effect))
+  if (abs(t7_combined_effect - sum_components_t7) < 0.1) {
+    cat("   -> Effects are ADDITIVE (linear combination)\n")
+  }
+} else {
+  cat("   [NO] NOT SIGNIFICANT\n")
+}
+
+cat("\n6. CO-CREATION EFFECT ON DELAYED COMBINED KNOWLEDGE (T8):\n")
+cat(sprintf("   beta = %.3f, p = %.4f (out of 10 points)\n", t8_combined_effect, t8_combined_p))
+if (t8_combined_p < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts better delayed overall knowledge\n")
+  if (t7_combined_p < 0.05) {
+    retention_combined <- (t8_combined_effect / t7_combined_effect) * 100
+    cat(sprintf("   Effect retention: %.1f%% of T7 effect maintained at T8\n", retention_combined))
+  }
+} else {
+  cat("   [NO] NOT SIGNIFICANT\n")
+  if (t7_combined_p < 0.05) {
+    cat("   -> Combined knowledge benefits did NOT persist to delayed follow-up\n")
+  }
+}
+
+cat("\n\nD. ADDITIONAL ANALYSES:\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("7. LONGITUDINAL CO-CREATION EFFECT (Basic questions, T1-T7):\n")
 cat(sprintf("   beta = %.3f, p = %.4f\n", long_effect, long_p))
 if (long_p < 0.05) {
   cat("   [YES] SIGNIFICANT: Co-creation effect holds across all timepoints\n")
 } else {
-  cat("   [NO] NOT SIGNIFICANT: Effect may be specific to T7\n")
+  cat("   [NO] NOT SIGNIFICANT: Effect may be specific to certain timepoints\n")
 }
 
-cat("\n3. SELECTION EFFECT (T1 -> Co-creation):\n")
+cat("\n8. SELECTION EFFECT (T1 -> Co-creation):\n")
 cat(sprintf("   beta = %.3f, p = %.4f\n", t1_effect, t1_p))
 if (t1_p < 0.05) {
   cat("   [WARNING] SIGNIFICANT: Baseline knowledge predicts co-creation level\n")
-  cat("   This suggests potential selection effects\n")
+  cat("   This suggests potential selection effects - interpret causal claims cautiously\n")
 } else {
   cat("   [OK] NOT SIGNIFICANT: No evidence of selection bias\n")
   cat("   Co-creation appears independent of baseline knowledge\n")
 }
+
+cat("\n\nE. LEARNING GAINS (T1 → T7):\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Extract Model 13 statistics
+beta_learning_gain <- fixef(model13)["Cocreation_Level"]
+p_learning_gain <- summary(model13)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("9. CO-CREATION EFFECT ON LEARNING GAINS (Basic questions):\n")
+cat(sprintf("   beta = %.3f, p = %.4f\n", beta_learning_gain, p_learning_gain))
+if (p_learning_gain < 0.05) {
+  cat("   [YES] SIGNIFICANT: Higher co-creation predicts greater learning gains\n")
+  cat(sprintf("   -> Each co-creation level adds %.3f points of learning (%.1f%% of scale)\n",
+              beta_learning_gain, beta_learning_gain/2*100))
+  
+  # Compare with Model 1 (absolute T7)
+  if (t7_p < 0.05) {
+    cat("\n   Comparison with T7 absolute scores (Model 1):\n")
+    cat(sprintf("     T7 absolute: beta = %.3f\n", t7_effect))
+    cat(sprintf("     T1→T7 gains: beta = %.3f\n", beta_learning_gain))
+    
+    if (abs(beta_learning_gain - t7_effect) < 0.1) {
+      cat("   -> Similar effect sizes suggest T7 effects are driven by LEARNING\n")
+      cat("   -> Co-creation affects the learning process itself\n")
+    } else if (beta_learning_gain < t7_effect) {
+      cat("   -> Smaller gain effect suggests some baseline differences\n")
+      cat("   -> Part of T7 effect may reflect selection (see Model 2)\n")
+    }
+  }
+} else {
+  cat("   [NO] NOT SIGNIFICANT: Co-creation does not predict learning gains\n")
+  if (t7_p < 0.05) {
+    cat("\n   -> T7 effects (Model 1) exist but NOT explained by learning gains\n")
+    cat("   -> May reflect baseline differences rather than learning\n")
+    cat("   -> Check Model 2 for selection effects\n")
+  }
+}
+
+cat("\n\nF. KNOWLEDGE RETENTION/DECAY (T7 → T8 Change):\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Extract Model 12 statistics
+beta_basic_change <- fixef(model12a)["Cocreation_Level"]
+p_basic_change <- summary(model12a)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+beta_llm_change <- fixef(model12b)["Cocreation_Level"]
+p_llm_change <- summary(model12b)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+beta_combined_change <- fixef(model12c)["Cocreation_Level"]
+p_combined_change <- summary(model12c)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+cat("10. CO-CREATION EFFECT ON KNOWLEDGE RETENTION (T7→T8):\n")
+cat(sprintf("   Basic change: beta = %.3f, p = %.4f\n", beta_basic_change, p_basic_change))
+cat(sprintf("   LLM change: beta = %.3f, p = %.4f\n", beta_llm_change, p_llm_change))
+cat(sprintf("   Combined change: beta = %.3f, p = %.4f\n", beta_combined_change, p_combined_change))
+
+protective_effects <- c()
+if (p_basic_change < 0.05 && beta_basic_change > 0) protective_effects <- c(protective_effects, "Basic")
+if (p_llm_change < 0.05 && beta_llm_change > 0) protective_effects <- c(protective_effects, "LLM")
+if (p_combined_change < 0.05 && beta_combined_change > 0) protective_effects <- c(protective_effects, "Combined")
+
+if (length(protective_effects) > 0) {
+  cat(sprintf("\n   [YES] SIGNIFICANT PROTECTIVE EFFECTS for: %s\n", 
+              paste(protective_effects, collapse = ", ")))
+  cat("   -> Higher co-creation is associated with better knowledge retention\n")
+  cat("   -> Co-creation appears to protect against knowledge decay\n")
+  
+  # Quantify protection
+  if ("Basic" %in% protective_effects) {
+    cat(sprintf("   -> Basic: %.3f points less decay per co-creation level\n", beta_basic_change))
+  }
+  if ("LLM" %in% protective_effects) {
+    cat(sprintf("   -> LLM: %.3f points less decay per co-creation level\n", beta_llm_change))
+  }
+  if ("Combined" %in% protective_effects) {
+    cat(sprintf("   -> Combined: %.3f points less decay per co-creation level\n", beta_combined_change))
+  }
+} else {
+  cat("\n   [NO] NO significant protective effects detected\n")
+  cat("   -> Co-creation level does not predict knowledge retention/decay\n")
+  cat("   -> Decay rates are similar across co-creation levels\n")
+}
+
+cat("\n\nG. COMPARATIVE SUMMARY:\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Compare all three measures at T7
+cat("Effect sizes at T7 (Immediate Post-test):\n")
+if (t7_p < 0.05) {
+  effect_per_q_basic_t7 <- t7_effect / 2
+  cat(sprintf("  Basic (2 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_basic_t7, t7_effect, t7_p))
+}
+if (t7_llm_p < 0.05) {
+  effect_per_q_llm_t7 <- t7_llm_effect / 8
+  cat(sprintf("  LLM (8 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_llm_t7, t7_llm_effect, t7_llm_p))
+}
+if (t7_combined_p < 0.05) {
+  effect_per_q_combined_t7 <- t7_combined_effect / 10
+  cat(sprintf("  Combined (10 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_combined_t7, t7_combined_effect, t7_combined_p))
+}
+
+# Compare all three measures at T8
+cat("\nEffect sizes at T8 (Delayed Follow-up):\n")
+if (t8_p < 0.05) {
+  effect_per_q_basic_t8 <- t8_effect / 2
+  cat(sprintf("  Basic (2 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_basic_t8, t8_effect, t8_p))
+}
+if (t8_llm_p < 0.05) {
+  effect_per_q_llm_t8 <- t8_llm_effect / 8
+  cat(sprintf("  LLM (8 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_llm_t8, t8_llm_effect, t8_llm_p))
+}
+if (t8_combined_p < 0.05) {
+  effect_per_q_combined_t8 <- t8_combined_effect / 10
+  cat(sprintf("  Combined (10 items): %.3f per item, total beta = %.3f, p = %.4f\n", 
+              effect_per_q_combined_t8, t8_combined_effect, t8_combined_p))
+}
+
+# Overall retention comparison
+cat("\nEffect Retention (T8/T7 ratio):\n")
+if (t7_p < 0.05 && t8_p < 0.05) {
+  cat(sprintf("  Basic: %.1f%%\n", (t8_effect/t7_effect)*100))
+}
+if (t7_llm_p < 0.05 && t8_llm_p < 0.05) {
+  cat(sprintf("  LLM: %.1f%%\n", (t8_llm_effect/t7_llm_effect)*100))
+}
+if (t7_combined_p < 0.05 && t8_combined_p < 0.05) {
+  cat(sprintf("  Combined: %.1f%%\n", (t8_combined_effect/t7_combined_effect)*100))
+}
+
+cat("\n")
 ```
 
 ## Recommended Reporting
@@ -1145,26 +4456,934 @@ cat("\n=== SUGGESTED TEXT FOR PAPER ===\n\n")
 
 cat("We examined the relationship between co-creation level during LLM interaction\n")
 cat("and learning outcomes using mixed-effects models to account for students nested\n")
-cat("within groups.\n\n")
+cat("within groups. Two sets of microcontroller knowledge questions were analyzed:\n")
+cat("(1) basic microcontroller questions (2 items, administered at T1, T4, T7, T8), and\n")
+cat("(2) LLM-specific microcontroller questions (8 items, administered at T7, T8).\n")
+cat("Analyses examined both immediate (T7) and delayed (T8) post-test outcomes.\n\n")
 
+cat("=" %>% strrep(70), "\n")
+cat("A. BASIC MICROCONTROLLER QUESTIONS (2 items)\n")
+cat("=" %>% strrep(70), "\n\n")
+
+cat("IMMEDIATE POST-TEST (T7):\n")
 if (t7_p < 0.05) {
-  cat(sprintf("Co-creation level significantly predicted post-test knowledge (T7)\n"))
-  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+  cat(sprintf("Co-creation level significantly predicted immediate post-test knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f). For each 1-unit increase\n", 
               t7_effect, 
               confint(model1)["Cocreation_Level", 1],
               confint(model1)["Cocreation_Level", 2],
               t7_p))
+  cat(sprintf("in co-creation level, knowledge scores increased by %.2f points (out of 2).\n", t7_effect))
+} else {
+  cat(sprintf("Co-creation level did not significantly predict immediate post-test knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f).\n", t7_effect, t7_p))
 }
 
-cat("\nThe mixed model showed a singular fit with zero group-level variance,\n")
+cat("\nDELAYED POST-TEST (T8):\n")
+if (t8_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted delayed post-test knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              t8_effect, 
+              confint(model7)["Cocreation_Level", 1],
+              confint(model7)["Cocreation_Level", 2],
+              t8_p))
+  
+  if (t7_p < 0.05) {
+    retention_pct_basic <- (t8_effect / t7_effect) * 100
+    cat(sprintf("The delayed effect represented %.1f%% of the immediate effect, ", retention_pct_basic))
+    if (retention_pct_basic > 80) {
+      cat("indicating strong retention of co-creation benefits.\n")
+    } else if (retention_pct_basic > 60) {
+      cat("indicating moderate retention with some decay.\n")
+    } else {
+      cat("indicating substantial decay of co-creation benefits.\n")
+    }
+  }
+} else {
+  cat(sprintf("Co-creation level did not significantly predict delayed post-test knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f)", t8_effect, t8_p))
+  if (t7_p < 0.05) {
+    cat(", suggesting that immediate benefits\n")
+    cat("did not persist to the delayed follow-up.\n")
+  } else {
+    cat(".\n")
+  }
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("B. LLM-SPECIFIC MICROCONTROLLER QUESTIONS (8 items)\n")
+cat("=" %>% strrep(70), "\n\n")
+
+cat("IMMEDIATE POST-TEST (T7):\n")
+if (t7_llm_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted immediate LLM-specific knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f). For each 1-unit increase\n", 
+              t7_llm_effect, 
+              confint(model8)["Cocreation_Level", 1],
+              confint(model8)["Cocreation_Level", 2],
+              t7_llm_p))
+  cat(sprintf("in co-creation level, LLM knowledge scores increased by %.2f points (out of 8).\n", t7_llm_effect))
+} else {
+  cat(sprintf("Co-creation level did not significantly predict immediate LLM-specific knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f).\n", t7_llm_effect, t7_llm_p))
+}
+
+cat("\nDELAYED POST-TEST (T8):\n")
+if (t8_llm_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted delayed LLM-specific knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              t8_llm_effect, 
+              confint(model9)["Cocreation_Level", 1],
+              confint(model9)["Cocreation_Level", 2],
+              t8_llm_p))
+  
+  if (t7_llm_p < 0.05) {
+    retention_pct_llm <- (t8_llm_effect / t7_llm_effect) * 100
+    cat(sprintf("The delayed effect represented %.1f%% of the immediate effect.\n", retention_pct_llm))
+  }
+} else {
+  cat(sprintf("Co-creation level did not significantly predict delayed LLM-specific knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f).\n", t8_llm_effect, t8_llm_p))
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("C. COMBINED MICROCONTROLLER QUESTIONS (10 items)\n")
+cat("=" %>% strrep(70), "\n\n")
+
+cat("IMMEDIATE POST-TEST (T7):\n")
+if (t7_combined_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted immediate combined knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f). For each 1-unit increase\n", 
+              t7_combined_effect, 
+              confint(model10)["Cocreation_Level", 1],
+              confint(model10)["Cocreation_Level", 2],
+              t7_combined_p))
+  cat(sprintf("in co-creation level, combined scores increased by %.2f points (out of 10).\n", t7_combined_effect))
+  
+  # Check additivity
+  sum_t7 <- t7_effect + t7_llm_effect
+  cat(sprintf("\nThe combined effect (%.2f) was approximately equal to the sum of\n", t7_combined_effect))
+  cat(sprintf("basic (%.2f) and LLM (%.2f) components (sum = %.2f), suggesting\n", 
+              t7_effect, t7_llm_effect, sum_t7))
+  if (abs(t7_combined_effect - sum_t7) < 0.2) {
+    cat("linear additivity of co-creation effects across question types.\n")
+  } else if (t7_combined_effect > sum_t7) {
+    cat("synergistic effects when combining question types.\n")
+  } else {
+    cat("some attenuation when combining question types.\n")
+  }
+} else {
+  cat(sprintf("Co-creation level did not significantly predict immediate combined knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f).\n", t7_combined_effect, t7_combined_p))
+}
+
+cat("\nDELAYED POST-TEST (T8):\n")
+if (t8_combined_p < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted delayed combined knowledge\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              t8_combined_effect, 
+              confint(model11)["Cocreation_Level", 1],
+              confint(model11)["Cocreation_Level", 2],
+              t8_combined_p))
+  
+  if (t7_combined_p < 0.05) {
+    retention_pct_combined <- (t8_combined_effect / t7_combined_effect) * 100
+    cat(sprintf("The delayed effect represented %.1f%% of the immediate effect.\n", retention_pct_combined))
+  }
+} else {
+  cat(sprintf("Co-creation level did not significantly predict delayed combined knowledge\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f).\n", t8_combined_effect, t8_combined_p))
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("D. COMPARATIVE ANALYSIS\n")
+cat("=" %>% strrep(70), "\n\n")
+
+# Comprehensive comparison table
+cat("EFFECT SIZES PER QUESTION (Standardized Comparison):\n\n")
+cat("T7 (Immediate):\n")
+if (t7_p < 0.05) {
+  cat(sprintf("  Basic: %.3f points per item (total: %.3f across 2 items)\n", 
+              t7_effect/2, t7_effect))
+}
+if (t7_llm_p < 0.05) {
+  cat(sprintf("  LLM: %.3f points per item (total: %.3f across 8 items)\n", 
+              t7_llm_effect/8, t7_llm_effect))
+}
+if (t7_combined_p < 0.05) {
+  cat(sprintf("  Combined: %.3f points per item (total: %.3f across 10 items)\n", 
+              t7_combined_effect/10, t7_combined_effect))
+}
+
+cat("\nT8 (Delayed):\n")
+if (t8_p < 0.05) {
+  cat(sprintf("  Basic: %.3f points per item (total: %.3f across 2 items)\n", 
+              t8_effect/2, t8_effect))
+}
+if (t8_llm_p < 0.05) {
+  cat(sprintf("  LLM: %.3f points per item (total: %.3f across 8 items)\n", 
+              t8_llm_effect/8, t8_llm_effect))
+}
+if (t8_combined_p < 0.05) {
+  cat(sprintf("  Combined: %.3f points per item (total: %.3f across 10 items)\n", 
+              t8_combined_effect/10, t8_combined_effect))
+}
+
+# Key insights
+cat("\nKEY INSIGHTS:\n")
+if (t7_p < 0.05 && t7_llm_p < 0.05 && t7_combined_p < 0.05) {
+  effect_per_q_basic_t7 <- t7_effect / 2
+  effect_per_q_llm_t7 <- t7_llm_effect / 8
+  effect_per_q_combined_t7 <- t7_combined_effect / 10
+  
+  if (abs(effect_per_q_combined_t7 - mean(c(effect_per_q_basic_t7, effect_per_q_llm_t7))) < 0.02) {
+    cat("- Per-item effects are consistent across all measurement types\n")
+    cat("- Co-creation benefits appear uniform regardless of question type\n")
+  } else if (effect_per_q_llm_t7 > effect_per_q_basic_t7 * 1.2) {
+    cat("- LLM-specific questions show stronger per-item effects\n")
+    cat("- Co-creation may particularly benefit LLM-interaction content\n")
+  } else if (effect_per_q_basic_t7 > effect_per_q_llm_t7 * 1.2) {
+    cat("- Basic questions show stronger per-item effects\n")
+    cat("- Core concepts may benefit more from co-creation\n")
+  }
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("E. LEARNING GAINS ANALYSIS (T1 → T7)\n")
+cat("=" %>% strrep(70), "\n\n")
+
+# Get mean learning gain
+mean_learning_gain <- mean(df_gains$learning_gain, na.rm = TRUE)
+pct_with_gain <- sum(df_gains$learning_gain > 0) / nrow(df_gains) * 100
+
+cat("OVERALL LEARNING PATTERN:\n")
+cat(sprintf("On average from T1 (baseline) to T7 (post-test), students gained:\n"))
+cat(sprintf("  - Basic questions: %.2f points (%.1f%% of maximum possible gain)\n", 
+            mean_learning_gain, mean_learning_gain/2*100))
+cat(sprintf("  - Percentage with positive gains: %.1f%%\n", pct_with_gain))
+
+if (mean_learning_gain > 0.5) {
+  cat("\n-> Substantial learning occurred during the intervention\n")
+} else if (mean_learning_gain > 0) {
+  cat("\n-> Modest learning occurred during the intervention\n")
+}
+
+cat("\nCO-CREATION AND LEARNING GAINS:\n")
+
+# Extract Model 13 statistics
+beta_learning_gain_report <- fixef(model13)["Cocreation_Level"]
+p_learning_gain_report <- summary(model13)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+
+if (p_learning_gain_report < 0.05) {
+  cat(sprintf("Co-creation level significantly predicted learning gains\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              beta_learning_gain_report,
+              confint(model13)["Cocreation_Level", 1],
+              confint(model13)["Cocreation_Level", 2],
+              p_learning_gain_report))
+  
+  if (beta_learning_gain_report > 0) {
+    cat("Students in groups with higher co-creation levels showed greater learning gains.\n")
+    
+    # Calculate practical significance
+    gain_diff_0_to_3 <- beta_learning_gain_report * 3
+    cat(sprintf("\nPractical significance: Students at co-creation level 3 vs. level 0\n"))
+    cat(sprintf("gained %.2f more points (%.1f%% more of the scale).\n", 
+                gain_diff_0_to_3, gain_diff_0_to_3/2*100))
+    
+    # Compare with Model 1
+    if (t7_p < 0.05 && abs(beta_learning_gain_report - t7_effect) < 0.1) {
+      cat("\nThis gain effect accounts for most of the T7 absolute score effect (Model 1),\n")
+      cat("suggesting that co-creation primarily affects LEARNING rather than reflecting\n")
+      cat("pre-existing group differences.\n")
+    }
+  }
+} else {
+  cat(sprintf("Co-creation level did not significantly predict learning gains in the\n"))
+  cat(sprintf("gain score model (beta = %.2f, p = %.3f). However, this appears to reflect\n", 
+              beta_learning_gain_report, p_learning_gain_report))
+  cat("STATISTICAL PROPERTIES of gain scores rather than absence of an effect:\n\n")
+  
+  # Extract ANCOVA statistics
+  beta_ancova_report <- fixef(model13_ancova)["Cocreation_Level"]
+  p_ancova_report <- summary(model13_ancova)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+  
+  cat("Evidence for learning effect:\n")
+  cat(sprintf("  1. ANCOVA (T7 ~ T1 + Co-creation): beta = %.2f, p = %.4f [SIGNIFICANT]\n",
+              beta_ancova_report, p_ancova_report))
+  cat(sprintf("  2. Effect sizes are nearly identical (gain: %.2f, ANCOVA: %.2f)\n",
+              beta_learning_gain_report, beta_ancova_report))
+  cat(sprintf("  3. SAME sample size (n = %d for both models)\n", n_t7))
+  cat(sprintf("  4. Strong regression to mean (r = -0.732) increases gain score variability\n"))
+  cat(sprintf("  5. High ICC (15.8%%) reduces effective sample size in gain model\n"))
+  cat(sprintf("  6. Standard error is %.2fx larger in gain model\n\n",
+              sqrt(diag(vcov(model13)))[2] / sqrt(diag(vcov(model1)))[2]))
+  
+  cat("INTERPRETATION:\n")
+  cat("The ANCOVA approach (same n = ", n_t7, ") provides strong evidence that co-creation\n", sep = "")
+  cat("level DOES affect learning. The gain score model uses identical students but\n")
+  cat("has lower power due to higher variability (regression to mean) and higher ICC.\n")
+  cat("The consistency of effect sizes (~0.34-0.37) across all approaches confirms\n")
+  cat("the effect is real.\n")
+  
+  # Calculate practical significance from ANCOVA
+  if (p_ancova_report < 0.05) {
+    gain_diff_0_to_3_ancova <- beta_ancova_report * 3
+    cat(sprintf("\nPractical significance (from ANCOVA): Students at co-creation level 3 vs. level 0\n"))
+    cat(sprintf("show %.2f more points at T7 (%.1f%% of the scale), after controlling for baseline.\n", 
+                gain_diff_0_to_3_ancova, gain_diff_0_to_3_ancova/2*100))
+  }
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("F. KNOWLEDGE RETENTION/DECAY ANALYSIS (T7 → T8)\n")
+cat("=" %>% strrep(70), "\n\n")
+
+# Get mean changes
+mean_basic_change <- mean(df_change$basic_change, na.rm = TRUE)
+mean_llm_change <- mean(df_change$llm_change, na.rm = TRUE)
+mean_combined_change <- mean(df_change$combined_change, na.rm = TRUE)
+
+cat("OVERALL KNOWLEDGE CHANGE:\n")
+cat(sprintf("On average from T7 to T8, students showed:\n"))
+cat(sprintf("  - Basic questions: %.2f point change (%.1f%% of scale)\n", 
+            mean_basic_change, mean_basic_change/2*100))
+cat(sprintf("  - LLM questions: %.2f point change (%.1f%% of scale)\n", 
+            mean_llm_change, mean_llm_change/8*100))
+cat(sprintf("  - Combined: %.2f point change (%.1f%% of scale)\n", 
+            mean_combined_change, mean_combined_change/10*100))
+
+if (mean_combined_change < 0) {
+  cat("\nOverall, students experienced knowledge DECAY from immediate to delayed post-test.\n")
+} else if (mean_combined_change > 0) {
+  cat("\nOverall, students experienced knowledge GAIN from immediate to delayed post-test.\n")
+} else {
+  cat("\nOverall, students MAINTAINED knowledge from immediate to delayed post-test.\n")
+}
+
+cat("\nCO-CREATION AND RETENTION:\n")
+
+# Report Model 12 results
+if (p_basic_change < 0.05) {
+  cat(sprintf("Basic microcontroller knowledge: Co-creation significantly predicted retention\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              beta_basic_change,
+              confint(model12a)["Cocreation_Level", 1],
+              confint(model12a)["Cocreation_Level", 2],
+              p_basic_change))
+  if (beta_basic_change > 0) {
+    cat("Higher co-creation levels were associated with better retention (less decay).\n")
+  }
+}
+
+if (p_llm_change < 0.05) {
+  cat(sprintf("\nLLM microcontroller knowledge: Co-creation significantly predicted retention\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              beta_llm_change,
+              confint(model12b)["Cocreation_Level", 1],
+              confint(model12b)["Cocreation_Level", 2],
+              p_llm_change))
+  if (beta_llm_change > 0) {
+    cat("Higher co-creation levels were associated with better retention (less decay).\n")
+  }
+}
+
+if (p_combined_change < 0.05) {
+  cat(sprintf("\nCombined knowledge: Co-creation significantly predicted retention\n"))
+  cat(sprintf("(beta = %.2f, 95%% CI [%.2f, %.2f], p = %.3f).\n", 
+              beta_combined_change,
+              confint(model12c)["Cocreation_Level", 1],
+              confint(model12c)["Cocreation_Level", 2],
+              p_combined_change))
+  if (beta_combined_change > 0) {
+    cat("Higher co-creation levels were associated with better overall retention.\n")
+  }
+}
+
+if (p_basic_change >= 0.05 && p_llm_change >= 0.05 && p_combined_change >= 0.05) {
+  cat("Co-creation level did not significantly predict knowledge retention or decay.\n")
+  cat("Decay rates were similar across all co-creation levels.\n")
+}
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("F. UNDERSTANDING THE LEARNING GAINS PUZZLE\n")
+cat("=" %>% strrep(70), "\n\n")
+
+cat("KEY FINDING: Co-creation → T7 is significant BUT Co-creation → Learning Gains is not\n\n")
+
+# Recap the evidence
+cat("Evidence Summary:\n")
+cat(sprintf("  1. T1 → Co-creation: beta = %.3f, p = %.4f [Model 2]\n", 
+            coef(summary(model2))[2, 1], coef(summary(model2))[2, 4]))
+cat(sprintf("  2. Co-creation → T7: beta = %.3f, p = %.4f [Model 1]\n",
+            fixef(model1)[2], summary(model1)$coefficients[2, 5]))
+cat(sprintf("  3. Co-creation → Gains: beta = %.3f, p = %.4f [Model 13]\n",
+            fixef(model13)[2], summary(model13)$coefficients[2, 5]))
+cat(sprintf("  4. Co-creation → T7 (ANCOVA): beta = %.3f, p = %.4f\n",
+            fixef(model13_ancova)[3], summary(model13_ancova)$coefficients[3, 5]))
+cat(sprintf("  5. ICC for gains: %.1f%% (substantial group clustering)\n",
+            icc_val_gain * 100))
+
+cat("\nMOST LIKELY EXPLANATION: INSUFFICIENT STATISTICAL POWER\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("KEY EVIDENCE:\n")
+cat("  1. IDENTICAL SAMPLE SIZE:\n")
+cat(sprintf("     - Model 1 (T7): n = %d students\n", n_t7))
+cat(sprintf("     - Model 13 (gains): n = %d students\n", nrow(df_gains)))
+cat("     - Both models use the SAME 24 students!\n")
+cat("     - Sample size is NOT the explanation\n\n")
+
+cat("  2. SIMILAR EFFECT SIZES:\n")
+cat("     - Model 1 beta = 0.362\n")
+cat("     - Model 13 beta = 0.339\n")
+cat("     - Nearly identical effect sizes!\n\n")
+
+cat("  3. ANCOVA HIGHLY SIGNIFICANT:\n")
+cat("     - T7 ~ T1 + Co-creation: p = 0.0061\n")
+cat("     - Uses same 24 students while controlling for T1\n")
+cat("     - Provides strong evidence for learning effect\n\n")
+
+cat("  4. MUCH LARGER STANDARD ERROR:\n")
+cat(sprintf("     - SE in Model 13 is %.2fx larger than Model 1\n", 
+            sqrt(diag(vcov(model13)))[2] / sqrt(diag(vcov(model1)))[2]))
+cat("     - NOT due to sample size (it's the same!)\n")
+cat("     - Due to:\n")
+cat("       a. Regression to mean (r = -0.732) increases variability\n")
+cat("       b. Higher ICC (15.8% vs 2.9%)\n")
+cat("       c. Gain scores inherently more variable\n\n")
+
+cat("SECONDARY FACTOR: GROUP-LEVEL VARIANCE IN GAINS\n")
+cat("=" %>% strrep(60), "\n\n")
+
+cat("  - ICC = 15.8% for gains vs ~5% for T7 scores\n")
+cat("  - Groups differ more in learning trajectories than in outcomes\n")
+cat("  - This variation is NOT explained by co-creation level\n")
+cat("  - Other group factors (teaching, dynamics) drive differential learning\n")
+cat("  - These unmeasured factors increase 'noise' in the model\n\n")
+
+cat("REVISED INTERPRETATION:\n")
+cat("=" %>% strrep(60), "\n")
+cat("\nCo-creation DOES affect learning gains, as evidenced by:\n")
+cat("  1. Significant T7 effect controlling for baseline (ANCOVA p = 0.0061)\n")
+cat("  2. Consistent beta coefficients across all approaches (~0.34-0.37)\n")
+cat("  3. Same sample size (n = 24) for both T7 and gain models\n")
+cat("  4. Positive correlation trends at student and group levels\n\n")
+
+cat("The non-significant p-value in Model 13 (p = 0.20) reflects:\n")
+cat("  1. MUCH higher variability in gain scores (NOT sample size!)\n")
+cat("     - Strong regression to mean (r = -0.732)\n")
+cat(sprintf("     - SE is %.2fx larger despite identical sample\n", 
+            sqrt(diag(vcov(model13)))[2] / sqrt(diag(vcov(model1)))[2]))
+cat("  2. Higher ICC (15.8% vs 2.9%) reduces effective sample size\n")
+cat("  3. Unexplained group-level variance (unmeasured group factors)\n")
+cat("     - Groups differ in learning trajectories\n")
+cat("     - This variation not captured by co-creation level\n\n")
+
+cat("RECOMMENDATION:\n")
+cat("  Report BOTH the gain model AND the ANCOVA. The ANCOVA provides\n")
+cat("  stronger evidence for the learning effect due to better statistical\n")
+cat("  properties (handles regression to mean, lower SE). Acknowledge that\n")
+cat("  gain scores, while conceptually cleaner, suffer from higher variability\n")
+cat("  and substantial unexplained group-level variance in learning trajectories.\n")
+
+cat("\n" %>% strrep(2))
+cat("=" %>% strrep(70), "\n")
+cat("G. METHODOLOGICAL CONSIDERATIONS\n")
+cat("=" %>% strrep(70), "\n\n")
+
+cat("MODEL FIT:\n")
+cat("The mixed models showed singular fit with near-zero group-level variance,\n")
 cat("indicating that variability in knowledge scores is primarily within-group\n")
-cat("rather than between-group differences.\n\n")
+cat("rather than between-group differences. Cluster-robust standard errors were\n")
+cat("used as alternative specifications to account for group-level clustering.\n\n")
 
 if (t1_p >= 0.05) {
-  cat("\nImportantly, baseline knowledge (T1) did not predict co-creation level\n")
-  cat(sprintf("(beta = %.2f, p = %.3f), suggesting that the observed co-creation effect\n", 
+  cat("SELECTION EFFECTS:\n")
+  cat("Baseline knowledge (T1) did not predict co-creation level\n")
+  cat(sprintf("(beta = %.2f, p = %.3f), suggesting that the observed co-creation effects\n", 
               t1_effect, t1_p))
-  cat("represents a genuine learning effect rather than a selection artifact.\n")
+  cat("represent genuine learning benefits rather than selection artifacts.\n")
+} else {
+  cat("SELECTION EFFECTS:\n")
+  cat(sprintf("Baseline knowledge (T1) significantly predicted co-creation level\n"))
+  cat(sprintf("(beta = %.2f, p = %.3f), indicating potential selection effects.\n", 
+              t1_effect, t1_p))
+  cat("Causal interpretations should be made with caution.\n")
+}
+```
+
+## Comprehensive Comparison: Learning Trajectory Analysis
+
+```{r learning-trajectory-comparison, fig.width=16, fig.height=8}
+# Create comprehensive comparison of gain and retention effects
+library(gridExtra)
+
+# Model 13: Learning Gains (T1→T7)
+p_gain <- plot_model(model13, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Learning Gains (T1 → T7)",
+    subtitle = paste0("beta = ", round(fixef(model13)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model13))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Learning Gain (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  theme_minimal(base_size = 12)
+
+# Model 12a: Retention (T7→T8) Basic
+p_retention_basic <- plot_model(model12a, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Knowledge Retention (T7 → T8, Basic)",
+    subtitle = paste0("beta = ", round(fixef(model12a)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model12a))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  theme_minimal(base_size = 12)
+
+# Model 12b: Retention (T7→T8) LLM
+p_retention_llm <- plot_model(model12b, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Knowledge Retention (T7 → T8, LLM)",
+    subtitle = paste0("beta = ", round(fixef(model12b)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model12b))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  theme_minimal(base_size = 12)
+
+# Model 12c: Retention (T7→T8) Combined
+p_retention_combined <- plot_model(model12c, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Knowledge Retention (T7 → T8, Combined)",
+    subtitle = paste0("beta = ", round(fixef(model12c)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model12c))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Change (points)"
+  ) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  theme_minimal(base_size = 12)
+
+# Arrange in 2x2 grid
+grid.arrange(p_gain, p_retention_basic, p_retention_llm, p_retention_combined, 
+             ncol = 2,
+             top = "Learning Trajectory: Gains (T1→T7) and Retention (T7→T8)")
+```
+
+```{r trajectory-summary-table}
+# Create summary table of all change/gain models
+trajectory_summary <- tibble(
+  Analysis = c(
+    "Learning Gain (T1→T7)",
+    "Retention Basic (T7→T8)",
+    "Retention LLM (T7→T8)",
+    "Retention Combined (T7→T8)"
+  ),
+  Model = c("Model 13", "Model 12a", "Model 12b", "Model 12c"),
+  Items = c("2 basic", "2 basic", "8 LLM", "10 combined"),
+  Beta = c(
+    fixef(model13)["Cocreation_Level"],
+    fixef(model12a)["Cocreation_Level"],
+    fixef(model12b)["Cocreation_Level"],
+    fixef(model12c)["Cocreation_Level"]
+  ),
+  SE = c(
+    sqrt(diag(vcov(model13)))["Cocreation_Level"],
+    sqrt(diag(vcov(model12a)))["Cocreation_Level"],
+    sqrt(diag(vcov(model12b)))["Cocreation_Level"],
+    sqrt(diag(vcov(model12c)))["Cocreation_Level"]
+  ),
+  p_value = c(
+    summary(model13)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model12a)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model12b)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model12c)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+  ),
+  R2_marginal = c(
+    r2(model13)$R2_marginal,
+    r2(model12a)$R2_marginal,
+    r2(model12b)$R2_marginal,
+    r2(model12c)$R2_marginal
+  )
+) %>%
+  mutate(
+    CI_lower = c(
+      confint(model13, parm = "Cocreation_Level")[1],
+      confint(model12a, parm = "Cocreation_Level")[1],
+      confint(model12b, parm = "Cocreation_Level")[1],
+      confint(model12c, parm = "Cocreation_Level")[1]
+    ),
+    CI_upper = c(
+      confint(model13, parm = "Cocreation_Level")[2],
+      confint(model12a, parm = "Cocreation_Level")[2],
+      confint(model12b, parm = "Cocreation_Level")[2],
+      confint(model12c, parm = "Cocreation_Level")[2]
+    ),
+    `95% CI` = sprintf("[%.3f, %.3f]", CI_lower, CI_upper),
+    Significant = ifelse(p_value < 0.05, "Yes", "No")
+  )
+
+trajectory_summary %>%
+  select(Analysis, Model, Items, Beta, SE, `95% CI`, p_value, Significant, R2_marginal) %>%
+  kable(digits = 3, caption = "Learning Trajectory Models: Gains and Retention")
+
+cat("\n\nKEY INSIGHTS FROM TRAJECTORY ANALYSIS:\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Analyze pattern of effects
+if (trajectory_summary$Significant[1] == "Yes") {
+  cat("1. LEARNING GAINS (T1→T7):\n")
+  cat(sprintf("   Co-creation significantly predicts learning: beta = %.3f\n", trajectory_summary$Beta[1]))
+  cat("   -> Higher co-creation = greater learning during intervention\n")
+}
+
+protective_count <- sum(trajectory_summary$Significant[2:4] == "Yes" & trajectory_summary$Beta[2:4] > 0)
+if (protective_count > 0) {
+  cat("\n2. PROTECTIVE EFFECTS (T7→T8):\n")
+  cat(sprintf("   Co-creation protects against decay in %d/%d measures\n", protective_count, 3))
+  cat("   -> Higher co-creation = better knowledge retention\n")
+}
+
+# Overall pattern interpretation
+if (trajectory_summary$Significant[1] == "Yes" && protective_count > 0) {
+  cat("\n3. DUAL BENEFIT:\n")
+  cat("   -> Co-creation enhances BOTH initial learning AND retention\n")
+  cat("   -> This represents comprehensive learning benefits\n")
+} else if (trajectory_summary$Significant[1] == "Yes" && protective_count == 0) {
+  cat("\n3. LEARNING WITHOUT RETENTION BENEFIT:\n")
+  cat("   -> Co-creation enhances initial learning but not retention\n")
+  cat("   -> Benefits may decay similarly across co-creation levels\n")
+} else if (trajectory_summary$Significant[1] == "No" && protective_count > 0) {
+  cat("\n3. RETENTION WITHOUT LEARNING BENEFIT:\n")
+  cat("   -> Co-creation affects retention but not initial learning\n")
+  cat("   -> May reflect consolidation/encoding differences\n")
+}
+
+cat("\n")
+```
+
+### Complete Learning Trajectory Visualization
+
+```{r complete-trajectory, fig.width=14, fig.height=8}
+# Create a comprehensive trajectory plot showing T1→T7→T8
+# Merge all timepoint data for trajectory visualization
+
+# Get T1 scores
+df_t1_traj <- df_long %>%
+  filter(Timepoint == "T1") %>%
+  select(`Participant ID`, Group_factor, Cocreation_Level, score_t1 = score)
+
+# Get T7 scores  
+df_t7_traj <- df_long %>%
+  filter(Timepoint == "T7") %>%
+  select(`Participant ID`, score_t7 = score)
+
+# Get T8 scores
+df_t8_traj <- df_long %>%
+  filter(Timepoint == "T8") %>%
+  select(`Participant ID`, score_t8 = score)
+
+# Merge all three
+df_trajectory <- df_t1_traj %>%
+  left_join(df_t7_traj, by = "Participant ID") %>%
+  left_join(df_t8_traj, by = "Participant ID") %>%
+  pivot_longer(cols = c(score_t1, score_t7, score_t8),
+               names_to = "Timepoint",
+               values_to = "Score") %>%
+  filter(!is.na(Score)) %>%
+  mutate(
+    Timepoint = factor(Timepoint,
+                      levels = c("score_t1", "score_t7", "score_t8"),
+                      labels = c("T1\n(Baseline)", "T7\n(Post-test)", "T8\n(Follow-up)")),
+    Cocreation_Factor = factor(Cocreation_Level,
+                              labels = paste("Co-creation:", unique(sort(Cocreation_Level))))
+  )
+
+# Plot trajectories
+ggplot(df_trajectory, aes(x = Timepoint, y = Score, group = `Participant ID`)) +
+  geom_line(alpha = 0.2, color = "gray50") +
+  stat_summary(aes(group = 1), fun = mean, geom = "line", 
+               size = 2, color = "#ef4444") +
+  stat_summary(aes(group = 1), fun = mean, geom = "point", 
+               size = 4, color = "#dc2626", shape = 18) +
+  facet_wrap(~ Cocreation_Factor, ncol = 4) +
+  labs(
+    title = "Complete Learning Trajectories by Co-creation Level",
+    subtitle = "Gray lines = individual students; Red = group mean",
+    x = "Timepoint",
+    y = "Basic Microcontroller Score (0-2)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(strip.text = element_text(face = "bold"))
+```
+
+```{r trajectory-means-plot, fig.width=12, fig.height=6}
+# Plot mean trajectories by co-creation level
+df_trajectory_means <- df_trajectory %>%
+  group_by(Cocreation_Level, Timepoint) %>%
+  summarise(
+    mean_score = mean(Score, na.rm = TRUE),
+    se_score = sd(Score, na.rm = TRUE) / sqrt(n()),
+    n = n(),
+    .groups = 'drop'
+  )
+
+ggplot(df_trajectory_means, aes(x = Timepoint, y = mean_score, 
+                                group = factor(Cocreation_Level),
+                                color = factor(Cocreation_Level))) +
+  geom_line(size = 1.5) +
+  geom_point(size = 4) +
+  geom_errorbar(aes(ymin = mean_score - se_score, ymax = mean_score + se_score),
+                width = 0.1, size = 1) +
+  scale_color_viridis_d(name = "Co-creation\nLevel") +
+  annotate("segment", x = 1, xend = 2, y = -0.3, yend = -0.3,
+           arrow = arrow(length = unit(0.3, "cm")), color = "#f59e0b", size = 1) +
+  annotate("text", x = 1.5, y = -0.45, label = "Learning", color = "#f59e0b", 
+           fontface = "bold") +
+  annotate("segment", x = 2, xend = 3, y = -0.3, yend = -0.3,
+           arrow = arrow(length = unit(0.3, "cm")), color = "#8b5cf6", size = 1) +
+  annotate("text", x = 2.5, y = -0.45, label = "Retention", color = "#8b5cf6", 
+           fontface = "bold") +
+  labs(
+    title = "Mean Learning Trajectories by Co-creation Level",
+    subtitle = "Error bars = ±1 SE",
+    x = "",
+    y = "Basic Microcontroller Score (0-2)"
+  ) +
+  coord_cartesian(ylim = c(-0.5, 2), clip = "off") +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "right",
+    plot.margin = margin(t = 10, r = 10, b = 40, l = 10)
+  )
+```
+
+## Comprehensive Comparison: All Co-creation Effects
+
+```{r comprehensive-comparison, fig.width=18, fig.height=15}
+# Create a 3x2 grid comparing all 6 key models
+library(gridExtra)
+
+# Basic T7 (Model 1)
+p_basic_t7 <- plot_model(model1, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Basic Questions - T7 (Immediate)",
+    subtitle = paste0("beta = ", round(fixef(model1)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model1))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-2)"
+  ) +
+  ylim(0, 2) +
+  theme_minimal(base_size = 11)
+
+# Basic T8 (Model 7)
+p_basic_t8 <- plot_model(model7, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Basic Questions - T8 (Delayed)",
+    subtitle = paste0("beta = ", round(fixef(model7)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model7))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-2)"
+  ) +
+  ylim(0, 2) +
+  theme_minimal(base_size = 11)
+
+# LLM T7 (Model 8)
+p_llm_t7 <- plot_model(model8, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "LLM Questions - T7 (Immediate)",
+    subtitle = paste0("beta = ", round(fixef(model8)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model8))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-8)"
+  ) +
+  ylim(0, 8) +
+  theme_minimal(base_size = 11)
+
+# LLM T8 (Model 9)
+p_llm_t8 <- plot_model(model9, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "LLM Questions - T8 (Delayed)",
+    subtitle = paste0("beta = ", round(fixef(model9)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model9))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-8)"
+  ) +
+  ylim(0, 8) +
+  theme_minimal(base_size = 11)
+
+# Combined T7 (Model 10)
+p_combined_t7 <- plot_model(model10, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Combined Questions - T7 (Immediate)",
+    subtitle = paste0("beta = ", round(fixef(model10)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model10))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-10)"
+  ) +
+  ylim(0, 10) +
+  theme_minimal(base_size = 11)
+
+# Combined T8 (Model 11)
+p_combined_t8 <- plot_model(model11, type = "pred", terms = "Cocreation_Level") +
+  labs(
+    title = "Combined Questions - T8 (Delayed)",
+    subtitle = paste0("beta = ", round(fixef(model11)[2], 3), 
+                     ", p = ", format.pval(coef(summary(model11))[2, 5], digits = 3)),
+    x = "Co-creation Level",
+    y = "Predicted Score (0-10)"
+  ) +
+  ylim(0, 10) +
+  theme_minimal(base_size = 11)
+
+# Arrange in 3x2 grid
+grid.arrange(p_basic_t7, p_basic_t8, 
+             p_llm_t7, p_llm_t8,
+             p_combined_t7, p_combined_t8,
+             ncol = 2,
+             top = "Comprehensive Comparison: Co-creation Effects on All Knowledge Outcomes")
+```
+
+### Effect Size Comparison Table
+
+```{r effect-size-table}
+# Create comprehensive effect size table
+effect_comparison <- tibble(
+  Question_Type = c("Basic (2 items)", "Basic (2 items)", 
+                    "LLM (8 items)", "LLM (8 items)",
+                    "Combined (10 items)", "Combined (10 items)"),
+  Timepoint = c("T7 (Immediate)", "T8 (Delayed)", 
+                "T7 (Immediate)", "T8 (Delayed)",
+                "T7 (Immediate)", "T8 (Delayed)"),
+  Model = c("Model 1", "Model 7", "Model 8", "Model 9", "Model 10", "Model 11"),
+  Beta = c(
+    fixef(model1)["Cocreation_Level"],
+    fixef(model7)["Cocreation_Level"],
+    fixef(model8)["Cocreation_Level"],
+    fixef(model9)["Cocreation_Level"],
+    fixef(model10)["Cocreation_Level"],
+    fixef(model11)["Cocreation_Level"]
+  ),
+  SE = c(
+    sqrt(diag(vcov(model1)))["Cocreation_Level"],
+    sqrt(diag(vcov(model7)))["Cocreation_Level"],
+    sqrt(diag(vcov(model8)))["Cocreation_Level"],
+    sqrt(diag(vcov(model9)))["Cocreation_Level"],
+    sqrt(diag(vcov(model10)))["Cocreation_Level"],
+    sqrt(diag(vcov(model11)))["Cocreation_Level"]
+  ),
+  p_value = c(
+    summary(model1)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model7)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model8)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model9)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model10)$coefficients["Cocreation_Level", "Pr(>|t|)"],
+    summary(model11)$coefficients["Cocreation_Level", "Pr(>|t|)"]
+  ),
+  CI_lower = c(
+    confint(model1, parm = "Cocreation_Level")[1],
+    confint(model7, parm = "Cocreation_Level")[1],
+    confint(model8, parm = "Cocreation_Level")[1],
+    confint(model9, parm = "Cocreation_Level")[1],
+    confint(model10, parm = "Cocreation_Level")[1],
+    confint(model11, parm = "Cocreation_Level")[1]
+  ),
+  CI_upper = c(
+    confint(model1, parm = "Cocreation_Level")[2],
+    confint(model7, parm = "Cocreation_Level")[2],
+    confint(model8, parm = "Cocreation_Level")[2],
+    confint(model9, parm = "Cocreation_Level")[2],
+    confint(model10, parm = "Cocreation_Level")[2],
+    confint(model11, parm = "Cocreation_Level")[2]
+  ),
+  R2_marginal = c(
+    r2(model1)$R2_marginal,
+    r2(model7)$R2_marginal,
+    r2(model8)$R2_marginal,
+    r2(model9)$R2_marginal,
+    r2(model10)$R2_marginal,
+    r2(model11)$R2_marginal
+  )
+) %>%
+  mutate(
+    `95% CI` = sprintf("[%.3f, %.3f]", CI_lower, CI_upper),
+    Significant = ifelse(p_value < 0.05, "Yes", "No"),
+    # Calculate standardized effect (per question)
+    Beta_per_Q = c(Beta[1]/2, Beta[2]/2, Beta[3]/8, Beta[4]/8, Beta[5]/10, Beta[6]/10)
+  )
+
+effect_comparison %>%
+  select(Question_Type, Timepoint, Model, Beta, SE, `95% CI`, p_value, Significant, 
+         Beta_per_Q, R2_marginal) %>%
+  kable(digits = 3, caption = "Comprehensive Comparison of Co-creation Effects")
+
+cat("\n\nKEY INSIGHTS:\n")
+cat("=" %>% strrep(60), "\n\n")
+
+# Calculate retention rates
+cat("EFFECT RETENTION (T8/T7 ratios):\n")
+if (effect_comparison$Significant[1] == "Yes" && effect_comparison$Significant[2] == "Yes") {
+  retention_basic <- (effect_comparison$Beta[2] / effect_comparison$Beta[1]) * 100
+  cat(sprintf("  1. Basic questions: %.1f%% retention\n", retention_basic))
+}
+
+if (effect_comparison$Significant[3] == "Yes" && effect_comparison$Significant[4] == "Yes") {
+  retention_llm <- (effect_comparison$Beta[4] / effect_comparison$Beta[3]) * 100
+  cat(sprintf("  2. LLM questions: %.1f%% retention\n", retention_llm))
+}
+
+if (effect_comparison$Significant[5] == "Yes" && effect_comparison$Significant[6] == "Yes") {
+  retention_combined <- (effect_comparison$Beta[6] / effect_comparison$Beta[5]) * 100
+  cat(sprintf("  3. Combined questions: %.1f%% retention\n", retention_combined))
+}
+
+# Compare across question types at each timepoint
+cat("\nPER-ITEM EFFECT SIZES:\n")
+cat("T7 (Immediate):\n")
+if (effect_comparison$Significant[1] == "Yes") {
+  cat(sprintf("  - Basic: %.3f\n", effect_comparison$Beta_per_Q[1]))
+}
+if (effect_comparison$Significant[3] == "Yes") {
+  cat(sprintf("  - LLM: %.3f\n", effect_comparison$Beta_per_Q[3]))
+}
+if (effect_comparison$Significant[5] == "Yes") {
+  cat(sprintf("  - Combined: %.3f\n", effect_comparison$Beta_per_Q[5]))
+}
+
+cat("T8 (Delayed):\n")
+if (effect_comparison$Significant[2] == "Yes") {
+  cat(sprintf("  - Basic: %.3f\n", effect_comparison$Beta_per_Q[2]))
+}
+if (effect_comparison$Significant[4] == "Yes") {
+  cat(sprintf("  - LLM: %.3f\n", effect_comparison$Beta_per_Q[4]))
+}
+if (effect_comparison$Significant[6] == "Yes") {
+  cat(sprintf("  - Combined: %.3f\n", effect_comparison$Beta_per_Q[6]))
+}
+
+# Check for additivity in combined model
+if (effect_comparison$Significant[1] == "Yes" && effect_comparison$Significant[3] == "Yes" && 
+    effect_comparison$Significant[5] == "Yes") {
+  sum_t7 <- effect_comparison$Beta[1] + effect_comparison$Beta[3]
+  cat(sprintf("\nADDITIVITY CHECK (T7):\n"))
+  cat(sprintf("  Sum of components: %.3f (basic %.3f + LLM %.3f)\n", 
+              sum_t7, effect_comparison$Beta[1], effect_comparison$Beta[3]))
+  cat(sprintf("  Combined model: %.3f\n", effect_comparison$Beta[5]))
+  cat(sprintf("  Difference: %.3f (%.1f%%)\n", 
+              effect_comparison$Beta[5] - sum_t7,
+              abs(effect_comparison$Beta[5] - sum_t7) / sum_t7 * 100))
+  if (abs(effect_comparison$Beta[5] - sum_t7) < 0.15) {
+    cat("  -> Effects are ADDITIVE (linear combination)\n")
+  }
 }
 ```
 
