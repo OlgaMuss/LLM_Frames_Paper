@@ -8,3 +8,6 @@ Analysis:
 
 Photos
 - [Builbot](https://photos.google.com/share/AF1QipMRpZcQr3CeKp09aSWLBMXXILDTlDVvp_YXl5dKT-GmY7AWp8QR2SHOKf21GwJqlA?pli=1&key=d3IwN09ReF9uaXFidjNib3NzY3pINUlORDhFTmRB)
+
+Figures in Canva
+- [Canva Design](https://www.canva.com/design/DAGyv90q0uA/TEQ9J5xEBm9JXcIeb_1tuw/edit)

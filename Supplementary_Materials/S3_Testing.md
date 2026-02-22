@@ -22,7 +22,7 @@ Four-tier validation approach:
 **Table S3.1**: Testing methodology tiers
 
 | Tier | Method | Purpose | Frequency |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | **Manual** | Interactive Streamlit interface | Edge case discovery, frame refinement | Continuous during development |
 | **Unit Tests** | pytest with actual LLM calls | Automated behavior verification | Every code change |
 | **Simulations** | Synthetic personas, multi-turn | Frame composition testing | Pre-deployment |
@@ -40,11 +40,11 @@ Four-tier validation approach:
 
 **Figure S3.1**: Streamlit interface with configuration panel collapsed, showing the main chat interface where Marty initiates the mnemonic co-creation session.
 
-![Streamlit Interface - Main View](Streamlit1.png)
+![Streamlit Interface - Main View](Images/Streamlit1.png)
 
 **Figure S3.2**: Streamlit interface with configuration panel expanded, showing learning experience settings (topic, learning material, mnemonic type), participant management (names and ages), and session controls.
 
-![Streamlit Interface - Configuration View](Streamlit2.png)
+![Streamlit Interface - Configuration View](Images/Streamlit2.png)
 
 ### Manual Testing Findings
 
@@ -63,7 +63,7 @@ Four-tier validation approach:
 **Table S3.2**: Static unit test files and coverage
 
 | Test File | Tests | Focus |
-|-----------------------|---------------|---------------------------------|
+|-----------------------|------------------|--------------------------------|
 | `test_balanced_turns.py` | 19 | Turn-taking validation: correct/incorrect next speaker, monopolization detection (3+ consecutive), underparticipation handling, validation pass/fail/revise scenarios |
 | `test_comprehension_tracker.py` | 12 | Concept extraction, per-student comprehension assessment (UNDERSTOOD/CONFUSED/MISCONCEPTION), dual analysis (understanding + confusion), prompt section generation |
 | `test_engine.py` | 8 | Pipeline execution (slot ordering), validation loop (PASS/REVISE/FAIL), prompt accumulation, multi-frame composition |
@@ -77,7 +77,7 @@ Four-tier validation approach:
 **Table S3.3**: User stories mapped to test files
 
 | User Story | Test Files | Key Functionality |
-|---------------------|---------------------|-------------------------------|
+|---------------------|---------------------|------------------------------|
 | **US1: Pipeline Execution** | `test_engine.py` | All slots execute in order, multiple frames compose correctly |
 | **US2: Validation Loop** | `test_engine.py` | PASS/REVISE/FAIL actions handled correctly, max repair attempts enforced |
 | **US3: Prompt Accumulation** | `test_engine.py` | Sections from multiple frames accumulated with proper formatting |
@@ -109,7 +109,7 @@ The simulation system uses three distinct 14-year-old student personas, each pow
 **Table S3.4**: Synthetic student personas for simulations
 
 | Persona | Personality & Style | Knowledge Level | Primary Testing Focus |
-|-----------------|-------------------|-----------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | **Red** | Enthusiastic, high energy, thinks out loud, starts ideas first | Knows basics (tiny computers, pins exist), confused about how pins work and HIGH/LOW states | Initial idea generation, building rough concepts, letting others refine |
 | **Blue** | Thoughtful, asks clarifying questions, builds on others' ideas | Understands HIGH/LOW states well, confused about how programs work and Blockly vs C++ | Refinement, synthesis, polishing ideas, asking "what if" questions |
 | **Green** | Creative, makes connections, sees patterns, finds humor | Good at real-world connections, remembers ESP32 term, confused about CPU vs Memory differences | Creative angles, connecting technical concepts to everyday life, pattern recognition |
