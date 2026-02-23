@@ -43,46 +43,6 @@ This supplementary material is organized into five technical documents:
 
 ------------------------------------------------------------------------
 
-## Quick Navigation
-
-**Understanding the framework** → Start with S1
-
-**Implementing frames** → Read S1, then S2
-
-**Testing** → Read S3
-
-**Replicating the classroom study** → Read S4 (methods) and S5 (statistical analysis)
-
-**Running statistical analyses** → Execute S5 notebook (requires Python + R)
-
-**Running the code** → See repository README for installation and setup
-
-------------------------------------------------------------------------
-
-## Repository
-
-**GitHub**: <https://github.com/OlgaMuss/BuildBot>
-
-**Frame Engine Code**: `LLM_Frames_Design/frame_engine_v1.1.2/code/`
-
-**Directory Structure**:
-
-```         
-frame_engine_v1.1.2/
-├── code/
-│   ├── src/backend/
-│   │   ├── frame_engine/      # Core engine
-│   │   └── frames/             # Frame implementations
-│   ├── tests/                  # Unit tests
-│   ├── simulations/            # Synthetic scenarios
-│   ├── sessions/               # Logged sessions
-│   └── scripts/                # Interactive interface
-├── context/                    # Learning material
-└── variables.md                # Configuration
-```
-
-------------------------------------------------------------------------
-
 ## Contact
 
 -   **Luca Leisten**: [luca.leisten\@gess.ethz.ch](mailto:luca.leisten@gess.ethz.ch)
