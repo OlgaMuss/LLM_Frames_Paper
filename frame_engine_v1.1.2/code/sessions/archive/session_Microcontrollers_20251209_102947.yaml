@@ -1,0 +1,244 @@
+session_id: Microcontrollers_20251209_102947
+saved_at: '2025-12-09T10:30:17.123322'
+metadata:
+  topic: Microcontrollers
+  mnemonic_type: Poem
+  students:
+  - Red
+  - Green
+  - Blue
+  target_age: 14
+events:
+- timestamp: '2025-12-09T10:29:47.625343'
+  event: Session initialized
+- timestamp: '2025-12-09T10:29:54.667573'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 1
+    speaker: Red
+    message: test
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: mnemonic_suggestion
+    is_relevant: true
+    mnemonic_progress: The student has started proposing a mnemonic element using the word 'Red' possibly as a color or keyword
+      for the poem.
+    summary: The student suggests 'Red' as part of the mnemonic poem.
+- timestamp: '2025-12-09T10:29:54.667790'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:29:54.668150'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students: []
+    suggested_next_speaker: Green
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:29:54.668193'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:29:54.668204'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:29:54.671881'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:29:54.671899'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:29:56.864134'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:29:56.864156'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:29:56.864162'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:29:56.864170'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:29:56.864178'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:29:56.868345'
+  event: Turn 1
+  data:
+    speaker: Red
+    user: test
+    assistant: Hi Red! What are the most important things about microcontrollers that you want to remember? Green, I’m looking
+      forward to hearing your thoughts next!
+- timestamp: '2025-12-09T10:30:02.491591'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 2
+    speaker: Red
+    message: retest
+    session_phase: 1
+    off_topic_duration: 1
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: off_topic
+    is_relevant: false
+    mnemonic_progress: No progress on mnemonic creation; the message is a single word 'retest' attributed to Red without conceptual
+      content.
+    summary: 'The student simply writes ''Red: retest'' which does not contribute to the mnemonic creation process.'
+- timestamp: '2025-12-09T10:30:02.491616'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:30:02.491746'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students:
+    - Green
+    - Blue
+    suggested_next_speaker: Green
+    consecutive_same_speaker: 2
+- timestamp: '2025-12-09T10:30:02.491756'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:30:02.491765'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:30:02.494350'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:30:02.494370'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:30:05.373886'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:05.373907'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:05.374130'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: revise
+    feedback: 'TURN-TAKING ERROR: You acknowledged Green, but Red was the one who just spoke. You must acknowledge Red first,
+      then invite Green to contribute.'
+- timestamp: '2025-12-09T10:30:05.374141'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:05.374148'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.453567'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.453583'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.453588'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.453593'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.453598'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:30:07.456013'
+  event: Turn 2
+  data:
+    speaker: Red
+    user: retest
+    assistant: Thanks for sharing, Red! What concepts about microcontrollers do you think are most important for us to include
+      in our Poem? Green, your turn to share your ideas!
+frame_memory:
+  turn_count: 2
+  session_phase: 1
+  session_language: English
+  consecutive_off_topic_turns: 1
+  session_start_time: '2025-12-09T10:29:52.608627'
+  mnemonic_state:
+    selected_concepts: []
+    concepts_finalized: false
+    mnemonic_text: ''
+    mnemonic_created: false
+  recall_tracking:
+    Red:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+    Green:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+    Blue:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+  elapsed_time_minutes: 0.12206543333333333
+  _phase2_extension_active: false
+  comprehension_tracker:
+    concepts: []
+    by_student: {}
+  balanced_turns_validator:
+    recent_speakers:
+    - Red
+    - Red
+    participation:
+      Red:
+        contribution_count: 2
+        total_speaking_time_seconds: 0.8
+        last_contribution_time: '2025-12-09T10:30:02.491629'
+      Green:
+        contribution_count: 0
+        total_speaking_time_seconds: 0.0
+        last_contribution_time: null
+      Blue:
+        contribution_count: 0
+        total_speaking_time_seconds: 0.0
+        last_contribution_time: null
+    suggested_next_speaker: Green
+    last_turn_time: '2025-12-09T10:30:02.491629'

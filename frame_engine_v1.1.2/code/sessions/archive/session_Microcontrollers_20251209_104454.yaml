@@ -1,0 +1,672 @@
+session_id: Microcontrollers_20251209_104454
+saved_at: '2025-12-09T10:52:54.770013'
+metadata:
+  topic: Microcontrollers
+  mnemonic_type: Poem
+  students:
+  - Red
+  - Green
+  - Blue
+  target_age: 14
+events:
+- timestamp: '2025-12-09T10:44:54.238410'
+  event: Session initialized
+- timestamp: '2025-12-09T10:45:17.407257'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 1
+    speaker: Red
+    message: we need to create a poem on microcontroller
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: mnemonic_suggestion
+    is_relevant: true
+    mnemonic_progress: The student proposes creating a poem as the mnemonic device for the microcontroller topic.
+    summary: The student suggests creating a poem on microcontrollers.
+- timestamp: '2025-12-09T10:45:17.407387'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:17.407536'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students: []
+    suggested_next_speaker: Green
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:45:17.407547'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:17.407554'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:17.410300'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:45:17.410320'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:45:19.910530'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:19.910552'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:19.910919'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: revise
+    feedback: 'TURN-TAKING ERROR: You asked 2 questions. You should ask ONLY ONE question to Green. Structure: 1) Acknowledge
+      Red briefly. 2) Ask ONLY Green ONE question to invite them to contribute next.'
+- timestamp: '2025-12-09T10:45:19.910933'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:19.910941'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.933376'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.933386'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.933390'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.933394'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.933397'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:21.935488'
+  event: Turn 1
+  data:
+    speaker: Red
+    user: we need to create a poem on microcontroller
+    assistant: Thanks for sharing, Red! Green, what are the most important things about microcontrollers that you want our
+      poem to help us remember?
+- timestamp: '2025-12-09T10:45:41.037128'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 2
+    speaker: Green
+    message: what they are and how they work
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: mnemonic_suggestion
+    is_relevant: true
+    mnemonic_progress: 'The student identifies key content areas for the poem mnemonic: the definition of microcontrollers
+      and their operational principles.'
+    summary: The student suggests focusing the poem on what microcontrollers are and how they work.
+- timestamp: '2025-12-09T10:45:41.037147'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:41.037253'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students: []
+    suggested_next_speaker: Blue
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:45:41.037260'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:41.037265'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:45:41.039204'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:45:41.039220'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:45:43.365826'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:43.365846'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:43.365850'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:43.365856'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:43.366062'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: revise
+    feedback: The response did not adhere to the Phase Goal. Please regenerate it to better match the session goal. Remove
+      the specific concept suggestions and instead ask an open-ended question like, 'Blue, what concepts do you think we should
+      include in our poem?'
+- timestamp: '2025-12-09T10:45:46.089193'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:46.089205'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:46.089210'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:46.089216'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:46.089394'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: revise
+    feedback: The response did not adhere to the Phase Goal. Please regenerate it to better match the session goal. Rephrase
+      the prompt to ask an open-ended question without suggesting specific concepts, such as 'Blue, what important details
+      do you think we should remember for our poem?'
+- timestamp: '2025-12-09T10:45:48.035057'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:48.035078'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:48.035083'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:48.035087'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:48.035092'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:45:48.037654'
+  event: Turn 2
+  data:
+    speaker: Green
+    user: what they are and how they work
+    assistant: Great points, Green! Blue, what important details about what microcontrollers are and how they work do you
+      think we should include in our poem?
+- timestamp: '2025-12-09T10:46:27.445802'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 3
+    speaker: Blue
+    message: well there have a chip and a memory
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: recall_attempt
+    is_relevant: true
+    recall_progress: 'Student recalled two components of microcontrollers: chip and memory.'
+    summary: The student attempts to recall that microcontrollers have a chip and memory.
+- timestamp: '2025-12-09T10:46:27.445820'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:46:27.445929'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students: []
+    suggested_next_speaker: Green
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:46:27.445936'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:46:27.445940'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:46:27.447668'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:46:27.447679'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:46:30.582598'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:30.582614'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:30.582620'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:30.582626'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:30.582879'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: revise
+    feedback: The response did not adhere to the Phase Goal. Please regenerate it to better match the session goal. Remove
+      the suggested concept and instead ask an open-ended question inviting Green to propose important concepts, e.g., 'Green,
+      what concepts do you think are important to include?'
+- timestamp: '2025-12-09T10:46:32.881813'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:32.881831'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:32.881836'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:32.881843'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:32.881850'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:46:32.884859'
+  event: Turn 3
+  data:
+    speaker: Blue
+    user: well there have a chip and a memory
+    assistant: Thanks, Blue! Green, what else about microcontrollers’ parts or functions should we add to our poem?
+- timestamp: '2025-12-09T10:47:04.878189'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 4
+    speaker: Green
+    message: they have pins
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: knowledge_statement
+    is_relevant: true
+    mnemonic_progress: The group is identifying key components of microcontrollers to include in the poem, currently listing
+      chip, memory, and pins.
+    summary: The student states that microcontrollers have pins.
+- timestamp: '2025-12-09T10:47:04.878214'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:04.878427'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students:
+    - Red
+    - Blue
+    suggested_next_speaker: Red
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:47:04.878440'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:04.878447'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:04.881794'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:47:04.881809'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:47:07.451676'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:07.451689'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:07.451871'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: revise
+    feedback: 'TURN-TAKING ERROR: You mentioned Blue, but for balanced participation, you should only interact with Green
+      (to acknowledge) and Red (to invite next). Please invite Red to speak.'
+- timestamp: '2025-12-09T10:47:07.451879'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:07.451944'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: revise
+    feedback: The response did not adhere to the Phase Goal. Please regenerate it to better match the session goal. Ask an
+      open-ended question that invites students to propose important concepts without suggesting any specific ones.
+- timestamp: '2025-12-09T10:47:09.272642'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:09.272648'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:09.272650'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:09.272652'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:09.272654'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:09.273960'
+  event: Turn 4
+  data:
+    speaker: Green
+    user: they have pins
+    assistant: Excellent, Green! Red, what should we remember about these pins for our poem?
+- timestamp: '2025-12-09T10:47:37.103105'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 5
+    speaker: Red
+    message: they control the sensors and motors
+    session_phase: 1
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: knowledge_statement
+    is_relevant: true
+    mnemonic_progress: The group is identifying key microcontroller components and functions to include in the poem, focusing
+      on the chip, memory, pins, and their role in controlling sensors and motors.
+    summary: The student states that the pins control sensors and motors.
+- timestamp: '2025-12-09T10:47:37.103134'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:37.103800'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students:
+    - Blue
+    suggested_next_speaker: Blue
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:47:37.103816'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:37.103822'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:47:37.106644'
+  event: '[get_prompt_sections] mnemonic_co_creator_marty'
+  data:
+    sections:
+    - Marty - Persona & Knowledge
+    - Marty - Phase 1 Instructions
+- timestamp: '2025-12-09T10:47:37.106659'
+  event: '[get_prompt_sections] balanced_turns_validator'
+  data:
+    sections:
+    - Balanced Turns Guidance
+- timestamp: '2025-12-09T10:47:41.472435'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:41.472451'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:41.472457'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:41.472464'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:41.472685'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: revise
+    feedback: The response did not adhere to the Phase Goal. Please regenerate it to better match the session goal. Do not
+      propose any concepts yourself. Instead, ask an open-ended question such as 'What concepts do you think are important
+      to include in our poem?' to allow students to propose concepts first.
+- timestamp: '2025-12-09T10:47:43.755057'
+  event: '[validate_output] mnemonic_co_creator_marty'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:43.755076'
+  event: '[validate_output] comprehension_tracker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:43.755082'
+  event: '[validate_output] balanced_turns_validator'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:43.755092'
+  event: '[validate_output] language_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:43.755100'
+  event: '[validate_output] phases_checker_frame'
+  data:
+    action: pass
+    feedback: null
+- timestamp: '2025-12-09T10:47:43.758561'
+  event: Turn 5
+  data:
+    speaker: Red
+    user: they control the sensors and motors
+    assistant: Perfect, Red! Blue, is there anything else about how pins control sensors or motors that we should include
+      in our poem?
+- timestamp: '2025-12-09T10:48:44.777856'
+  event: '[analyze_input] mnemonic_co_creator_marty'
+  data:
+    turn_count: 6
+    speaker: Blue
+    message: i'm not sure they control sensors and motors, they communicate, but we control by writing a program and storing
+      it in microcontroller's memory
+    session_phase: 2
+    off_topic_duration: 0
+    _suggested_next_speaker: null
+    _consecutive_same_speaker: 0
+    contribution_type: builds_on_idea
+    is_relevant: true
+    mnemonic_progress: Students are collaboratively identifying key features of microcontrollers to include in the poem, clarifying
+      the role of pins and memory.
+    summary: The student clarifies that pins communicate with sensors and motors, but control is achieved through programming
+      stored in memory.
+- timestamp: '2025-12-09T10:48:46.601924'
+  event: '[analyze_input] comprehension_tracker_frame'
+  data:
+    concepts: &id001
+    - what microcontrollers are
+    - how they work
+    - chip
+    - memory
+    - pins
+    - control sensors and motors
+    per_turn_analysis:
+      understood:
+      - memory
+      confused:
+      - control sensors and motors
+    cumulative_assessments_updated:
+    - concept: control sensors and motors
+      level: CONFUSED
+      justification: The student is unsure about whether microcontrollers directly control sensors and motors, indicating
+        uncertainty about their role.
+    - concept: memory
+      level: UNDERSTOOD
+      justification: The student correctly understands that programs are written and stored in the microcontroller's memory.
+    all_student_profiles: &id002 {}
+- timestamp: '2025-12-09T10:48:46.602159'
+  event: '[analyze_input] balanced_turns_validator'
+  data:
+    underparticipating_students: []
+    suggested_next_speaker: Green
+    consecutive_same_speaker: 1
+- timestamp: '2025-12-09T10:48:46.602172'
+  event: '[analyze_input] language_checker_frame'
+  data:
+    result: no_output
+- timestamp: '2025-12-09T10:48:46.602179'
+  event: '[analyze_input] phases_checker_frame'
+  data:
+    result: no_output
+frame_memory:
+  turn_count: 6
+  session_phase: 2
+  session_language: English
+  consecutive_off_topic_turns: 0
+  session_start_time: '2025-12-09T10:45:15.586124'
+  mnemonic_state:
+    selected_concepts: *id001
+    concepts_finalized: true
+    mnemonic_text: "Microcontrollers hold the key,  \nPrograms stored in memory.  \nWe write code that sets the pace,  \n\
+      Guiding sensors, motors’ race.  \nThey don’t just talk or merely send—  \nThey follow what we design and send.  \nIn\
+      \ tiny chips, control is born,  \nOur commands, their tasks adorn."
+    mnemonic_created: true
+    _quality_validated: true
+    _quality_passed: true
+    _quality_feedback: The mnemonic is concise with 8 lines, has a rhythmic and rhyming structure, covers key concepts about
+      microcontrollers including memory, control of sensors and motors, chips, and programming, and maintains an encouraging
+      and classroom-appropriate tone.
+    mnemonic_text_clean: "Microcontrollers hold the key,  \nPrograms stored in memory.  \nWe write code that sets the pace,\
+      \  \nGuiding sensors, motors’ race.  \nThey don’t just talk or merely send—  \nThey follow what we design and send.\
+      \  \nIn tiny chips, control is born,  \nOur commands, their tasks adorn."
+  recall_tracking:
+    Red:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+    Green:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+    Blue:
+      attempts: 0
+      successful_parts: []
+      stuck_on: []
+      last_attempt: null
+  elapsed_time_minutes: 3.3497227666666665
+  _phase2_extension_active: false
+  comprehension_tracker:
+    concepts: *id001
+    by_student: *id002
+  balanced_turns_validator:
+    recent_speakers:
+    - Green
+    - Blue
+    - Green
+    - Red
+    - Blue
+    participation:
+      Red:
+        contribution_count: 2
+        total_speaking_time_seconds: 5.6
+        last_contribution_time: '2025-12-09T10:47:37.103146'
+      Green:
+        contribution_count: 2
+        total_speaking_time_seconds: 4.0
+        last_contribution_time: '2025-12-09T10:47:04.878226'
+      Blue:
+        contribution_count: 2
+        total_speaking_time_seconds: 12.399999999999999
+        last_contribution_time: '2025-12-09T10:48:46.601947'
+    suggested_next_speaker: Green
+    last_turn_time: '2025-12-09T10:48:46.601947'
