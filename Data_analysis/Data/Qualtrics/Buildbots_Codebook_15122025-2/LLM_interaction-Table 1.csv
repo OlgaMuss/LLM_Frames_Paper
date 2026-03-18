@@ -1,0 +1,6 @@
+Variable name;English;German;Scale English;Scale German;Source
+LLM_enjoyment;How did you like your last voice interaction with Marty?;Wie hat dir die letzte Sprachinteraktion mit Marty gefallen?;Very bad (1), Rather bad, Neither, Rather good, Very good (5);Sehr schlecht (1), Eher schlecht, Weder noch, Eher gut, Sehr gut (5);Added by author
+LLM_learning;How much did your last conversation with Marty help you learn about microcontrollers?;Wie viel hat dir die letzte Sprachinteraktion mit Marty beim Lernen über Mikrocontroller geholfen?;Very little (1), Rather little, Neither, Rather a lot, Very much (5);Sehr wenig (1), Eher wenig, Weder noch, Eher viel, Sehr viel (5);
+LLM_contributions;Did you feel that everyone in your group talked/wrote to Marty equally?;Hattest du das Gefühl, dass in deiner Gruppe alle gleich viel mit Marty geredet/geschrieben haben?;"No, not at all (1); No, not really; Yes, somewhat; Yes, absolutely (4)";"Nein, gar nicht (1); Nein, eher nicht; Ja, eher schon; Ja, absolut (4)";
+LLM_liked;What did you like about the last language interaction?;Was hat dir gut an der letzten Sprachinteraktion gefallen?;Open ended;;
+LLM_disliked;What did you dislike about the last language interaction?;Was hat dir nicht gut an der letzten Sprachinteraktion gefallen?;Open ended;;

@@ -1,0 +1,6 @@
+Variable name;English;German;Scale English;Scale German;Source
+project_enjoyment;Wie hat dir das gesamte Projekt gefallen?;Wie hat dir das gesamte Projekt gefallen?;Very bad (1), Rather bad, Neither, Rather good, Very good (5);Sehr schlecht (1), Eher schlecht, Weder noch, Eher gut, Sehr gut (5);Added by author
+project_learning;How much did you learn throughout the entire project?;Wie viel hast du im gesamten Projekt gelernt?;Very little (1), Rather little, Neither, Rather a lot, Very much (5);Sehr wenig (1), Eher wenig, Weder noch, Eher viel, Sehr viel (5);
+project_difficulty;How difficult did you find the entire project?;Wie schwer fandest du das gesamte Projekt?;Very difficult (1), Somewhat difficult, Neither difficult nor easy, Somewhat easy, Very easy (5);Sehr schwer (1), Eher schwer, Weder noch, Eher leicht, Sehr leicht (5);
+project_liked;What did you like best about the entire project?;Was hat dir am gesamten Projekt am besten gefallen?;Open ended;;
+project_disliked;What didn't you like about the whole project?;Was hat dir am gesamten Projekt nicht gefallen?;Open ended;;

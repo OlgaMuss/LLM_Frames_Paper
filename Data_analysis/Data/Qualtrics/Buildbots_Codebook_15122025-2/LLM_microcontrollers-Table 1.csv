@@ -1,0 +1,73 @@
+English;German;Source;;
+"1. What is a microcontroller?
+A) A particularly powerful battery
+B) A small computer on a chip
+C) A sensor that detects things
+D) A case in which games are stored";"1. Was ist ein Mikrocontroller?
+A) Eine besonders starke Batterie
+b) Ein kleiner Computer auf einem Chip
+c) Ein Sensor, der Dinge wahrnimmt
+d) Ein Gehäuse, in dem man Spiele speichert";Added by authors;;
+"2. Which parts are always necessary for a microcontroller to function?
+A) A positive terminal (+) and a negative terminal (-)
+B) Only a positive terminal (+)
+C) A robot
+D) A sensor""";"2. Welche Teile sind immer notwendig, damit ein Mikrocontroller funktionieren kann?
+A) Einen Pluspol (+) und einen Minuspol (-)
+B) Nur einen Pluspol (+)
+C) Ein Roboter
+D) Ein Sensor";;;
+"3. What voltage does a microcontroller output at its connections (pins) to control other devices?
+A) 10 V
+B) No voltage
+C) 3 V
+D) 220 V (as in a power outlet)""";"3. Welche Spannung gibt ein Mikrocontroller an seinen Anschlüssen (Pins) aus, um andere Geräte zu steuern?
+A) 10 V
+B) Keine Spannung
+C) 3 V
+D) 220 V (wie in der Steckdose)";;;
+"4. What is the state of a pin called when the microcontroller turns it on?
+A) LOW
+B) HIGH
+C) ON
+D) MED";"4. Wie wird der Zustand eines Pins genannt, wenn der Mikrocontroller diesen einschaltet?
+A) LOW
+B) HIGH
+C) ON
+D) MED";;;
+"5. What does the status “LOW” mean for a pin on the microcontroller?
+A) The pin is read-only.
+B) It is switched on.
+C) It is switched off.
+D) The voltage fluctuates greatly.";"5. Was bedeutet der Zustand ‚LOW' bei einem Pin des Mikrocontrollers?
+A) Der Pin ist nur zum Lesen da
+B) Er ist eingeschaltet
+C) Er ist ausgeschaltet
+D) Die Spannung schwankt sehr stark";;;
+"6. What controls the switching of a microcontroller's pins between ‘HIGH’ and ‘LOW’?
+A) The size of the microcontroller
+B) The program running on the microcontroller
+C) It happens randomly
+D) The weather";"6. Was steuert das Umschalten der Pins eines Mikrocontrollers zwischen ‚HIGH' und ‚LOW'?
+A) Die Größe des Mikrocontrollers
+B) Das Programm, das auf dem Mikrocontroller läuft
+C) Das passiert zufällig
+D) Das Wetter";;;
+"7. How many programs can a microcontroller typically execute?
+A) At least ten different programs simultaneously
+B) Only a single program
+C) A microcontroller does not execute programs
+D) As many as fit on the memory card";"7. Wie viele Programme kann ein Mikrocontroller typischerweise auszuführen?
+A) Mindestens zehn verschiedene Programme gleichzeitig
+B) Nur ein einzelnes Programm
+C) Ein Mikrocontroller führt keine Programme aus
+D) So viele, wie auf die Speicherkarte passen";;;
+"8. What is the name of the programming language often used for programs that run on microcontrollers?
+A) HTML
+B) German
+C) Blockly
+D) C++";"8. Wie heißt die Programmiersprache, die oft für die Programme verwendet wird, die auf Mikrocontrollern laufen?
+A) HTML
+B) Deutsch
+C) Blockly
+D) C++";;;
