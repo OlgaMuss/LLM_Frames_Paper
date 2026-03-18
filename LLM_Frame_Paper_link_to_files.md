@@ -1,14 +1,17 @@
 Journal:
-- [Link](https://www.nature.com/collections/hdeficejfh) 
+
+- [Link](https://www.nature.com/collections/hdeficejfh)
 
 Paper:
+
 - [GoogleDoc Paper Draft](https://docs.google.com/document/d/1bR7kb8tqGsV9vVk5M43otDcsgH9OHzOvmk89QW_Rrhs/edit?tab=t.0)
 - [Buildbot LLM interaction notes in google doc](https://docs.google.com/document/d/1H8ze6IJ8H7I5qsTjTcrK8b4FXwIk0rf9yr8sr4EKXkY/edit?tab=t.0)
 
-
 Analysis:
+
 - [Looking at the data google spreadsheet](https://docs.google.com/spreadsheets/d/1GBSiVlsbLkn2IVy701VjI0h77Xp1-r9zDml6keAZBNM/edit?gid=1955506790#gid=1955506790)
 
-
 Figures in Canva
+
 - [Canva Design](https://www.canva.com/design/DAGyv90q0uA/TEQ9J5xEBm9JXcIeb_1tuw/edit)
+

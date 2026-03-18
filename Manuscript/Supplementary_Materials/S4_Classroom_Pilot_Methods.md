@@ -151,45 +151,11 @@ d)  C++ ✓ (correct)
 
 **Domains**: Enjoyment, learning support, participation equity, and open feedback
 
-+-----------------------+---------------------------------------------------------------------------------------+---------------------+
-| Variable              | Item (English)                                                                        | Scale               |
-+=======================+=======================================================================================+=====================+
-| **LLM_enjoyment**     | How did you like your last voice interaction with Marty?                              | 1 = Very bad        |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 2 = Rather bad      |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 3 = Neither         |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 4 = Rather good     |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 5 = Very good       |
-+-----------------------+---------------------------------------------------------------------------------------+---------------------+
-| **LLM_learning**      | How much did your last conversation with Marty help you learn about microcontrollers? | 1 = Very little     |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 2 = Rather little   |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 3 = Neither         |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 4 = Rather a lot    |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 5 = Very much       |
-+-----------------------+---------------------------------------------------------------------------------------+---------------------+
-| **LLM_contributions** | Did you feel that everyone in your group talked/wrote to Marty equally?               | 1 = No, not at all  |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 2 = No, not really  |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 3 = Yes, somewhat   |
-|                       |                                                                                       |                     |
-|                       |                                                                                       | 4 = Yes, absolutely |
-+-----------------------+---------------------------------------------------------------------------------------+---------------------+
-
-+------------------+-----------------------------------------------------------+--------------------------+
-| Variable         | Item (English)                                            | Response Format          |
-+==================+===========================================================+==========================+
-| **LLM_liked**    | What did you like about the last language interaction?    | Open-ended               |
-+------------------+-----------------------------------------------------------+--------------------------+
-| **LLM_disliked** | What did you dislike about the last language interaction? | Open-ended               |
-+------------------+-----------------------------------------------------------+--------------------------+
+**LLM_enjoyment** How did you like your last voice interaction with Marty? 1 = Very bad, 2 = Rather bad, 3 = Neither, 4 = Rather good, 5 = Very good 
+**LLM_learning** How much did your last conversation with Marty help you learn about microcontrollers? 1 = Very little, 2 = Rather little, 3 = Neither, 4 = Rather a lot,5 = Very much
+**LLM_contributions** Did you feel that everyone in your group talked/wrote to Marty equally? 1 = No, not at all, 2 = No, not really, 3 = Yes, somewhat, 4 = Yes, absolutely 
+**LLM_liked** What did you like about the last language interaction? Open-ended
+**LLM_disliked** What did you dislike about the last language interaction?  Open-ended 
 
 **Purpose**: Evaluate student experience with LLM-mediated learning, perceived learning support, and participation equity
 
@@ -205,69 +171,14 @@ d)  C++ ✓ (correct)
 
 **Purpose**: Assess teacher perceptions of student engagement, learning, and lesson implementation
 
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-| Variable          | Item (English)                                                                               | Scale                            |
-+===================+==============================================================================================+==================================+
-| **engagement**    | How engaged did you find your students in today's lesson compared to other lessons?          | 1 = Much less engaged            |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 2 = Slightly less engaged        |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 3 = Equally engaged              |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 4 = Slightly more engaged        |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 5 = Much more engaged            |
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-| **questions**     | In your opinion, how many relevant questions did your students ask during today's lesson?    | 1 = No relevant questions        |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 2 = Very few relevant questions  |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 3 = Some relevant questions      |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 4 = Many relevant questions      |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 5 = Very many relevant questions |
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-| **difficulty_1**  | How easy was it to guide the students through the lesson in terms of: The content            | 1 = Very difficult               |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 2 = Rather difficult             |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 3 = Moderate                     |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 4 = Rather easy                  |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 5 = Very easy                    |
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-| **difficulty_2**  | How easy was it to guide the students through the lesson in terms of: The students' behavior | 1 = Very difficult               |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 2 = Rather difficult             |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 3 = Moderate                     |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 4 = Rather easy                  |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 5 = Very easy                    |
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-| **learning**      | How much do you think your students learned in today's lesson?                               | 1 = Learned nothing              |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 2 = Learned a little             |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 3 = Learned something            |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 4 = Learned a lot                |
-|                   |                                                                                              |                                  |
-|                   |                                                                                              | 5 = Learned a great deal         |
-+-------------------+----------------------------------------------------------------------------------------------+----------------------------------+
-
-+-----------------+------------------------------------------------------------------------------------------------------------------+--------------------------+
-| Variable        | Item (English)                                                                                                   | Response Format          |
-+=================+==================================================================================================================+==========================+
-| **positive**    | What two things did you like about today's lesson?                                                               | Open-ended               |
-+-----------------+------------------------------------------------------------------------------------------------------------------+--------------------------+
-| **negative**    | What two things did you find difficult in today's lesson, or what would you have liked to have done differently? | Open-ended               |
-+-----------------+------------------------------------------------------------------------------------------------------------------+--------------------------+
-| **qualitative** | There is space here if you would like to tell us anything else.                                                  | Open-ended               |
-+-----------------+------------------------------------------------------------------------------------------------------------------+--------------------------+
+**engagement**  How engaged did you find your students in today's lesson compared to other lessons? 1 = Much less engaged, 2 = Slightly less engaged, 3 = Equally engaged, 4 = Slightly more engaged, 5 = Much more engaged
+**questions** In your opinion, how many relevant questions did your students ask during today's lesson? 1 = No relevant questions, 2 = Very few relevant questions, 3 = Some relevant questions, 4 = Many relevant questions, 5 = Very many relevant questions
+**difficulty_1** How easy was it to guide the students through the lesson in terms of: The content 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather, 5 = Very easy
+**difficulty_2** How easy was it to guide the students through the lesson in terms of: The students' behavior 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather easy, 5 = Very easy
+**learning** How much do you think your students learned in today's lesson? 1 = Learned nothing, 2 = Learned a little, 3 = Learned something, 4 = Learned a lot, 5 = Learned a great deal 
+**positive** What two things did you like about today's lesson? Open-ended
+**negative** What two things did you find difficult in today's lesson, or what would you have liked to have done differently? Open-ended
+**qualitative** There is space here if you would like to tell us anything else. Open-ended 
 
 #### 1.3.3 LLM Interaction Evaluation (Teacher Perspective)
 
@@ -275,45 +186,9 @@ d)  C++ ✓ (correct)
 
 **Note**: These items are specific to LLM interaction sessions, while sections 1.2.3.1-1.2.3.2 refer to general lesson evaluation
 
-+-------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------+
-| Variable          | Item (English)                                                                                | Scale                                         |
-+===================+===============================================================================================+===============================================+
-| **LLM_helpful**   | How helpful did you find the last language interaction with Marty for the students' learning? | 1 = Not helpful at all                        |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 2 = Somewhat helpful                          |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 3 = Helpful                                   |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 4 = Very helpful                              |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 5 = I can't say                               |
-+-------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------+
-| **LLM_easy**      | How easy did you find the last language interaction for the students?                         | 1 = Very difficult                            |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 2 = Rather difficult                          |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 3 = Moderate                                  |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 4 = Rather easy                               |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 5 = Very easy                                 |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 6 = I cannot judge                            |
-+-------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------+
-| **LLM_engaging**  | How entertaining did you find the last language interaction for the students?                 | 1 = Not entertaining at all                   |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 2 = Not very entertaining                     |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 3 = Neither entertaining nor not entertaining |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 4 = Somewhat entertaining                     |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 5 = Very entertaining                         |
-|                   |                                                                                               |                                               |
-|                   |                                                                                               | 6 = I can't say                               |
-+-------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------+
-
-------------------------------------------------------------------------
+**LLM_helpful** How helpful did you find the last language interaction with Marty for the students' learning? 1 = Not helpful at all, 2 = Somewhat helpful, 3 = Helpful, 4 = Very helpful, 5 = I can't say
+**LLM_easy** How easy did you find the last language interaction for the students? 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather easy, 5 = Very easy, 6 = I cannot judge
+**LLM_engaging** How entertaining did you find the last language interaction for the students? 1 = Not entertaining at all, 2 = Not very entertaining, 3 = Neither entertaining nor not entertaining, 4 = Somewhat entertaining, 5 = Very entertaining, 6 = I can't say
 
 ### 1.4 LLM Interaction Analysis Measures
 
