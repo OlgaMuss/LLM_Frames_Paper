@@ -1,0 +1,332 @@
+Learning topics;Learning objective;Week;English;German;Item difficulty;Category;Source;Adapted;Code in data
+Technical knowledge;Robots parts;Week 1;"1. Which Marty component is shown in this picture?
+
+A) Circuit board connecting the leg motors and sensors to the onboard computer in the head.
+
+B) Onboard computer that controls the robot.
+
+C) Infrared sensor that detects movement.
+
+D) Knee motor that moves the leg.";"Welches Bauteil von Marty is auf diesem Bild abgebildet?
+
+A) Platine, die die Beinmotoren und Sensoren mit dem Onboard-Computer im Kopf verbindet
+
+b) Onboard computer, der den Roboter steuert
+
+c) Infra-rot sensor, der Bewegungen wahrnimmt.
+
+d) Kniemotor, der das Bein bewegt.";;;;;
+;;;"2. What movements can Marty's hip motor perform?
+ 
+a)  move the entire leg
+
+b)  rotate the lower leg at the knee
+
+c)  bend the knee
+
+d)  raise and lower the arm";"Welche Bewegung kann Marty's Hüftmotor ausführen?
+ 
+a)  das ganze Bein bewegen
+
+b)  den Unterschenkel am Knie rotieren
+
+c)  das Knie beugen
+
+d)  den Arm heben und senken";;;added by authors;;
+;Sensors;Week 5;"1. 'Marty the robot has an infrared (IR) sensor in its foot. What is the primary job of this sensor?
+
+a) To help the robot hear and understand voice commands.
+
+b) To detect obstacles directly in front of its feet or the edge of a surface.
+
+c) To run the program that tells the robot how to move.
+
+d) To move the motors that make the robot's legs walk.";"Marty der Roboter hat einen Infrarot (IR)-Sensor in seinem Fuß. Was ist die Hauptaufgabe dieses Sensors?
+
+a) Dem Roboter zu helfen, Sprachbefehle zu hören und zu verstehen.
+
+b) Hindernisse direkt vor seinen Füßen oder die Kante einer Oberfläche erkennen.
+
+c) Das Programm auszuführen, das dem Roboter sagt, wie er sich bewegen soll.
+
+d) Die Motoren zu bewegen, die die Beine des Roboters zum Laufen bringen.";;;added by authors;Added I don't know options to all MC questions;
+;;;"2. Which of the following tasks can a sensor not perform?
+
+a) Detect if an object is in front of the sensor.
+
+b) Measure the brightness of the light in a room.
+
+c) Move a leg to make something move.
+
+d) Sense if the sensors is being tilted or picked up.";"Welche der folgenden Aufgaben kann ein Sensor NICHT ausführen?
+
+a) Erkennen, ob sich ein Objekt vor dem Sensor befindet.
+
+b) Messen der Helligkeit des Lichts in einem Raum.
+
+c) Bewegen eines Beins, damit der Roboter laufen kann.
+
+d) Erkennen, ob der Sensor gekippt oder angehoben wird.";;;added by authors;;
+;Microcontrollers;Week 4;"1. What is the main function of this component on the Arduino Nano ESP32?
+
+a) It is the main processor (""brain"") that executes the program and gives the board Wi-Fi and Bluetooth capabilities.
+
+b) It is the chip that converts the 5V voltage from the USB port for the board.
+
+c) It is a sensor that measures the board's ambient temperature.
+
+d) It is the translator chip that is exclusively responsible for USB communication.";" Was ist die Hauptfunktion dieses Bauteils auf dem Arduino Nano ESP32?
+
+a) Es ist der Hauptprozessor (""Gehirn""), der das Programm ausführt und dem Board WLAN- und Bluetooth-Fähigkeiten gibt.
+
+b) Es ist der Chip, der die 5V-Spannung vom USB-Anschluss für das Board umwandelt.
+
+c) Es ist ein Sensor, der die Umgebungstemperatur des Boards misst.
+
+d) Es ist der Übersetzer-Chip, der ausschließlich für die USB-Kommunikation zuständig ist.";;;added by authors;;
+;;;"2. What is the main role of a microcontroller (like an Arduino) in a robot?
+
+a) To run a specific, relatively simple program, such as controlling motors or reading sensors.
+
+b) To run complex Artificial Intelligence, like a Large Language Model (LLM).
+
+c) To move the robot's legs and arms.
+
+d) To provide a software library of pre-made functions for programming.";"Was ist die Hauptaufgabe eines Mikrocontrollers (wie eines Arduinos) in einem Roboter?
+
+a) Ein bestimmtes, relativ einfaches Programm auszuführen, wie zum Beispiel Motoren zu steuern oder Sensoren auszulesen.
+
+b) Komplexe Künstliche Intelligenz auszuführen, wie ein großes Sprachmodell (LLM).
+
+c) Die Beine und Arme des Roboters zu bewegen.
+
+d) Eine Software-Bibliothek mit vorgefertigten Funktionen für die Programmierung bereitzustellen.";;;added by authors;;
+AI;What is AI;Week 2;"DA09: What characteristics differentiate AI from previous IT applications?
+a) Learning ability and independence
+b) Ability to process data and ease of use
+c) Speed and ability to process data
+d) Location-independent access and data security
+AICOS, Markus 2025";"DA09: Durch welche Merkmale unterscheidet sich KI von bisherigen IT-Anwendungen?
+a) Lernfähigkeit und Selbstständigkeit
+b) Fähigkeit, Daten zu verarbeiten und Benutzerfreundlichkeit
+c) Schnelligkeit und Fähigkeit, Daten zu bearbeiten
+d) Ortungsabhängiger Zugriff und Datensicherheit";"DA09: -1.30 (easy)
+";Detect AI;;;
+;What is not AI;;"CA12: Which of the following examples is NOT AI?
+a) Style change filters in applications such as Prisma, which use a photo as a starting point and create variants in different art styles (impressionist, cubist, etc.).
+b) A music recommendation system such as Spotify recommends music based on the user's listening behavior.
+c) Big data storage solutions that store large amounts of data (e.g., images or videos) and can play them for a large number of users at the same time.
+d) Applications that can reformulate a text into different language styles.
+(AICOS, Markus 2025)";"CA12: Bei welchem der folgenden Beispiele handelt es sich NICHT um KI?
+a) Stiländerungsfilter in Anwendungen wie Prisma, die ein Foto als Ausgangsbasis verwenden und daraus Varianten in unterschiedlichen Kunststilen (impressionistisch, kubistisch etc.) erstellen.
+b) Ein Musikempfehlungssystem wie Spotify, das Musik basierend auf dem Hörverhalten der Nutzer:innen empfiehlt.
+c) Big-Data-Speicherlösungen, die große Datenmengen (z.B. Bilder oder Videos) speichern und diese für eine Vielzahl von Nutzer:innen gleichzeitig abspielen können.
+d) Anwendungen, die einen Text in verschiedene Sprachstile umformulieren können.";CA12: -1.40 (easy);Create AI;;;
+Machine learning;Outcomes of Machine Learning;;"CI29: An app convert the style of your face to a Van Gogh painting. What is the main task of this AI?
+
+a) Generation
+
+b) Action
+
+c) Classification
+
+d) Clustering";"CI29: Eine App wandelt den Stil deines Gesichts in ein Van-Gogh-Gemälde um. Was ist die Hauptaufgabe dieser KI?
+
+a) Generierung
+
+b) Aktion
+
+c) Klassifizierung
+
+d) Clustering";CI29: -1.24 (easy);Machine learning;AI-CHI, Zhang 2025;tadapted to fit 4 options MC, ranslated by us;
+;Supervised, unsupervised, and reinforcement learning;;"CI31: A machine is given a dataset of images of flowers with the identification of whether the image is of a tulip or not tulip and is trained to identify when an image cointains a tulip. What type of machine learning is this?
+a) unsupervised learning
+b) supervised learning
+c) reinforcement learning
+d) semi-supervised learning";"CI31: Eine Maschine erhält einen Datensatz mit Bildern von Blumen, in dem angegeben ist, ob es sich bei einem Bild um eine Tulpe handelt oder nicht. Die Maschine  wird darauf trainiert, zu erkennen, wann ein Bild eine Tulpe enthält. Um welche Art des maschinellen Lernens handelt es sich?
+a) Unüberwachtes Lernen
+b) Überwachtes Lernen
+c) Verstärkendes Lernen
+d) Halbüberwachtes Lernen";CI31: -0.62 (moderate);Machine learning;AI-CHI, Zhang 2025;translated by us;
+;;;"UA19: What is a central feature of reinforcement learning models?
+a) The model performs actions and learns through a trial-and-error method.
+b) It works in interaction with the training environment.
+c) The model makes decisions based on previous experience and current states.
+d) The model requires a labeled data set for training.";"UA19: Was ist ein zentrales Merkmal von Modellen, die verstärkendes  Lernen benutzen?
+a) Das Modell führt Aktionen aus und lernt durch eine Versuch-und-Irrtum-Methode.
+b) Es arbeitet in Interaktion mit der Trainingsumgebung.
+c) Das Modell trifft Entscheidungen basierend auf vorherigen Erfahrungen und aktuellen Zuständen.
+d) Das Modell benötigt einen markierten Datensatz zum Training.";UA19: 0.23 (moderate);Understanding AI;"AICOS; Markus, 2025";adapted for easier language;
+LLMs and generative AI;Prompt engineering;Week 2;"GA10: What is a ""prompt""?
+a) A short text given as input to the large language model can be used to control the model's output in many ways.
+b) A short text used to train the large language model.
+c) A pre-trained generative AI model that serves as a starting point for fine-tuning and customizing the generation of specific content types.
+d) A long section of text used to debug the large language model.
+AICOS, Markus 2025";"GA10: Was ist ein ""Prompt""?
+a) Ein kurzer Text, der dem großen Sprachmodell als Eingabe gegeben wird und mit dem die Ausgabe des Modells auf viele Arten gesteuert werden kann.
+b) Ein kurzer Text, der zum Trainieren des großen Sprachmodells verwendet wird.
+c) Ein vortrainiertes generatives KI-Modell, das als Ausgangspunkt für die Feinabstimmung und individuelle Anpassung der Generierung spezifischer Inhaltstypen dient.
+d) Ein langer Textabschnitt, der zum Debuggen des großen Sprachmodells verwendet wird.";GA10: -1.45 (easy);Generative AI;"AICOS; Markus, 2025";;
+;LLM design;;"1. When designing a prompt for an LLM, which of the following instructions could produce a worse response?
+
+a) ""Act as an expert historian and summarize the main causes of the French Revolution in 100 words.""
+
+b) ""Write a short, funny poem about a robot that is learning to cook.""
+
+c) ""Tell me about science.""
+
+d) ""Based on the attached document, identify three key risks and one opportunity.""";"Welche der folgenden Anweisungen könnte bei der Erstellung eines Prompts für ein LLM zu einer schlechteren Antwort führen?
+
+a) „Sei ein als Experte für Geschichte und fasse die Hauptursachen der Französischen Revolution in 100 Wörtern zusammen.“
+
+b) „Schreibe ein kurzes, lustiges Gedicht über einen Roboter, der kochen lernt.“
+
+c) „Erzähle mir etwas über Wissenschaft.“
+
+d) „Identifiziere anhand des beigefügten Dokuments drei wesentliche Risiken und eine Chance.“";;;added by author;;
+;Generative AI;;"GA13: Which of the following best describes how generative AI works?
+a) Generative AI randomly creates new content without reference to existing data.
+b) Generative AI uses rules to create completely original and unique content.
+c) Generative AI determines the relationship between data sets and classifies data according to the existing data sets.
+d) Generative AI learns from existing data and creates new content resembling learned patterns.
+AICOS, Markus 2025";"GA13: Welche der folgenden Erklärungen beschreibt am besten, wie generative KI funktioniert?
+a) Generative KI erstellt zufällig neue Inhalte ohne Bezug auf vorhandene Daten.
+b) Generative KI verwendet Regeln, um völlig originelle und einzigartige Inhalte zu erzeugen.
+c) Generative KI bestimmt die Beziehung zwischen Datensätzen und klassifiziert Daten entsprechend den vorhandenen Datensätzen.
+d) Generative KI lernt aus vorhandenen Daten und erstellt daraufhin neue Inhalte, die den gelernten Mustern ähneln.";GA13: -1.73 (easy);Generative AI;"AICOS; Markus, 2025";;
+;Biases;Week 3;"EA05: Two people use a voice assistant to search for career opportunities in technology. While person 1 (a young German woman) receives numerous job offers, including management positions and support programs, person 2 (a young man with a non-European background) mainly receives information on entry-level jobs and further training. What ethical dilemma is illustrated by this scenario?
+a) The algorithm has automatically assumed less interest in higher positions based on the origin of person 2.
+b) The algorithm could reproduce unconscious prejudices by providing person 1 and person 2 with different information based on gender and origin.
+c) The algorithm provides different information to protect users due to security concerns.
+d) The algorithm was programmed to provide optimal results only for a certain user group, leading to discrimination.
+AICOS; Markus 2025";"EA05: Zwei Personen nutzen einen Sprachassistenten, um nach Karrierechancen in der Technologiebranche zu suchen. Während Person 1 (eine junge deutsche Frau) zahlreiche Jobangebote, darunter Führungspositionen und Förderprogramme, erhält, bekommt Person 2 (ein junger Mann mit nicht-europäischem Hintergrund) hauptsächlich Informationen zu Einstiegsjobs und Weiterbildungen. Welches ethische Dilemma wird durch dieses Szenario verdeutlicht?
+a) Der Algorithmus hat anhand der Herkunft von Person 2 automatisch angenommen, dass weniger Interesse an höheren Positionen besteht.
+b) Der Algorithmus könnte unbewusste Vorurteile reproduzieren, indem er Person 1 und Person 2 unterschiedliche Informationen basierend auf Geschlecht und Herkunft liefert.
+c) Der Algorithmus bietet aufgrund von Sicherheitsbedenken unterschiedliche Informationen an, um Nutzer:innen zu schützen.
+d) Der Algorithmus wurde so programmiert, dass er nur für eine bestimmte Gruppe an Nutzer:innen optimale Ergebnisse liefert, was zu Diskriminierung führt.";EA05: -1.28 (easy);Ethics AI;"AICOS; Markus, 2025";;
+Limitations of AI;Halucinations;;"GA04: Hallucinations in AI models refer to nonsensical or grammatically incorrect words or sentences generated by the model. Which of the following factors probably does not cause hallucinations?
+a) The model is trained using noisy or erroneous data.
+b) The model is trained with too much data.
+c) The model is not trained with enough data.
+d) The model is not given enough context.
+AICOS, Markus 2025";"GA04: Halluzinationen in KI-Modellen beziehen sich auf unsinnige oder grammatikalisch fehlerhafte Wörter oder Sätze, die vom Modell generiert werden. Welcher der folgenden Faktoren verursacht vermutlich keine  Halluzinationen?
+a) Das Modell wird anhand verrauschter oder fehlerhafter Daten trainiert.
+b) Das Modell wird mit zu vielen Daten trainiert.
+c) Das Modell wird mit zu wenigen Daten trainiert.
+d) Dem Modell wird nicht genügend Kontext gegeben.";GA04: 1.01 (difficult);Generative AI;"AICOS; Markus, 2025";Adapted to easier language;
+Programming;Commands, parameters, variables, functions, libraries;Week 4;"1. In programming, which of these is the best description of a command?
+
+a) A single, basic command, like ""turn left"".
+
+b) A collection of all possible commands you can use.
+
+c) A sequence of commands, saved so it can be easily run again later.
+
+d) A variable that stores a single piece of information, like a number.";"Welche der folgenden Aussagen beschreibt beim Programmieren am besten was ein Kommando  ist?
+a) Ein einzelner Befehl, wie „nach links drehen“.
+b) Eine Sammlung aller möglichen Befehle, die du verwenden kannst.
+c) Eine Folge von Befehlen, die gespeichert wird, damit sie später leicht wieder ausgeführt werden kann.
+d) Eine Variable, die eine einzelne Information speichert, wie beispielsweise eine Zahl.";;;added by author;;
+;Loops;;"2. You want a robot to blink an LED light exactly ten times. Which programming concept is the most efficient way to do this?
+
+a) A loop
+
+b) A variable
+
+c) An if-else statement
+
+d) A function";"Du möchtest, dass ein Roboter eine LED-Leuchte genau zehn Mal blinken lässt. Welches Programmierkonzept ist dafür am besten geeignet?
+
+a) Ein Loop
+
+b) Eine Variable
+
+c) Eine if-else-Anweisung
+
+d) Eine Funktion";;;added by author;;
+;If-Else;;"3. Look at the following C++ code snippet. Under which condition will the turn_on_light() command be executed?
+
+if (room == ""dark"") {
+  turn_on_light();
+} else {
+  // do nothing
+}
+
+a) It will always be executed.
+
+b) Only when the value of room is ""dark"".
+
+c) Only when the value of room is not ""dark"".
+
+d) It will never be executed.";"Schau dir den folgenden C++-Code an. Unter welcher Bedingung wird der Befehl turn_on_light() ausgeführt?
+
+if (room == „“dark„“) {
+  turn_on_light();
+} else {
+  // nichts tun
+}
+
+a) Er wird immer ausgeführt.
+
+b) Nur wenn der Wert von room „“dark„“ ist.
+
+c) Nur wenn der Wert von room nicht „“dark„“ ist.
+
+d) Er wird niemals ausgeführt.“";;;added by author;;
+;C++;;"4. A programmer wants Marty the robot to walk forward 2 steps and then turn right 90 degrees. Assuming the C++ commands are marty.walk(steps); and marty.turn(""direction"", degrees);, which code snippet will correctly execute this sequence?
+
+a)
+marty.turn(""right"", 90);
+marty.walk(2);
+
+b)
+marty.walk(2);
+marty.turn(""right"", 90);
+
+c)
+marty.walk(""2 steps"");
+marty.turn(""right 90 degrees"");
+
+d)
+loop(1) {
+  marty.walk(2);
+  marty.turn(""right"", 90);
+}";"Ein/e Programmierer/In möchte, dass der Roboter Marty zwei Schritte vorwärts geht und sich dann um 90 Grad nach rechts dreht. Angenommen, die C++-Befehle lauten marty.walk(steps); und marty.turn(„direction“, degrees);, welcher Codeausschnitt führt diese Sequenz korrekt aus?
+
+a)
+marty.turn(„“right„“, 90);
+marty.walk(2);
+
+b)
+marty.walk(2);
+marty.turn(„“right„“, 90);
+
+c)
+marty.walk(„“2 steps„“);
+marty.turn(„“right 90 degrees„“);
+
+d)
+loop(1) {
+  marty.walk(2);
+  marty.turn(„“right„“, 90);
+}""";;;added by author;;
+AI ethics;When to use and not use AI (part 1);Week 6;"GA16: A company decides to use AI instead of human voice actors for the voice recordings of a movie. What ethical problem could arise in terms of social responsibility?
+a) AI might not provide the desired emotional expression.
+b) Using AI could potentially put a human out of work.
+c) Viewers might have problems accepting the AI voice as authentic.
+d) AI takes longer to produce than human speakers.";"GA16: Ein Unternehmen entscheidet sich, anstelle menschlicher Synchronsprecher:innen eine KI für die Sprachaufnahmen eines Films zu verwenden. Welches ethische Problem könnte dabei im Hinblick auf die soziale Verantwortung entstehen?
+a) Die KI könnte nicht den gewünschten emotionalen Ausdruck bieten.
+b) Durch den Einsatz der KI wird ein Mensch potenziell arbeitslos.
+c) Zuschauer:innen könnten Probleme haben, die KI-Stimme als authentisch zu akzeptieren.
+d) Die KI benötigt länger zur Produktion als  menschliche Sprecher:innen.";GA16: -1.01 (easy);;"AICOS; Markus, 2025";;
+;;;"EA11: What risks and challenges does using AI solutions entail?
+a) AI models, if left unsupervised, can spontaneously mutate and evolve into computer viruses.
+b) In a social context, using confidential data to train and operate AI systems is completely unobjectionable.
+c) Health insurance companies do not yet support using AI systems.
+d) The power consumption for training AI systems is very high.
+AICOS, Markus 2025 -> answer option a adapted because also correct.";"EA11: Welche Risiken und Herausforderungen birgt der Einsatz von KI-Lösungen?
+a) Rechtliche und ethische Fragestellungen sind bereits vollkommen geklärt.
+b) Im gesellschaftlichen Kontext ist der Einsatz von vertraulichen Daten für das Training und den Betrieb von KI-Systemen vollkommen unbedenklich.
+c) Krankenkassen unterstützen den Einsatz von KI-Systemen noch nicht.
+d) Der Strom- und Wasserverbrauch beim Training der KI-Systeme ist sehr hoch.";EA11: -0.66 (moderate);Ethics AI;"AICOS; Markus, 2025";;
+;;;;;;;;;

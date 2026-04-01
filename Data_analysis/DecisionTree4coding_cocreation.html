@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Co-Creation Level — Decision Tree</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #222;
+      padding: 30px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1140px; margin: 0 auto; }
+    h1 {
+      font-size: 1.45em; font-weight: 700; color: #1a1a2e;
+      border-bottom: 3px solid #2c3e50; padding-bottom: 10px; margin-bottom: 6px;
+    }
+    .subtitle { font-size: 0.84em; color: #666; margin-bottom: 30px; }
+    h2 { font-size: 1.1em; font-weight: 600; color: #2c3e50; margin: 32px 0 14px; }
+
+    .tree-container {
+      background: white; border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px; overflow-x: auto;
+    }
+    footer { font-size: 11px; color: #aaa; margin-top: 20px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Co-Creation Level — Decision Tree</h1>
+  <p class="subtitle">Coding scheme for the co-creation level variable. Marty/SCAFFOLD pilot study, Muss, Leisten &amp; Bardyn (in prep.)</p>
+
+  <div class="tree-container">
+    <svg viewBox="0 0 960 960" width="920" height="920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#888"/>
+        </marker>
+      </defs>
+
+      <!-- START -->
+      <rect x="268" y="20" width="284" height="40" rx="20" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+      <text x="410" y="45" text-anchor="middle" font-size="13" font-weight="600" fill="#444">Review full interaction transcript</text>
+
+      <!-- START → Q1 -->
+      <line x1="410" y1="60" x2="410" y2="73" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- Q1 rect: center(410,125) -->
+      <rect x="214" y="73" width="392" height="104" rx="6" fill="#dde8f6" stroke="#4a7fb5" stroke-width="1.5"/>
+      <text x="410" y="108" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">Did any student provide ANY input</text>
+      <text x="410" y="124" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">that contributed to the task?</text>
+      <text x="410" y="139" text-anchor="middle" font-size="9" fill="#5577aa">(content, format, style, guidance — anything counts)</text>
+      <text x="410" y="153" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">(Number of relevant contributions &gt; 0?)</text>
+
+      <!-- Q1 NO → L0 -->
+      <line x1="606" y1="125" x2="624" y2="125" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="615" y="117" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">NO</text>
+      <rect x="626" y="98" width="200" height="60" rx="8" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+      <text x="726" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#900">LEVEL 0</text>
+      <text x="726" y="138" text-anchor="middle" font-size="11" fill="#700">LLM created everything</text>
+      <text x="726" y="152" text-anchor="middle" font-size="10" fill="#700">Students gave no input</text>
+
+      <!-- Q1 YES → Q2 -->
+      <line x1="410" y1="177" x2="410" y2="220" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="422" y="202" text-anchor="start" font-size="11" fill="#27ae60" font-weight="700">YES</text>
+
+      <!-- Q2 rect: center(410,268) -->
+      <rect x="214" y="220" width="392" height="106" rx="6" fill="#dde8f6" stroke="#4a7fb5" stroke-width="1.5"/>
+      <text x="410" y="243" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">Did contributions go beyond</text>
+      <text x="410" y="259" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">format and style?</text>
+      <text x="410" y="274" text-anchor="middle" font-size="9" fill="#5577aa">("make it a rhyme", "in Italian", "do it for us")</text>
+      <text x="410" y="289" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">(Number of relevant contributions &gt; 0 AND</text>
+      <text x="410" y="304" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a"> Phase 1: identification of the concepts</text>
+      <text x="410" y="319" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a"> to use for the mnemonic is not "Unsuccessful"?)</text>
+
+      <!-- Q2 NO → L05a -->
+      <line x1="606" y1="268" x2="624" y2="268" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="615" y="260" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">NO</text>
+      <rect x="626" y="242" width="200" height="78" rx="8" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+      <text x="726" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#8d3100">LEVEL 0.5</text>
+      <text x="726" y="282" text-anchor="middle" font-size="11" fill="#6d2100">Style guidance only</text>
+      <text x="726" y="297" text-anchor="middle" font-size="10" fill="#6d2100">"make it a rhyme", "in Italian"</text>
+      <text x="726" y="311" text-anchor="middle" font-size="10" fill="#6d2100">No microcontroller content</text>
+
+      <!-- Q2 YES → Q3 -->
+      <line x1="410" y1="325" x2="410" y2="383" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="422" y="358" text-anchor="start" font-size="11" fill="#27ae60" font-weight="700">YES</text>
+
+      <!-- Q3 rect: center(410,436) -->
+      <rect x="214" y="383" width="392" height="106" rx="6" fill="#dde8f6" stroke="#4a7fb5" stroke-width="1.5"/>
+      <text x="410" y="416" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">Did students independently propose</text>
+      <text x="410" y="432" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c"> any SPECIFIC concept in Phase 1?</text>
+      <text x="410" y="447" text-anchor="middle" font-size="9" fill="#5577aa">(pins, voltage, C++, HIGH/LOW — not vague labels</text>
+      <text x="410" y="460" text-anchor="middle" font-size="9" fill="#5577aa">like "electrical technology", not LLM-prompted)</text>
+      <text x="410" y="474" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">(Phase 1: # concepts &gt; 0 AND identification = "Successful"?)</text>
+
+      <!-- Q3 NO → L05b -->
+      <line x1="606" y1="436" x2="624" y2="436" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="615" y="428" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">NO</text>
+      <rect x="626" y="408" width="200" height="78" rx="8" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+      <text x="726" y="432" text-anchor="middle" font-size="13" font-weight="700" fill="#8d3100">LEVEL 0.5</text>
+      <text x="726" y="448" text-anchor="middle" font-size="11" fill="#6d2100">Style guidance only</text>
+      <text x="726" y="463" text-anchor="middle" font-size="10" fill="#6d2100">Phase 1 concepts missing or</text>
+      <text x="726" y="477" text-anchor="middle" font-size="10" fill="#6d2100">only LLM-prompted responses</text>
+
+      <!-- Q3 YES → Q4 -->
+      <line x1="410" y1="489" x2="410" y2="551" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="422" y="526" text-anchor="start" font-size="11" fill="#27ae60" font-weight="700">YES</text>
+
+      <!-- Q4 rect: center(410,604) -->
+      <rect x="214" y="551" width="392" height="106" rx="6" fill="#dde8f6" stroke="#4a7fb5" stroke-width="1.5"/>
+      <text x="410" y="589" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">Did students contribute a phrase</text>
+      <text x="410" y="605" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">or idea to the mnemonic in Phase 2?</text>
+      <text x="410" y="620" text-anchor="middle" font-size="9" fill="#5577aa">(phrase, character, metaphor — not just "do it for us")</text>
+      <text x="410" y="635" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">(Phase 2: # relevant Student contributions &gt; 0?)</text>
+
+      <!-- Q4 NO → L1 -->
+      <line x1="606" y1="604" x2="624" y2="604" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="615" y="596" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">NO</text>
+      <rect x="626" y="578" width="200" height="60" rx="8" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+      <text x="726" y="602" text-anchor="middle" font-size="13" font-weight="700" fill="#7a5c00">LEVEL 1</text>
+      <text x="726" y="618" text-anchor="middle" font-size="11" fill="#5a4000">Students gave concepts;</text>
+      <text x="726" y="632" text-anchor="middle" font-size="11" fill="#5a4000">LLM created the mnemonic</text>
+
+      <!-- Q4 YES → Q5 -->
+      <line x1="410" y1="657" x2="410" y2="703" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="422" y="686" text-anchor="start" font-size="11" fill="#27ae60" font-weight="700">YES</text>
+
+      <!-- Q5 rect: center(410,756) -->
+      <rect x="214" y="703" width="392" height="106" rx="6" fill="#dde8f6" stroke="#4a7fb5" stroke-width="1.5"/>
+      <text x="410" y="734" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">Did the key narrative IDEAS originate</text>
+      <text x="410" y="749" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3a5c">from students, with LLM connecting them?</text>
+      <text x="410" y="762" text-anchor="middle" font-size="9" fill="#5577aa">(characters, metaphors, story arc from students;</text>
+      <text x="410" y="774" text-anchor="middle" font-size="9" fill="#5577aa">LLM structured the narrative → Level 2)</text>
+      <text x="410" y="788" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">(Phase 2: # relevant Student contributions &gt; 0</text>
+      <text x="410" y="801" text-anchor="middle" font-size="11" font-style="italic" fill="#2d5a8a">AND Phase 2: Collaboration = "Successful"?)</text>
+
+      <!-- Q5 NO → L2 (bottom-left) -->
+      <path d="M214,756 L128,756 L128,858" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+      <text x="168" y="749" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">NO</text>
+      <rect x="48" y="858" width="196" height="70" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+      <text x="146" y="882" text-anchor="middle" font-size="13" font-weight="700" fill="#1b5e20">LEVEL 2</text>
+      <text x="146" y="898" text-anchor="middle" font-size="11" fill="#1b5e20">Students and LLM</text>
+      <text x="146" y="912" text-anchor="middle" font-size="11" fill="#1b5e20">co-created together</text>
+
+      <!-- Q5 YES → L3 (bottom-right) -->
+      <path d="M606,756 L720,756 L720,858" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+      <text x="664" y="749" text-anchor="middle" font-size="11" fill="#27ae60" font-weight="700">YES</text>
+      <rect x="622" y="858" width="196" height="70" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+      <text x="720" y="882" text-anchor="middle" font-size="13" font-weight="700" fill="#0d47a1">LEVEL 3</text>
+      <text x="720" y="898" text-anchor="middle" font-size="11" fill="#0d47a1">Students led creation;</text>
+      <text x="720" y="912" text-anchor="middle" font-size="11" fill="#0d47a1">LLM only supported</text>
+
+    </svg>
+  </div>
+
+
+  <footer style="font-size:11px; color:#aaa; margin-top:20px;">
+    Decision tree: coding_cocreation_decision_tree__validation_required.md &nbsp;|&nbsp; Muss, Leisten &amp; Bardyn (in prep.)
+  </footer>
+
+</div>
+</body>
+</html>

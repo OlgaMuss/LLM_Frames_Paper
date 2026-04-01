@@ -6,117 +6,20 @@
 
 ### 1.1 Knowledge Assessment
 
-**Instrument**: Multiple-choice questionnaire developped by the researchers
+**Instrument**: Multiple-choice questionnaire developed by the researchers
 
 **Administration**: The knowledge assessment was administered at three time points during the study. At T1 (pre-session), students completed 2 items to establish baseline knowledge. At T2 and T3 (post-sessions), students completed 10 items, which included the 2 repeated items from T1 plus 8 new items assessing microcontroller fundamentals, programming concepts, and technical specifications.
 
 **Scoring**: Each item was scored as correct (1) or incorrect (0).
 
-#### Items present at all time points
+**Items**: Complete item text, German translations, and psychometric properties are available in the codebook: [`LLM_microcontrollers-Table 1.csv`](../../Data_analysis/Data/Qualtrics/Buildbots_Codebook_15122025-2/LLM_microcontrollers-Table%201.csv)
 
-**Item 1**: What is the main function of this component on the Arduino Nano ESP32?
-
-a)  It is the main processor ("brain") that executes the program and gives the board Wi-Fi and Bluetooth capabilities. ✓ (correct)
-
-b)  It is the chip that converts the 5V voltage from the USB port for the board.
-
-c)  It is a sensor that measures the board's ambient temperature.
-
-d)  It is the translator chip that is exclusively responsible for USB communication.
-
-**Item 2**: What is the main role of a microcontroller (like an Arduino) in a robot?
-
-a)  To run a specific, relatively simple program, such as controlling motors or reading sensors. ✓ (correct)
-
-b)  To run complex Artificial Intelligence, like a Large Language Model (LLM).
-
-c)  To move the robot's legs and arms.
-
-d)  To provide a software library of pre-made functions for programming.
-
-#### Additional Items (T2 and T3)
-
-**8 additional items assessing**: Microcontroller fundamentals, programming concepts, and technical specifications
-
-**Item 3**: What is a microcontroller?
-
-a)  A particularly powerful battery
-
-b)  A small computer on a chip ✓ (correct)
-
-c)  A sensor that detects things
-
-d)  A case in which games are stored
-
-**Item 4**: Which parts are always necessary for a microcontroller to function?
-
-a)  A positive terminal (+) and a negative terminal (-) ✓ (correct)
-
-b)  Only a positive terminal (+)
-
-c)  A robot
-
-d)  A sensor
-
-**Item 5**: What voltage does a microcontroller output at its connections (pins) to control other devices?
-
-a)  10 V
-
-b)  No voltage
-
-c)  3 V ✓ (correct)
-
-d)  220 V (as in a power outlet)
-
-**Item 6**: What is the state of a pin called when the microcontroller turns it on?
-
-a)  LOW
-
-b)  HIGH ✓ (correct)
-
-c)  ON
-
-d)  MED
-
-**Item 7**: What does the status "LOW" mean for a pin on the microcontroller?
-
-a)  The pin is read-only.
-
-b)  It is switched on.
-
-c)  It is switched off. ✓ (correct)
-
-d)  The voltage fluctuates greatly.
-
-**Item 8**: What controls the switching of a microcontroller's pins between 'HIGH' and 'LOW'?
-
-a)  The size of the microcontroller
-
-b)  The program running on the microcontroller ✓ (correct)
-
-c)  It happens randomly
-
-d)  The weather
-
-**Item 9**: How many programs can a microcontroller typically execute?
-
-a)  At least ten different programs simultaneously
-
-b)  Only a single program ✓ (correct)
-
-c)  A microcontroller does not execute programs
-
-d)  As many as fit on the memory card
-
-**Item 10**: What is the name of the programming language often used for programs that run on microcontrollers?
-
-a)  HTML
-
-b)  German
-
-c)  Blockly
-
-d)  C++ ✓ (correct)
+**Content summary**: The 10 items assessed understanding of:
+- Microcontroller definition and core components (Items 1-3)
+- Power requirements and voltage specifications (Item 4-5)
+- Pin states and control mechanisms (HIGH/LOW states) (Items 6-8)
+- Program execution capabilities (Item 9)
+- Programming languages for microcontrollers (Item 10)
 
 ------------------------------------------------------------------------
 
@@ -130,16 +33,7 @@ d)  C++ ✓ (correct)
 
 **Scale**: Responses were collected on a 5-point Likert scale ranging from 1 (Does not apply) to 5 (Very true), with intermediate points at 2 (Not very true), 3 (Somewhat true), and 4 (Quite true).
 
-**Items**:
-
-1.  I enjoyed the activity.
-2.  I found the activity very interesting.
-3.  I think I was quite good at the activity during the lesson.
-4.  I felt like I could keep up with the activity in the lesson.
-5.  I had the information that I needed to do the activity in the lesson well.
-6.  Through the activity in the class I felt under pressure.
-7.  I believe that the activity is useful for me.
-8.  I believe that the activity is important.
+**Items**: Eight items assessing interest/enjoyment (2 items), perceived competence (3 items), pressure/tension (2 items), and value/usefulness (2 items). Complete item text, German translations, subscale assignments, and source information are available in the codebook: [`Intrinsic motivation inventory-Table 1.csv`](../../Data_analysis/Data/Qualtrics/Buildbots_Codebook_15122025-2/Intrinsic%20motivation%20inventory-Table%201.csv)
 
 **Reference**: Adapted from Heindl, M. (2020). An extended short scale for measuring intrinsic motivation when engaged in inquiry-based learning. *Journal of Pedagogical Research*, 4(1), 22–30. https://doi.org/10.33902/JPR.2020057989
 
@@ -149,15 +43,13 @@ d)  C++ ✓ (correct)
 
 **Administration**: After voice interaction session with Marty
 
-**Domains**: Enjoyment, learning support, participation equity, and open feedback
+**Items**: Five items including quantitative ratings (enjoyment, learning support, participation balance) and open-ended responses (likes, dislikes). Complete item text, German translations, and scale anchors are available in the codebook: [`LLM_interaction-Table 1.csv`](../../Data_analysis/Data/Qualtrics/Buildbots_Codebook_15122025-2/LLM_interaction-Table%201.csv)
 
-**LLM_enjoyment** How did you like your last voice interaction with Marty? 1 = Very bad, 2 = Rather bad, 3 = Neither, 4 = Rather good, 5 = Very good 
-**LLM_learning** How much did your last conversation with Marty help you learn about microcontrollers? 1 = Very little, 2 = Rather little, 3 = Neither, 4 = Rather a lot,5 = Very much
-**LLM_contributions** Did you feel that everyone in your group talked/wrote to Marty equally? 1 = No, not at all, 2 = No, not really, 3 = Yes, somewhat, 4 = Yes, absolutely 
-**LLM_liked** What did you like about the last language interaction? Open-ended
-**LLM_disliked** What did you dislike about the last language interaction?  Open-ended 
-
-**Purpose**: Evaluate student experience with LLM-mediated learning, perceived learning support, and participation equity
+**Domains assessed**:
+- **Enjoyment** (LLM_enjoyment): 5-point scale from "Very bad" to "Very good"
+- **Learning support** (LLM_learning): 5-point scale from "Very little" to "Very much"
+- **Participation equity** (LLM_contributions): 4-point scale assessing perceived balance of contributions
+- **Open feedback** (LLM_liked, LLM_disliked): Qualitative responses about positive and negative aspects
 
 ### 1.3 Teacher Feedback
 
@@ -165,34 +57,37 @@ d)  C++ ✓ (correct)
 
 **Administration**: After each lesson session
 
-**Domains**: Student engagement, learning outcomes, lesson management, and LLM interaction evaluation
+**Items**: Complete item text, German translations, and scale anchors are available in the codebook: [`BuildbotAnalysis - Teachers.csv`](../../Data_analysis/Data/Qualtrics/Buildbots_Codebook_15122025-2/BuildbotAnalysis%20-%20Teachers.csv)
 
 #### 1.3.1 General Lesson Evaluation
 
 **Purpose**: Assess teacher perceptions of student engagement, learning, and lesson implementation
 
-**engagement**  How engaged did you find your students in today's lesson compared to other lessons? 1 = Much less engaged, 2 = Slightly less engaged, 3 = Equally engaged, 4 = Slightly more engaged, 5 = Much more engaged
-**questions** In your opinion, how many relevant questions did your students ask during today's lesson? 1 = No relevant questions, 2 = Very few relevant questions, 3 = Some relevant questions, 4 = Many relevant questions, 5 = Very many relevant questions
-**difficulty_1** How easy was it to guide the students through the lesson in terms of: The content 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather, 5 = Very easy
-**difficulty_2** How easy was it to guide the students through the lesson in terms of: The students' behavior 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather easy, 5 = Very easy
-**learning** How much do you think your students learned in today's lesson? 1 = Learned nothing, 2 = Learned a little, 3 = Learned something, 4 = Learned a lot, 5 = Learned a great deal 
-**positive** What two things did you like about today's lesson? Open-ended
-**negative** What two things did you find difficult in today's lesson, or what would you have liked to have done differently? Open-ended
-**qualitative** There is space here if you would like to tell us anything else. Open-ended 
+**Items** (administered after each lesson, n=5 quantitative + 3 open-ended):
+- **engagement**: Student engagement compared to other lessons (5-point comparative scale)
+- **questions**: Number of relevant student questions (5-point frequency scale)
+- **difficulty_1**: Ease of guiding students through content (5-point difficulty scale)
+- **difficulty_2**: Ease of managing student behavior (5-point difficulty scale)
+- **learning**: Perceived student learning (5-point learning achievement scale)
+- **positive**: Two things that went well (open-ended)
+- **negative**: Two challenges or desired changes (open-ended)
+- **qualitative**: Additional feedback (open-ended)
 
-#### 1.3.3 LLM Interaction Evaluation (Teacher Perspective)
+#### 1.3.2 LLM Interaction Evaluation (Teacher Perspective)
 
 **Purpose**: Evaluate teacher perceptions of LLM-mediated learning effectiveness and appropriateness
 
-**Note**: These items are specific to LLM interaction sessions, while sections 1.2.3.1-1.2.3.2 refer to general lesson evaluation
-
-**LLM_helpful** How helpful did you find the last language interaction with Marty for the students' learning? 1 = Not helpful at all, 2 = Somewhat helpful, 3 = Helpful, 4 = Very helpful, 5 = I can't say
-**LLM_easy** How easy did you find the last language interaction for the students? 1 = Very difficult, 2 = Rather difficult, 3 = Moderate, 4 = Rather easy, 5 = Very easy, 6 = I cannot judge
-**LLM_engaging** How entertaining did you find the last language interaction for the students? 1 = Not entertaining at all, 2 = Not very entertaining, 3 = Neither entertaining nor not entertaining, 4 = Somewhat entertaining, 5 = Very entertaining, 6 = I can't say
+**Items** (administered after LLM interaction sessions, n=3):
+- **LLM_helpful**: Helpfulness of Marty interaction for learning (5-point scale, includes "I can't say" option)
+- **LLM_easy**: Ease of LLM interaction for students (6-point scale, includes "I cannot judge" option)
+- **LLM_engaging**: Entertainment value of interaction (6-point scale, includes "I can't say" option)
 
 ### 1.4 LLM Interaction Analysis Measures
 
-Conversation transcripts were emailed to the researchers, translated to English, then manually coded and analysed to identify detailed characterization of student-LLM interactions, collaboration patterns, and learning processes across frame conditions
+Conversation transcripts were emailed to the researchers, translated to English, then manually coded and analysed to identify detailed characterization of student-LLM interactions, collaboration patterns, and learning processes across frame conditions.
+
+**Data source**: The manual coding process is documented in [`BuildbotAnalysis - LLM analysis.csv`](../../Data_analysis/Data/BuildbotAnalysis%20-%20LLM%20analysis.csv), which contains all coded variables and derived measures.
+
 
 The manual coding process generated multiple data columns that were analyzed to derive four key measures: (1) Contribution patterns with and without frame, (2) Co-creation level, (3) On-topic versus off-topic engagement, and (4) Individual participation patterns.
 
@@ -200,19 +95,10 @@ The manual coding process generated multiple data columns that were analyzed to 
 
 This measure quantifies the total number and quality of student contributions in each experimental condition to assess how the pedagogical frame influences student engagement.
 
-**Manual Coding Columns Contributing to This Measure**:
-
--   **Phase 1: Number of Concepts Proposed by Students**: Student-generated concept suggestions in Phase 1
-
--   **Phase 2: Number of Relevant Student Contributions**: Substantive, on-topic contributions during mnemonic creation
-
--   **Number of Turns in Frame**: Total conversational turns during frame-guided sessions
-
--   **Number of Turns in No Frame**: Total conversational turns during unguided sessions
-
--   **Number of Relevant Contributions**: Count of substantive, on-topic student inputs across both conditions
-
--   **Non-Relevant Contributions**: Count of off-topic or unhelpful student inputs across both conditions
+**Manual Coding Columns**: Six variables from the LLM analysis dataset track student contributions:
+- Phase-specific counts: `Phase 1: Number of Concepts Proposed by Students`, `Phase 2: Number of Relevant Student Contributions`
+- Condition-specific turn counts: `Number of Turns in Frame`, `Number of Turns in No Frame`
+- Contribution quality: `Number of Relevant Contributions`, `Non-Relevant Contributions`
 
 **Analysis**: Phase 1 and Phase 2 relevant contributions were summed to calculate total student relevant contributions with the SCAFFOLD framework, which was compared to baseline (no-frame) sessions to quantify the framework's impact on active student engagement.
 
@@ -220,7 +106,16 @@ This measure quantifies the total number and quality of student contributions in
 
 **Description**: This measure assesses the degree of student agency in the learning process, ranging from passive reception of LLM-generated content to active leadership in knowledge construction.
 
-**Scale**: 4-point scale - 0: LLM generated all content (no student agency) - 1: Students provided concepts; LLM created rest (minimal agency) - 2: Students provided concepts; co-created mnemonic with LLM (moderate agency) - 3: Students led most of the creation process (high agency)
+**Scale**: Ordinal scale : 0, 0.5, 1, 2, 3:
+- **0**: LLM generated all content (no student agency)
+- **0.5**: Guidance only - students contributed only format/style directives, no learning content
+- **1**: Students provided concepts; LLM created rest (minimal agency)
+- **2**: Students provided concepts; co-created mnemonic with LLM (moderate agency)
+- **3**: Students led most of the creation process (high agency)
+
+![Co-Creation Level Coding Decision Tree](./Images/Co-creation-level-coding-decision-tree.png)
+
+*Figure: Decision tree used to assign co-creation levels based on the nature and origin of student contributions during LLM-mediated sessions.*
 
 **Manual Coding Columns Contributing to This Measure**:
 
@@ -336,9 +231,17 @@ Where $x_i$ represents the contribution count for student $i$ (sorted in ascendi
 
 **Data Privacy**: To ensure compliance with data protection regulations, interaction data was not stored on any server. Instead, all conversation data was temporarily stored in browser cookies during the session and then sent directly by email to the researchers upon session completion. This approach ensured that no student data was retained on external servers.
 
-![Marty Web Interface](Images/Marty%20web%20interface.png)
+![Marty Web Interface](./Images/Marty-web-interface.png)
 
-*Figure: Screenshot of the custom web interface showing the LLM Settings panel (left) with configurable frame options, learning materials, and instructions, alongside the stage view with Marty and conversation controls (right).*
+*Figure 1: Screenshot of the custom web interface showing the LLM Settings panel (left) with configurable frame options, learning materials, and instructions, alongside the stage view with Marty and conversation controls (right).*
+
+![Marty Interface - Interaction Configuration](./Images/Marty-interface-1.png)
+
+*Figure 2: Detailed view of the Interaction Type and Interaction Parameters sections, showing the participant management interface where teachers could configure which students participate and assign keyboard shortcuts for multi-turn conversations.*
+
+![Marty Interface - Transcript and Messaging](./Images/Marty-interface-2.png)
+
+*Figure 3: Lower section of the interface showing the Safeguards field (for defining restricted topics), Transcript display (showing conversation history), and the Message input area where students could type messages to Marty with participant selection dropdown.*
 
 ### 2.3 Learning Materials
 
