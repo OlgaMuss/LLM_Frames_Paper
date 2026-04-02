@@ -2,19 +2,22 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\graphicspath{{../}}
 \usepackage{url}
 \usepackage{float}
+\renewcommand{\JournalTitle}[1]{#1}
 
 \title{Scaffolding Students-AI Dialogue: A Framework for Safe Educational Interactions}
 
 \author[1,2,+,*]{Olga Muss}
-\author[2,+]{Luca M. Leisten}
+\author[2,+,X]{Luca M. Leisten}
 \author[3]{Charles Edouard Bardyn}
-\affil[1]{Université de Neuchâtel, ETH Zurich}
-\affil[2]{ETH Zurich}
-\affil[3]{AI Swiss}
+\affil[1]{Université de Neuchâtel, Switzerland}
+\affil[2]{ETH Zurich, Switzerland}
+\affil[3]{AI Swiss, Switzerland}
 
 \affil[*]{olga.muss@unine.ch}
+\affil[X]{lleisten@ethz.ch}
 
 \affil[+]{these authors contributed equally to this work}
 
@@ -39,9 +42,10 @@ The risks of using LLMs are numerous, particularly for children and adolescents 
 Existing approaches to AI safety in education are insufficient: technical safeguards like content filters can block harmful outputs but don't ensure pedagogically sound interactions, while pedagogical frameworks cannot reliably steer unpredictable LLM behavior. Addressing this requires bridging conceptual and technical work: defining pedagogically appropriate students-AI interactions and developing methods to reliably implement them. Here we present a methodology that is both conceptual and technical - \textbf{Steered Contextual AI Framework for Orchestrating Learning Dialogue (SCAFFOLD)} - which goal is to enable alignment of pedagogical goals with technical feasibility in the educational context of students-AI interactions. We first present the general concept of SCAFFOLD, highlighting its potential, and then present the results of a pilot study with 12-16 year-old students. The contributions of this paper are:
 
 \begin{itemize}
-\item A novel \textbf{SCAFFOLD} methodology consisting of a modular system of frames that sits between students and the LLM, analyzing inputs, shaping prompts with safeguards, verifying outputs against pedagogical requirements, and triggering repairs or fallbacks when needed, thereby enabling reliable implementation of pre-designed educational interactions, independently of the LLM model and enabling data privacy and integration of the science of learning.
-\item An \textbf{open-source modular system of frames} for co-creating a mnemonic in multi-user interactions with an AI, including balanced turns management, contribution tracking, phases and time management.
-\item \textbf{Empirical testing results} in a classroom deployment with 12--16-year-old students showing feasibility and potential to support learning.
+\item \textbf{A novel methodological framework}: \textbf{SCAFFOLD} consists of a modular system of frames that sits between students and the LLM, analyzing inputs, shaping prompts with safeguards, verifying outputs against pedagogical requirements, and triggering repairs or fallbacks when needed, thereby enabling reliable implementation of pre-designed educational interactions, independently of the LLM model and enabling data privacy and integration of the science of learning.
+\item \textbf{Empirical validation in authentic educational settings}: We piloted the framework in classroom deployment with 12-15-year-old students using an LLM-powered social robot in a multi-user co-creation task. Results demonstrated that students were significantly more active, engaged, and on-topic with the framework compared to baseline LLM interaction.
+\item \textbf{Evidence for learning potential}: Higher levels of student co-creation predicted post-test knowledge scores, suggesting the framework's potential to support both engagement and learning outcomes.
+\item \textbf{Open-source implementation}: The complete modular system for co-creating a mnemonic in multi-user interactions with an AI, including balanced turns management, contribution tracking, phases and time management, is available open-source, enabling the community to build upon and extend this work for diverse educational contexts.
 \end{itemize}
 
 \section*{2 A framework for safe LLM interactions}
@@ -68,7 +72,7 @@ The EU AI Act classifies AI systems used in education as high-risk, requiring co
 
 For these reasons, SCAFFOLD builds on a major preliminary step: first designing the desired interaction, and then uses several techniques to steer the LLMs' behavior. The overview of the flow of information and design is presented in \textbf{Figure 1}. We first outline the concept, explaining what we mean by designing an AI - student interaction, then describe the technical implementation of the interaction design into a modular and layered framework.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{Images for manuscript/Figure 1}
 \caption{Overview of the SCAFFOLD method for each turn in a multi-turn conversation}
@@ -83,7 +87,7 @@ Lesson planning and activity design requires educators to define the learning go
 
 A learning interaction, with or without AI, is a dynamic process involving feedback loops that reinforce or discourage certain behaviors in a multi-turn dialogue. It is therefore necessary, in the context of students-AI interactions to design these with the desired flow in mind, building on the science of learning and pedagogy. It is also necessary to steer LLM's behavior at each turn depending on what is happening in the interaction. Since it is impossible to define all possible behaviors in all situations, the goal could rather be to set key elements of an AI-interaction in a specific learning activity and improve these at each iteration.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{Images for manuscript/Figure 2}
 \caption{Elements of a parametrization of an interaction}
@@ -104,7 +108,7 @@ The behavior of an LLM depends on its training data, size, structure of the mode
 
 Specifically, SCAFFOLD aims at increasing an LLM's reliability, addressing the intrinsic by-product of the generative nature of LLMs, namely hallucinations and reduced compliance to guidelines with increasing turns as instructions get diluted \cite{Huang2025, Xu2025}. It is particularly important, to not just provide safe students-AI interactions that lead to learning, but also that AI provides accurate information and that teachers and students trust the system enough to consider it usable, acceptable, and useful \cite{Tricot2003}.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{Images for manuscript/Figure 3}
 \caption{Illustration of the SCAFFOLD structure}
@@ -115,7 +119,7 @@ The SCAFFOLD framework proposes a modular system of frames as illustrated in \te
 
 \textbf{1: Collect data.} This step collects the information from the user, such as age, nickname, location, prompt; from the parameters of the designed interaction, such as what checks to run, what is the goal of the interaction, etc.; from memory, such as the conversation logs, previous checks results, etc. This first step feeds the others.
 
-\textbf{2: Analyse input.} This second step allows to assess different levels of risks and trigger safety measures that are difficult to put in place otherwise. For example, sending an alert to a teacher when a student insists at misusing the tool or when a student is expressing dark thoughts, but also to trigger meta-responses when the user goes off topic. Another advantage of an input analysis is to be able to assess users' cognitive and emotional engagement, an aspect that is particularly relevant in educational settings. Moreover, input analysis allows to perform analysis that can be used to improve the interaction in real time or to analyse the interaction afterwards. Examples of analyses can be the user's understanding of the content, progress towards a goal, their level of critical thinking, level of engagement or fatigue. Some analyses can be quite simple and straightforward, such as the level of distraction from the topic, while other analyses could be more complex and require expert validation, such as in the case of detecting learning difficulties or mental health problems. In this last case, a committee of experts should contribute to the development of the analysis.
+\textbf{2: Analyse input.} This second step allows to assess different levels of risks and trigger safety measures that are difficult to put in place otherwise. For example, sending an alert to a teacher when a student insists at misusing the tool or when a student is expressing dark thoughts, but also to trigger meta-responses when the user goes off topic. Another advantage of an input analysis is to be able to assess users' cognitive and emotional engagement, an aspect that is particularly relevant in educational settings. Moreover, input analysis allows to perform analysis that can be used to improve the interaction in real time or to analyse the interaction afterwards. Examples of analyses can be the user's understanding of the content, progress towards a goal, their level of critical thinking, level of engagement or fatigue. Some analyses can be quite simple and straightforward, such as the level of distraction from the topic, while other analyses could be more complex and require expert validation, such as in the case of detecting learning difficulties or mental health problems.
 
 \textbf{3: Shape and generate draft response.} Step 3 consists of shaping the prompt in a way to take into account (1) a constitution which integrates safeguards as prompts, (2) the context of the interaction -- parametrization -- with information from parametrization of the interaction and user information, (3) the results of the input analysis, and the (4) user's prompt and information from memory such as conversation logs. This step also includes the generation of a drafted response by an LLM. When the model is used in real time interactions, processing speed might become a crucial factor in deciding which model to use, while for offline analysis or when the interaction is only monitored, a more heavy, slow model might be more appropriate.
 
@@ -156,7 +160,7 @@ Students-AI interaction consisted in co-creating a mnemonic, such as a story, a 
 
 We developed the general architecture to run the six SCAFFOLD stages (collect data, analyse input, shape and generate draft response, verify, repair and deliver answer; see \textbf{Figure 3};S1). While this architecture can run on any LLM model, we used gpt-4.1-mini on Microsoft Azure for this pilot. Since the interaction involved the social robot Marty, we additionally deployed text to speech and speech to text by using a Microsoft Azure male standard voice.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{Images for manuscript/Figure 5}
 \caption{Marty's interaction parameters}
@@ -165,7 +169,7 @@ We developed the general architecture to run the six SCAFFOLD stages (collect da
 
 We created five frames implemented throughout the six stages of the frame engine and detailed in Table 1: the main frame ``Mnemonic CoCreator Frame'' (1), which managed most of the checks, and four more specific validation frames. The ``language checker'' frame (2) assessed age appropriate language, tone, and complexity of responses. The ``balanced turns'' frame (3) managed fair turn-taking across students, tracking participation count, speaking time, and consecutive turns. The ``comprehension tracker'' frame (4) maintained per-student, per-concept understanding profiles, tracking whether each student understands, is confused about, or has misconceptions regarding specific concepts. Lastly, the ``phase checker'' frame (5) ensured that responses aligned with the current session phase goals and pedagogical requirements (see supplementary material S2 for more details).
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{|l|p{5cm}|p{5cm}|}
 \hline
@@ -195,7 +199,7 @@ We administered pre-, post-, and feedback surveys in Qualtrics \cite{Qualtrics20
 
 Student speech was captured by the computer's microphone and transmitted to Microsoft Azure for speech-to-text transcription, LLM inference (gpt-4.1-mini), and text-to-speech synthesis.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{Images for manuscript/Figure 4}
 \caption{Illustration of the setting of the interaction}
@@ -222,17 +226,17 @@ For each conversation, we coded the number of turns each student spoke, and then
 
 \textit{Co-creation level}
 
-While we pre-registered the length and depth of the created mnemonic as an indicator of learning success, we later realized that the mnemonic was sometimes created by the LLM and therefore did not represent students' engagement or contribution. We therefore decided to use another variable that we defined at the pre-registration: the co-creation level ( ``0: LLM did it all, 1: concepts by kids/rest LLM, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students). This variable was coded manually per group counting students' contributions to each phase and considering the depth of the contribution (e.g. one very simple concept vs. several complex ones). We added a 0.5 level a posteriori to integrate the case where students contributed in guiding the LLM, but did not contribute to the concepts.
+While we pre-registered the length and depth of the created mnemonic as an indicator of learning success, we later realized that the mnemonic was sometimes created by the LLM and therefore did not represent students' engagement or contribution. We therefore decided to use another variable that we defined at the pre-registration: the co-creation level ( ``0: LLM did it all, 1: concepts by kids/rest LLM, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students). This variable was coded manually by two raters using a decision tree available in S4. The coding was done per group counting students' contributions to each phase and considering the depth of the contribution (e.g. one very simple concept vs. several complex ones). We added a 0.5 level a posteriori to integrate the case where students contributed in guiding the LLM, but did not contribute to the concepts.
 
 \subsubsection*{3.1.6 Data analysis}
 
-Statistical analyses were performed in R \cite{RCore2020} using RStudio \cite{Posit2025} and Python (version 3.12.12; \cite{Python2021}) using Jupyter Notebooks \cite{Kluyver2016}. Since the aim of this pilot was to test the feasibility and potential benefits of SCAFFOLD, statistical analyses are mainly descriptive. To answer RQ1 and RQ4, we fit a linear mixed-effects model with children's post-test knowledge scores (T2: immediate post-test; T3: delayed post-test) as the outcome variable, co-creation level, timepoint (immediate vs. delayed), and prior knowledge (T1) as fixed effects, and participant as a random effects to account for repeated measures. We fit a linear mixed-effects model using the lmer() function from the lme4 package \cite{Bates2015} with p-values computed using the lmerTest package \cite{Kuznetsova2017}. We originally preregistered separate linear mixed effects models per timepoint, which we ran and their results are available in supplementary material S5. However a combined model allows to account for the nested nature of the data and to control for prior knowledge and therefore has been chosen for reporting.
+Statistical analyses were performed in R \cite{RCore2020} using RStudio \cite{Posit2025} and Python (version 3.12.12; \cite{Python2021}) using Jupyter Notebooks \cite{Kluyver2016}. Since the aim of this pilot was to test the feasibility and potential benefits of SCAFFOLD, statistical analyses are mainly descriptive. Co-creation level coding inter-rater reliability was assessed using Cohen's $\kappa$ (unweighted and weighted) and Pearson's \textit{r}. Weighted $\kappa$ is reported as the primary measure due to the ordinal nature of the scale \cite{Landis1977}. To answer RQ1 and RQ4, we fit a linear mixed-effects model with children's post-test knowledge scores (T2: immediate post-test; T3: delayed post-test) as the outcome variable, co-creation level, timepoint (immediate vs. delayed), and prior knowledge (T1) as fixed effects, and participant as a random effects to account for repeated measures. We fit a linear mixed-effects model using the lmer() function from the lme4 package \cite{Bates2015} with p-values computed using the lmerTest package \cite{Kuznetsova2017}. We originally preregistered separate linear mixed effects models per timepoint, which we ran and their results are available in supplementary material S5. However a combined model allows to account for the nested nature of the data and to control for prior knowledge and therefore has been chosen for reporting.
 
 \subsection*{3.2 Results}
 
 The aim of this pilot was to test the feasibility, usability, and utility of the frame for supporting children's learning. We successfully implemented the framework, enabling students to co-create a mnemonic with a social robot, highlighting the feasibility and usability. Below, we report the findings organized by relevance, including both descriptive findings and preregistered analyses.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{Images for manuscript/Figure 6}
 \caption{Example of answers without and with SCAFFOLD framing}
@@ -243,7 +247,7 @@ The aim of this pilot was to test the feasibility, usability, and utility of the
 
 The main impact of the SCAFFOLD frame was that students contributed to the creation of the mnemonic, a behavior that was absent from their LLM interactions without SCAFFOLD. Students contributed to the identification of concepts to include in the mnemonic (18 relevant suggestions by 13/24 students) and to the actual creation of the mnemonic (13 suggestions from 12/24 students, \textbf{Figure 7}). This is an important shift from students being mere consumers of AI technology to becoming active creators.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{Images for manuscript/Figure 7 contributions}
 \caption{Students' contributions per phase with and without the SCAFFOLD framework}
@@ -256,7 +260,7 @@ While all groups successfully created a mnemonic, two groups fully co-created it
 
 Another important aspect was a more balanced involvement of students (RQ3). Without SCAFFOLD, six students did not participate in the interaction at all, while only one student did not participate in the interaction with SCAFFOLD. While participation was not significantly more equitable (\textit{W = 9.00}, \textit{p} = .13), the balance between turns was more reliable (i.e., varied less; \textit{F} = 5.84, \textit{p} = .02); \textbf{Figure 8}). From this exploratory analysis, the balanced turns frame appears to have worked well and succeeded in guiding a more balanced interaction, setting an example for multi-user interactions with AI.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.65\linewidth]{Images for manuscript/Figure 8 gini}
 \caption{Gini Coefficient \cite{Dixon1987} assessing the level of equitable participation in interaction without or with SCAFFOLD framing. The dots represent Gini coefficients per group.}
@@ -265,9 +269,9 @@ Another important aspect was a more balanced involvement of students (RQ3). With
 
 \subsubsection*{Finding 3: Higher co-creation level was associated with higher post-test knowledge scores and not predicted by prior knowledge (RQ1 \& RQ4)}
 
-Children's post-test microcontroller knowledge was significantly associated with their co-creation level (\textit{b} = 1.06, \textit{SE} = 0.35, \textit{p} = .005; \textbf{Figure 9}), indicating that higher student engagement during mnemonic creation was associated with better learning outcomes. This effect remained significant when controlling for prior knowledge (T1), which itself did not predict post-test scores (\textit{b} = -0.13, \textit{SE} = 0.49, \textit{p} = .79; \textbf{Figure 9}). There was no significant main effect of timepoint (\textit{b} = -0.09, \textit{SE} = 0.63, \textit{p} = .88), suggesting similar overall performance on immediate (T2) and delayed (T3) post-tests. The co-creation and timepoint interaction was not significant (\textit{b} = -0.59, \textit{SE} = 0.38, \textit{p} = .13).
+Children's post-test microcontroller knowledge was significantly associated with their co-creation level (\textit{b} = 1.06, \textit{SE} = 0.35, \textit{p} = .005; \textbf{Figure 9}), indicating that higher student engagement during mnemonic creation was associated with better learning outcomes. This effect remained significant when controlling for prior knowledge (T1), which itself did not predict post-test scores (\textit{b} = -0.13, \textit{SE} = 0.49, \textit{p} = .79; \textbf{Figure 9}). There was no significant main effect of timepoint (\textit{b} = -0.09, \textit{SE} = 0.63, \textit{p} = .88), suggesting similar overall performance on immediate (T2) and delayed (T3) post-tests. The co-creation and timepoint interaction was not significant (\textit{b} = -0.59, \textit{SE} = 0.38, \textit{p} = .13). Co-creation level coding inter-rater reliability was almost perfect (weighted $\kappa$ = 0.82, 95\% CI [0.70, 0.95]), with 44.4\% exact agreement (4/9 groups). Unweighted $\kappa$ = 0.35 (95\% CI [0.03, 0.66], fair) and Pearson's \textit{r} = 0.894 (\textit{p} = .001). The five disagreements were resolved through discussion between raters.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\linewidth]{Images for manuscript/Figure 9 T2 and T3}
 \caption{Association between co-creation level and microcontrollers knowledge at posttest (T2) and learning retention test (T3). Co-creation level defined as: 0: LLM did it all, 0.5: some guidance from students unrelated to learning, 1: concepts by students/rest LLM, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students).}
@@ -278,7 +282,7 @@ Children's post-test microcontroller knowledge was significantly associated with
 
 Students' off-topic turns decreased from 38\% without the framing to 1\% with SCAFFOLD (\textit{W} = 0.00, \textit{p} = .03; \textbf{Figure 10}). This suggests that students were more engaged in the activity, potentially because Marty was asking individual students directly.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\linewidth]{Images for manuscript/Figure 10 off topic}
 \caption{Total number of turns in general and turns off-topic without and with SCAFFOLD framing}
@@ -289,7 +293,7 @@ Students' off-topic turns decreased from 38\% without the framing to 1\% with SC
 
 In general students rather enjoyed the activity (\textit{M} = 3.96, \textit{SD} = 0.92) and thought that the LLM interaction has helped them learn (\textit{M} = 3.27, \textit{SD} = 1.12, \textbf{Figure 12}), with several students reporting creation as a mnemonic with Marty as what they liked about the LLM interaction with SCAFFOLD. Negative feedback came mainly from groups that ran out of time, which resulted in Marty resisting to answer and instead indicating that their time was over. Both teachers also considered the activity helpful (\textit{M} = 3, \textit{SD} = 0) and somewhat engaging (\textit{M} = 4, \textit{SD} = 0).
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{Images for manuscript/Figure 12}
 \caption{Students feedback on the interaction with Marty using SCAFFOLD: 1. LLM enjoyment: How did you like your last voice interaction with Marty? (1-5), 2. LLM Learning Help: How much did your last conversation with Marty help you learn? (1-5), 3. Perceived Turn Balance: Did you feel everyone talked to Marty equally? (1-4)}
@@ -328,6 +332,22 @@ We thank the participating school, the teachers who facilitated the classroom se
 
 Partial funding was received by the Social Brain Sciences Lab.
 
+\section*{Data availability statement}
+
+All data supporting the findings of this study are openly available in the GitHub repository at \href{https://github.com/OlgaMuss/LLM_Frames_Paper}{https://github.com/OlgaMuss/LLM\_Frames\_Paper}. The repository includes:
+
+\begin{itemize}
+\item Student knowledge assessment data (anonymized with participant IDs)
+\item Student and teacher feedback survey data
+\item LLM interaction transcripts (with pseudonyms)
+\item Manually coded behavioral analysis data
+\item Complete codebook for all measures
+\item All analysis code (Python and R)
+\item Supplementary materials (S1-S9)
+\end{itemize}
+
+An interactive simulation app demonstrating the SCAFFOLD framework is available at \href{https://buildbot-4tzkvoxzssupnzkb9e6va4.streamlit.app}{https://buildbot-4tzkvoxzssupnzkb9e6va4.streamlit.app}. The study preregistration is available at \href{https://doi.org/10.17605/OSF.IO/K7UE2}{https://doi.org/10.17605/OSF.IO/K7UE2}.
+
 \bibliography{references}
 
 \section*{Annexes}
@@ -342,7 +362,7 @@ Partial funding was received by the Social Brain Sciences Lab.
 \item S5: Pilot statistical analysis
 \item S6: Learning material
 \item S7: Codebook for qualtrics
-\item S8: \href{https://docs.google.com/document/d/1H8ze6IJ8H7I5qsTjTcrK8b4FXwIk0rf9yr8sr4EKXkY/edit?tab=t.0}{Detailed Buildbot LLM Interaction analysis}
+\item S8: \href{https://docs.google.com/document/d/1H8ze6IJ8H7I5qsTjTcrK8b4FXwIk0rf9yr8sr4EKXkY/edit?tab=t.0}{Detailed LLM Interaction notes}
 \item S9: \href{https://github.com/OlgaMuss/LLM_Frames_Paper/blob/main/Data_analysis/Data/BuildbotAnalysis\%20-\%20LLM\%20analysis.csv}{LLM interaction coding and co-creation level calculation}
 \end{itemize}
 
