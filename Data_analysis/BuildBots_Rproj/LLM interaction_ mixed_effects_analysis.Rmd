@@ -116,8 +116,8 @@ cat("Group mapping extracted:\n")
 cat("  Unique students:", n_distinct(mapping$`Participant ID`), "\n")
 cat("  Unique groups:", n_distinct(mapping$Group), "\n\n")
 
-# Clean co-creation column name
-cocreation_col <- "Co-creation Level (0:LLM did it all, 1: concepts by students/rest llm, 2: concepts by the students, co-creation of the mnemonic, 3: mainly by students)"
+# Clean co-creation column name - using final agreed rating from two raters
+cocreation_col <- "Final Co-creation level"
 
 # Prepare co-creation data
 df_cocreation_clean <- df_cocreation %>%
